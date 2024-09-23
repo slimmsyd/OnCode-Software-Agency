@@ -1,0 +1,39 @@
+{
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/third-parties": "^14.2.5",
+    "@react-three/fiber": "^8.17.8",
+    "@tanstack/react-query": "^5.51.23",
+    "@thirdweb-dev/react": "^4.9.4",
+    "@thirdweb-dev/sdk": "^4.0.99",
+    "ethers": "^5.7.2",
+    "framer-motion": "^11.5.6",
+    "framer-motion-3d": "^11.5.6",
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.9",
+    "next": "^14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-query": "^3.39.3",
+    "three": "^0.168.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.168.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.5",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

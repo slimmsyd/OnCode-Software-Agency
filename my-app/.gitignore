@@ -1,0 +1,9 @@
+node_modules
+node_modules
+# Next.js specific
+.next/
+out/
+
+# Webpack specific
+**/webpack/
+**/static/webpack/

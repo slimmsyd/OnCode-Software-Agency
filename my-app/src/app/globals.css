@@ -1,0 +1,495 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: #fff;
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+    font-family: "IBM Plex Mono", monospace;
+
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+h1 {
+  font-size: 88px;
+}
+h2 {
+  font-size: 36px;
+}
+
+@media screen and (max-width: 850px) {
+  h1 {
+    font-size: 48px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  h3 {
+    font-size: 20px !important;
+  }
+}
+h3 {
+  font-size: 30px;
+}
+h4 {
+  font-size: 20px;
+}
+
+.header-h1 {
+  line-height: 120%;
+}
+p {
+  font-size: 20px;
+}
+
+.site-wrapper {
+  display: grid;
+  grid-template-columns: 80px auto 80px;
+}
+.site-inner-container {
+  grid-column: 2;
+
+  z-index: 4;
+  position: relative;
+}
+
+.social-container {
+  grid-column: 1;
+  z-index: 5;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.nav-container {
+  position: relative;
+  z-index: 10;
+}
+
+.nav-block {
+  padding: 20px 10px;
+  width: 164px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: background 250ms ease-in-out;
+  
+}
+.nav-block:hover{
+  background: white;
+  color:black
+}
+
+
+.nav-block.w-large {
+  width: 180px;
+}
+
+[data-rk] .ju367va {
+  align-items: center;
+  text-align: center;
+}
+[data-rk] .ju367v9i{
+  background: transparent !important;
+  text-align: center !important;
+  font-size: 14px;
+  width: 100%;
+  font-weight: light !important;
+}
+[data-rk] ._12cbo8i6{
+  text-align: center;
+}
+[data-rk] ._12cbo8i3{
+  /* width: 200px !important; */
+
+}
+[data-rk] .iekbcc0 {
+  font-weight: light !important;
+}
+
+.video-bg {
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.overlayDark {
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.373);
+  z-index: 2;
+}
+
+.join-btn {
+  background: white;
+  color: black;
+  width: 120px;
+  height: 32px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+.join-btn:hover{
+  background: transparent;
+  color: white;
+  border: 0.5px solid white;  
+}
+
+.join-btn.clear-bg {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+.join-btn.clear-bg:hover{
+  background-color: white;
+  color: black;
+}
+
+
+
+.mobile-nav-div , .mobile-nav-wrapper {
+  display: none;
+}
+
+
+@media screen and (max-width: 1110px)
+{ 
+  .nav-block, .nav-wrapper{
+    display: none;
+  }
+  .mobile-nav-div{
+    display: flex;
+    position: fixed;
+    top: 0;
+    background: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    transform: translateX(100%);
+    transition: transform 250ms ease-in-out;
+    padding: 5rem 45px
+  }
+  .show{
+    transform: translateX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  .nav-svg{
+    color: black; 
+    transform: color 500ms ease-in-out;
+    position: fixed;
+
+  }
+  
+  .mobile-nav-wrapper{
+    display: flex;
+    z-index: 10;
+    position: relative;
+  }
+  .mobile-btn{
+    background: #784cfbea;
+    height: 45px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: #fff;
+    --tw-shadow: 0px 0px 0px 1px rgba(68, 76, 231, .12), 0px 4px 8px 0px rgba(68, 76, 231, .12), 0px 2px .5px 0px rgba(255, 255, 255, .2) inset;
+    --tw-shadow-colored: 0px 0px 0px 1px var(--tw-shadow-color), 0px 4px 8px 0px var(--tw-shadow-color), inset 0px 2px .5px 0px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+
+  }
+
+  .div-border-bottom{
+    width: 100%;
+    height: 0.5px;
+    background-color: #a0a0a0a8;
+    margin-top: 10px;
+  }
+}
+@media screen and (max-width: 850px)
+{ 
+  .nav-block{
+    display: none;
+  }
+  h1{
+    font-size: 48px;
+  }
+
+  .site-wrapper {
+    display: grid;
+    background: black;  
+    grid-template-columns: 25px auto 25px;
+  }
+}
+
+
+
+
+.cornerImageContainer img {
+  width: 100%;
+}
+.line-height {
+  line-height: 132%;
+}
+
+.borderDiv {
+  border-bottom: 0.5px solid #b4b4b4;
+  border-right: 0.5px solid #b4b4b4;
+  border-left: 0.5px solid #b4b4b4;
+}
+.social-container-image { 
+  width: 50px;
+  height: 50px;
+}
+.testimonal-container{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  /* justify-content: space-around; */
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.svg-rotate{
+  transform: rotate(180deg);
+  align-self: flex-end;
+}
+.testimonal-header {
+  grid-column: 2;
+  border-right: 0.5px solid #b4b4b4;
+  border-left: 0.5px solid #b4b4b4;
+}
+
+
+.move-back , .move-forward{ 
+  display: flex;
+  align-items: center;
+  border: 1px solid #6042F3;
+}
+.move-back:hover, .move-forward:hover{
+  background: #6042f392;
+
+}
+.quote-container{
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 800px)
+{ 
+  .quote-container{
+    padding: 0px 10px;
+
+  }
+}
+
+.site-container {
+  border-right: 0.5px solid #b4b4b4;
+  border-left: 0.5px solid #b4b4b4;
+  grid-column: 2;
+}
+
+.image-container {
+  width: 100%;
+  height: 346px;
+  border: 1px solid;
+  border-radius: 8px;
+}
+.image-container img { 
+  height: 100% !important;
+  width: 100% !;
+  object-fit: cover;
+}
+
+.image-wrapper p {
+  font-size: 14px;
+  color: #cccccc;
+}
+
+.video-container {
+  height: 476px;
+  border-radius: 8px;
+}
+.video-container video {
+  height: 100%;
+  border-radius: 8px;
+}
+
+.text-container {
+  border: 0.5px solid #5d5d5d;
+  border-radius: 8px;
+  /* height: 444px; */
+  padding: 2rem;
+  max-width: 800px;
+}
+
+.text-div h2 {
+  line-height: 129%;
+}
+
+.large-btn {
+  margin-top: 50px !important;
+
+  width: 353px;
+  height: 63px;
+ margin: auto;
+  border: 1px solid #6b6556;
+  background-color: #282c32;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  flex: none;
+  height: 46px;
+  margin-bottom: 16px;
+  padding: 8px 28px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: opacity .2s, color .2s;
+  box-shadow: 0 3px 4px rgba(32, 32, 32, .05)
+}
+.large-btn:hover
+{ 
+  background:black;
+  color:white;
+}
+
+
+.pricing-card-container {
+  width: 300px;
+  padding: 1.5rem;
+  height: 530px;
+  border: 0.5px solid #5d5d5d;
+  border-radius: 8px;
+}
+@media screen and (max-width: 750px) { 
+  .pricing-card-container{
+    width: 100%;
+  }
+  .large-btn{
+    width: 100%;
+  }
+}
+
+.divider-line {
+  color: #676767;
+  font-size: 28px;
+  font-weight: thin;
+  transform: rotate(12deg);
+}
+
+.price-btn {
+  background: white;
+  color: black;
+  border-radius: 5px;
+  width: 148px;
+  height: 35px;
+  transition: background 250ms ease-in-out;
+  
+}
+
+.price-btn:hover{
+  background: transparent;
+  color: white;
+  border: 0.5px solid #fff;
+}
+
+
+
+.slider-content, .slider-content img, .servicesImage { 
+  border-radius: 19px
+}
+
+.bardCodeDiv{
+  background: url('/images/QRCODE.png') no-repeat center center;
+  background-size: cover;
+  border-radius: 19px;
+  background-color: transparent;
+  border: 0.5px solid #0000;
+
+
+}
+
+.afterH1{
+  position: relative;
+}
+.afterH1::after{
+  content: '';
+  position: absolute;
+  top: 75%;
+  right: 60px; /* Adjust this value to position the QR code */
+  transform: translateY(-50%);
+  width: 180px;
+  height: 45px;
+  background: url('/images/QRCODE.png') no-repeat center center;
+  background-size: cover;
+  border-radius: 19px;
+}
+
+.custom-block{
+
+  background: url('/images/QRCODE.png') no-repeat center center;
+  background-size: cover;
+  width: 100px;
+  height: 45px;
+}
+@media sccreen and (max-width: 750px)
+{ 
+  .afterH1::after{
+    top: 75%;
+    right: 20px; /* Adjust this value to position the QR code */
+  }
+}
+.clickBtns
+{ 
+  background: black;
+  color: white;
+  height: 42px;
+  width: 42px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  transition: opacity .2s, color .2s;
+}
