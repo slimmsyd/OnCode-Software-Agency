@@ -43,11 +43,10 @@ export default function HeaderComponent({
 
             <button
               onClick={() => scrollToSection("about")}
-              className="bg-white text-black px-[20px] py-[10px] rounded-[2px]"
+              className="bg-white text-black px-[20px] py-[10px] rounded-[2px] hover:bg-gray-100 transition-colors duration-300"
             >
               Book A Call
             </button>
-
 
           </div>
 

@@ -272,7 +272,9 @@ export default function HomePage() {
           <h1 className="text-black z-10 afterH1">Explore our Ecosystem</h1>
         </div>
 
-        <ImageSlider />
+        <ImageSlider 
+        scrollToSection={scrollToSection}
+        />
       </section>
 
       <section className="relative  px-[20px] h-[80vh]">
@@ -509,7 +511,7 @@ const PageLoader: React.FC = () => {
 
 
 
-function ImageSlider() {
+function ImageSlider({ scrollToSection }: { scrollToSection: (section: string) => void }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -631,9 +633,13 @@ function ImageSlider() {
                   {service.description}
                 </span>
 
-                <button className=" cursor-pointer contactBtn flex items-center justify-center w-[134px] h-[42px] bg-white text-black w-[">
-                  Get In Touch
-                </button>
+             
+            <button
+              onClick={() => scrollToSection("about")}
+              className="bg-white text-black px-[20px] py-[10px] w-[160px] rounded-[2px] hover:bg-gray-100 transition-colors duration-300"
+            >
+              Get In Touch
+            </button>
 
                 <Link
                   href={service.link}
