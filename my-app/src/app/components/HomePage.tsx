@@ -74,11 +74,8 @@ export default function HomePage() {
   }, []);
 
   //Scroll to the correspoding container
-
-  const scrollToSection = (ref: RefObject<HTMLElement>) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
   const refSection1 = useRef<HTMLDivElement>(null);
   const refSection2 = useRef<HTMLDivElement>(null);
@@ -243,10 +240,13 @@ export default function HomePage() {
           refSection3={refSection3}
           refSection4={refSection4}
           priceRef={priceRef}
+          scrollToSection={scrollToSection}
         />
       </div>
 
-      <section className=" pt-[50px] px-[20px] relative" ref={refSectionHome}>
+      <section
+      id = "home"
+      className=" pt-[50px] px-[20px] relative" ref={refSectionHome}>
         {/* <div className="overlayDark absolute h-[100vh]"></div> */}
         <div className="absolute video-bg ">
           <Video
@@ -283,7 +283,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className=" h-[100vh] bg-black relative p-[20px]">
+      <section 
+            id = "why"
+            className=" h-[100vh] bg-black relative p-[20px]">
+        
         <div className="pt-50px px-[20px]">
           <h2>Oncode</h2>
         </div>
@@ -305,7 +308,10 @@ export default function HomePage() {
 
 
     {/* WHat We DO */}
-    <section className = "relative h-full bg-black">
+    <section 
+                id = "about"
+
+    className = "relative h-full bg-black">
     <div className="flex flex-col md:flex-row  relative w-full bg-[#0B0B0B]">
   {services.map((service, index) => (
     <div 
@@ -405,16 +411,23 @@ export default function HomePage() {
 
 
         <div className = "flex flex-row gap-[10px] items-start justify-start">
-          <button>
+          <button
+          onClick={() => scrollToSection("home")}
+          >
           HOME
 
           </button>
   
-          <button>
+          <button
+                    onClick={() => scrollToSection("home")}
+
+          >
           ECOSYSTEM
 
           </button>
-          <button>
+          <button
+          onClick={() => scrollToSection("why")}
+          >
           WHY US
 
           </button>

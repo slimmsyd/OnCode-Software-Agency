@@ -7,6 +7,7 @@ interface Props {
   refSection3: RefObject<HTMLDivElement>;
   refSection4: RefObject<HTMLDivElement>;
   priceRef: RefObject<HTMLDivElement>;
+  scrollToSection: (sectionId: string) => void;
 }
 
 export default function HeaderComponent({
@@ -15,14 +16,8 @@ export default function HeaderComponent({
   refSection3,
   refSection4,
   priceRef,
+  scrollToSection,
 }: Props) {
-  const scrollToSection = (ref: RefObject<HTMLElement>) => {
-    console.log("Scroll to section is being clikec tho", ref);
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
     <section className="site-inner-container h-[120vh] md:h-[80vh]  ">
       <Navigation
@@ -47,8 +42,8 @@ export default function HeaderComponent({
           <div className="flex flex-row gap-[20px] mt-[20px]">
 
             <button
-              onClick={() => scrollToSection(priceRef)}
-              className="join-btn clear-bg"
+              onClick={() => scrollToSection("about")}
+              className="bg-white text-black px-[20px] py-[10px] rounded-[2px]"
             >
               Book A Call
             </button>

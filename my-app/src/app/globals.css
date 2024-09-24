@@ -109,10 +109,10 @@ p {
   transition: background 250ms ease-in-out;
   
 }
-.nav-block:hover{
+/* .nav-block:hover{
   background: white;
   color:black
-}
+} */
 
 
 .nav-block.w-large {

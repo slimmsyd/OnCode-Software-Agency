@@ -25,7 +25,7 @@ const wallets = [
 ];
 
 interface NavigationProps {
-  scrollToSection: (ref: RefObject<HTMLElement>) => void;
+  scrollToSection: (sectionId: string) => void;
   refSection1: RefObject<HTMLDivElement>;
   refSection2: RefObject<HTMLDivElement>;
   refSection3: RefObject<HTMLDivElement>;
@@ -45,8 +45,8 @@ export default function Navigation({
     setShowBG(!showBG);
   };
 
-  const mobileNavBtn = (ref: RefObject<HTMLElement>) => {
-    scrollToSection(ref);
+  const mobileNavBtn = (id: string) => {
+    scrollToSection(id);
 
     setShowBG(!showBG);
   };
@@ -115,16 +115,16 @@ export default function Navigation({
       ONCODE
       </h3>
       <div className="flex flex-row w-full nav-wrapper text-white">
-        <div onClick={() => scrollToSection(refSection1)} className="nav-block  text-white">
-       Learn
+        <div onClick={() => scrollToSection("home")} className="nav-block  text-white">
+       HOME
         </div>
-        <div onClick={() => scrollToSection(refSection2)} className="nav-block  text-white">
-        Build
+        <div onClick={() => scrollToSection("home")} className="nav-block  text-white">
+        ECOSYSTEM
         </div>
-        <div onClick={() => scrollToSection(refSection3)} className="nav-block  text-white">
-        Projects
+        <div onClick={() => scrollToSection("why")} className="nav-block  text-white">
+        WHY US
         </div>
-        <div onClick={() => scrollToSection(refSection4)} className="nav-block  text-white">
+        <div onClick={() => scrollToSection("about")} className="nav-block  text-white">
         About us
         </div>
       
@@ -200,11 +200,10 @@ export default function Navigation({
         <div className="flex flex-col gap-[5px] mt-[10px] ">
           <div className="flex flex-row gap-[10px] items-center ">
             <div
-              onClick={() => mobileNavBtn(refSection1)}
+              onClick={() => mobileNavBtn("home")}
               className="text-[20px] cursor-pointer"
             >
-              What You Learn
-            </div>
+HOME            </div>
             <div className="svg-div">
               <svg
                 width="24"
@@ -229,9 +228,9 @@ export default function Navigation({
           <div className="flex flex-row gap-[10px] items-center ">
             <div
               className="text-[20px] cursor-pointer"
-              onClick={() => mobileNavBtn(refSection2)}
+              onClick={() => mobileNavBtn("home")}
             >
-              Defi
+              ECOYSTEM
             </div>
             <div className="svg-div">
               <svg
@@ -257,9 +256,9 @@ export default function Navigation({
           <div className="flex flex-row gap-[10px] items-center ">
             <div
               className="text-[20px] cursor-pointer"
-              onClick={() => mobileNavBtn(refSection3)}
+              onClick={() => mobileNavBtn("why")}
             >
-              Crypto
+              Why us
             </div>
             <div className="svg-div">
               <svg
@@ -279,58 +278,7 @@ export default function Navigation({
           </p>
         </div>
 
-        <div className="flex flex-col gap-[5px]">
-          <div className="flex flex-row gap-[10px] items-center ">
-            <div
-              className="text-[20px] cursor-pointer"
-              onClick={() => mobileNavBtn(refSection4)}
-            >
-              Blockchain
-            </div>
-            <div className="svg-div">
-              <svg
-                width="24"
-                height="25"
-                viewBox="0 0 24 25"
-                fill="fillCurrent"
-                aria-hidden="true"
-              >
-                <path d="M8.9101 21.17C8.7201 21.17 8.5301 21.1 8.3801 20.95C8.0901 20.66 8.0901 20.18 8.3801 19.89L14.9001 13.37C15.3801 12.89 15.3801 12.11 14.9001 11.63L8.3801 5.11002C8.0901 4.82002 8.0901 4.34002 8.3801 4.05002C8.6701 3.76002 9.1501 3.76002 9.4401 4.05002L15.9601 10.57C16.4701 11.08 16.7601 11.77 16.7601 12.5C16.7601 13.23 16.4801 13.92 15.9601 14.43L9.4401 20.95C9.2901 21.09 9.1001 21.17 8.9101 21.17Z"></path>
-              </svg>
-            </div>
-          </div>
-
-          <p className="text-[14px] text-[#2b2b2b78]">
-            Digital ledger tech that..{" "}
-          </p>
-        </div>
-
-        <div className="flex flex-col gap-[5px]">
-          <div className="flex flex-row gap-[10px] items-center ">
-            <div
-              className="text-[20px] cursor-pointer"
-              onClick={() => mobileNavBtn(refSection3)}
-            >
-              AI Meets Blockchain
-            </div>
-            <div className="svg-div">
-              <svg
-                width="24"
-                height="25"
-                viewBox="0 0 24 25"
-                fill="fillCurrent"
-                aria-hidden="true"
-              >
-                <path d="M8.9101 21.17C8.7201 21.17 8.5301 21.1 8.3801 20.95C8.0901 20.66 8.0901 20.18 8.3801 19.89L14.9001 13.37C15.3801 12.89 15.3801 12.11 14.9001 11.63L8.3801 5.11002C8.0901 4.82002 8.0901 4.34002 8.3801 4.05002C8.6701 3.76002 9.1501 3.76002 9.4401 4.05002L15.9601 10.57C16.4701 11.08 16.7601 11.77 16.7601 12.5C16.7601 13.23 16.4801 13.92 15.9601 14.43L9.4401 20.95C9.2901 21.09 9.1001 21.17 8.9101 21.17Z"></path>
-              </svg>
-            </div>
-          </div>
-
-          <p className="text-[14px] text-[#2b2b2b78]">
-            {" "}
-            AI computes the blockchain space...{" "}
-          </p>
-        </div>
+     
       </div>
     </div>
   );
