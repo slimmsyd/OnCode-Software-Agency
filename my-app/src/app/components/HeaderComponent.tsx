@@ -60,7 +60,7 @@ export default function HeaderComponent({
 
           </div>
 
-          <div className = "flex flex-row gap-[50px] mt-[20px] md:mt-[50px] w-[100%] mb-[10px] md:mb-[0px] ">
+          <div className = " mobileBanner flex flex-row gap-[50px] mt-[20px] md:mt-[50px] w-[100%] mb-[10px] md:mb-[0px] ">
 
           <div className="flex items-center w-[100%] lg:w-[320px] justify-start gap-[10px]">
             <h2 className = "md:text-[28px] text-[18px]">Build</h2>

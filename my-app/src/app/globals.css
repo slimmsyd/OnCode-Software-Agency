@@ -416,6 +416,9 @@ p {
   .large-btn{
     width: 100%;
   }
+  .mobileBanner{
+    display: none;
+  }
 }
 
 .divider-line {
@@ -473,6 +476,7 @@ p {
   border-radius: 19px;
 }
 
+
 .custom-block{
 
   background: url('/images/QRCODE.png') no-repeat center center;
@@ -483,6 +487,7 @@ p {
 @media sccreen and (max-width: 750px)
 { 
   .afterH1::after{
+    display: none;
     top: 75%;
     right: 20px; /* Adjust this value to position the QR code */
   }

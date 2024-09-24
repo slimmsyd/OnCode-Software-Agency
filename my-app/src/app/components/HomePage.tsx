@@ -552,18 +552,18 @@ function ImageSlider({ scrollToSection }: { scrollToSection: (section: string) =
     },
     {
       src: "/images/Created3Grow.png",
-      name: "BlackW3B Crypto Solutions",
+      name: "Created 2 Grow | Shopify Agency",
       rank: "05",
       description:
-        " Custom blockchain applications, token development, and other tailored solutions.",
+        "Shopify Agency",
       link: "https://www.created2grow.com/",
     },
     {
       src: "/images/TSGO.png",
-      name: "BlackW3B Crypto Solutions",
+      name: "TSG Consulting",
       rank: "06",
       description:
-        " Custom blockchain applications, token development, and other tailored solutions.",
+        "Political Consulting Firm",
       link: "https://www.tsgco.com/",
     },
   ];
