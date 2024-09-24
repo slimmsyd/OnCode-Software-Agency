@@ -17,6 +17,7 @@ import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import dynamic from "next/dynamic";
+import LoadingComponent from "./loadingComponent";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -166,8 +167,13 @@ export default function HomePage() {
     }
   };
 
+
+
   return (
     <>
+
+    <PageLoader />
+
       <div
         className="site-wrapper h-[90vh] md:h-[120vh] relative"
         ref={refSectionHome}
@@ -456,6 +462,52 @@ export default function HomePage() {
     </>
   );
 }
+
+
+
+const PageLoader: React.FC = () => {
+  const [isVisible, setIsVisible] = useState(true);
+  const [opacity, setOpacity] = useState(1);
+  const [text, setText] = useState('');
+  const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const fullText = 'ONCODE ';
+
+  useEffect(() => {
+    let index = 0;
+    const typingInterval = setInterval(() => {
+      if (index < fullText.length) {
+        setText((prev) => prev + fullText[index]);
+        index++;
+      } else {
+        clearInterval(typingInterval);
+        setIsTypingComplete(true);
+        setTimeout(() => setOpacity(0), 500); // Wait 500ms after typing before fading
+      }
+    }, 200); // Adjust typing speed here (200ms between each letter)
+
+    const fadeOutTimer = setTimeout(() => {
+      setIsVisible(false);
+    }, 2300); // Total duration: ~1.2s for typing + 0.5s pause + 0.3s fade out
+
+    return () => {
+      clearInterval(typingInterval);
+      clearTimeout(fadeOutTimer);
+    };
+  }, []);
+
+  if (!isVisible) return null;
+
+  return (
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center bg-white transition-opacity duration-300 ease-in-out"
+      style={{ opacity }}
+    >
+      <LoadingComponent />
+    </div>
+  );
+};
+
+
 
 function ImageSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
