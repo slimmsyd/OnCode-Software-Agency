@@ -29,6 +29,7 @@ body {
     )
     rgb(var(--background-start-rgb)); */
     font-family: "IBM Plex Mono", monospace;
+    overflow-x: hidden;
 
 }
 
