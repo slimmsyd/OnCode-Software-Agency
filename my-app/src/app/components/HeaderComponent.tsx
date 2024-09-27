@@ -52,8 +52,8 @@ export default function HeaderComponent({
 
           <div className="flex flex-col gap-[10px] w-[60%]">
 
-          <p className="font-light  text-white mt-[50px] md:mt-[150px] text-left ">
-            OnCode, why pay a co-founder to 50% equity, when you can retain 100% equity and pay us a fraction of the cost?
+          <p className="font-light text-[16px]  text-white mt-[50px] md:mt-[150px] text-left ">
+          we become your strategic partner. While you save equity by not bringing on a co-founder CTO, you gain a team that is entirely invested in the success of your product. We are as dedicated to realizing your vision as any co-founder would be, providing you with expert guidance, innovative solutions, and unwavering support throughout your journey.
           </p>
 
  

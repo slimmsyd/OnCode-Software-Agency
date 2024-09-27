@@ -196,7 +196,7 @@ export default function HomePage() {
         <div className="social-container">
           <div className="flex flex-col gap-[20px] fixed">
             <Link
-              href="https://www.instagram.com/rio.brazy/"
+              href="https://www.instagram.com/0ncode/"
               target="_blank"
               className="cursor-pointer"
             >
@@ -216,7 +216,7 @@ export default function HomePage() {
               </svg>
             </Link>
 
-            <Link
+            {/* <Link
               href="https://exchange.art/lord-brazy"
               target="_blank"
               className="cursor-pointer"
@@ -236,7 +236,7 @@ export default function HomePage() {
                   fill="white"
                 ></path>
               </svg>
-            </Link>
+            </Link> */}
           </div>
         </div>
 
@@ -281,9 +281,10 @@ export default function HomePage() {
         <div className="max-w-[850px] m-auto flex flex-col gap-[20px] items-start justify-center h-full text-black">
           <span className="custom-block block"></span>
           <h3 className="text-[44px]">
-            OnCode is a Software service agency at serving Founders with the
-            most quality, effective, and efficient outcome possible.
+          OnCode: Your partner in quality, effective, and efficient software development for founders in every sector.
           </h3>
+          <p className = "lowercase text-[14px]">specalist and generalist, with the use of AI agency </p>
+          <p className = "lowercase text-[14px]">A jack of all trades is a master of none, but oftentimes better than a master of one </p>
 {/* 
           <button className="bg-black text-white px-[20px] py-[10px] rounded-[2px]">
             Demo Features
@@ -309,7 +310,7 @@ export default function HomePage() {
 
         <div className="text-white  text-[12px]  absolute bottom-[50px] right-[5px] w-[30%]">
           <p className="text-[14px]">
-            every founder must build products that enable a decentralized component, reaching the eyes of many
+          every founder must build products that enables scablity and excels industry stanards, be a distruter
           </p>
         </div>
       </section>
