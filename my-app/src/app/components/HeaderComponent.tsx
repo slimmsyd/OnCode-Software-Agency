@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navigation from "./Navigation";
 import { RefObject } from "react";
 
@@ -32,21 +33,23 @@ export default function HeaderComponent({
         <div className="flex flex-col gap-[5px] items-start text-center w-[100%] text-white">
           <p className="font-light text-[14px]  text-white/50 ">staying on code...</p>
 
-          <h1 className="font-medium text-left header-h1"> ENSURING THAT YOUR IDEA HAS THE ENGINEERING CAPACITY</h1>
+          <h1 className="font-medium text-left header-h1"> BUILD YOUR MVP
+          IN WEEKS, NOT MONTHS</h1>
 
-          {/* <p className="font-light  text-white ">
-            Your ultimate destination for expert-led education in blockchain,
-            crypto, AI, and web3 technologies.
-          </p> */}
+          <p className="font-light  text-white text-left !text-[16px] max-w-[70%] md:max-w-[100%] ">
+          Transform your idea into a market-ready MVP in weeks. Fast, affordable, and hassle-free.
+
+          </p>
 
           <div className="flex flex-row gap-[20px] mt-[20px]">
 
-            <button
-              onClick={() => scrollToSection("about")}
+            <Link
+            href="https://calendly.com/0ncode-info/30min"
+              // onClick={() => scrollToSection("about")}
               className="bg-white text-black px-[20px] py-[10px] rounded-[2px] hover:bg-gray-100 transition-colors duration-300"
             >
               Book A Call
-            </button>
+            </Link>
 
           </div>
 
