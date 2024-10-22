@@ -451,9 +451,17 @@ function ImageSlider({
       link: "https://www.aisolomon.xyz/",
     },
     {
+      src: "/assets/GliddyPng.png",
+      name: "Gliddy",
+      rank: "03",
+      description:
+        "End to End Event Management Platform, targeted to Bartenders",
+      link: "https://www.meetgliddy.com/",
+    },
+    {
       src: "/images/Terrain.png",
       name: "Terrin Crypto Solutions",
-      rank: "03",
+      rank: "04",
       description:
         "Comprehensive support for users at all levels, from beginners to advanced, covering privacy, security, and advanced blockchain applications.",
       link: "https://www.terrapincrypto.us/",
@@ -461,7 +469,7 @@ function ImageSlider({
     {
       src: "/images/BlackWeb.png",
       name: "BlackW3B Crypto Solutions",
-      rank: "04",
+      rank: "05",
       description:
         " Custom blockchain applications, token development, and other tailored solutions.",
       link: "https://blackw3b.io/",
@@ -469,14 +477,14 @@ function ImageSlider({
     {
       src: "/images/Created3Grow.png",
       name: "Created 2 Grow | Shopify Agency",
-      rank: "05",
+      rank: "06",
       description: "Shopify Agency",
       link: "https://www.created2grow.com/",
     },
     {
       src: "/images/TSGO.png",
       name: "TSG Consulting",
-      rank: "06",
+      rank: "07",
       description: "Political Consulting Firm",
       link: "https://www.tsgco.com/",
     },
