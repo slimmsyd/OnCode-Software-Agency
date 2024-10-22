@@ -29,9 +29,9 @@ export default function HeaderComponent({
         refSection3={refSection3}
       />
 
-      <div className="flex flex-col h-[80%] items-center justify-start mt-[0px]">
+      <div className="flex flex-col h-[80%] items-center justify-start mt-[50px]">
         <div className="flex flex-col gap-[5px] items-start text-center w-[100%] text-white">
-          <p className="font-light text-[14px]  text-white/50 ">staying on code...</p>
+          <p className="font-light text-[14px]  text-white/50 ">Generative AI Software Development</p>
 
           <h1 className="font-medium text-left header-h1"> BUILD YOUR MVP
           IN WEEKS, NOT MONTHS</h1>

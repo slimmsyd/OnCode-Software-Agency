@@ -19,6 +19,32 @@
   }
 }
 
+
+@keyframes marquee {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.marquee > * {
+  animation: marquee 15s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.rotate {
+  animation: rotate 3s linear infinite; /* 3 seconds for one full rotation */
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: #fff;
@@ -265,7 +291,7 @@ p {
 
   .site-wrapper {
     display: grid;
-    background: black;  
+    /* background: black;   */
     grid-template-columns: 25px auto 25px;
   }
 }
