@@ -110,7 +110,7 @@ export default function Footer({
               className="border p-[10px] h-[150px] resize-none  border-gray-300 pb-1 focus:outline-none"
             />
 
-            <button className="bg-black text-white px-[20px] py-[10px] rounded-[2px]">
+            <button className="bg-black text-white px-[20px] py-[10px] rounded-[2px] border border-transparent hover:bg-white hover:text-black hover:border-black transition-all duration-250">
               See You!
             </button>
           </form>
