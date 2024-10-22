@@ -438,7 +438,7 @@ function ImageSlider({
       name: "Creatures Cube",
       rank: "01",
       description:
-        "Dedicated to supporting the Bitcoin network by processing transactions in real time.",
+        "Web3 NFT collection",
       link: "https://creaturecubes.art/",
       secondLink: "https://www.creature.world/",
     },
