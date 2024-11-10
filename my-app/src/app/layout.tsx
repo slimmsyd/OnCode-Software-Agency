@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleTagManager } from "@next/third-parties/google";
 
 import { Gnosis, Ethereum } from "@thirdweb-dev/chains";
 
@@ -25,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <GoogleAnalytics gaId="G-ESW0CVVTY5" />
+        <GoogleTagManager gtmId="G-ESW0CVVTY5" />
         <ThirdwebProvider>{children}</ThirdwebProvider>
       </body>
     </html>
