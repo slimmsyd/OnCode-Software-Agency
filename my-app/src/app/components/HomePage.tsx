@@ -163,7 +163,7 @@ export default function HomePage() {
             autoPlay={true}
             loop={true}
             muted={true} // Ensure the video is muted for autoplay to work
-            className="relative h-[70vh] md:h-[120vh]"
+            className="relative h-[100vh] md:h-[120vh]"
           />
         </div>
 

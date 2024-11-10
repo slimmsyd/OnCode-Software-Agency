@@ -501,6 +501,13 @@ p {
   background-size: cover;
   border-radius: 19px;
 }
+@media screen and (max-width: 750px)
+{ 
+  .afterH1::after{
+    top: 110%;
+    left:0;
+  }
+}
 
 
 .custom-block{
