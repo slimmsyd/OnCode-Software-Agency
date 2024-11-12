@@ -144,6 +144,28 @@ export default function HomePage() {
     }
   };
 
+  // Add this before the return statement
+  const articles = [
+    {
+      id: 1,
+      image: "/blogAssets/Tech.png",
+      title: "Article 1",
+      link: "https://0ncode.substack.com/"
+    },
+    {
+      id: 2,
+      image: "/blogAssets/Information.jpg", // Update with your actual image path
+      title: "Article 2",
+      link: "https://0ncode.substack.com/"
+    },
+    {
+      id: 3,
+      image: "/blogAssets/Thoughts.png", // Update with your actual image path
+      title: "Article 3",
+      link: "https://0ncode.substack.com/"
+    }
+  ];
+
   return (
     <>
       {/* <PageLoader /> */}
@@ -204,39 +226,37 @@ export default function HomePage() {
 
       <div className="py-1 w-full flex flex-col items-center gap-[20px]  justify-center lg:p-8 px-0 bg-black">
         <p className="text-white/80 montserrat text-[12px]">
-        Tech we work with
+          Tech we work with
         </p>
 
         <div className="marquee w-full flex gap-[20px] items-center justify-between overflow-hidden whitespace-nowrap">
-    
           <img
             src="https://cdn.prod.website-files.com/6564c816d808331339215960/656628cd52a692653ba4dad8_icon_openAI.png"
             alt="OpenAI logo"
             className="w-[120px]  h-[60px]"
-            />
+          />
           <img
-              src="https://cdn.prod.website-files.com/6564c816d808331339215960/66f38a2506d16f7bebd590f4_llamaindx_icon.png"
-              alt="LlamaIndex logo"
-              className="w-[130px]  h-[50px]"
-              />
-    
+            src="https://cdn.prod.website-files.com/6564c816d808331339215960/66f38a2506d16f7bebd590f4_llamaindx_icon.png"
+            alt="LlamaIndex logo"
+            className="w-[130px]  h-[50px]"
+          />
+
           <img
-              src="https://cdn.prod.website-files.com/6564c816d808331339215960/65772de377bab5a434fb51a1_icon_LLaMA.png"
-              alt="LLaMA logo"
-              className="w-[130px]  h-[50px]"
-              />
-    
+            src="https://cdn.prod.website-files.com/6564c816d808331339215960/65772de377bab5a434fb51a1_icon_LLaMA.png"
+            alt="LLaMA logo"
+            className="w-[130px]  h-[50px]"
+          />
+
           <img
-              src="https://cdn.prod.website-files.com/6564c816d808331339215960/65776f14d6312f05bf70fef4_icon_vercel.png"
-              alt="Vercel logo"
-              className="w-[130px]  h-[50px]"
-              />
+            src="https://cdn.prod.website-files.com/6564c816d808331339215960/65776f14d6312f05bf70fef4_icon_vercel.png"
+            alt="Vercel logo"
+            className="w-[130px]  h-[50px]"
+          />
           <img
-              src="https://cdn.prod.website-files.com/6564c816d808331339215960/656628cd73f2e9c08f5cba6c_icon_node.png"
-              alt="Node.js logo"
-              className="w-[130px]  h-[50px]"
-              />
-    
+            src="https://cdn.prod.website-files.com/6564c816d808331339215960/656628cd73f2e9c08f5cba6c_icon_node.png"
+            alt="Node.js logo"
+            className="w-[130px]  h-[50px]"
+          />
         </div>
       </div>
 
@@ -261,7 +281,7 @@ export default function HomePage() {
         </div>
 
         <div className="w-[70%] relative leading-[600%] items-center flex flex-row gap-[10px]">
-          <h1 className="text-black z-10 afterH1">Explore our Ecosystem</h1>
+          <h1 className="text-black z-10 afterH1">Glimpse Into Our Work</h1>
         </div>
 
         <ImageSlider scrollToSection={scrollToSection} />
@@ -310,10 +330,8 @@ export default function HomePage() {
         </div>
       </section>
 
-
-
       {/* WHat We DO */}
-      <section id="about" className="relative h-full bg-black">
+      <section id="about" className="relative h-full bg-black ">
         <div className="flex flex-col md:flex-row  relative w-full bg-[#0B0B0B]">
           {services.map((service, index) => (
             <div
@@ -357,26 +375,82 @@ export default function HomePage() {
       </div> */}
       </section>
 
+      <section className="relative h-full bg-white text-black px-4 py-[100px]">
+        <div className="flex flex-col gap-[20px] items-start justify-start h-full">
+
+          <div
+          className = "max-w-[850px]  "
+          >
+ <h2 className="text-[34px]">
+            We research the AI space and always have our finger on the pulse
+          </h2>
+          </div>
+         
+
+          <div className="flex flex-row gap-[10px] items-center justify-center">
+            <p className="text-[14px]">Read Our Insights Below</p>
+
+            <svg
+              className="relative transition-transform duration-0 group-hover:translate-x-20 group-hover:duration-500"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 25 24"
+              aria-hidden="true"
+              focusable="false"
+              width="24"
+              height="24"
+            >
+              <path
+                fill="currentColor"
+                d="M22.3536 12.3536C22.5488 12.1583 22.5488 11.8417 22.3536 11.6464L19.1716 8.46447C18.9763 8.26921 18.6597 8.26921 18.4645 8.46447C18.2692 8.65973 18.2692 8.97631 18.4645 9.17157L21.2929 12L18.4645 14.8284C18.2692 15.0237 18.2692 15.3403 18.4645 15.5355C18.6597 15.7308 18.9763 15.7308 19.1716 15.5355L22.3536 12.3536ZM2 12.5L22 12.5L22 11.5L2 11.5L2 12.5Z"
+              ></path>
+            </svg>
+          </div>
+
+
+
+
+          <div className="flex flex-row justify-start gap-[50px] mt-[30px] w-full">
+            {articles.map((article) => (
+              <div key={article.id} className="flex-1 h-[450px] max-w-[350px] rounded-[10px] group relative overflow-hidden">
+                <Link href={article.link} target="_blank" className="block h-full">
+                  <div className="w-full h-full relative rounded-[10px] overflow-hidden">
+                    <Image
+                      src={article.image}
+                      alt={article.title}
+                      fill
+                      className="object-cover rounded-[10px] transition-all duration-300 group-hover:scale-110 group-hover:blur-[2px]"
+                    />
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <button className="bg-white text-black px-6 py-3 rounded-md font-medium transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        READ HERE
+                      </button>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          
+        </div>
+      </section>
 
       <div className="flex flex-col gap-[15px] items-center justify-center bg-black text-white py-16 px-4">
         <p className="text-[14px] text-gray-500">
-        Sign up to receive updates on our latest projects and insights into the world of AI.
+          Sign up to receive updates on our latest projects and insights into
+          the world of AI.
         </p>
-        <h2 className="text-2xl font-bold mb-4">
-            Subscribe to our Newsletter
-        </h2>
+        <h2 className="text-2xl font-bold mb-4">Subscribe to our Newsletter</h2>
         <Link
-        target="_blank"
+          target="_blank"
           href="https://0ncode.substack.com/"
           className="bg-white text-black px-[20px] py-[10px] rounded-[5px] hover:bg-gray-200 transition-colors"
         >
-            Subscribe
+          Subscribe
         </Link>
       </div>
 
-
       <Footer />
-   
     </>
   );
 }
@@ -437,8 +511,7 @@ function ImageSlider({
       src: "/images/CreatureCube.png",
       name: "Creatures Cube",
       rank: "01",
-      description:
-        "Web3 NFT collection",
+      description: "Web3 NFT collection",
       link: "https://creaturecubes.art/",
       secondLink: "https://www.creature.world/",
     },
