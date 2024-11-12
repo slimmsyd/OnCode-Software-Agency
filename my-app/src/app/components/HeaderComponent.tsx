@@ -29,7 +29,7 @@ export default function HeaderComponent({
         refSection3={refSection3}
       />
 
-      <div className="flex flex-col h-[80%] items-center justify-center mt-[150px]">
+      <div className="flex flex-col h-[80%] items-center justify-center mt-[0px] md:mt-[150px]">
         <div className="flex flex-col gap-[5px] items-center text-center w-[100%] text-white">
           <p className="font-light text-[14px]  text-white/50 ">
             Generative AI Software Development
@@ -71,8 +71,8 @@ export default function HeaderComponent({
             </Link>
           </div>
 
-          <div className="flex flex-col gap-[10px] w-[60%]">
-            <p className="font-light text-[16px]  text-white mt-[50px] md:mt-[150px] text-left ">
+          <div className="flex flex-col gap-[10px] mt-[20px] w-[95%] md:w-[60%]">
+            <p className="font-light text-[16px]  text-white mt-[0px] md:mt-[150px] text-center ">
               we become your strategic partner. While you save equity by not
               bringing on a co-founder CTO, you gain a team that is entirely
               invested in the success of your product. We are as dedicated to
