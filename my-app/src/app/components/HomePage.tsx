@@ -280,7 +280,7 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="w-[70%] relative leading-[600%] items-center flex flex-row gap-[10px]">
+        <div className="w-full md:w-[70%] relative md:leading-[600%] items-center flex flex-row gap-[10px]">
           <h1 className="text-black z-10 afterH1">Glimpse Into Our Work</h1>
         </div>
 
