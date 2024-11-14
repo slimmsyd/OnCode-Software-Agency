@@ -46,6 +46,8 @@ export default function HeaderComponent({
   
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("Sending email to:", email);
+
     
     // Format the phone number
     const formattedPhone = formatPhoneNumber(phone);
@@ -56,7 +58,10 @@ export default function HeaderComponent({
       return;
     }
 
+
+
     try {
+      // Send form submission
       const response = await fetch("/api/sendMessage", {
         method: "POST",
         headers: {
@@ -64,16 +69,48 @@ export default function HeaderComponent({
         },
         body: JSON.stringify({ 
           email, 
-          phone: formattedPhone, // Use formatted phone number
+          phone: formattedPhone,
           company, 
           idea 
         }),
       });
+
+      // Send admin notification
+      const adminEmailResponse = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: "ssanderss444@gmail.com",
+          subject: "New Form Submission on Oncode",
+          content: `
+            Email: ${email}
+            Phone: ${formattedPhone}
+            Company: ${company}
+            Idea: ${idea}
+          `,
+          isClientEmail: false
+        }),
+      });
       
-      const data = await response.json();
+      // Send client confirmation
+      const clientEmailResponse = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: email,
+          subject: "Thank you for your submission",
+          content: `
+.`,  // The content will be set in the route
+          isClientEmail: true
+        }),
+      });
       
-      if (response.ok) {
-        alert(data.message);
+      if (adminEmailResponse.ok && clientEmailResponse.ok) {
+        // alert(data.message);
         setEmail('');
         setPhone('');
         setCompany('');

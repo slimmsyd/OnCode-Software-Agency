@@ -9,7 +9,6 @@ load_dotenv()
 
 app = FastAPI()
 
-
 # Pydantic model for request validation
 class IdeaSubmission(BaseModel):
     email: str
@@ -17,15 +16,15 @@ class IdeaSubmission(BaseModel):
     company: str
     idea: str
 
-
 # Initialize Twilio client
-twilio_client = Client(os.getenv("TWILIO_ACCOUNT_SID"), os.getenv("TWILIO_AUTH_TOKEN"))
-
+twilio_client = Client(
+    os.getenv('TWILIO_ACCOUNT_SID'),
+    os.getenv('TWILIO_AUTH_TOKEN')
+)
 
 @app.post("/analyze-idea")
 async def analyze_idea(submission: IdeaSubmission):
-    logger = logging.getLogger(__name__)
-    logger.info("Received idea submission")
+    logger
     try:
         # Prepare encouraging response
         response_message = f"""Thank you for sharing your vision with us! 
@@ -44,21 +43,19 @@ Company: {submission.company}
 Email: {submission.email}
 Phone: {submission.phone}
 Idea: {submission.idea}""",
-            from_=os.getenv("TWILIO_PHONE_NUMBER"),
-            to=os.getenv("YOUR_PHONE_NUMBER"),
+            from_=os.getenv('TWILIO_PHONE_NUMBER'),
+            to=os.getenv('YOUR_PHONE_NUMBER')
         )
 
         return {
             "success": True,
             "message": response_message,
-            "message_sid": message.sid,
+            "message_sid": message.sid
         }
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
-
 if __name__ == "__main__":
     import uvicorn
-
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8000) 
