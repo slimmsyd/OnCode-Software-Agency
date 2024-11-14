@@ -50,7 +50,15 @@ export async function POST(request: Request) {
         from: process.env.SMTP_FROM_EMAIL || '',
         to: to,
         subject: "Thank you for sharing your vision with us!",
-        text: ``
+        text: `Thank you for sharing your vision with us! 
+        
+We're excited about your idea and look forward to exploring how we can bring it to life together.
+
+Our team will reach out to you within the next 2 business days to discuss your project in detail. We can't wait to collaborate with you!
+
+Best regards,
+OnCode AI Agent
+`
       });
     } else {
       // Send notification email to admin

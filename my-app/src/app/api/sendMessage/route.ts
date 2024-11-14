@@ -19,21 +19,30 @@ export async function POST(request: Request) {
       },
     });
 
-    // Forward to Python backend
+    // Forward to Python backend - Fixed request
     const pythonResponse = await fetch(`${PYTHON_API_URL}/analyze-idea`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(body),
+      body: JSON.stringify({
+        email,
+        phone,
+        company,
+        idea,
+        submissionId: submission.id
+      }),
+    }).catch(error => {
+      console.error('Python API error:', error);
+      // Continue execution even if Python API fails
+      return { ok: true, json: () => ({ message: 'Submission recorded' }) };
     });
 
     const pythonData = await pythonResponse.json();
 
-    // If everything succeeded, return success response
     return NextResponse.json({ 
       success: true,
-      message: pythonData.message,
+      message: pythonData.message || 'Submission recorded successfully',
       submissionId: submission.id 
     });
 
