@@ -235,29 +235,29 @@ export default function HomePage() {
           <img
             src="https://cdn.prod.website-files.com/6564c816d808331339215960/656628cd52a692653ba4dad8_icon_openAI.png"
             alt="OpenAI logo"
-            className="w-[120px]  h-[60px]"
+            className="w-[100px]  h-[30px]"
           />
           <img
             src="https://cdn.prod.website-files.com/6564c816d808331339215960/66f38a2506d16f7bebd590f4_llamaindx_icon.png"
             alt="LlamaIndex logo"
-            className="w-[130px]  h-[50px]"
+            className="w-[100px]  h-[30px]"
           />
 
           <img
             src="https://cdn.prod.website-files.com/6564c816d808331339215960/65772de377bab5a434fb51a1_icon_LLaMA.png"
             alt="LLaMA logo"
-            className="w-[130px]  h-[50px]"
+            className="w-[100px]  h-[30px]"
           />
 
           <img
             src="https://cdn.prod.website-files.com/6564c816d808331339215960/65776f14d6312f05bf70fef4_icon_vercel.png"
             alt="Vercel logo"
-            className="w-[130px]  h-[50px]"
+            className="w-[100px]  h-[30px]"
           />
           <img
             src="https://cdn.prod.website-files.com/6564c816d808331339215960/656628cd73f2e9c08f5cba6c_icon_node.png"
             alt="Node.js logo"
-            className="w-[130px]  h-[50px]"
+            className="w-[100px]  h-[30px]"
           />
         </div>
       </div>
