@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"next dev\" \"cd python && uvicorn main:app --reload\"",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@next/third-parties": "^14.2.17",
+    "@prisma/client": "^5.22.0",
     "@react-three/fiber": "^8.17.8",
     "@tanstack/react-query": "^5.51.23",
     "@thirdweb-dev/react": "^4.9.4",
@@ -24,16 +25,19 @@
     "react-dom": "^18",
     "react-loader-spinner": "^6.1.6",
     "react-query": "^3.39.3",
-    "three": "^0.168.0"
+    "three": "^0.168.0",
+    "twilio": "^5.3.5"
   },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",
     "@types/three": "^0.168.0",
+    "concurrently": "^8.2.2",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
     "postcss": "^8",
+    "prisma": "^5.22.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }
