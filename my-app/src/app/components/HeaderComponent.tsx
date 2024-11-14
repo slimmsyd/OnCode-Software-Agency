@@ -43,6 +43,7 @@ export default function HeaderComponent({
   scrollToSection,
 }: Props) {
   const [showPopup, setShowPopup] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -116,7 +117,9 @@ export default function HeaderComponent({
         setCompany('');
         setIdea('');
         setShowPopup(false);
-        alert("Submission successful");
+        setShowSuccessPopup(true);
+        // Auto-hide success message after 3 seconds
+        setTimeout(() => setShowSuccessPopup(false), 3000);
       }
     } catch (error) {
       console.error('Failed to submit form:', error);
@@ -317,6 +320,26 @@ export default function HeaderComponent({
                 Submit
               </button>
             </form>
+          </div>
+        </div>
+      )}
+      {showSuccessPopup && (
+        <div className="fixed inset-0 flex items-start pt-[10px] justify-center z-[100] left-0 ">
+          <div className="bg-white rounded-lg p-[0.5rem] shadow-lg flex items-center gap-3 animate-fade-in">
+            <svg 
+              className="w-6 h-6 text-green-500" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M5 13l4 4L19 7" 
+              />
+            </svg>
+            <p className="text-gray-800 font-medium">Email Submitted! Thank you</p>
           </div>
         </div>
       )}
