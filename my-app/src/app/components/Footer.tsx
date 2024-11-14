@@ -35,38 +35,50 @@ export default function Footer({
     e.preventDefault();
 
     try {
-      const response = await fetch(
-        "https://hook.us1.make.com/weto5s8cei9yev2bt3kutqvcoqfzeajf",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            firstName,
-            email,
-            phoneNumber,
-            message,
-            companyName,
-          }),
-        }
-      );
-
-      if (response.ok) {
-        // Clear form fields after successful submission
-        setFirstName("");
-        setEmail("");
-        setMessage("");
-        setPhoneNumber("");
-        setCompanyName("");
-        alert("Message sent successfully!");
-      } else {
-        alert("Failed to send message. Please try again.");
+      const adminEmailResponse = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: "ssanderss444@gmail.com",
+          subject: "New Form Submission on Oncode",
+          content: `
+            Email: ${email}
+            Phone: ${phoneNumber}
+            Company: ${companyName}
+            Idea: ${message}
+          `,
+          isClientEmail: false
+        }),
+      });
+      
+      // Send client confirmation
+      const clientEmailResponse = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          to: email,
+          subject: "Thank you for your submission",
+          content: `
+.`,  // The content will be set in the route
+          isClientEmail: true
+        }),
+      });
+      
+      if (adminEmailResponse.ok && clientEmailResponse.ok) {
+        setEmail('');
+        setPhoneNumber('');
+        setCompanyName('');
+        setMessage('');
+        alert("Submission successful");
       }
     } catch (error) {
-      console.error("Error submitting contact:", error);
-      alert("An error occurred. Please try again later.");
-    }
+      console.error('Failed to submit form:', error);
+      alert('Something went wrong. Please try again.');
+    } 
   };
   return (
     <section className="h-full site-wrapper bg-white text-black">
