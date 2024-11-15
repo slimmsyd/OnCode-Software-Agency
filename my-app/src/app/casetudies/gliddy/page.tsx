@@ -48,7 +48,12 @@ export default function SolomonAI() {
 
           <div className="flex flex-col items-start justify-start">
             <p className="text-[16px] text-gray-500">
-            We built a secure headless web application that would allow users to manage their upcoming events. With SMS and Email notifications, Gliddy was able to notify users of upcoming events.  
+            We built a secure headless web application that would allow users to manage their upcoming events. With SMS and Email notifications, Gliddy was able to notify users of upcoming events. 
+            
+            <br />
+            <br />
+            
+            Our team implemented a custom AI agent feature that would allow users to scan physical flyers and add them to auto create an event. This feature was build upon Microsoft Azure Cognitive Services.
 
             </p>
           </div>
@@ -104,7 +109,7 @@ export default function SolomonAI() {
 
       <section className="h-[70vh] bg-white py-[100px] px-[50px] text-black flex flex-col items-start justify-center">
         <h3>
-          "ONCODE's expertise in web development has been instrumental in bringing Gliddy to life. Their efficient approach and attention to detail helped us create a user-friendly platform that simplifies event management. The seamless integration of features and robust backend have positioned us well for future growth."
+          "ONCODE's expertise Web Application has been instrumental in bringing Gliddy to life. Their efficient approach and attention to detail helped us create a user-friendly platform that simplifies event management. The seamless integration of features and robust backend have positioned us well for future growth."
         </h3>
         <p>Gliddy Team</p>
 
