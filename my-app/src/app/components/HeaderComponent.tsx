@@ -239,7 +239,7 @@ export default function HeaderComponent({
             </p>
           </div>
 
-          <div className=" mobileBanner  flex flex-row gap-[50px] mt-[20px] md:mt-[50px] w-[100%] mb-[10px] md:mb-[0px] ">
+          <div className=" mobileBanner items-center justify-center  flex flex-row gap-[50px] mt-[20px] md:mt-[50px] w-[100%] mb-[10px] md:mb-[0px] ">
             <div className="flex items-center w-[100%] lg:w-[320px] justify-center gap-[10px]">
               <h2 className="md:text-[28px] text-[18px]">Build</h2>
               <div className="w-[20px] h-[20px] rounded-full bg-white flex items-center justify-center">
