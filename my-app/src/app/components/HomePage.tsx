@@ -509,6 +509,14 @@ function ImageSlider({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const services = [
+
+    {
+      src: "/images/Invoice.png",
+      name: "Invoice Magi",
+      rank: "01",
+      description: "Agentic AI for Invoice Management",
+      link: "https://www.invoicemagic.tech/",
+    },
     {
       src: "/images/CreatureCube.png",
       name: "Creatures Cube",

@@ -13,12 +13,15 @@ export default function SolomonAI() {
           <h2>We built Solomon AI, and their customers are content about it</h2>
 
           <div className="flex flex-col items-start justify-start">
+            
             <p className="text-[16px] text-gray-500">
+
             Design Patterns for Application Development
             </p>
             <p>Web Application Development</p>
             <p>Secure Headless Web Application</p>
             <p>Website Design</p>
+
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
