@@ -13,18 +13,18 @@ interface Props {
 
 const formatPhoneNumber = (phoneNumber: string): string => {
   // Remove all non-numeric characters
-  const cleaned = phoneNumber.replace(/\D/g, '');
-  
+  const cleaned = phoneNumber.replace(/\D/g, "");
+
   // Check if it's a US number without country code
   if (cleaned.length === 10) {
     return `+1${cleaned}`;
   }
-  
+
   // If it already has country code
-  if (cleaned.length === 11 && cleaned.startsWith('1')) {
+  if (cleaned.length === 11 && cleaned.startsWith("1")) {
     return `+${cleaned}`;
   }
-  
+
   return cleaned;
 };
 
@@ -44,35 +44,32 @@ export default function HeaderComponent({
 }: Props) {
   const [showPopup, setShowPopup] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
-  
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Sending email to:", email);
 
-    
     // Format the phone number
     const formattedPhone = formatPhoneNumber(phone);
-    
+
     // Validate phone number
     if (!isValidPhoneNumber(formattedPhone)) {
-      alert('Please enter a valid US phone number (10 digits)');
+      alert("Please enter a valid US phone number (10 digits)");
       return;
     }
-
-
 
     try {
       // Send form submission
       const response = await fetch("/api/sendMessage", {
         method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ 
-          email, 
+        body: JSON.stringify({
+          email,
           phone: formattedPhone,
-          company, 
-          idea 
+          company,
+          idea,
         }),
       });
 
@@ -80,7 +77,7 @@ export default function HeaderComponent({
       const adminEmailResponse = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           to: "ssanderss444@gmail.com",
@@ -91,39 +88,39 @@ export default function HeaderComponent({
             Company: ${company}
             Idea: ${idea}
           `,
-          isClientEmail: false
+          isClientEmail: false,
         }),
       });
-      
+
       // Send client confirmation
       const clientEmailResponse = await fetch("/api/sendEmail", {
         method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           to: email,
           subject: "Thank you for your submission",
           content: `
-.`,  // The content will be set in the route
-          isClientEmail: true
+.`, // The content will be set in the route
+          isClientEmail: true,
         }),
       });
-      
+
       if (adminEmailResponse.ok && clientEmailResponse.ok) {
         // alert(data.message);
-        setEmail('');
-        setPhone('');
-        setCompany('');
-        setIdea('');
+        setEmail("");
+        setPhone("");
+        setCompany("");
+        setIdea("");
         setShowPopup(false);
         setShowSuccessPopup(true);
         // Auto-hide success message after 3 seconds
         setTimeout(() => setShowSuccessPopup(false), 3000);
       }
     } catch (error) {
-      console.error('Failed to submit form:', error);
-      alert('Something went wrong. Please try again.');
+      console.error("Failed to submit form:", error);
+      alert("Something went wrong. Please try again.");
     }
   };
 
@@ -133,8 +130,8 @@ export default function HeaderComponent({
   const [idea, setIdea] = useState("");
 
   const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let value = e.target.value.replace(/\D/g, '');
-    
+    let value = e.target.value.replace(/\D/g, "");
+
     // Format for display as user types
     if (value.length > 0) {
       if (value.length <= 3) {
@@ -142,12 +139,17 @@ export default function HeaderComponent({
       } else if (value.length <= 6) {
         value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
       } else if (value.length <= 10) {
-        value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}) ${value.slice(6)}`;
+        value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}) ${value.slice(
+          6
+        )}`;
       } else {
-        value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}) ${value.slice(6, 10)}) ${value.slice(10)}`;
+        value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}) ${value.slice(
+          6,
+          10
+        )}) ${value.slice(10)}`;
       }
     }
-    
+
     setPhone(value);
   };
 
@@ -230,12 +232,13 @@ export default function HeaderComponent({
 
           <div className="flex flex-col gap-[10px] mt-[20px] w-[95%] md:w-[60%]">
             <p className="font-light text-[16px]  text-white mt-[0px] md:mt-[15px] text-center ">
-              we become your strategic partner. While you save equity by not
-              bringing on a co-founder CTO, you gain a team that is entirely
-              invested in the success of your product. We are as dedicated to
-              realizing your vision as any co-founder would be, providing you
-              with expert guidance, innovative solutions, and unwavering support
-              throughout your journey.
+              We at Oncode, help you build your MVP(software application) with
+              the execution of 4 devs but with the price of 1 , we build your
+              MVP in weeks not months using effecive AI agentic automation
+              workflows.
+              <br />
+              <br />
+              As tech updates, so do we.
             </p>
           </div>
 
@@ -271,16 +274,21 @@ export default function HeaderComponent({
         <div className="fixed  inset-0 text-black bg-black/50 flex items-center justify-center z-100">
           <div className="bg-white rounded-lg p-6 w-full max-w-md relative z-50">
             <div className="flex justify-between items-center mb-4">
-              <h3 className="text-xl font-semibold text-black">Validate Your Idea</h3>
-              <button 
+              <h3 className="text-xl font-semibold text-black">
+                Validate Your Idea
+              </h3>
+              <button
                 onClick={() => setShowPopup(false)}
                 className="text-gray-500 hover:text-gray-700"
               >
                 ✕
               </button>
             </div>
-            
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-black">
+
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col gap-4 text-black"
+            >
               <input
                 type="email"
                 placeholder="Email"
@@ -326,20 +334,22 @@ export default function HeaderComponent({
       {showSuccessPopup && (
         <div className="fixed inset-0 flex items-start pt-[10px] justify-center z-[100] left-0 ">
           <div className="bg-white rounded-lg p-[0.5rem] shadow-lg flex items-center gap-3 animate-fade-in">
-            <svg 
-              className="w-6 h-6 text-green-500" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-6 h-6 text-green-500"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M5 13l4 4L19 7" 
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M5 13l4 4L19 7"
               />
             </svg>
-            <p className="text-gray-800 font-medium">Email Submitted! Thank you</p>
+            <p className="text-gray-800 font-medium">
+              Email Submitted! Thank you
+            </p>
           </div>
         </div>
       )}
