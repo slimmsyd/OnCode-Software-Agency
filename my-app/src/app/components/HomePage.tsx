@@ -173,21 +173,18 @@ export default function HomePage() {
       {/* <PageLoader /> */}
 
       <div
-        className="site-wrapper h-[90vh] md:h-[120vh] relative"
+        className="site-wrapper h-[90vh] md:h-[80vh] relative"
         ref={refSectionHome}
       >
         <div className="overlayDark absolute"></div>
         <div className="absolute video-bg">
-          <Video
-            src="/Computer_Screen.mp4"
-            type="video/mp4"
-            width="100%"
-            height="110vh"
-            controls={false}
-            autoPlay={true}
-            loop={true}
-            muted={true} // Ensure the video is muted for autoplay to work
-            className="relative h-[100vh] md:h-[120vh]"
+          <Image
+            src="/HomeAssets/Bg_Desktop_Image.png"
+            alt="Background"
+            fill
+            priority
+            className="object-cover"
+            quality={100}
           />
         </div>
 
@@ -269,16 +266,13 @@ export default function HomePage() {
       >
         {/* <div className="overlayDark absolute h-[100vh]"></div> */}
         <div className="absolute video-bg ">
-          <Video
+          <Image
             src="/pastel.mp4"
-            type="video/mp4"
-            width="100%"
-            height="100vh"
-            controls={false}
-            autoPlay={true}
-            loop={true}
-            muted={true} // Ensure the video is muted for autoplay to work
-            className="relative h-[100vh]"
+            alt="Background"
+            fill
+            priority
+            className="object-cover"
+            quality={100}
           />
         </div>
 
