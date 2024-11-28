@@ -20,7 +20,7 @@ export default function About() {
           >
             <p className="text-lg text-black ">
             You'll receive a response within 24 hours of booking. If your project is a good fit, we'll schedule a call to discuss the details and work process.
-            Book a callGet started           
+            Book a call get started           
                  </p>
           </motion.div>
 

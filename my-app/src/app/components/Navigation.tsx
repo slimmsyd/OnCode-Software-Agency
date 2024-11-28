@@ -159,8 +159,45 @@ export default function Navigation({
 
         {/* Mobile Menu */}
         {showBG && (
-          <div className="absolute top-16 left-0 right-0 bg-white p-4 md:hidden">
-            {/* ... existing mobile menu content ... */}
+          <div className="absolute top-16 left-0 right-0 bg-white p-4 md:hidden rounded-[10px] border border-[#F0F0F0] shadow-lg">
+            <div className="flex flex-col space-y-4">
+              <div 
+                className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                onClick={() => mobileNavBtn('home')}
+              >
+                Home
+              </div>
+              <div 
+                className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                onClick={() => mobileNavBtn('ecosystem')}
+              >
+                Ecosystem
+              </div>
+              <div 
+                className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                onClick={() => mobileNavBtn('about')}
+              >
+                About us
+              </div>
+              <div 
+                className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                onClick={() => mobileNavBtn('case-studies')}
+              >
+                Case Studies
+              </div>
+              
+              {/* Mobile Connect Wallet Button */}
+              <div className="py-2">
+                <ConnectButton
+                  client={client}
+                  wallets={wallets}
+                  appMetadata={{
+                    name: "Black Web3",
+                    url: "https://example.com",
+                  }}
+                />
+              </div>
+            </div>
           </div>
         )}
       </div>

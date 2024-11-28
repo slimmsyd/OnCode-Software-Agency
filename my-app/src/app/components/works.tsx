@@ -26,7 +26,7 @@ const works: Work[] = [
   },
   {
     title: "Gliddy",
-    description: "Implementation of your design. No design? No problem. We can assist.",
+    description: "A platform that allows you to meet people in your area. Booking events with people you meet is easy.",
     image: "/works/gliddy.png", // Update with your actual image path
     link: "https://meetgliddy.com"
   },
@@ -70,7 +70,7 @@ export default function Works() {
                 </div>
 
                 {/* Right Image */}
-                <div className="md:w-2/3 relative h-[400px] bg-gray-100 m-10 rounded-[10px] border border-[#DDDBDB]">
+                <div className="md:w-2/3 relative h-[400px] bg-gray-100 m-4 md:m-10 rounded-[10px] border border-[#DDDBDB]">
                   <Image
                     src={work.image}
                     alt={work.title}
