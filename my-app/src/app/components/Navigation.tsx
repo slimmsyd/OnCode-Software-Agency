@@ -137,13 +137,14 @@ export default function Navigation({
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden">
-          <button onClick={() => showNavBG()} className="mobile-nav-container">
+        <div className="md:hidden z-30 ">
+          <button 
+            onClick={() => showNavBG()} 
+            className="mobile-nav-container z-30 w-6 h-6 flex items-center justify-center"
+          >
             <svg
-              className={`${showBG ? "nav-svg" : ""}`}
+              className={`${showBG ? "nav-svg" : ""} w-6 h-6`}
               xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
               fill="none"
               viewBox="0 0 24 24"
             >
