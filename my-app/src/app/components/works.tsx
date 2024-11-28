@@ -15,14 +15,14 @@ const works: Work[] = [
     title: "Invoice Magi",
     description: "Implementation of your design. No design? No problem. We can assist.",
     image: "/works/invoice-magi.png", // Update with your actual image path
-    link: "https://invoicemagic.com"
+    link: "https://www.invoicemagic.tech/"
   },
 
   {
     title: "Solomon Gpt",
     description: "A GPT-4o powered AI sage that can help you guide your life and more deeper questions than ever.",
     image: "/works/solomon.png", // Update with your actual image path
-    link: "https://aislomon.xyz"
+    link: "https://www.aisolomon.xyz/"
   },
   {
     title: "Gliddy",
