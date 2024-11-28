@@ -154,7 +154,7 @@ export default function HeaderComponent({
   };
 
   return (
-    <section className="site-inner-container h-[120vh] md:h-[80vh]  ">
+    <section className="site-inner-container h-[100vh] md:h-[100vh]  ">
       <Navigation
         scrollToSection={scrollToSection}
         refSection1={refSection1}
@@ -163,9 +163,9 @@ export default function HeaderComponent({
         refSection3={refSection3}
       />
 
-      <div className="flex flex-col h-[80%] items-center justify-center mt-[0px] md:mt-[150px]">
-        <div className="flex flex-col gap-[5px] items-center text-center w-[100%] text-white">
-          <p className="font-light text-[14px]  text-white/50 ">
+      <div className="flex flex-col h-[80%] items-center justify-center mt-[0px] md:mt-[90px]">
+        <div className="flex flex-col gap-[5px] items-center text-center w-[100%] text-black">
+          <p className="font-light text-[14px]  text-black/50 ">
             Generative AI Software Development
           </p>
 
@@ -173,21 +173,22 @@ export default function HeaderComponent({
             BUILD YOUR MVP IN WEEKS NOT MONTHS
           </h1>
 
-          <p className="font-light  text-white text-center !text-[16px] max-w-[70%] md:max-w-[100%] ">
+          <p className="font-light  text-black text-center !text-[16px] max-w-[70%] md:max-w-[100%] ">
             Turning ideas into reality, fast. Let us take your idea from concept
             to a market-ready MVP in just a few weeks.
           </p>
 
           <div className="flex flex-row gap-[20px] mt-[20px]">
             <Link
+            target="_blank"
               href="https://calendly.com/0ncode-info/30min"
               // onClick={() => scrollToSection("about")}
-              className="bg-white text-black flex flex-row gap-[10px] items-center px-[20px] py-[10px] rounded-[2px] hover:bg-gray-100 transition-colors duration-300"
+              className="bg-black text-white text-[14px] flex flex-row gap-[10px] items-center px-[20px] py-[10px] rounded-[8px] hover:bg-gray-100 transition-colors duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="16"
+                height="16"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -206,7 +207,7 @@ export default function HeaderComponent({
 
             <button
               onClick={() => setShowPopup(true)}
-              className="bg-white  text-black flex flex-row gap-[10px] items-center px-[20px] py-[10px] rounded-[2px] hover:bg-gray-100 transition-colors duration-300"
+              className="bg-white text-[14px] flex flex-row gap-[10px] items-center px-[20px] py-[10px] rounded-[8px] hover:bg-gray-100 transition-colors duration-300 border border-[#CDCDCD]"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -231,7 +232,7 @@ export default function HeaderComponent({
           </div>
 
           <div className="flex flex-col gap-[10px] mt-[20px] w-[95%] md:w-[60%]">
-            <p className="font-light text-[16px]  text-white mt-[0px] md:mt-[15px] text-center ">
+            <p className="font-light text-[16px]  text-black mt-[0px] md:mt-[15px] text-center ">
               We at Oncode, help you build your MVP(software application) with
               the execution of 4 devs but with the price of 1 , we build your
               MVP in weeks not months using effecive AI agentic automation
@@ -323,7 +324,7 @@ export default function HeaderComponent({
               />
               <button
                 type="submit"
-                className="bg-black text-white py-2 px-4 rounded hover:bg-gray-800"
+                className="bg-black text-black py-2 px-4 rounded hover:bg-gray-800"
               >
                 Submit
               </button>

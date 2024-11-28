@@ -28,7 +28,7 @@ const activeChain = "ethereum"; // Change to the desired blockchain
 export default function Home() {
   return (
 
-        <HomePage />
+      <HomePage />
 
 
 
