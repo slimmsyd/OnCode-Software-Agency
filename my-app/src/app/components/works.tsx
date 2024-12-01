@@ -25,6 +25,12 @@ const works: Work[] = [
     link: "https://www.aisolomon.xyz/"
   },
   {
+    title: "Creatures Cube",
+    description: "Web application for an ERC-4047 NFT collection.",
+    image: "/works/CreatureCubes.png", // Update with your actual image path
+    link: "https://creaturecubes.art/"
+  },
+  {
     title: "Gliddy",
     description: "A platform that allows you to meet people in your area. Booking events with people you meet is easy.",
     image: "/works/gliddy.png", // Update with your actual image path
