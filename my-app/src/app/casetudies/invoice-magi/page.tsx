@@ -10,23 +10,31 @@ export default function SolomonAI() {
       <section className="flex flex-col md:flex-row items-start justify-start  text-black gap-[50px] py-[100px] px-[50px]">
         <div className="flex flex-col items-start justify-start w-[100%] flex-1 min-w-[500px]">
           <p>Case Studies</p>
-          <h2>We built Gliddy , and their customers are content about it</h2>
+          <h2>We built Invoice Magi AI, true testament to the power of Agentic AI</h2>
 
           <div className="flex flex-col items-start justify-start">
-            
             <p className="text-[16px] text-gray-500">
-
-            Design Patterns for Application Development
+              Design Patterns for AI Agents
             </p>
             <p>Web Application Development</p>
+            <p>Prompt Engineering (CoT)</p>
             <p>Secure Headless Web Application</p>
             <p>Website Design</p>
-
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col items-start justify-start">
-            <img src="/assets/GliddyPng.png" alt="gliddy" />
+            <Video
+                   src="https://teal-artistic-bonobo-612.mypinata.cloud/ipfs/Qmbai728AC9JdVS5rbNu4Rfwadx6jpxzCebMgm62WMmJub"
+              type="video/mp4"
+              width="90%"
+              height="auto"
+              controls={true}
+              autoPlay={true}
+              loop={true}
+              muted={false}
+              className="pointerEventsYes m-[0px] md:m-auto"
+            />
           </div>
         </div>
       </section>
@@ -39,7 +47,7 @@ export default function SolomonAI() {
 
           <div className="flex flex-col items-start justify-start">
             <p className="text-[16px] text-gray-500">
-              Gliddy is a startup that was building a platform for bartender and comanies to manage their upcoming events.
+              Invoice Magi AI was a startup that desired to build a platform that would allow users to generate invoice, payment links, utilizing NLP for their customers.
             </p>
           </div>
         </div>
@@ -51,13 +59,7 @@ export default function SolomonAI() {
 
           <div className="flex flex-col items-start justify-start">
             <p className="text-[16px] text-gray-500">
-            We built a secure headless web application that would allow users to manage their upcoming events. With SMS and Email notifications, Gliddy was able to notify users of upcoming events. 
-            
-            <br />
-            <br />
-            
-            Our team implemented a custom AI agent feature that would allow users to scan physical flyers and add them to auto create an event. This feature was build upon Microsoft Azure Cognitive Services.
-
+              We built a secure headless web application that would allow users to generate invoice, payment links, utilizing NLP for their customers.
             </p>
           </div>
         </div>
@@ -69,8 +71,8 @@ export default function SolomonAI() {
 
           <div className="flex flex-col items-start justify-start">
             <p className="text-[16px] text-gray-500">
-              A MVP was built and launched on AWS, with SMS and Email notifications. And currently, Gliddy is in the process of raising capital to scale the product.
-
+              Invoice Magi AI was able to launch a product that was in high demand.
+              Users were able to generate invoice, payment links, utilizing NLP for their customers.
             </p>
           </div>
         </div>
@@ -84,17 +86,17 @@ export default function SolomonAI() {
 
           <div className="flex flex-row items-center justify-center gap-[20px]">
             <div className="flex flex-col items-start justify-start">
-              <h3 className="text-[16px] font-medium text-white">Web Application Development</h3>
+              <h3 className="text-[16px] font-medium text-white">Ai consulting</h3>
               <p className="text-[14px] text-gray-500">
-                      We built a secure headless web application that would allow users to manage their upcoming events.
+                  We consulting with Solmon AI team, to help them build a innovate LLM product.
               </p>
             </div>
             <div className="flex flex-col items-start justify-start">
               <h3 className="text-[16px] font-medium text-white">
-                Website Design
+                Generative AI Development
               </h3>
               <p className="text-[14px] text-gray-500">
-              We designed a website that would allow users to manage their upcoming events.
+              Our team of Prompt Engineeers was able to build and a tailor an AI to Solomon AI's needs.
               </p>
             </div>
             <div className="flex flex-col items-start justify-start">
@@ -112,15 +114,14 @@ export default function SolomonAI() {
 
       <section className="h-[70vh] bg-white py-[100px] px-[50px] text-black flex flex-col items-start justify-center">
         <h3 className="text-[16px] text-gray-500">
-          "ONCODE's expertise Web Application has been instrumental in bringing Gliddy to life. Their efficient approach and attention to detail helped us create a user-friendly platform that simplifies event management. The seamless integration of features and robust backend have positioned us well for future growth."
+          "ONCODE's expertise in AI development has been transformative for Solomon AI. Their innovative approach and deep understanding of LLMs helped us create a product that truly resonates with our users. The ability to synthesize complex ideological data into coherent, holistic answers has set us apart in the market."
         </h3>
-        <p className="text-[16px] text-gray-500"  >Gliddy Team</p>
+        <p className="text-[16px] text-gray-500">Solomon.AI</p>
 
         <div className="w-full h-[1px] mt-[40px] bg-gray-300"></div>
 
         <Link
           href="/casetudies/gliddy"
-          target="_blank"
           className="text-[14px] mt-[20px] text-gray-500"
         >
           Next Case Study

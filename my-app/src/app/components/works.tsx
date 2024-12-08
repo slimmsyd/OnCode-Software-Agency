@@ -15,26 +15,26 @@ const works: Work[] = [
     title: "Invoice Magi",
     description: "Implementation of your design. No design? No problem. We can assist.",
     image: "/works/invoice-magi.png", // Update with your actual image path
-    link: "https://www.invoicemagic.tech/"
+    link: "/casetudies/invoice-magi"
   },
 
   {
     title: "Solomon Gpt",
     description: "A GPT-4o powered AI sage that can help you guide your life and more deeper questions than ever.",
     image: "/works/solomon.png", // Update with your actual image path
-    link: "https://www.aisolomon.xyz/"
+    link: "/casetudies/solomonAI"
   },
   {
     title: "Creatures Cube",
     description: "Web application for an ERC-4047 NFT collection.",
     image: "/works/CreatureCubes.png", // Update with your actual image path
-    link: "https://creaturecubes.art/"
+    link: "/casetudies/creaturecubes"
   },
   {
     title: "Gliddy",
     description: "A platform that allows you to meet people in your area. Booking events with people you meet is easy.",
     image: "/works/gliddy.png", // Update with your actual image path
-    link: "https://meetgliddy.com"
+    link: "/casetudies/gliddy"
   },
 
   // Add more works as needed

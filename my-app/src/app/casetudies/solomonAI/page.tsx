@@ -42,7 +42,7 @@ export default function SolomonAI() {
       <section className="h-full md:h-[100vh] bg-black py-[100px] px-[50px] flex flex-col gap-[50px]">
         <div className="flex flex-col md:flex-row items-start justify-between">
           <div className="flex flex-col items-start justify-start min-w-[300px]">
-            <p>Problem</p>
+            <p className="text-[16px] text-gray-500">Problem</p>
           </div>
 
           <div className="flex flex-col items-start justify-start">
@@ -56,7 +56,7 @@ export default function SolomonAI() {
 
         <div className="flex flex-col md:flex-row items-start justify-between">
           <div className="flex flex-col items-start justify-start min-w-[300px]">
-            <p>What We Did</p>
+            <p className="text-[16px] text-gray-500">What We Did</p>
           </div>
 
           <div className="flex flex-col items-start justify-start">
@@ -69,7 +69,7 @@ export default function SolomonAI() {
 
         <div className="flex flex-col md:flex-row items-start justify-between">
           <div className="flex flex-col items-start justify-start min-w-[300px]">
-            <p>Results</p>
+            <p className="text-[16px] text-gray-500">Results</p>
           </div>
 
           <div className="flex flex-col items-start justify-start">
@@ -91,13 +91,13 @@ export default function SolomonAI() {
 
           <div className="flex flex-row items-center justify-center gap-[20px]">
             <div className="flex flex-col items-start justify-start">
-              <h3 className="text-[16px] font-medium">Ai consulting</h3>
+              <h3 className="text-[16px] font-medium text-white">Ai consulting</h3>
               <p className="text-[14px] text-gray-500">
                   We consulting with Solmon AI team, to help them build a innovate LLM product.
               </p>
             </div>
             <div className="flex flex-col items-start justify-start">
-              <h3 className="text-[16px] font-medium">
+              <h3 className="text-[16px] font-medium text-white">
                 Generative AI Development
               </h3>
               <p className="text-[14px] text-gray-500">
@@ -105,7 +105,7 @@ export default function SolomonAI() {
               </p>
             </div>
             <div className="flex flex-col items-start justify-start">
-              <h3 className="text-[16px] font-medium">
+              <h3 className="text-[16px] font-medium text-white">
                 Ongoing Feature Development
               </h3>
               <p className="text-[14px] text-gray-500">
@@ -118,10 +118,10 @@ export default function SolomonAI() {
       </section>
 
       <section className="h-[70vh] bg-white py-[100px] px-[50px] text-black flex flex-col items-start justify-center">
-        <h3>
+        <h3 className="text-[16px] text-gray-500">
           "ONCODE's expertise in AI development has been transformative for Solomon AI. Their innovative approach and deep understanding of LLMs helped us create a product that truly resonates with our users. The ability to synthesize complex ideological data into coherent, holistic answers has set us apart in the market."
         </h3>
-        <p>Solomon.AI</p>
+        <p className="text-[16px] text-gray-500">Solomon.AI</p>
 
         <div className="w-full h-[1px] mt-[40px] bg-gray-300"></div>
 

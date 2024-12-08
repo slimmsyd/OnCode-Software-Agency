@@ -11,6 +11,7 @@ import {
   useIsAutoConnecting,
   useWalletBalance,
 } from "thirdweb/react";
+import { useRouter } from "next/navigation";
 // import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { client } from "../helper/client";
 // import "@rainbow-me/rainbowkit/styles.css";
@@ -42,7 +43,7 @@ export default function Navigation({
   textColor,
 }: NavigationProps) {
   const [showBG, setShowBG] = useState<boolean>(false);
-
+  const router = useRouter();
   const showNavBG = () => {
     setShowBG(!showBG);
   };
@@ -113,7 +114,9 @@ export default function Navigation({
       <div className="flex items-center justify-between px-8 h-[48px] py-4 w-full border border-[#F0F0F0] rounded-[10px] bg-white">
         {/* Logo */}
         <div className="flex items-center">
-          <h3 className="text-xl font-semibold">OnCode</h3>
+          <button 
+          onClick={() => router.push('/')}
+          className="text-xl font-semibold cursor-pointer">OnCode</button>
         </div>
 
         {/* Navigation Links */}
