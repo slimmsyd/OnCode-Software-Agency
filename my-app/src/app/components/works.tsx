@@ -11,6 +11,13 @@ interface Work {
 }
 
 const works: Work[] = [
+
+  {
+    title: "Kinnected(On-going)",
+    description: "A platform using Blockhaing Technology, store your family, history forever, using the immutable nature of blockchain.",
+    image: "/works/Kinnected.png", // Update with your actual image path
+    link: "/casetudies/kinnected"
+  },
   {
     title: "Invoice Magi",
     description: "Implementation of your design. No design? No problem. We can assist.",
@@ -35,6 +42,18 @@ const works: Work[] = [
     description: "A platform that allows you to meet people in your area. Booking events with people you meet is easy.",
     image: "/works/gliddy.png", // Update with your actual image path
     link: "/casetudies/gliddy"
+  },
+  {
+    title: "Preeminent Professional Services",
+    description: "A Discovery site build for Professional Managment Agency",
+    image: "/works/PM.png", // Update with your actual image path
+    link: "https://www.prmntpro.com/"
+  },
+  {
+    title: "Generative AI, RAG, and LLM Discord Bot",
+    description: "A Discord bot that can help you generate AI images, Query Crypto Prices, answer questions, and more.",
+    image: "/works/Discord.png", // Update with your actual image path
+    link: "https://github.com/slimmsyd/Discord_Bot_Main"
   },
 
   // Add more works as needed
