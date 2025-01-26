@@ -11,6 +11,7 @@ export default function SolomonAI() {
         <div className="flex flex-col items-start justify-start w-[100%] flex-1 min-w-[500px]">
           <p>Case Studies</p>
           <h2>Building an Advanced AI intergrated Blockchain Platform, to store your family, history forever</h2>
+          <Link href="https://www.kinnected.life/" target="_blank" className="text-[14px] my-[20px] text-gray-500">Visit Website</Link>
 
           <div className="flex flex-col items-start justify-start">
             
