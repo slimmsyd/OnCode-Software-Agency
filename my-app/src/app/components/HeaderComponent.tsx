@@ -204,7 +204,7 @@ export default function HeaderComponent({
               </svg>
               Book A Call
             </Link>
-
+{/* 
             <button
               onClick={() => setShowPopup(true)}
               className="bg-white text-[14px] flex flex-row gap-[10px] items-center px-[20px] py-[10px] rounded-[8px] hover:bg-gray-100 transition-colors duration-300 border border-[#CDCDCD] w-[200px] m-auto"
@@ -228,7 +228,7 @@ export default function HeaderComponent({
                 <path d="M16 17H8"></path>
               </svg>
               Validate Your Idea
-            </button>
+            </button> */}
           </div>
 
           <div className="flex flex-col gap-[10px] mt-[20px] w-[95%] md:w-[60%]">
