@@ -10,8 +10,8 @@ export default function Pricing() {
 
         {/* Price Display */}
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-8">
-          <span className="text-gray-400 line-through text-2xl">$8,999 / MVP</span>
-          <span className="text-black text-2xl font-semibold">$5,999 / MVP</span>
+          <span className="text-gray-400 line-through text-2xl">$6,999 / MVP</span>
+          <span className="text-black text-2xl font-semibold">$5,000 / MVP</span>
           <span className="text-red-500 text-lg">(1 spot left)</span>
         </div>
 
