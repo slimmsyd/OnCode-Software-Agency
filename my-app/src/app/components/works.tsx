@@ -25,6 +25,12 @@ const works: Work[] = [
     link: "/casetudies/streetEconomics"
   },
   {
+    title: "Universal Law AI Youtube Automation Channel",
+    description: "A Youtube automation channel that uses AI Songs, Images, and Videos to create a new song every week.",
+    image: "/works/Universal_Law.png", // Update with your actual image path
+    link: "/casetudies/universalLaw"
+  },
+  {
     title: "Invoice Magi",
     description: "Implementation of your design. No design? No problem. We can assist.",
     image: "/works/invoice-magi.png", // Update with your actual image path
