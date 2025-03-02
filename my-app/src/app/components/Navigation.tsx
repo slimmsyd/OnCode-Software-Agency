@@ -32,6 +32,10 @@ interface NavigationProps {
   refSection3?: RefObject<HTMLDivElement>;
   refSection4?: RefObject<HTMLDivElement>;
   textColor?: boolean;
+  customLinks?: Array<{
+    label: string;
+    onClick: () => void;
+  }>;
 }
 
 export default function Navigation({
@@ -41,6 +45,7 @@ export default function Navigation({
   refSection3,
   refSection4,
   textColor,
+  customLinks,
 }: NavigationProps) {
   const [showBG, setShowBG] = useState<boolean>(false);
   const router = useRouter();
@@ -115,16 +120,52 @@ export default function Navigation({
         {/* Logo */}
         <div className="flex items-center">
           <button 
-          onClick={() => router.push('/')}
-          className="text-xl font-semibold cursor-pointer">OnCode</button>
+            onClick={() => router.push('/')}
+            className="text-xl font-semibold cursor-pointer">OnCode</button>
         </div>
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
-          <div className="nav-link hover:text-gray-300 cursor-pointer">Home</div>
-          <div className="nav-link hover:text-gray-300 cursor-pointer">Ecosytem</div>
-          <div className="nav-link hover:text-gray-300 cursor-pointer">About us</div>
-          <div className="nav-link hover:text-gray-300 cursor-pointer">Case Studies</div>
+          {customLinks ? (
+            // Render custom links for case studies
+            customLinks.map((link, index) => (
+              <div
+                key={index}
+                onClick={link.onClick}
+                className="nav-link hover:text-gray-300 cursor-pointer"
+              >
+                {link.label}
+              </div>
+            ))
+          ) : (
+            // Render default navigation
+            <>
+              <div 
+                onClick={() => scrollToSection && scrollToSection('home')}
+                className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
+              >
+                Home
+              </div>
+              <div 
+                onClick={() => scrollToSection && scrollToSection('ecosystem')}
+                className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
+              >
+                Ecosystem
+              </div>
+              <div 
+                onClick={() => scrollToSection && scrollToSection('about')}
+                className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
+              >
+                About us
+              </div>
+              <div 
+                onClick={() => scrollToSection && scrollToSection('case-studies')}
+                className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
+              >
+                Case Studies
+              </div>
+            </>
+          )}
         </div>
 
         {/* Connect Wallet Button */}
@@ -140,7 +181,7 @@ export default function Navigation({
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden z-30 ">
+        <div className="md:hidden z-30">
           <button 
             onClick={() => showNavBG()} 
             className="mobile-nav-container z-30 w-6 h-6 flex items-center justify-center"
@@ -165,30 +206,49 @@ export default function Navigation({
         {showBG && (
           <div className="absolute top-16 left-0 right-0 bg-white p-4 md:hidden rounded-[10px] border border-[#F0F0F0] shadow-lg">
             <div className="flex flex-col space-y-4">
-              <div 
-                className="nav-link hover:text-gray-300 cursor-pointer py-2"
-                onClick={() => mobileNavBtn('home')}
-              >
-                Home
-              </div>
-              <div 
-                className="nav-link hover:text-gray-300 cursor-pointer py-2"
-                onClick={() => mobileNavBtn('ecosystem')}
-              >
-                Ecosystem
-              </div>
-              <div 
-                className="nav-link hover:text-gray-300 cursor-pointer py-2"
-                onClick={() => mobileNavBtn('about')}
-              >
-                About us
-              </div>
-              <div 
-                className="nav-link hover:text-gray-300 cursor-pointer py-2"
-                onClick={() => mobileNavBtn('case-studies')}
-              >
-                Case Studies
-              </div>
+              {customLinks ? (
+                // Render custom links for case studies in mobile menu
+                customLinks.map((link, index) => (
+                  <div
+                    key={index}
+                    onClick={() => {
+                      link.onClick();
+                      setShowBG(false);
+                    }}
+                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                  >
+                    {link.label}
+                  </div>
+                ))
+              ) : (
+                // Render default mobile navigation
+                <>
+                  <div 
+                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                    onClick={() => mobileNavBtn('home')}
+                  >
+                    Home
+                  </div>
+                  <div 
+                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                    onClick={() => mobileNavBtn('ecosystem')}
+                  >
+                    Ecosystem
+                  </div>
+                  <div 
+                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                    onClick={() => mobileNavBtn('about')}
+                  >
+                    About us
+                  </div>
+                  <div 
+                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                    onClick={() => mobileNavBtn('case-studies')}
+                  >
+                    Case Studies
+                  </div>
+                </>
+              )}
               
               {/* Mobile Connect Wallet Button */}
               <div className="py-2">

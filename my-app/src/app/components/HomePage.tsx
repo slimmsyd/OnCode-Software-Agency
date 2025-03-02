@@ -68,7 +68,17 @@ export default function HomePage() {
 
   //Scroll to the correspoding container
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80; // Adjust this value based on your header height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
   };
   const refSection1 = useRef<HTMLDivElement>(null);
   const refSection2 = useRef<HTMLDivElement>(null);
@@ -242,39 +252,44 @@ export default function HomePage() {
         </div>
       </div> */}
 
-      <section
-        id="home"
-        className=" pt-[50px] px-[20px] relative"
-        ref={refSectionHome}
-      >
-        {/* <div className="overlayDark absolute h-[100vh]"></div> */}
-        <div className="absolute video-bg ">
-          <Image
-            src="/pastel.mp4"
-            alt="Background"
-            fill
-            priority
-            className="object-cover"
-            quality={100}
+      <main className="relative">
+        <div id="home" ref={refSectionHome}>
+          <HeaderComponent
+            refSection1={refSection1}
+            refSection2={refSection2}
+            refSection3={refSection3}
+            refSection4={refSection4}
+            priceRef={priceRef}
+            scrollToSection={scrollToSection}
           />
         </div>
 
-        <About />
-        <Process />
-        <Pricing />
-        <Works />
-        <Founder />
-        <Value />
-      <Footer />
-
-        {/* <div className="w-full md:w-[70%] relative md:leading-[600%] items-center flex flex-row gap-[10px]">
-          <h1 className="text-black z-10 afterH1">Glimpse Into Our Work</h1>
+        <div id="ecosystem" ref={refSection1}>
+          <About />
         </div>
 
+        <div id="about" ref={refSection2}>
+          <Process />
+        </div>
 
+        <div id="case-studies" ref={refSection4}>
+          <Works />
+        </div>
 
-        <ImageSlider scrollToSection={scrollToSection} /> */}
-      </section>
+        <div ref={refSection5}>
+          <Value />
+        </div>
+
+        <div ref={priceRef}>
+          <Pricing />
+        </div>
+
+        <div>
+          <Founder />
+        </div>
+
+        <Footer />
+      </main>
 
     
     </>
