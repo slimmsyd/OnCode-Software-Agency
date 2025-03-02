@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 interface Work {
   title: string;
   description: string;
-  image: string;
+  image: string; // This can now be either an image or video URL
   link: string;
 }
 
@@ -17,6 +17,12 @@ const works: Work[] = [
     description: "A platform using Blockhaing Technology, store your family, history forever, using the immutable nature of blockchain.",
     image: "/works/Kinnected.png", // Update with your actual image path
     link: "/casetudies/kinnected"
+  },
+  {
+    title: "Street Economics Dashboard",
+    description: "A dashboard for Street Economics,to manage community engagment, user interactions. to caputre data and analytics. To help the community grow and thrive.",
+    image: "https://red-broken-ferret-951.mypinata.cloud/ipfs/bafybeifsyeosyutghfvz7aphm7wgdyezk6nfttanurc4ldyuiwsvs76yme", // Update with your actual image path
+    link: "/casetudies/streetEconomics"
   },
   {
     title: "Invoice Magi",
@@ -59,6 +65,12 @@ const works: Work[] = [
   // Add more works as needed
 ];
 
+// Add a helper function to determine if the URL is a video
+const isVideoUrl = (url: string) => {
+  // Check for common video extensions or IPFS URLs
+  return url.includes('ipfs') || /\.(mp4|webm|ogg)$/i.test(url);
+};
+
 export default function Works() {
   return (
     <section className="relative w-full py-12 md:py-24 lg:py-20 xl:py-20 max-w-[1200px] m-auto">
@@ -96,13 +108,28 @@ export default function Works() {
 
                 {/* Right Image */}
                 <div className="md:w-2/3 relative h-[400px] bg-gray-100 m-4 md:m-10 rounded-[10px] border border-[#DDDBDB]">
-                  <Image
-                    src={work.image}
-                    alt={work.title}
-                    fill
-                    className="object-cover rounded-[10px]"
-                    quality={100}
-                  />
+                  <div className="aspect-w-16 aspect-h-9">
+                    {isVideoUrl(work.image) ? (
+                      <video
+                        className="w-full h-full object-cover"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                      >
+                        <source src={work.image} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    ) : (
+                      <Image
+                        src={work.image}
+                        alt={work.title}
+                        fill
+                        className="object-cover rounded-[10px]"
+                        quality={100}
+                      />
+                    )}
+                  </div>
                 </div>
               </div>
             </motion.div>
