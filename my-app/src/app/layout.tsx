@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { GoogleTagManager } from "@next/third-parties/google";
+import { AuthProvider } from "./context/AuthContext";
 
 import { Gnosis, Ethereum } from "@thirdweb-dev/chains";
 
@@ -27,7 +28,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <GoogleTagManager gtmId="G-ESW0CVVTY5" />
-        <ThirdwebProvider>{children}</ThirdwebProvider>
+        <ThirdwebProvider>
+          <AuthProvider>
+            {children}
+          </AuthProvider>
+        </ThirdwebProvider>
       </body>
     </html>
   );

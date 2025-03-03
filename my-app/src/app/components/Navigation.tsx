@@ -164,6 +164,12 @@ export default function Navigation({
               >
                 Case Studies
               </div>
+              <Link 
+                href="/blog"
+                className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
+              >
+                Blog
+              </Link>
             </>
           )}
         </div>
@@ -247,6 +253,13 @@ export default function Navigation({
                   >
                     Case Studies
                   </div>
+                  <Link 
+                    href="/blog"
+                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                    onClick={() => setShowBG(false)}
+                  >
+                    Blog
+                  </Link>
                 </>
               )}
               
