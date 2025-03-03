@@ -18,6 +18,7 @@ import Pricing from "./pricing";
 import Works from "./works";
 import Value from "./value";
 import Founder from "./founder";
+import ChatPopup from "./ChatPopup";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -187,7 +188,8 @@ export default function HomePage() {
   return (
     <>
       {/* <PageLoader /> */}
-
+      <ChatPopup />
+      
       <div
         className="site-wrapper h-[100vh] md:h-[100vh] relative"
         ref={refSectionHome}
@@ -531,6 +533,7 @@ function ImageSlider({
       >
         &gt;
       </button>
+
     </div>
   );
 }
