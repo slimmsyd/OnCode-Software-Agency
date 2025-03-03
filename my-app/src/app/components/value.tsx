@@ -19,8 +19,8 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-lg text-black ">
-            You'll receive a response within 24 hours of booking. If your project is a good fit, we'll schedule a call to discuss the details and work process.
-            Book a call get started           
+            You'll receive a response within 24 hours of booking along with a free MVP checklist to review before our call. If your project is a good fit, we'll schedule a call to discuss the details and work process.
+            Book a call to get started           
                  </p>
           </motion.div>
 
