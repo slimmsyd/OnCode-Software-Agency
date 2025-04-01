@@ -2,6 +2,7 @@ import Navigation from "@/app/components/Navigation";
 import Video from "@/app/components/VideoComponent";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
+import NewImage from '../../../../public/works/Sales_Call_Dashboard.png'
 export default function PRMNTPRO() {
   return (
     <>
@@ -76,7 +77,7 @@ export default function PRMNTPRO() {
                 <div className="relative w-full h-full">
                   <div className="absolute inset-0 border border-white/20 z-10"></div>
                   <img 
-                    src="/assets/prmntpro-dashboard.png" 
+                    src={NewImage.src}  
                     alt="PRMNTPRO CRM Dashboard" 
                     className="w-full h-full object-cover opacity-90 grayscale hover:grayscale-0 transition-all duration-700"
                   />
@@ -181,7 +182,7 @@ export default function PRMNTPRO() {
                 <div className="relative aspect-video mb-16 overflow-hidden">
                   <div className="absolute inset-0 border border-neutral-200"></div>
                   <img 
-                    src="/assets/prmntpro-dashboard.png" 
+                    src={NewImage.src} 
                     alt="PRMNTPRO CRM Dashboard" 
                     className="w-full h-full object-cover"
                   />
@@ -378,19 +379,264 @@ export default function PRMNTPRO() {
         </div>
       </section>
 
+      {/* Technical Approach Section */}
+      <section className="relative bg-black">
+        {/* Diagonal separator */}
+        <div className="absolute top-0 left-0 w-full h-[200px] bg-neutral-100 transform skew-y-6 origin-top-right -translate-y-[50%]"></div>
+        
+        <div className="container mx-auto relative z-10 py-[180px] px-8">
+          <div className="mb-24 overflow-hidden">
+            <div className="inline-block relative">
+              <span className="block font-mono text-sm text-white/60 tracking-wider mb-2">TECHNICAL APPROACH</span>
+              <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold">How we built it</h2>
+              <div className="absolute -bottom-3 left-0 w-[80%] h-[1px] bg-white/20"></div>
+            </div>
+          </div>
+          
+          <div className="relative">
+            {/* Technical services grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 relative">
+              {/* Service 1 */}
+              <div className="group relative">
+                <div className="absolute top-[-30px] left-0 text-[60px] font-bold text-white/5">01</div>
+                
+                {/* Line and dot */}
+                <div className="absolute top-[10px] left-[-40px] w-[25px] h-[1px] bg-blue-500"></div>
+                <div className="absolute top-[10px] left-[-40px] w-[5px] h-[5px] rounded-full bg-blue-500"></div>
+                
+                <div className="relative">
+                  <h3 className="text-2xl text-white font-medium mb-6 group-hover:text-blue-400 transition-colors">
+                    Custom CRM Architecture
+                  </h3>
+                  
+                  <p className="text-white/70 mb-8">
+                    We designed and built a tailored CRM solution from the ground up, creating a system that precisely aligned with PRMNTPRO's unique sales workflow and processes.
+                  </p>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-[4px] h-[4px] bg-blue-500 rounded-full"></div>
+                      <span className="text-white/60 text-sm">User-centered design approach</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-[4px] h-[4px] bg-blue-500 rounded-full"></div>
+                      <span className="text-white/60 text-sm">Modular component structure</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-[4px] h-[4px] bg-blue-500 rounded-full"></div>
+                      <span className="text-white/60 text-sm">Extensible API architecture</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-[-20px] left-0 w-[60%] h-[1px] bg-white/10 group-hover:bg-blue-500/30 transition-colors"></div>
+              </div>
+              
+              {/* Service 2 */}
+              <div className="group relative">
+                <div className="absolute top-[-30px] left-0 text-[60px] font-bold text-white/5">02</div>
+                
+                {/* Line and dot */}
+                <div className="absolute top-[10px] left-[-40px] w-[25px] h-[1px] bg-purple-500"></div>
+                <div className="absolute top-[10px] left-[-40px] w-[5px] h-[5px] rounded-full bg-purple-500"></div>
+                
+                <div className="relative">
+                  <h3 className="text-2xl text-white font-medium mb-6 group-hover:text-purple-400 transition-colors">
+                    MAKE Automation Suite
+                  </h3>
+                  
+                  <p className="text-white/70 mb-8">
+                    Using MAKE as the automation backbone, we created sophisticated workflows that eliminated repetitive tasks and ensured data consistency across all platforms.
+                  </p>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-[4px] h-[4px] bg-purple-500 rounded-full"></div>
+                      <span className="text-white/60 text-sm">Multi-source data integration</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-[4px] h-[4px] bg-purple-500 rounded-full"></div>
+                      <span className="text-white/60 text-sm">Conditional logic workflows</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-[4px] h-[4px] bg-purple-500 rounded-full"></div>
+                      <span className="text-white/60 text-sm">Error handling mechanisms</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-[-20px] left-0 w-[60%] h-[1px] bg-white/10 group-hover:bg-purple-500/30 transition-colors"></div>
+              </div>
+              
+              {/* Service 3 */}
+              <div className="group relative">
+                <div className="absolute top-[-30px] left-0 text-[60px] font-bold text-white/5">03</div>
+                
+                {/* Line and dot */}
+                <div className="absolute top-[10px] left-[-40px] w-[25px] h-[1px] bg-cyan-500"></div>
+                <div className="absolute top-[10px] left-[-40px] w-[5px] h-[5px] rounded-full bg-cyan-500"></div>
+                
+                <div className="relative">
+                  <h3 className="text-2xl text-white font-medium mb-6 group-hover:text-cyan-400 transition-colors">
+                    Database Architecture
+                  </h3>
+                  
+                  <p className="text-white/70 mb-8">
+                    We implemented a custom database setup optimized specifically for sales data structures, enabling powerful analytics while ensuring long-term scalability.
+                  </p>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-[4px] h-[4px] bg-cyan-500 rounded-full"></div>
+                      <span className="text-white/60 text-sm">Normalized data schema</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-[4px] h-[4px] bg-cyan-500 rounded-full"></div>
+                      <span className="text-white/60 text-sm">Advanced indexing strategy</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-[4px] h-[4px] bg-cyan-500 rounded-full"></div>
+                      <span className="text-white/60 text-sm">Performance optimization</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-[-20px] left-0 w-[60%] h-[1px] bg-white/10 group-hover:bg-cyan-500/30 transition-colors"></div>
+              </div>
+            </div>
+            
+            {/* Technical diagram */}
+            <div className="mt-32 relative">
+              <h3 className="text-white/80 text-xl mb-12">System Architecture</h3>
+              
+              <div className="bg-white/5 border border-white/10 p-8 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-blue-500/10 rounded-full blur-[100px]"></div>
+                <div className="absolute bottom-0 left-0 w-[150px] h-[150px] bg-purple-500/10 rounded-full blur-[80px]"></div>
+                
+                <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {/* Data Sources */}
+                  <div className="border-r border-white/10 pr-8">
+                    <div className="text-blue-400 uppercase tracking-wider text-sm mb-4">Data Sources</div>
+                    
+                    <div className="space-y-4">
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        CRM APIs
+                      </div>
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        Email Services
+                      </div>
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        Call Systems
+                      </div>
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        Calendar Services
+                      </div>
+                    </div>
+                    
+                    <div className="mt-6 flex justify-end">
+                      <div className="w-[30px] h-[1px] bg-blue-500/50"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Processing */}
+                  <div className="border-r border-white/10 px-8">
+                    <div className="text-purple-400 uppercase tracking-wider text-sm mb-4">Processing</div>
+                    
+                    <div className="space-y-4">
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        MAKE Workflows
+                      </div>
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        Data Transformation
+                      </div>
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        Business Logic
+                      </div>
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        Custom APIs
+                      </div>
+                    </div>
+                    
+                    <div className="mt-6 flex justify-end">
+                      <div className="w-[30px] h-[1px] bg-purple-500/50"></div>
+                    </div>
+                  </div>
+                  
+                  {/* Output */}
+                  <div className="pl-8">
+                    <div className="text-cyan-400 uppercase tracking-wider text-sm mb-4">Output</div>
+                    
+                    <div className="space-y-4">
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        Custom Dashboard
+                      </div>
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        Analytics Platform
+                      </div>
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        Alert Systems
+                      </div>
+                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                        Reporting Tools
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Connector lines */}
+                <div className="absolute top-[50%] left-[33%] w-[2px] h-[30px] bg-white/20"></div>
+                <div className="absolute top-[50%] left-[66%] w-[2px] h-[30px] bg-white/20"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* CTA Section */}
-      <section className="py-20 px-8 bg-gradient-to-br from-blue-900 to-purple-900 text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to transform your sales process?</h2>
-          <p className="text-blue-100 max-w-2xl mx-auto mb-10">
-            Let's discuss how our custom CRM solutions can help you streamline operations and boost revenue.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-white text-blue-900 px-8 py-4 rounded-lg font-bold hover:bg-blue-50 transform hover:scale-105 transition-all shadow-lg"
-          >
-            Get in touch
-          </Link>
+      <section className="relative bg-white overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-0 left-0 w-full h-[1px] bg-neutral-200"></div>
+          <div className="absolute bottom-0 left-0 w-full h-[1px] bg-neutral-200"></div>
+          <div className="absolute top-0 left-0 h-full w-[1px] bg-neutral-200"></div>
+          <div className="absolute top-0 right-0 h-full w-[1px] bg-neutral-200"></div>
+          
+          <div className="absolute top-[25%] left-0 w-full h-[1px] bg-neutral-200"></div>
+          <div className="absolute top-[50%] left-0 w-full h-[1px] bg-neutral-200"></div>
+          <div className="absolute top-[75%] left-0 w-full h-[1px] bg-neutral-200"></div>
+          
+          <div className="absolute top-0 left-[25%] h-full w-[1px] bg-neutral-200"></div>
+          <div className="absolute top-0 left-[50%] h-full w-[1px] bg-neutral-200"></div>
+          <div className="absolute top-0 left-[75%] h-full w-[1px] bg-neutral-200"></div>
+        </div>
+        
+        <div className="container mx-auto relative z-10 py-[120px] px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-neutral-900">Ready to transform your sales process?</h2>
+            
+            <p className="text-xl text-neutral-600 mb-12">
+              Let's discuss how our custom solutions can help streamline your operations and boost revenue.
+            </p>
+            
+            <Link
+              href="https://calendly.com/0ncode-info/30min?month=2025-04&date=2025-04-02"
+              className="inline-flex items-center justify-center border border-neutral-900 bg-white text-neutral-900 hover:bg-neutral-900 hover:text-white transition-colors px-8 py-4 min-w-[200px] group relative overflow-hidden"
+            >
+              <span className="relative z-10 font-medium">Get in touch</span>
+              <div className="absolute top-0 left-0 w-full h-full bg-neutral-900 transform translate-x-[-110%] group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
+            </Link>
+            
+            <div className="mt-16">
+              <Link
+                href="/casetudies/universalLaw"
+                className="inline-flex items-center gap-2 text-neutral-500 hover:text-neutral-900 transition-colors"
+              >
+                <span>Explore next case study</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
