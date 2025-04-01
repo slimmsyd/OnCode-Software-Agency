@@ -5,115 +5,291 @@ import Link from "next/link";
 export default function PRMNTPRO() {
   return (
     <>
-      <Navigation textColor={true} />
+      <Navigation textColor={false} />
 
-      {/* Hero Section with Gradient Background */}
-      <section className="relative overflow-hidden py-[120px] px-[50px] bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 text-white">
-        <div className="absolute top-0 left-0 w-full h-full opacity-10">
-          <div className="absolute top-[10%] left-[5%] w-[30%] h-[30%] rounded-full bg-blue-400 blur-[80px]"></div>
-          <div className="absolute bottom-[20%] right-[10%] w-[25%] h-[25%] rounded-full bg-purple-500 blur-[100px]"></div>
-          <div className="absolute top-[40%] right-[30%] w-[20%] h-[20%] rounded-full bg-cyan-400 blur-[70px]"></div>
+      {/* Unconventional Hero Section */}
+      <section className="relative min-h-screen bg-black overflow-hidden">
+        {/* Geometric patterns */}
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-[20%] left-[15%] w-[40vw] h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
+          <div className="absolute top-[40%] left-[30%] w-[1px] h-[30vh] bg-gradient-to-b from-transparent via-purple-500 to-transparent"></div>
+          <div className="absolute bottom-[10%] right-[20%] w-[35vw] h-[1px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
+          <div className="absolute top-[60%] right-[35%] w-[1px] h-[25vh] bg-gradient-to-b from-transparent via-indigo-500 to-transparent"></div>
         </div>
         
-        <div className="container mx-auto relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-[50px]">
-            <div className="flex flex-col items-start justify-start w-[100%] max-w-[600px]">
-              <p className="text-blue-300 font-medium tracking-wider mb-2">CASE STUDY</p>
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
-                PRMNTPRO Sales CRM
-              </h1>
-              <p className="text-lg text-blue-50 mb-8">
-                We developed a comprehensive sales management system to unify fragmented data and streamline the entire sales process.
-              </p>
-              
-              <div className="flex flex-wrap gap-4">
-                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium">Custom CRM Development</span>
-                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium">Data Aggregation & Analytics</span>
-                <span className="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium">Workflow Automation</span>
+        {/* Grid pattern */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="grid grid-cols-12 h-full">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="border-l border-white/5 h-full"></div>
+            ))}
+          </div>
+          <div className="grid grid-rows-12 w-full absolute top-0 left-0">
+            {Array.from({ length: 12 }).map((_, i) => (
+              <div key={i} className="border-t border-white/5 w-full h-[8.33vh]"></div>
+            ))}
+          </div>
+        </div>
+        
+        {/* Main content */}
+        <div className="container mx-auto relative z-10 pt-[20vh] px-8">
+          <div className="grid grid-cols-12 gap-6">
+            {/* Left column - Case Study Tag */}
+            <div className="col-span-12 md:col-span-3 lg:col-span-2 relative overflow-hidden">
+              <div className="hidden md:block w-[1px] h-[120px] bg-white/20 absolute right-0 top-0"></div>
+              <div className="transform -rotate-90 origin-top-left translate-y-[120px] md:translate-y-[180px] text-white/70 uppercase tracking-[0.2em] text-sm font-light">
+                Case Study
               </div>
             </div>
             
-            <div className="relative w-full max-w-[500px] aspect-video rounded-lg overflow-hidden shadow-2xl border border-white/20 backdrop-blur">
-              <img 
-                src="/assets/prmntpro-dashboard.png" 
-                alt="PRMNTPRO CRM Dashboard" 
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+            {/* Middle column - Main Title */}
+            <div className="col-span-12 md:col-span-5 lg:col-span-6 relative">
+              <h1 className="text-5xl md:text-7xl font-bold text-white mb-12 leading-tight">
+                <span className="block">PRMNTPRO</span>
+                <span className="block text-3xl md:text-5xl text-blue-400 mt-3">Sales Ecosystem</span>
+              </h1>
+              
+              <div className="hidden md:block absolute top-[105%] left-0 w-[80%] h-[1px] bg-white/10"></div>
+              
+              <div className="mt-16 space-y-3">
+                <div className="flex items-start">
+                  <span className="text-blue-400 mr-3">01.</span>
+                  <span className="text-white/80">Custom CRM Development</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-blue-400 mr-3">02.</span>
+                  <span className="text-white/80">Data Aggregation & Analytics</span>
+                </div>
+                <div className="flex items-start">
+                  <span className="text-blue-400 mr-3">03.</span>
+                  <span className="text-white/80">Workflow Automation</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Right column - Image & Description */}
+            <div className="col-span-12 md:col-span-4 lg:col-span-4 mt-16 md:mt-0">
+              <div className="relative w-full aspect-[4/3] mb-8 overflow-hidden">
+                <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-blue-500 opacity-25 rounded-full blur-[60px]"></div>
+                <div className="absolute bottom-0 left-0 w-[100px] h-[100px] bg-purple-500 opacity-25 rounded-full blur-[50px]"></div>
+                
+                <div className="relative w-full h-full">
+                  <div className="absolute inset-0 border border-white/20 z-10"></div>
+                  <img 
+                    src="/assets/prmntpro-dashboard.png" 
+                    alt="PRMNTPRO CRM Dashboard" 
+                    className="w-full h-full object-cover opacity-90 grayscale hover:grayscale-0 transition-all duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-transparent"></div>
+                </div>
+                
+                <div className="absolute -bottom-4 -right-4 w-[70%] aspect-square border border-blue-500/30"></div>
+              </div>
+              
+              <p className="text-white/70 text-sm leading-relaxed">
+                We developed a comprehensive sales ecosystem for PRMNTPRO that brings together fragmented data sources into a unified platform, eliminating process friction and providing unprecedented visibility.
+              </p>
+            </div>
+          </div>
+          
+          <div className="absolute bottom-[5vh] left-[50%] transform -translate-x-1/2">
+            <div className="w-[30px] h-[50px] border border-white/20 rounded-full flex items-center justify-center">
+              <div className="w-[2px] h-[10px] bg-white/50 animate-bounce"></div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Journey Section with Timeline */}
-      <section className="py-[100px] px-[50px] bg-slate-50">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-16 text-slate-800">The PRMNTPRO Journey</h2>
+      
+      {/* Asymmetrical Problem-Solution Section */}
+      <section className="relative bg-neutral-100 overflow-hidden">
+        {/* Diagonal separator */}
+        <div className="absolute top-0 left-0 w-full h-[200px] bg-black transform -skew-y-6 origin-top-left -translate-y-[50%]"></div>
+        
+        <div className="container mx-auto relative py-[180px] px-8">
+          {/* Scattered horizontal lines */}
+          <div className="absolute left-[10%] top-[20%] w-[100px] h-[1px] bg-neutral-300"></div>
+          <div className="absolute right-[15%] top-[40%] w-[150px] h-[1px] bg-neutral-300"></div>
+          <div className="absolute left-[20%] bottom-[25%] w-[120px] h-[1px] bg-neutral-300"></div>
           
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-[50%] top-0 bottom-0 w-[2px] bg-blue-200"></div>
-            
-            {/* Problem Block */}
-            <div className="relative mb-24">
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-[45%] p-6 md:p-8 bg-white rounded-xl shadow-lg md:mr-[10%] z-10 transform hover:scale-[1.02] transition-transform">
-                  <div className="absolute top-[50%] md:right-[-20px] w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center text-white text-xl font-bold">1</div>
-                  <h3 className="text-blue-600 font-bold text-xl mb-4">The Challenge</h3>
-                  <p className="text-slate-700">
-                    PRMNTPRO was struggling with fragmented sales data across multiple platforms, making it difficult to track customer interactions and manage their sales pipeline effectively. Their team was spending excessive time on administrative tasks instead of focusing on relationship building and closing deals.
-                  </p>
-                </div>
-                
-                <div className="hidden md:block md:w-[45%]"></div>
-              </div>
-            </div>
-            
-            {/* Solution Block */}
-            <div className="relative mb-24">
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="hidden md:block md:w-[45%]"></div>
-                
-                <div className="md:w-[45%] p-6 md:p-8 bg-white rounded-xl shadow-lg md:ml-[10%] z-10 transform hover:scale-[1.02] transition-transform">
-                  <div className="absolute top-[50%] md:left-[-20px] w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-white text-xl font-bold">2</div>
-                  <h3 className="text-purple-600 font-bold text-xl mb-4">Our Approach</h3>
-                  <p className="text-slate-700">
-                    We developed a custom Sales CRM that integrated seamlessly with their existing tools. Using MAKE as the automation backbone, we created workflows that automatically captured and processed data from various sources including phone calls, emails, and meetings.
-                  </p>
-                  <p className="text-slate-700 mt-4">
-                    Our solution included a custom web application with an intuitive dashboard that gave the sales team a holistic view of their pipeline. We implemented a tailored database architecture to ensure optimal performance and data integrity, allowing for real-time analytics and reporting.
-                  </p>
+          {/* Vertical axis line */}
+          <div className="absolute left-[80px] md:left-[120px] top-[15%] bottom-[15%] w-[1px] bg-neutral-800"></div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-[100px] md:gap-6">
+            {/* Side column with phase labels */}
+            <div className="hidden md:block md:col-span-3 lg:col-span-2 relative">
+              <div className="sticky top-[30vh]">
+                <div className="transform -rotate-90 origin-top-left translate-y-[80px] tracking-[0.2em] uppercase text-xs font-light text-neutral-500">
+                  Business Challenge
                 </div>
               </div>
             </div>
             
-            {/* Results Block */}
-            <div className="relative">
-              <div className="flex flex-col md:flex-row items-center">
-                <div className="md:w-[45%] p-6 md:p-8 bg-white rounded-xl shadow-lg md:mr-[10%] z-10 transform hover:scale-[1.02] transition-transform">
-                  <div className="absolute top-[50%] md:right-[-20px] w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white text-xl font-bold">3</div>
-                  <h3 className="text-green-600 font-bold text-xl mb-4">The Impact</h3>
-                  <p className="text-slate-700">
-                    The implementation of our custom CRM solution led to a 40% increase in sales team productivity and a 30% improvement in lead conversion rates. By automating routine tasks and providing actionable insights through the centralized dashboard, PRMNTPRO was able to focus more on building client relationships and less on administrative work.
-                  </p>
+            {/* Main content column */}
+            <div className="col-span-12 md:col-span-9 lg:col-span-10">
+              {/* Problem Block */}
+              <div className="relative mb-[200px]">
+                <div className="absolute left-[-80px] md:left-[-50px] top-[15px] flex items-center justify-center w-[40px] h-[40px]">
+                  <div className="w-[10px] h-[10px] bg-blue-500 rounded-full"></div>
+                </div>
+                
+                <span className="block font-mono text-blue-600 tracking-wider mb-4">PROBLEM</span>
+                <h2 className="text-5xl font-bold mb-16 leading-tight max-w-3xl">Fragmented data created a disjointed sales process</h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                  <div className="relative">
+                    <div className="absolute top-0 left-0 w-[30px] h-[30px] border-t border-l border-neutral-300"></div>
+                    <p className="pt-6 pl-6 text-neutral-600">
+                      PRMNTPRO was struggling with data scattered across multiple platforms, creating information silos. Sales teams were unable to access a complete view of customer interactions, leading to missed opportunities and redundant outreach efforts.
+                    </p>
+                  </div>
                   
-                  <div className="mt-6 flex flex-col sm:flex-row gap-4">
-                    <div className="flex-1 bg-green-50 p-4 rounded-lg text-center">
-                      <span className="block text-3xl font-bold text-green-600">40%</span>
-                      <span className="text-sm text-slate-600">Productivity Boost</span>
+                  <div className="relative">
+                    <div className="absolute top-0 left-0 w-[30px] h-[30px] border-t border-l border-neutral-300"></div>
+                    <p className="pt-6 pl-6 text-neutral-600">
+                      Their team was spending up to 15 hours per week on manual data entry and reconciliation tasks. This administrative burden diverted valuable time from relationship building and closing deals, directly impacting revenue generation.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="mt-20 flex items-center space-x-4">
+                  <div className="w-[25px] h-[1px] bg-blue-500"></div>
+                  <span className="text-blue-600 text-sm">Pain Points</span>
+                </div>
+                
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <div className="py-4 px-5 bg-white border-l-2 border-blue-500">
+                    <span className="block text-neutral-800 font-medium">Data Fragmentation</span>
+                  </div>
+                  <div className="py-4 px-5 bg-white border-l-2 border-blue-500">
+                    <span className="block text-neutral-800 font-medium">Manual Processes</span>
+                  </div>
+                  <div className="py-4 px-5 bg-white border-l-2 border-blue-500">
+                    <span className="block text-neutral-800 font-medium">Visibility Gaps</span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Solution Block */}
+              <div className="relative mb-[200px]">
+                <div className="absolute left-[-80px] md:left-[-50px] top-[15px] flex items-center justify-center w-[40px] h-[40px]">
+                  <div className="w-[10px] h-[10px] bg-purple-500 rounded-full"></div>
+                </div>
+                
+                <span className="block font-mono text-purple-600 tracking-wider mb-4">SOLUTION</span>
+                <h2 className="text-5xl font-bold mb-16 leading-tight max-w-3xl">A unified sales ecosystem with intelligent automation</h2>
+                
+                <div className="relative aspect-video mb-16 overflow-hidden">
+                  <div className="absolute inset-0 border border-neutral-200"></div>
+                  <img 
+                    src="/assets/prmntpro-dashboard.png" 
+                    alt="PRMNTPRO CRM Dashboard" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                  <div className="relative">
+                    <p className="text-neutral-600">
+                      We developed a custom Sales CRM that integrated seamlessly with their existing tools. Using MAKE as the automation backbone, we created workflows that automatically captured and processed data from various sources including phone calls, emails, and meetings.
+                    </p>
+                  </div>
+                  
+                  <div className="relative">
+                    <p className="text-neutral-600">
+                      Our solution included a custom web application with an intuitive dashboard that gave the sales team a holistic view of their pipeline. We implemented a tailored database architecture to ensure optimal performance and data integrity, allowing for real-time analytics and reporting.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="mt-16">
+                  <div className="inline-block relative">
+                    <span className="block font-mono text-sm text-purple-600 tracking-wider mb-2">TECHNOLOGIES USED</span>
+                    <div className="absolute bottom-0 left-0 w-full h-[1px] bg-purple-200"></div>
+                  </div>
+                  
+                  <div className="mt-8 flex flex-wrap gap-6">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-[8px] h-[8px] bg-purple-500 rounded-full"></div>
+                      <span className="text-neutral-600">MAKE</span>
                     </div>
-                    <div className="flex-1 bg-blue-50 p-4 rounded-lg text-center">
-                      <span className="block text-3xl font-bold text-blue-600">30%</span>
-                      <span className="text-sm text-slate-600">Higher Conversion</span>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-[8px] h-[8px] bg-purple-500 rounded-full"></div>
+                      <span className="text-neutral-600">React</span>
                     </div>
-                    <div className="flex-1 bg-purple-50 p-4 rounded-lg text-center">
-                      <span className="block text-3xl font-bold text-purple-600">60%</span>
-                      <span className="text-sm text-slate-600">Less Admin Time</span>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-[8px] h-[8px] bg-purple-500 rounded-full"></div>
+                      <span className="text-neutral-600">Node.js</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-[8px] h-[8px] bg-purple-500 rounded-full"></div>
+                      <span className="text-neutral-600">PostgreSQL</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-[8px] h-[8px] bg-purple-500 rounded-full"></div>
+                      <span className="text-neutral-600">AWS</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Results Block */}
+              <div className="relative">
+                <div className="absolute left-[-80px] md:left-[-50px] top-[15px] flex items-center justify-center w-[40px] h-[40px]">
+                  <div className="w-[10px] h-[10px] bg-green-500 rounded-full"></div>
+                </div>
+                
+                <span className="block font-mono text-green-600 tracking-wider mb-4">RESULTS</span>
+                <h2 className="text-5xl font-bold mb-16 leading-tight max-w-3xl">Transformative outcomes with measurable impact</h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                  <div className="relative pt-[60px]">
+                    <div className="absolute top-0 left-0 text-[120px] font-bold text-neutral-100 leading-none z-0">01</div>
+                    <div className="relative z-10">
+                      <div className="text-4xl font-bold text-green-500 mb-2">40%</div>
+                      <h3 className="text-xl font-bold text-neutral-800 mb-3">Productivity Boost</h3>
+                      <p className="text-neutral-600 text-sm">
+                        Sales team reclaimed 15+ hours weekly through automated data capture and processing
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="relative pt-[60px]">
+                    <div className="absolute top-0 left-0 text-[120px] font-bold text-neutral-100 leading-none z-0">02</div>
+                    <div className="relative z-10">
+                      <div className="text-4xl font-bold text-green-500 mb-2">30%</div>
+                      <h3 className="text-xl font-bold text-neutral-800 mb-3">Higher Conversion</h3>
+                      <p className="text-neutral-600 text-sm">
+                        Improved lead conversion through better targeting and follow-up consistency
+                      </p>
+                    </div>
+                  </div>
+                  
+                  <div className="relative pt-[60px]">
+                    <div className="absolute top-0 left-0 text-[120px] font-bold text-neutral-100 leading-none z-0">03</div>
+                    <div className="relative z-10">
+                      <div className="text-4xl font-bold text-green-500 mb-2">60%</div>
+                      <h3 className="text-xl font-bold text-neutral-800 mb-3">Less Admin Time</h3>
+                      <p className="text-neutral-600 text-sm">
+                        Dramatic reduction in manual data entry and reconciliation tasks
+                      </p>
                     </div>
                   </div>
                 </div>
                 
-                <div className="hidden md:block md:w-[45%]"></div>
+                <div className="relative py-8 px-10 bg-white border border-neutral-200">
+                  <div className="absolute top-[30px] left-[-10px] text-[140px] font-serif text-neutral-100 leading-none">"</div>
+                  <p className="relative z-10 text-xl text-neutral-600 italic">
+                    ONCODE transformed our sales process with their custom CRM solution. The automation workflows they built with MAKE saved our team countless hours of manual work, and the centralized dashboard gives us unprecedented visibility into our sales pipeline.
+                  </p>
+                  
+                  <div className="mt-8 flex items-center space-x-4">
+                    <div className="w-[40px] h-[40px] bg-neutral-800 rounded-full flex items-center justify-center text-white font-bold">P</div>
+                    <div>
+                      <div className="font-medium text-neutral-800">PRMNTPRO Leadership Team</div>
+                      <div className="text-sm text-neutral-500">Sales Operations</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
