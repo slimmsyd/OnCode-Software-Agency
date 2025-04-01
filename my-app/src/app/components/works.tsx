@@ -13,6 +13,14 @@ interface Work {
 const works: Work[] = [
 
   {
+    title: "PRMNT PRO | Custom CRM",
+    description: "Designed and Developed Custom CRM for PRMNT PRO, to handle SDR.",
+    image: "/works/Sales_Call_Dashboard.png", // Update with your actual image path
+    link: ""
+
+  },
+
+  {
     title: "Kinnected(On-going)",
     description: "A platform using Blockhaing Technology, store your family, history forever, using the immutable nature of blockchain.",
     image: "/works/Kinnected.png", // Update with your actual image path
