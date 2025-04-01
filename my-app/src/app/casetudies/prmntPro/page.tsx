@@ -10,66 +10,66 @@ export default function PRMNTPRO() {
 
       {/* Unconventional Hero Section */}
       <section className="relative min-h-screen bg-black overflow-hidden">
-        {/* Geometric patterns */}
-        <div className="absolute top-0 left-0 w-full h-full">
+        {/* Geometric patterns - hidden on small screens */}
+        <div className="absolute top-0 left-0 w-full h-full hidden sm:block">
           <div className="absolute top-[20%] left-[15%] w-[40vw] h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
           <div className="absolute top-[40%] left-[30%] w-[1px] h-[30vh] bg-gradient-to-b from-transparent via-purple-500 to-transparent"></div>
           <div className="absolute bottom-[10%] right-[20%] w-[35vw] h-[1px] bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
           <div className="absolute top-[60%] right-[35%] w-[1px] h-[25vh] bg-gradient-to-b from-transparent via-indigo-500 to-transparent"></div>
         </div>
         
-        {/* Grid pattern */}
+        {/* Grid pattern - simplified on mobile */}
         <div className="absolute inset-0 opacity-10">
-          <div className="grid grid-cols-12 h-full">
+          <div className="grid grid-cols-4 sm:grid-cols-8 md:grid-cols-12 h-full">
             {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className="border-l border-white/5 h-full"></div>
+              <div key={i} className={`border-l border-white/5 h-full ${i >= 4 ? 'hidden sm:block' : ''} ${i >= 8 ? 'hidden md:block' : ''}`}></div>
             ))}
           </div>
-          <div className="grid grid-rows-12 w-full absolute top-0 left-0">
+          <div className="grid grid-rows-6 sm:grid-rows-8 md:grid-rows-12 w-full absolute top-0 left-0">
             {Array.from({ length: 12 }).map((_, i) => (
-              <div key={i} className="border-t border-white/5 w-full h-[8.33vh]"></div>
+              <div key={i} className={`border-t border-white/5 w-full ${i >= 6 ? 'hidden sm:block' : ''} ${i >= 8 ? 'hidden md:block' : ''}`} style={{ height: `${100 / (i >= 8 ? 12 : i >= 6 ? 8 : 6)}vh` }}></div>
             ))}
           </div>
         </div>
         
         {/* Main content */}
-        <div className="container mx-auto relative z-10 pt-[20vh] px-8">
-          <div className="grid grid-cols-12 gap-6">
+        <div className="container mx-auto relative z-10 pt-[15vh] sm:pt-[20vh] px-4 sm:px-8">
+          <div className="grid grid-cols-12 gap-4 sm:gap-6">
             {/* Left column - Case Study Tag */}
             <div className="col-span-12 md:col-span-3 lg:col-span-2 relative overflow-hidden">
               <div className="hidden md:block w-[1px] h-[120px] bg-white/20 absolute right-0 top-0"></div>
-              <div className="transform -rotate-90 origin-top-left translate-y-[120px] md:translate-y-[180px] text-white/70 uppercase tracking-[0.2em] text-sm font-light">
+              <div className="transform origin-top-left text-white/70 uppercase tracking-[0.2em] text-sm font-light md:transform md:-rotate-90 md:translate-y-[180px]">
                 Case Study
               </div>
             </div>
             
             {/* Middle column - Main Title */}
-            <div className="col-span-12 md:col-span-5 lg:col-span-6 relative">
-              <h1 className="text-5xl md:text-7xl font-bold text-white mb-12 leading-tight">
+            <div className="col-span-12 md:col-span-5 lg:col-span-6 relative mt-6 md:mt-0">
+              <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-8 sm:mb-12 leading-tight">
                 <span className="block">PRMNTPRO</span>
-                <span className="block text-3xl md:text-5xl text-blue-400 mt-3">Sales Ecosystem</span>
+                <span className="block text-2xl sm:text-3xl md:text-5xl text-blue-400 mt-2 sm:mt-3">Sales Ecosystem</span>
               </h1>
               
               <div className="hidden md:block absolute top-[105%] left-0 w-[80%] h-[1px] bg-white/10"></div>
               
-              <div className="mt-16 space-y-3">
+              <div className="mt-8 sm:mt-16 space-y-3">
                 <div className="flex items-start">
-                  <span className="text-blue-400 mr-3">01.</span>
+                  <span className="text-blue-400 mr-3 w-6 flex-shrink-0">01.</span>
                   <span className="text-white/80">Custom CRM Development</span>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-blue-400 mr-3">02.</span>
+                  <span className="text-blue-400 mr-3 w-6 flex-shrink-0">02.</span>
                   <span className="text-white/80">Data Aggregation & Analytics</span>
                 </div>
                 <div className="flex items-start">
-                  <span className="text-blue-400 mr-3">03.</span>
+                  <span className="text-blue-400 mr-3 w-6 flex-shrink-0">03.</span>
                   <span className="text-white/80">Workflow Automation</span>
                 </div>
               </div>
             </div>
             
             {/* Right column - Image & Description */}
-            <div className="col-span-12 md:col-span-4 lg:col-span-4 mt-16 md:mt-0">
+            <div className="col-span-12 md:col-span-4 lg:col-span-4 mt-12 md:mt-0">
               <div className="relative w-full aspect-[4/3] mb-8 overflow-hidden">
                 <div className="absolute top-0 right-0 w-[120px] h-[120px] bg-blue-500 opacity-25 rounded-full blur-[60px]"></div>
                 <div className="absolute bottom-0 left-0 w-[100px] h-[100px] bg-purple-500 opacity-25 rounded-full blur-[50px]"></div>
@@ -93,7 +93,7 @@ export default function PRMNTPRO() {
             </div>
           </div>
           
-          <div className="absolute bottom-[5vh] left-[50%] transform -translate-x-1/2">
+          <div className="hidden sm:block absolute bottom-[5vh] left-[50%] transform -translate-x-1/2">
             <div className="w-[30px] h-[50px] border border-white/20 rounded-full flex items-center justify-center">
               <div className="w-[2px] h-[10px] bg-white/50 animate-bounce"></div>
             </div>
@@ -106,16 +106,16 @@ export default function PRMNTPRO() {
         {/* Diagonal separator */}
         <div className="absolute top-0 left-0 w-full h-[200px] bg-black transform -skew-y-6 origin-top-left -translate-y-[50%]"></div>
         
-        <div className="container mx-auto relative py-[180px] px-8">
-          {/* Scattered horizontal lines */}
-          <div className="absolute left-[10%] top-[20%] w-[100px] h-[1px] bg-neutral-300"></div>
-          <div className="absolute right-[15%] top-[40%] w-[150px] h-[1px] bg-neutral-300"></div>
-          <div className="absolute left-[20%] bottom-[25%] w-[120px] h-[1px] bg-neutral-300"></div>
+        <div className="container mx-auto relative py-[120px] sm:py-[180px] px-4 sm:px-8">
+          {/* Scattered horizontal lines - hidden on mobile */}
+          <div className="absolute left-[10%] top-[20%] w-[100px] h-[1px] bg-neutral-300 hidden sm:block"></div>
+          <div className="absolute right-[15%] top-[40%] w-[150px] h-[1px] bg-neutral-300 hidden sm:block"></div>
+          <div className="absolute left-[20%] bottom-[25%] w-[120px] h-[1px] bg-neutral-300 hidden sm:block"></div>
           
-          {/* Vertical axis line */}
-          <div className="absolute left-[80px] md:left-[120px] top-[15%] bottom-[15%] w-[1px] bg-neutral-800"></div>
+          {/* Vertical axis line - adjusted for mobile */}
+          <div className="absolute left-[20px] sm:left-[80px] md:left-[120px] top-[15%] bottom-[15%] w-[1px] bg-neutral-800 hidden sm:block"></div>
           
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-[100px] md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-[60px] sm:gap-[100px] md:gap-6">
             {/* Side column with phase labels */}
             <div className="hidden md:block md:col-span-3 lg:col-span-2 relative">
               <div className="sticky top-[30vh]">
@@ -128,15 +128,16 @@ export default function PRMNTPRO() {
             {/* Main content column */}
             <div className="col-span-12 md:col-span-9 lg:col-span-10">
               {/* Problem Block */}
-              <div className="relative mb-[200px]">
-                <div className="absolute left-[-80px] md:left-[-50px] top-[15px] flex items-center justify-center w-[40px] h-[40px]">
+              <div className="relative mb-[100px] sm:mb-[200px]">
+                {/* Dot indicator - adjusted for mobile */}
+                <div className="absolute left-0 sm:left-[-50px] top-[15px] flex items-center justify-center w-[40px] h-[40px] -ml-[20px] sm:ml-0">
                   <div className="w-[10px] h-[10px] bg-blue-500 rounded-full"></div>
                 </div>
                 
-                <span className="block font-mono text-blue-600 tracking-wider mb-4">PROBLEM</span>
-                <h2 className="text-5xl font-bold mb-16 leading-tight max-w-3xl">Fragmented data created a disjointed sales process</h2>
+                <span className="block font-mono text-blue-600 tracking-wider mb-4 ml-[30px] sm:ml-0">PROBLEM</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-16 leading-tight max-w-3xl ml-[30px] sm:ml-0">Fragmented data created a disjointed sales process</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16 ml-[30px] sm:ml-0">
                   <div className="relative">
                     <div className="absolute top-0 left-0 w-[30px] h-[30px] border-t border-l border-neutral-300"></div>
                     <p className="pt-6 pl-6 text-neutral-600">
@@ -152,12 +153,12 @@ export default function PRMNTPRO() {
                   </div>
                 </div>
                 
-                <div className="mt-20 flex items-center space-x-4">
+                <div className="mt-16 sm:mt-20 flex items-center space-x-4 ml-[30px] sm:ml-0">
                   <div className="w-[25px] h-[1px] bg-blue-500"></div>
                   <span className="text-blue-600 text-sm">Pain Points</span>
                 </div>
                 
-                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 ml-[30px] sm:ml-0">
                   <div className="py-4 px-5 bg-white border-l-2 border-blue-500">
                     <span className="block text-neutral-800 font-medium">Data Fragmentation</span>
                   </div>
@@ -171,15 +172,16 @@ export default function PRMNTPRO() {
               </div>
               
               {/* Solution Block */}
-              <div className="relative mb-[200px]">
-                <div className="absolute left-[-80px] md:left-[-50px] top-[15px] flex items-center justify-center w-[40px] h-[40px]">
+              <div className="relative mb-[100px] sm:mb-[200px]">
+                {/* Dot indicator - adjusted for mobile */}
+                <div className="absolute left-0 sm:left-[-50px] top-[15px] flex items-center justify-center w-[40px] h-[40px] -ml-[20px] sm:ml-0">
                   <div className="w-[10px] h-[10px] bg-purple-500 rounded-full"></div>
                 </div>
                 
-                <span className="block font-mono text-purple-600 tracking-wider mb-4">SOLUTION</span>
-                <h2 className="text-5xl font-bold mb-16 leading-tight max-w-3xl">A unified sales ecosystem with intelligent automation</h2>
+                <span className="block font-mono text-purple-600 tracking-wider mb-4 ml-[30px] sm:ml-0">SOLUTION</span>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-16 leading-tight max-w-3xl ml-[30px] sm:ml-0">A unified sales ecosystem with intelligent automation</h2>
                 
-                <div className="relative aspect-video mb-16 overflow-hidden">
+                <div className="relative aspect-video mb-8 sm:mb-16 overflow-hidden ml-[30px] sm:ml-0">
                   <div className="absolute inset-0 border border-neutral-200"></div>
                   <img 
                     src={NewImage.src} 
@@ -188,7 +190,7 @@ export default function PRMNTPRO() {
                   />
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16 ml-[30px] sm:ml-0">
                   <div className="relative">
                     <p className="text-neutral-600">
                       We developed a custom Sales CRM that integrated seamlessly with their existing tools. Using MAKE as the automation backbone, we created workflows that automatically captured and processed data from various sources including phone calls, emails, and meetings.
@@ -202,13 +204,13 @@ export default function PRMNTPRO() {
                   </div>
                 </div>
                 
-                <div className="mt-16">
+                <div className="mt-12 sm:mt-16 ml-[30px] sm:ml-0">
                   <div className="inline-block relative">
                     <span className="block font-mono text-sm text-purple-600 tracking-wider mb-2">TECHNOLOGIES USED</span>
                     <div className="absolute bottom-0 left-0 w-full h-[1px] bg-purple-200"></div>
                   </div>
                   
-                  <div className="mt-8 flex flex-wrap gap-6">
+                  <div className="mt-8 flex flex-wrap gap-4 sm:gap-6">
                     <div className="flex items-center space-x-2">
                       <div className="w-[8px] h-[8px] bg-purple-500 rounded-full"></div>
                       <span className="text-neutral-600">MAKE</span>
@@ -234,17 +236,18 @@ export default function PRMNTPRO() {
               </div>
               
               {/* Results Block */}
-              <div className="relative">
-                <div className="absolute left-[-80px] md:left-[-50px] top-[15px] flex items-center justify-center w-[40px] h-[40px]">
+              <div className="relative ml-[30px] sm:ml-0">
+                {/* Dot indicator - adjusted for mobile */}
+                <div className="absolute left-0 sm:left-[-50px] top-[15px] flex items-center justify-center w-[40px] h-[40px] -ml-[20px] sm:ml-0">
                   <div className="w-[10px] h-[10px] bg-green-500 rounded-full"></div>
                 </div>
                 
                 <span className="block font-mono text-green-600 tracking-wider mb-4">RESULTS</span>
-                <h2 className="text-5xl font-bold mb-16 leading-tight max-w-3xl">Transformative outcomes with measurable impact</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-16 leading-tight max-w-3xl">Transformative outcomes with measurable impact</h2>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-6 mb-12 sm:mb-16">
                   <div className="relative pt-[60px]">
-                    <div className="absolute top-0 left-0 text-[120px] font-bold text-neutral-100 leading-none z-0">01</div>
+                    <div className="absolute top-0 left-0 text-[90px] sm:text-[120px] font-bold text-neutral-100 leading-none z-0">01</div>
                     <div className="relative z-10">
                       <div className="text-4xl font-bold text-green-500 mb-2">40%</div>
                       <h3 className="text-xl font-bold text-neutral-800 mb-3">Productivity Boost</h3>
@@ -255,7 +258,7 @@ export default function PRMNTPRO() {
                   </div>
                   
                   <div className="relative pt-[60px]">
-                    <div className="absolute top-0 left-0 text-[120px] font-bold text-neutral-100 leading-none z-0">02</div>
+                    <div className="absolute top-0 left-0 text-[90px] sm:text-[120px] font-bold text-neutral-100 leading-none z-0">02</div>
                     <div className="relative z-10">
                       <div className="text-4xl font-bold text-green-500 mb-2">30%</div>
                       <h3 className="text-xl font-bold text-neutral-800 mb-3">Higher Conversion</h3>
@@ -266,7 +269,7 @@ export default function PRMNTPRO() {
                   </div>
                   
                   <div className="relative pt-[60px]">
-                    <div className="absolute top-0 left-0 text-[120px] font-bold text-neutral-100 leading-none z-0">03</div>
+                    <div className="absolute top-0 left-0 text-[90px] sm:text-[120px] font-bold text-neutral-100 leading-none z-0">03</div>
                     <div className="relative z-10">
                       <div className="text-4xl font-bold text-green-500 mb-2">60%</div>
                       <h3 className="text-xl font-bold text-neutral-800 mb-3">Less Admin Time</h3>
@@ -277,9 +280,9 @@ export default function PRMNTPRO() {
                   </div>
                 </div>
                 
-                <div className="relative py-8 px-10 bg-white border border-neutral-200">
-                  <div className="absolute top-[30px] left-[-10px] text-[140px] font-serif text-neutral-100 leading-none">"</div>
-                  <p className="relative z-10 text-xl text-neutral-600 italic">
+                <div className="relative py-8 px-6 sm:px-10 bg-white border border-neutral-200">
+                  <div className="absolute top-[30px] left-[-10px] text-[100px] sm:text-[140px] font-serif text-neutral-100 leading-none hidden sm:block">"</div>
+                  <p className="relative z-10 text-lg sm:text-xl text-neutral-600 italic">
                     ONCODE transformed our sales process with their custom CRM solution. The automation workflows they built with MAKE saved our team countless hours of manual work, and the centralized dashboard gives us unprecedented visibility into our sales pipeline.
                   </p>
                   
@@ -382,13 +385,13 @@ export default function PRMNTPRO() {
       {/* Technical Approach Section */}
       <section className="relative bg-black">
         {/* Diagonal separator */}
-        <div className="absolute top-0 left-0 w-full h-[200px] bg-neutral-100 transform skew-y-6 origin-top-right -translate-y-[50%]"></div>
+        <div className="absolute top-0 left-0 w-full h-[150px] sm:h-[200px] bg-neutral-100 transform skew-y-6 origin-top-right -translate-y-[50%]"></div>
         
-        <div className="container mx-auto relative z-10 py-[180px] px-8">
-          <div className="mb-24 overflow-hidden">
+        <div className="container mx-auto relative z-10 py-[100px] sm:py-[180px] px-4 sm:px-8">
+          <div className="mb-16 sm:mb-24 overflow-hidden">
             <div className="inline-block relative">
               <span className="block font-mono text-sm text-white/60 tracking-wider mb-2">TECHNICAL APPROACH</span>
-              <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold">How we built it</h2>
+              <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">How we built it</h2>
               <div className="absolute -bottom-3 left-0 w-[80%] h-[1px] bg-white/20"></div>
             </div>
           </div>
@@ -397,19 +400,23 @@ export default function PRMNTPRO() {
             {/* Technical services grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 relative">
               {/* Service 1 */}
-              <div className="group relative">
-                <div className="absolute top-[-30px] left-0 text-[60px] font-bold text-white/5">01</div>
+              <div className="group relative pl-[30px] sm:pl-0">
+                <div className="absolute top-[-30px] left-[30px] sm:left-0 text-[60px] font-bold text-white/5">01</div>
                 
-                {/* Line and dot */}
-                <div className="absolute top-[10px] left-[-40px] w-[25px] h-[1px] bg-blue-500"></div>
-                <div className="absolute top-[10px] left-[-40px] w-[5px] h-[5px] rounded-full bg-blue-500"></div>
+                {/* Line and dot - hidden on mobile */}
+                <div className="absolute top-[10px] left-[-40px] w-[25px] h-[1px] bg-blue-500 hidden sm:block"></div>
+                <div className="absolute top-[10px] left-[-40px] w-[5px] h-[5px] rounded-full bg-blue-500 hidden sm:block"></div>
+                
+                {/* Mobile dot */}
+                <div className="absolute top-[10px] left-0 w-[5px] h-[5px] rounded-full bg-blue-500 sm:hidden"></div>
+                <div className="absolute top-[10px] left-[5px] w-[15px] h-[1px] bg-blue-500 sm:hidden"></div>
                 
                 <div className="relative">
-                  <h3 className="text-2xl text-white font-medium mb-6 group-hover:text-blue-400 transition-colors">
+                  <h3 className="text-xl sm:text-2xl text-white font-medium mb-4 sm:mb-6 group-hover:text-blue-400 transition-colors">
                     Custom CRM Architecture
                   </h3>
                   
-                  <p className="text-white/70 mb-8">
+                  <p className="text-white/70 mb-6 sm:mb-8">
                     We designed and built a tailored CRM solution from the ground up, creating a system that precisely aligned with PRMNTPRO's unique sales workflow and processes.
                   </p>
                   
@@ -433,19 +440,23 @@ export default function PRMNTPRO() {
               </div>
               
               {/* Service 2 */}
-              <div className="group relative">
-                <div className="absolute top-[-30px] left-0 text-[60px] font-bold text-white/5">02</div>
+              <div className="group relative pl-[30px] sm:pl-0">
+                <div className="absolute top-[-30px] left-[30px] sm:left-0 text-[60px] font-bold text-white/5">02</div>
                 
-                {/* Line and dot */}
-                <div className="absolute top-[10px] left-[-40px] w-[25px] h-[1px] bg-purple-500"></div>
-                <div className="absolute top-[10px] left-[-40px] w-[5px] h-[5px] rounded-full bg-purple-500"></div>
+                {/* Line and dot - hidden on mobile */}
+                <div className="absolute top-[10px] left-[-40px] w-[25px] h-[1px] bg-purple-500 hidden sm:block"></div>
+                <div className="absolute top-[10px] left-[-40px] w-[5px] h-[5px] rounded-full bg-purple-500 hidden sm:block"></div>
+                
+                {/* Mobile dot */}
+                <div className="absolute top-[10px] left-0 w-[5px] h-[5px] rounded-full bg-purple-500 sm:hidden"></div>
+                <div className="absolute top-[10px] left-[5px] w-[15px] h-[1px] bg-purple-500 sm:hidden"></div>
                 
                 <div className="relative">
-                  <h3 className="text-2xl text-white font-medium mb-6 group-hover:text-purple-400 transition-colors">
+                  <h3 className="text-xl sm:text-2xl text-white font-medium mb-4 sm:mb-6 group-hover:text-purple-400 transition-colors">
                     MAKE Automation Suite
                   </h3>
                   
-                  <p className="text-white/70 mb-8">
+                  <p className="text-white/70 mb-6 sm:mb-8">
                     Using MAKE as the automation backbone, we created sophisticated workflows that eliminated repetitive tasks and ensured data consistency across all platforms.
                   </p>
                   
@@ -469,19 +480,23 @@ export default function PRMNTPRO() {
               </div>
               
               {/* Service 3 */}
-              <div className="group relative">
-                <div className="absolute top-[-30px] left-0 text-[60px] font-bold text-white/5">03</div>
+              <div className="group relative pl-[30px] sm:pl-0">
+                <div className="absolute top-[-30px] left-[30px] sm:left-0 text-[60px] font-bold text-white/5">03</div>
                 
-                {/* Line and dot */}
-                <div className="absolute top-[10px] left-[-40px] w-[25px] h-[1px] bg-cyan-500"></div>
-                <div className="absolute top-[10px] left-[-40px] w-[5px] h-[5px] rounded-full bg-cyan-500"></div>
+                {/* Line and dot - hidden on mobile */}
+                <div className="absolute top-[10px] left-[-40px] w-[25px] h-[1px] bg-cyan-500 hidden sm:block"></div>
+                <div className="absolute top-[10px] left-[-40px] w-[5px] h-[5px] rounded-full bg-cyan-500 hidden sm:block"></div>
+                
+                {/* Mobile dot */}
+                <div className="absolute top-[10px] left-0 w-[5px] h-[5px] rounded-full bg-cyan-500 sm:hidden"></div>
+                <div className="absolute top-[10px] left-[5px] w-[15px] h-[1px] bg-cyan-500 sm:hidden"></div>
                 
                 <div className="relative">
-                  <h3 className="text-2xl text-white font-medium mb-6 group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-xl sm:text-2xl text-white font-medium mb-4 sm:mb-6 group-hover:text-cyan-400 transition-colors">
                     Database Architecture
                   </h3>
                   
-                  <p className="text-white/70 mb-8">
+                  <p className="text-white/70 mb-6 sm:mb-8">
                     We implemented a custom database setup optimized specifically for sales data structures, enabling powerful analytics while ensuring long-term scalability.
                   </p>
                   
@@ -505,20 +520,20 @@ export default function PRMNTPRO() {
               </div>
             </div>
             
-            {/* Technical diagram */}
-            <div className="mt-32 relative">
-              <h3 className="text-white/80 text-xl mb-12">System Architecture</h3>
+            {/* Technical diagram - made responsive */}
+            <div className="mt-20 sm:mt-32 relative">
+              <h3 className="text-white/80 text-xl mb-8 sm:mb-12">System Architecture</h3>
               
-              <div className="bg-white/5 border border-white/10 p-8 relative overflow-hidden">
+              <div className="bg-white/5 border border-white/10 p-4 sm:p-8 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-blue-500/10 rounded-full blur-[100px]"></div>
                 <div className="absolute bottom-0 left-0 w-[150px] h-[150px] bg-purple-500/10 rounded-full blur-[80px]"></div>
                 
-                <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {/* Data Sources */}
-                  <div className="border-r border-white/10 pr-8">
+                <div className="relative grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-4">
+                  {/* Data Sources - full width on mobile */}
+                  <div className="md:border-r md:border-white/10 md:pr-8">
                     <div className="text-blue-400 uppercase tracking-wider text-sm mb-4">Data Sources</div>
                     
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       <div className="p-3 border border-white/10 text-white/80 text-sm">
                         CRM APIs
                       </div>
@@ -536,13 +551,18 @@ export default function PRMNTPRO() {
                     <div className="mt-6 flex justify-end">
                       <div className="w-[30px] h-[1px] bg-blue-500/50"></div>
                     </div>
+                    
+                    {/* Mobile connector - only visible on mobile */}
+                    <div className="flex justify-center my-4 md:hidden">
+                      <div className="w-[1px] h-[30px] bg-white/20"></div>
+                    </div>
                   </div>
                   
-                  {/* Processing */}
-                  <div className="border-r border-white/10 px-8">
+                  {/* Processing - full width on mobile */}
+                  <div className="md:border-r md:border-white/10 md:px-8">
                     <div className="text-purple-400 uppercase tracking-wider text-sm mb-4">Processing</div>
                     
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       <div className="p-3 border border-white/10 text-white/80 text-sm">
                         MAKE Workflows
                       </div>
@@ -560,13 +580,18 @@ export default function PRMNTPRO() {
                     <div className="mt-6 flex justify-end">
                       <div className="w-[30px] h-[1px] bg-purple-500/50"></div>
                     </div>
+                    
+                    {/* Mobile connector - only visible on mobile */}
+                    <div className="flex justify-center my-4 md:hidden">
+                      <div className="w-[1px] h-[30px] bg-white/20"></div>
+                    </div>
                   </div>
                   
-                  {/* Output */}
-                  <div className="pl-8">
+                  {/* Output - full width on mobile */}
+                  <div className="md:pl-8">
                     <div className="text-cyan-400 uppercase tracking-wider text-sm mb-4">Output</div>
                     
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       <div className="p-3 border border-white/10 text-white/80 text-sm">
                         Custom Dashboard
                       </div>
@@ -583,9 +608,9 @@ export default function PRMNTPRO() {
                   </div>
                 </div>
                 
-                {/* Connector lines */}
-                <div className="absolute top-[50%] left-[33%] w-[2px] h-[30px] bg-white/20"></div>
-                <div className="absolute top-[50%] left-[66%] w-[2px] h-[30px] bg-white/20"></div>
+                {/* Connector lines - hidden on mobile */}
+                <div className="absolute top-[50%] left-[33%] w-[2px] h-[30px] bg-white/20 hidden md:block"></div>
+                <div className="absolute top-[50%] left-[66%] w-[2px] h-[30px] bg-white/20 hidden md:block"></div>
               </div>
             </div>
           </div>
@@ -594,38 +619,41 @@ export default function PRMNTPRO() {
       
       {/* CTA Section */}
       <section className="relative bg-white overflow-hidden">
+        {/* Background grid - simplified for mobile */}
         <div className="absolute top-0 left-0 w-full h-full">
           <div className="absolute top-0 left-0 w-full h-[1px] bg-neutral-200"></div>
           <div className="absolute bottom-0 left-0 w-full h-[1px] bg-neutral-200"></div>
           <div className="absolute top-0 left-0 h-full w-[1px] bg-neutral-200"></div>
           <div className="absolute top-0 right-0 h-full w-[1px] bg-neutral-200"></div>
           
-          <div className="absolute top-[25%] left-0 w-full h-[1px] bg-neutral-200"></div>
-          <div className="absolute top-[50%] left-0 w-full h-[1px] bg-neutral-200"></div>
-          <div className="absolute top-[75%] left-0 w-full h-[1px] bg-neutral-200"></div>
+          {/* Horizontal lines - reduced for mobile */}
+          <div className="absolute top-[33.33%] left-0 w-full h-[1px] bg-neutral-200 sm:top-[25%]"></div>
+          <div className="absolute top-[66.66%] left-0 w-full h-[1px] bg-neutral-200 sm:top-[50%]"></div>
+          <div className="absolute top-[75%] left-0 w-full h-[1px] bg-neutral-200 hidden sm:block"></div>
           
-          <div className="absolute top-0 left-[25%] h-full w-[1px] bg-neutral-200"></div>
-          <div className="absolute top-0 left-[50%] h-full w-[1px] bg-neutral-200"></div>
-          <div className="absolute top-0 left-[75%] h-full w-[1px] bg-neutral-200"></div>
+          {/* Vertical lines - reduced for mobile */}
+          <div className="absolute top-0 left-[33.33%] h-full w-[1px] bg-neutral-200 sm:left-[25%]"></div>
+          <div className="absolute top-0 left-[66.66%] h-full w-[1px] bg-neutral-200 sm:left-[50%]"></div>
+          <div className="absolute top-0 left-[75%] h-full w-[1px] bg-neutral-200 hidden sm:block"></div>
         </div>
         
-        <div className="container mx-auto relative z-10 py-[120px] px-8">
+        <div className="container mx-auto relative z-10 py-[80px] sm:py-[120px] px-4 sm:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-8 text-neutral-900">Ready to transform your sales process?</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-neutral-900">Ready to transform your sales process?</h2>
             
-            <p className="text-xl text-neutral-600 mb-12">
+            <p className="text-lg sm:text-xl text-neutral-600 mb-8 sm:mb-12">
               Let's discuss how our custom solutions can help streamline your operations and boost revenue.
             </p>
             
             <Link
               href="https://calendly.com/0ncode-info/30min?month=2025-04&date=2025-04-02"
-              className="inline-flex items-center justify-center border border-neutral-900 bg-white text-neutral-900 hover:bg-neutral-900 hover:text-white transition-colors px-8 py-4 min-w-[200px] group relative overflow-hidden"
+              className="inline-flex items-center justify-center border border-neutral-900 bg-white text-neutral-900 hover:bg-neutral-900 hover:text-white transition-colors px-6 sm:px-8 py-3 sm:py-4 min-w-[180px] sm:min-w-[200px] group relative overflow-hidden"
             >
               <span className="relative z-10 font-medium">Get in touch</span>
               <div className="absolute top-0 left-0 w-full h-full bg-neutral-900 transform translate-x-[-110%] group-hover:translate-x-0 transition-transform duration-300 ease-out"></div>
             </Link>
             
-            <div className="mt-16">
+            <div className="mt-12 sm:mt-16">
               <Link
                 href="/casetudies/universalLaw"
                 className="inline-flex items-center gap-2 text-neutral-500 hover:text-neutral-900 transition-colors"

@@ -473,31 +473,7 @@ Summarize your post here and provide any final thoughts.
           
           {showPreview ? (
             <div className="border border-gray-300 rounded-md p-4 min-h-[300px] prose prose-sm max-w-none bg-white">
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                components={{
-                  code: ({ node, inline, className, children, ...props }) => {
-                    const match = /language-(\w+)/.exec(className || '');
-                    return !inline && match ? (
-                      <SyntaxHighlighter
-                        style={vscDarkPlus}
-                        language={match[1]}
-                        PreTag="div"
-                        className="rounded-md"
-                        {...props}
-                      >
-                        {String(children).replace(/\n$/, '')}
-                      </SyntaxHighlighter>
-                    ) : (
-                      <code className="bg-gray-100 px-1 py-0.5 rounded text-sm font-mono" {...props}>
-                        {children}
-                      </code>
-                    );
-                  },
-                }}
-              >
-                {content || '*No content yet. Start writing or switch to edit mode.*'}
-              </ReactMarkdown>
+    
             </div>
           ) : (
             <textarea
@@ -584,7 +560,7 @@ Summarize your post here and provide any final thoughts.
               <li><code className="bg-gray-100 px-1 rounded">[Link](url)</code></li>
               <li><code className="bg-gray-100 px-1 rounded">![Image](url)</code></li>
               <li><code className="bg-gray-100 px-1 rounded">- List item</code></li>
-              <li><code className="bg-gray-100 px-1 rounded">> Blockquote</code></li>
+              <li><code className="bg-gray-100 px-1 rounded"> Blockquote</code></li>
             </ul>
           </div>
         </div>
