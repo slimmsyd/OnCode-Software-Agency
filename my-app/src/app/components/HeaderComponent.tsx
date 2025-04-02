@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Navigation from "./Navigation";
 import { RefObject, useState } from "react";
+import styles from "../styles/response.module.css";
 
 interface Props {
   refSection1: RefObject<HTMLDivElement>;
@@ -44,10 +45,17 @@ export default function HeaderComponent({
 }: Props) {
   const [showPopup, setShowPopup] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [aiResponse, setAiResponse] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Sending email to:", email);
+    
+    // Prevent submission if already loading
+    if (isLoading) return;
+
+    console.log("Sending idea validation request for:", email);
+    setIsLoading(true); // Start loading
 
     // Format the phone number
     const formattedPhone = formatPhoneNumber(phone);
@@ -55,12 +63,13 @@ export default function HeaderComponent({
     // Validate phone number
     if (!isValidPhoneNumber(formattedPhone)) {
       alert("Please enter a valid US phone number (10 digits)");
+      setIsLoading(false); // Stop loading on validation error
       return;
     }
 
     try {
-      // Send form submission
-      const response = await fetch("/api/sendMessage", {
+      // Send to idea validation endpoint
+      const validationResponse = await fetch("/api/validateIdea", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,54 +82,60 @@ export default function HeaderComponent({
         }),
       });
 
-      // Send admin notification
-      const adminEmailResponse = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          to: "ssanderss444@gmail.com",
-          subject: "New Form Submission on Oncode",
-          content: `
-            Email: ${email}
-            Phone: ${formattedPhone}
-            Company: ${company}
-            Idea: ${idea}
-          `,
-          isClientEmail: false,
-        }),
-      });
-
-      // Send client confirmation
-      const clientEmailResponse = await fetch("/api/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          to: email,
-          subject: "Thank you for your submission",
-          content: `
-.`, // The content will be set in the route
-          isClientEmail: true,
-        }),
-      });
-
-      if (adminEmailResponse.ok && clientEmailResponse.ok) {
-        // alert(data.message);
-        setEmail("");
-        setPhone("");
-        setCompany("");
-        setIdea("");
-        setShowPopup(false);
-        setShowSuccessPopup(true);
-        // Auto-hide success message after 3 seconds
-        setTimeout(() => setShowSuccessPopup(false), 3000);
+      if (!validationResponse.ok) {
+        // Try to get error message from response
+        let errorMsg = 'Failed to validate idea';
+        try {
+          const errorData = await validationResponse.json();
+          errorMsg = errorData.error || errorMsg;
+        } catch (jsonError) {
+          // Ignore if response is not JSON
+        }
+        throw new Error(errorMsg);
       }
-    } catch (error) {
+
+      // Extract the AI response from the response body
+      const responseData = await validationResponse.json();
+      const response = responseData.aiResponse;
+      setAiResponse(response);
+
+      console.log("AI Response:", response);
+
+      // Send form submission to webhook with AI response (Run in background, don't wait)
+      fetch("https://godofai.app.n8n.cloud/webhook-test/228d6cec-48b3-4c6d-9628-f1951ae4fcc3", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          phone: formattedPhone,
+          company,
+          idea,
+          aiResponse: response,
+        }),
+      }).catch(webhookError => {
+        // Log webhook error but don't block UI
+        console.error("Webhook submission failed:", webhookError);
+      });
+
+      // Clear form and show success message
+      setEmail("");
+      setPhone("");
+      setCompany("");
+      setIdea("");
+      setShowPopup(false);
+      setShowSuccessPopup(true);
+      // Auto-hide success message after 10 seconds
+      setTimeout(() => {
+        setShowSuccessPopup(false);
+        setAiResponse("");
+      }, 10000);
+    } catch (error: any) {
       console.error("Failed to submit form:", error);
-      alert("Something went wrong. Please try again.");
+      alert(`Something went wrong: ${error.message || 'Please try again.'}`);
+    } finally {
+      setIsLoading(false); // Stop loading regardless of success or failure
     }
   };
 
@@ -204,7 +219,7 @@ export default function HeaderComponent({
               </svg>
               Book A Call
             </Link>
-{/* 
+
             <button
               onClick={() => setShowPopup(true)}
               className="bg-white text-[14px] flex flex-row gap-[10px] items-center px-[20px] py-[10px] rounded-[8px] hover:bg-gray-100 transition-colors duration-300 border border-[#CDCDCD] w-[200px] m-auto"
@@ -228,7 +243,9 @@ export default function HeaderComponent({
                 <path d="M16 17H8"></path>
               </svg>
               Validate Your Idea
-            </button> */}
+            </button> 
+
+
           </div>
 
           <div className="flex flex-col gap-[10px] mt-[20px] w-[95%] md:w-[60%]">
@@ -297,6 +314,7 @@ export default function HeaderComponent({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="border p-2 rounded"
+                disabled={isLoading}
               />
               <input
                 type="tel"
@@ -305,6 +323,7 @@ export default function HeaderComponent({
                 value={phone}
                 onChange={handlePhoneChange}
                 className="border p-2 rounded"
+                disabled={isLoading}
               />
               <input
                 type="text"
@@ -313,6 +332,7 @@ export default function HeaderComponent({
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
                 className="border p-2 rounded"
+                disabled={isLoading}
               />
               <textarea
                 placeholder="Tell us about your idea"
@@ -321,36 +341,78 @@ export default function HeaderComponent({
                 onChange={(e) => setIdea(e.target.value)}
                 rows={4}
                 className="border p-2 rounded resize-none"
+                disabled={isLoading}
               />
               <button
                 type="submit"
-                className="bg-black text-black py-2 px-4 rounded hover:bg-gray-800"
+                className={`bg-black text-white py-2 px-4 rounded hover:bg-gray-800 flex items-center justify-center transition-opacity ${isLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                disabled={isLoading}
               >
-                Submit
+                {isLoading ? (
+                  <svg
+                    className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                    ></path>
+                  </svg>
+                ) : (
+                  'Submit'
+                )}
               </button>
             </form>
           </div>
         </div>
       )}
       {showSuccessPopup && (
-        <div className="fixed inset-0 flex items-start pt-[10px] justify-center z-[100] left-0 ">
-          <div className="bg-white rounded-lg p-[0.5rem] shadow-lg flex items-center gap-3 animate-fade-in">
-            <svg
-              className="w-6 h-6 text-green-500"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <p className="text-gray-800 font-medium">
-              Email Submitted! Thank you
-            </p>
+        <div className="fixed inset-0 flex items-start pt-[10px] justify-center z-[100] left-0">
+          <div className="bg-white rounded-lg p-6 shadow-lg max-w-2xl w-full mx-4 animate-fade-in">
+            <div className="flex items-center gap-3 mb-4">
+              <svg
+                className="w-6 h-6 text-green-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <h3 className="text-xl font-semibold text-gray-800">
+                Thank you for sharing your vision!
+              </h3>
+            </div>
+            <div 
+              className={`prose max-w-none ${styles['response-container']}`}
+              dangerouslySetInnerHTML={{ __html: aiResponse }}
+            />
+            <div className="mt-4 flex justify-end">
+              <button
+                onClick={() => {
+                  setShowSuccessPopup(false);
+                  setAiResponse("");
+                }}
+                className="text-gray-500 hover:text-gray-700"
+              >
+                Close
+              </button>
+            </div>
           </div>
         </div>
       )}

@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     // .
   
 
-    // Configure email transporter (update with your email service details)
+    // Configure email transporter (update wit¬¬¬h your email service details)
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
       port: parseInt(process.env.SMTP_PORT || '587'),
