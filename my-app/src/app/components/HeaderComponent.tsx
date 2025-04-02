@@ -102,7 +102,7 @@ export default function HeaderComponent({
       console.log("AI Response:", response);
 
       // Send form submission to webhook with AI response (Run in background, don't wait)
-      fetch("https://godofai.app.n8n.cloud/webhook-test/228d6cec-48b3-4c6d-9628-f1951ae4fcc3", {
+      fetch("https://godofai.app.n8n.cloud/webhook/228d6cec-48b3-4c6d-9628-f1951ae4fcc3", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
