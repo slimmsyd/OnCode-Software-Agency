@@ -13,6 +13,13 @@ interface Work {
 const works: Work[] = [
 
   {
+    title: "PRMNT PRO | Contract Extraction AI Pipeline",
+    description: "We built an intelligent PDF Contract Extractor that leverages LangChain and OpenAI to analyze government contract documents. The system can analyze entire contracts or extract information page by page, giving the team unprecedented flexibility in how they review documents.",
+    image: "/works/Preem_Chat1.png", // Update with your actual image path
+    link: "/casetudies/prmntProExtractor"
+
+  },
+  {
     title: "PRMNT PRO | Custom CRM",
     description: "Designed and Developed Custom CRM for PRMNT PRO, to handle SDR.",
     image: "/works/Sales_Call_Dashboard.png", // Update with your actual image path

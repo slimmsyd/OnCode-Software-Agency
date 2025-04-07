@@ -255,16 +255,7 @@ export default function HomePage() {
       </div> */}
 
       <main className="relative">
-        <div id="home" ref={refSectionHome}>
-          <HeaderComponent
-            refSection1={refSection1}
-            refSection2={refSection2}
-            refSection3={refSection3}
-            refSection4={refSection4}
-            priceRef={priceRef}
-            scrollToSection={scrollToSection}
-          />
-        </div>
+     
 
         <div id="ecosystem" ref={refSection1}>
           <About />
