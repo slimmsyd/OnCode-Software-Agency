@@ -1,6 +1,7 @@
 import Navigation from "@/app/components/Navigation";
 import Video from "@/app/components/VideoComponent";
 import Footer from "@/app/components/Footer";
+import N8nWorkflow from  "../../../../public/works/N8nWorlfow.png"
 import Link from "next/link";
 export default function UniversalLaw() {
   return (
@@ -33,7 +34,7 @@ export default function UniversalLaw() {
         <div className="flex flex-col items-center justify-center md:w-[45%]">
           <div className="w-full rounded-xl overflow-hidden shadow-2xl aspect-video">
             <iframe
-              src="https://www.youtube.com/embed/zFZooXB8wzA"
+              src="https://www.youtube.com/watch?v=jW2C5EAEKR4&t=3s"
               width="100%"
               height="100%"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -93,6 +94,55 @@ export default function UniversalLaw() {
               </ul>
               <p className="text-[18px] text-white leading-relaxed mt-6">
                 This automated workflow reduced content creation time from hours to just 30 minutes, while maintaining high-quality output and consistency.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row items-start justify-between gap-[40px]">
+          <div className="flex flex-col items-start justify-start md:w-[200px]">
+            <p className="text-[16px] text-blue-400 font-medium tracking-wide uppercase">Workflow Automation</p>
+          </div>
+
+          <div className="flex flex-col items-start justify-start flex-1 gap-6">
+            <div className="bg-gray-900 p-8 rounded-xl">
+              <p className="text-[18px] text-white leading-relaxed mb-6">
+                We developed an intelligent N8N workflow automation that streamlines Universal Law's YouTube content management:
+              </p>
+              
+              <div className="w-full rounded-xl overflow-hidden mb-6">
+                <img 
+                  src={N8nWorkflow.src} 
+                  alt="N8N Workflow Automation Diagram"
+                  className="w-full h-auto"
+                />
+              </div>
+
+              <p className="text-[18px] text-white leading-relaxed mb-6">
+                This automation workflow enables Universal Law to:
+              </p>
+
+              <ul className="grid grid-cols-1 gap-4">
+                <li className="bg-black p-4 rounded-lg text-white flex items-center gap-3">
+                  <span className="text-blue-400">•</span>
+                  <span>Automatically transcribe uploaded YouTube videos</span>
+                </li>
+                <li className="bg-black p-4 rounded-lg text-white flex items-center gap-3">
+                  <span className="text-blue-400">•</span>
+                  <span>Generate SEO-optimized video descriptions</span>
+                </li>
+                <li className="bg-black p-4 rounded-lg text-white flex items-center gap-3">
+                  <span className="text-blue-400">•</span>
+                  <span>Create relevant video titles based on content</span>
+                </li>
+                <li className="bg-black p-4 rounded-lg text-white flex items-center gap-3">
+                  <span className="text-blue-400">•</span>
+                  <span>Streamline the metadata management process</span>
+                </li>
+              </ul>
+              
+              <p className="text-[18px] text-white leading-relaxed mt-6">
+                This automation significantly reduces the manual effort required for content management while ensuring consistent, SEO-friendly metadata across all videos.
               </p>
             </div>
           </div>

@@ -259,7 +259,7 @@ export default function PRMNTPROExtractor() {
                     </div>
                   </div>
                   
-                  <div className="relative pt-[60px]">
+                  {/* <div className="relative pt-[60px]">
                     <div className="absolute top-0 left-0 text-[90px] sm:text-[120px] font-bold text-neutral-100 leading-none z-0">02</div>
                     <div className="relative z-10">
                       <div className="text-4xl font-bold text-green-500 mb-2">35%</div>
@@ -269,7 +269,7 @@ export default function PRMNTPROExtractor() {
                       </p>
                     </div>
                   </div>
-                  
+                   */}
                   <div className="relative pt-[60px]">
                     <div className="absolute top-0 left-0 text-[90px] sm:text-[120px] font-bold text-neutral-100 leading-none z-0">03</div>
                     <div className="relative z-10">
@@ -515,9 +515,9 @@ export default function PRMNTPROExtractor() {
                       <div className="p-3 border border-white/10 text-white/80 text-sm">
                         Requirement Summary
                       </div>
-                      <div className="p-3 border border-white/10 text-white/80 text-sm">
+                      {/* <div className="p-3 border border-white/10 text-white/80 text-sm">
                         Code Interpretation
-                      </div>
+                      </div> */}
                       <div className="p-3 border border-white/10 text-white/80 text-sm">
                         Gap Analysis
                       </div>
