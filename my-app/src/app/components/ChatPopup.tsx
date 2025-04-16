@@ -109,30 +109,75 @@ export default function ChatPopup() {
   ]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Webhook URL for tracking conversations
-  const webhookUrl = "https://hook.us2.make.com/kz8n27322r3opkg8cl659hfr7exfpkyq";
+  // Webhook URLs for tracking conversations
+  const webhookUrl1 = "https://hook.us2.make.com/kz8n27322r3opkg8cl659hfr7exfpkyq";
+  const webhookUrl2 = "https://hook.us1.make.com/sij9fbffnrt7zacbv8nflikuw0s4dnc1";
 
-  // Function to send data to webhook
-  const sendToWebhook = async (userMessage: string, assistantMessage: string) => {
+  // Function to send data to webhooks
+  const sendToWebhooks = async (userMessage: string, assistantMessage: string) => {
     try {
-      const response = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          userMessage,
-          assistantMessage,
+      console.log('Sending to webhooks:', { userMessage, assistantMessage });
+      
+      // Format data for Make.com webhook
+      const webhookData = {
+        data: {
+          userMessage: userMessage || "empty",
+          assistantMessage: assistantMessage || "empty",
           timestamp: new Date().toISOString(),
           source: 'OnCode Website Chat'
-        }),
-      });
+        }
+      };
       
-      if (!response.ok) {
-        console.error('Webhook error:', response.status);
+      console.log('Formatted webhook data:', JSON.stringify(webhookData, null, 2));
+      
+      // Send to first webhook
+      // try {
+      //   console.log('Sending to webhook 1:', webhookUrl1);
+      //   const response1 = await fetch(webhookUrl1, {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify({
+      //       userMessage,
+      //       assistantMessage,
+      //       timestamp: new Date().toISOString(),
+      //       source: 'OnCode Website Chat'
+      //     }),
+      //   });
+      
+      //   if (!response1.ok) {
+      //     console.error('Webhook 1 error:', response1.status, await response1.text());
+      //   } else {
+      //     console.log('Webhook 1 success:', await response1.text());
+      //   }
+      // } catch (error) {
+      //   console.error('Error sending to webhook 1:', error);
+      // }
+
+      // Send to second webhook
+      try {
+        console.log('Sending to webhook 2:', webhookUrl2);
+        console.log("Loggin the user Message", userMessage)
+        console.log('Assistant message:', assistantMessage);
+        const response2 = await fetch(webhookUrl2, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(webhookData),
+        });
+        
+        if (!response2.ok) {
+          console.error('Webhook 2 error:', response2.status, await response2.text());
+        } else {
+          console.log('Webhook 2 success:', await response2.text());
+        }
+      } catch (error) {
+        console.error('Error sending to webhook 2:', error);
       }
     } catch (error) {
-      console.error('Error sending to webhook:', error);
+      console.error('Error in sendToWebhooks:', error);
     }
   };
 
@@ -158,8 +203,8 @@ export default function ChatPopup() {
         }
       ]);
       
-      // Send initial conversation to webhook
-      sendToWebhook("", initialMessage);
+      // Send initial conversation to webhooks
+      sendToWebhooks("", initialMessage);
     }, 1000);
 
     return () => clearTimeout(timer);
@@ -252,12 +297,12 @@ Our AI expertise includes building custom analytics dashboards, developing AI ag
         includeContactButton: true
       };
       
-      setTimeout(() => {
+      setTimeout(async () => {
         setMessages((prev) => [...prev, blockchainResponse]);
         setIsLoading(false);
         
-        // Send to webhook
-        sendToWebhook(userMessageText, blockchainResponseContent);
+        // Send to webhooks
+        await sendToWebhooks(userMessageText, blockchainResponseContent);
       }, 1000);
       return;
     }
@@ -273,12 +318,12 @@ Our AI expertise includes building custom analytics dashboards, developing AI ag
         includeContactButton: true
       };
       
-      setTimeout(() => {
+      setTimeout(async () => {
         setMessages((prev) => [...prev, aiResponse]);
         setIsLoading(false);
         
-        // Send to webhook
-        sendToWebhook(userMessageText, aiResponseContent);
+        // Send to webhooks
+        await sendToWebhooks(userMessageText, aiResponseContent);
       }, 1000);
       return;
     }
@@ -309,12 +354,12 @@ Would you like to learn more about any specific service or discuss your project 
         includeContactButton: true
       };
       
-      setTimeout(() => {
+      setTimeout(async () => {
         setMessages((prev) => [...prev, servicesMessage]);
         setIsLoading(false);
         
-        // Send to webhook
-        sendToWebhook(userMessageText, servicesMessageContent);
+        // Send to webhooks
+        await sendToWebhooks(userMessageText, servicesMessageContent);
       }, 1000);
       return;
     }
@@ -342,12 +387,12 @@ Would you like to schedule a call with our team?`;
         includeContactButton: true
       };
       
-      setTimeout(() => {
+      setTimeout(async () => {
         setMessages((prev) => [...prev, contactMessage]);
         setIsLoading(false);
         
-        // Send to webhook
-        sendToWebhook(userMessageText, contactMessageContent);
+        // Send to webhooks
+        await sendToWebhooks(userMessageText, contactMessageContent);
       }, 1000);
       return;
     }
@@ -382,8 +427,8 @@ Would you like to schedule a call with our team?`;
 
       setMessages((prev) => [...prev, assistantMessage]);
       
-      // Send to webhook
-      sendToWebhook(userMessageText, responseText);
+      // Send to webhooks
+      await sendToWebhooks(userMessageText, responseText);
     } catch (error) {
       console.error('Error:', error);
       
@@ -396,16 +441,16 @@ Would you like to schedule a call with our team?`;
       
       setMessages((prev) => [...prev, errorMessage]);
       
-      // Send error to webhook
-      sendToWebhook(userMessageText, errorMessageContent);
+      // Send error to webhooks
+      await sendToWebhooks(userMessageText, errorMessageContent);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleContactButtonClick = () => {
+  const handleContactButtonClick = async () => {
     // Track contact button clicks in webhook
-    sendToWebhook("User clicked contact button", "Redirected to Calendly");
+    await sendToWebhooks("User clicked contact button", "Redirected to Calendly");
     window.open('https://calendly.com/0ncode-info/30min', '_blank');
   };
 
