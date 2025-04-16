@@ -196,7 +196,7 @@ export default function HeaderComponent({
           <div className="flex flex-col sm:flex-row gap-[20px] mt-[20px] w-full sm:w-auto px-4 sm:px-0">
             <Link
               target="_blank"
-              href="https://calendly.com/0ncode-info/30min"
+              href="https://calendly.com/sydcodes/30min"
               // onClick={() => scrollToSection("about")}
               className="bg-black text-white text-[14px] flex flex-row gap-[10px] items-center px-[10px] py-[8px] rounded-[8px] hover:bg-gray-100 transition-colors duration-300 w-[200px] m-auto text-center justify-center"
             >

@@ -451,7 +451,7 @@ Would you like to schedule a call with our team?`;
   const handleContactButtonClick = async () => {
     // Track contact button clicks in webhook
     await sendToWebhooks("User clicked contact button", "Redirected to Calendly");
-    window.open('https://calendly.com/0ncode-info/30min', '_blank');
+    window.open('https://calendly.com/sydcodes/30min', '_blank');
   };
 
   return (
