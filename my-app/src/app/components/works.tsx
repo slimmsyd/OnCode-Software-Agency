@@ -19,13 +19,13 @@ const works: Work[] = [
     link: "/casetudies/prmntProExtractor"
 
   },
-  {
-    title: "PRMNT PRO | Custom CRM",
-    description: "Designed and Developed Custom CRM for PRMNT PRO, to handle SDR.",
-    image: "/works/Sales_Call_Dashboard.png", // Update with your actual image path
-    link: "/casetudies/prmntPro"
+  // {
+  //   title: "PRMNT PRO | Custom CRM",
+  //   description: "Designed and Developed Custom CRM for PRMNT PRO, to handle SDR.",
+  //   image: "/works/Sales_Call_Dashboard.png", // Update with your actual image path
+  //   link: "/casetudies/prmntPro"
 
-  },
+  // },
 
   {
     title: "Kinnected(On-going)",

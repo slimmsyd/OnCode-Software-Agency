@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 import Video from "./VideoComponent";
 import HeaderComponent from "./HeaderComponent";
+import CaseStudySection from "./CaseStudySection";
 
 import Lenis from "lenis";
 import { gsap } from "gsap";
@@ -260,6 +261,9 @@ export default function HomePage() {
         <div id="ecosystem" ref={refSection1}>
           <About />
         </div>
+
+        {/* Case Study Section */}
+        <CaseStudySection />
 
         <div id="about" ref={refSection2}>
           <Process />
