@@ -9,7 +9,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 const clientData = {
   'JamesBooth': {
     name: 'James Booth ',
-    industry: 'Financial Technology',
+    industry: '',
     primaryColor: '#0891b2', // cyan-600
     defaultFormValues: {
       projectName: "Distributed Data Security Platform",
