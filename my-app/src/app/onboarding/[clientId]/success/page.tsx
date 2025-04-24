@@ -9,7 +9,7 @@ const clientData = {
 
   'JamesBooth': {
     name: 'James Booth ',
-    industry: 'Financial Technology',
+    industry: '',
     primaryColor: '#0891b2', // cyan-600
     contactEmail: 'james.booth@example.com',
     contactName: 'James Booth'
