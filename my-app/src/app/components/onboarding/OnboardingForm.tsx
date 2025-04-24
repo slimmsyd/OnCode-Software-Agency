@@ -4,37 +4,69 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function OnboardingForm() {
+interface OnboardingFormProps {
+  clientId?: string;
+  defaultValues?: {
+    projectName?: string;
+    primaryContact?: string;
+    email?: string;
+    phone?: string;
+    problemStatement?: string;
+    targetAudience?: string;
+    coreSolution?: string;
+    coreFeatures?: string;
+    successMetrics?: string;
+    mustHaveFeatures?: string;
+    niceToHaveFeatures?: string;
+    techStack?: string;
+    deploymentModel?: string;
+    timeline?: string;
+    budget?: string;
+    additionalNotes?: string;
+  };
+}
+
+export default function OnboardingForm({ clientId = 'default', defaultValues = {} }: OnboardingFormProps) {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
+    // Client tracking info
+    clientId: clientId,
+    submissionDate: new Date().toISOString(),
+    
     // Step 1: Basic Project Information
-    projectName: "",
-    primaryContact: "",
-    email: "",
-    phone: "",
+    projectName: defaultValues.projectName || "",
+    primaryContact: defaultValues.primaryContact || "",
+    email: defaultValues.email || "",
+    phone: defaultValues.phone || "",
     
     // Step 2: Problem & Solution
-    problemStatement: "",
-    targetAudience: "",
-    coreSolution: "",
+    problemStatement: defaultValues.problemStatement || "",
+    targetAudience: defaultValues.targetAudience || "",
+    coreSolution: defaultValues.coreSolution || "",
     
     // Step 3: MVP Requirements & Features
-    coreFeatures: "",
-    successMetrics: "",
-    mustHaveFeatures: "",
-    niceToHaveFeatures: "",
+    coreFeatures: defaultValues.coreFeatures || "",
+    successMetrics: defaultValues.successMetrics || "",
+    mustHaveFeatures: defaultValues.mustHaveFeatures || "",
+    niceToHaveFeatures: defaultValues.niceToHaveFeatures || "",
     
     // Step 4: Technical & Timeline
-    techStack: "",
-    deploymentModel: "",
-    timeline: "",
-    budget: "",
-    additionalNotes: ""
+    techStack: defaultValues.techStack || "",
+    deploymentModel: defaultValues.deploymentModel || "",
+    timeline: defaultValues.timeline || "",
+    budget: defaultValues.budget || "",
+    additionalNotes: defaultValues.additionalNotes || ""
   });
   const router = useRouter();
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+    
+    // Log phone field changes
+    if (name === 'phone') {
+      console.log("Phone field changed:", value);
+    }
+    
     setFormData(prevData => ({
       ...prevData,
       [name]: value
@@ -54,12 +86,33 @@ export default function OnboardingForm() {
     
     // In a real app, you'd send this data to your backend
     console.log("Form submitted:", formData);
+    console.log("Phone value:", formData.phone);
     
     // Store in localStorage for demo purposes
     localStorage.setItem("onboardingData", JSON.stringify(formData));
     
-    // Redirect to success page
-    router.push("/onboarding/success");
+    // Send data to Make.com webhook
+    fetch("https://hook.us1.make.com/asyohb1n2p93mooqkdm7x3sax4ihnw8s", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...formData,
+        // Ensure phone is explicitly included
+        phone: formData.phone || ""
+      }),
+    })
+      .then((response) => {
+        console.log("Webhook response:", response);
+        // Redirect to success page with clientId (preserving original URL casing)
+        router.push(`/onboarding/${clientId}/success`);
+      })
+      .catch((error) => {
+        console.error("Webhook error:", error);
+        // Still redirect even if webhook fails
+        router.push(`/onboarding/${clientId}/success`);
+      });
   };
 
   const calculateProgress = () => {
@@ -154,6 +207,9 @@ export default function OnboardingForm() {
                     onChange={handleChange}
                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     placeholder="Your phone number"
+                    pattern="[0-9\-\+\s\(\)]*"
+                    title="Please enter a valid phone number"
+                    inputMode="tel"
                   />
                 </div>
               </>
@@ -411,7 +467,9 @@ export default function OnboardingForm() {
       {/* Link to PRD document */}
       <div className="mt-6 text-center">
         <Link 
-          href="/documents/OnboardingProcess-PRD.md" 
+          href={clientId.toLowerCase() === 'jamesbooth' 
+            ? "https://sage-fifth-adf.notion.site/Core-MVP-Requirements-1de4a79ac6b780f686b7ff1306b38834?pvs=73"
+            : "/documents/OnboardingProcess-PRD.md"}
           className="text-blue-600 hover:underline"
           target="_blank"
         >

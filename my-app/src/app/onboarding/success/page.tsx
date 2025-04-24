@@ -81,7 +81,7 @@ export default function OnboardingSuccess() {
             Return Home
           </Link>
           <Link 
-            href="https://calendly.com/sydcodes/30min"
+            href="https://calendly.com/0ncode-info/30min"
             className="flex-1 px-6 py-3 text-black font-medium bg-transparent border border-black hover:bg-gray-100 rounded-md text-center"
             target="_blank"
           >

@@ -170,12 +170,12 @@ export default function Navigation({
               >
                 Blog
               </Link>
-              <Link 
+              {/* <Link 
                 href="/onboarding"
                 className="nav-link px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-black rounded-md transition-colors duration-300"
               >
                 Get Started
-              </Link>
+              </Link> */}
             </>
           )}
         </div>
