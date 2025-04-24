@@ -170,6 +170,12 @@ export default function Navigation({
               >
                 Blog
               </Link>
+              <Link 
+                href="/onboarding"
+                className="nav-link px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-black rounded-md transition-colors duration-300"
+              >
+                Get Started
+              </Link>
             </>
           )}
         </div>
@@ -260,20 +266,27 @@ export default function Navigation({
                   >
                     Blog
                   </Link>
+                  <Link 
+                    href="/onboarding"
+                    className="nav-link bg-yellow-400 hover:bg-yellow-500 text-black py-2 px-4 rounded-md mt-2 text-center"
+                    onClick={() => setShowBG(false)}
+                  >
+                    Get Started
+                  </Link>
                 </>
               )}
-              
-              {/* Mobile Connect Wallet Button */}
-              <div className="py-2">
-                <ConnectButton
-                  client={client}
-                  wallets={wallets}
-                  appMetadata={{
-                    name: "Black Web3",
-                    url: "https://example.com",
-                  }}
-                />
-              </div>
+            </div>
+            
+            {/* Mobile Connect Wallet Button */}
+            <div className="mt-4">
+              <ConnectButton
+                client={client}
+                wallets={wallets}
+                appMetadata={{
+                  name: "Black Web3",
+                  url: "https://example.com",
+                }}
+              />
             </div>
           </div>
         )}

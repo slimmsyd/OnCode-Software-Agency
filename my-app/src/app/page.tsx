@@ -28,12 +28,19 @@ const activeChain = "ethereum"; // Change to the desired blockchain
 
 export default function Home() {
   return (
-
-      <HomePage />
-
-
-
-
-   
+    <QueryClientProvider client={queryClient}>
+      <ThirdwebProvider
+        activeChain={activeChain}
+        clientId={process.env.NEXT_PUBLIC_THIRDWEB_CLIENT_ID || ""}
+        supportedWallets={[
+          metamaskWallet(),
+          coinbaseWallet(),
+          phantomWallet(),
+          walletConnect()
+        ]}
+      >
+        <HomePage />
+      </ThirdwebProvider>
+    </QueryClientProvider>
   );
 }
