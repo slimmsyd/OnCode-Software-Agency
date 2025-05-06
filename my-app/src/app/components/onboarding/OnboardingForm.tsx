@@ -470,7 +470,7 @@ export default function OnboardingForm({ clientId = 'default', defaultValues = {
       
       {/* Link to PRD document */}
       <div className="mt-6 text-center">
-        <Link 
+        {/* <Link 
           href={clientId.toLowerCase() === 'jamesbooth' 
             ? "https://sage-fifth-adf.notion.site/Core-MVP-Requirements-1de4a79ac6b780f686b7ff1306b38834?pvs=73"
             : "/documents/OnboardingProcess-PRD.md"}
@@ -478,7 +478,7 @@ export default function OnboardingForm({ clientId = 'default', defaultValues = {
           target="_blank"
         >
           View Product Requirements Document
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
