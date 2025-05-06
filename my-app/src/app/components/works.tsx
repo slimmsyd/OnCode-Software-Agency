@@ -13,6 +13,13 @@ interface Work {
 const works: Work[] = [
 
   {
+    title: "Naturally Radiant | Custom Scheduling & Payment Integration",
+    description: "A custom scheduling and payment solution for a leading wellness provider. Integrated Airtable, MAKE, n8n, and Helcium to centralize appointments, automate reminders, and modernize in-person payments.",
+    image: "/works/Naturally_Radiant.png",
+    link: "/casetudies/naturallyRadiant"
+  },
+
+  {
     title: "PRMNT PRO | Contract Extraction AI Pipeline",
     description: "We built an intelligent PDF Contract Extractor that leverages LangChain and OpenAI to analyze government contract documents. The system can analyze entire contracts or extract information page by page, giving the team unprecedented flexibility in how they review documents.",
     image: "/works/Preem_Chat1.png", // Update with your actual image path
