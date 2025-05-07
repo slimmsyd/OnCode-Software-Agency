@@ -397,7 +397,6 @@ export default function OnboardingForm({ clientId = 'default', defaultValues = {
                     <option value="1-4 weeks">1-4 weeks (Very minimal MVP)</option>
                     <option value="1-2 months">1-2 months (Standard MVP)</option>
                     <option value="3-6 months">3-6 months (Complex MVP)</option>
-                    <option value="flexible">Flexible/Not sure</option>
                   </select>
                 </div>
                 
@@ -413,12 +412,11 @@ export default function OnboardingForm({ clientId = 'default', defaultValues = {
                     required
                   >
                     <option value="">Select your budget range</option>
+                    <option value="1k-5k">$1,000 - $5,000</option>
                     <option value="under-10k">Under $10,000</option>
                     <option value="10k-25k">$10,000 - $25,000</option>
                     <option value="25k-50k">$25,000 - $50,000</option>
                     <option value="50k-100k">$50,000 - $100,000</option>
-                    <option value="over-100k">Over $100,000</option>
-                    <option value="flexible">Flexible/Not sure</option>
                   </select>
                 </div>
                 
