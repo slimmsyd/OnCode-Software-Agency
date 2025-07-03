@@ -49,6 +49,7 @@ export default function OfferPage() {
               <div className="text-lg tracking-widest uppercase text-gray-600 space-y-4">
                 <p>For Anita's FXBG</p>
                 <p>by Sydney Sanders</p>
+                <p>423-933-5112</p>
               </div>
             </div>
           </motion.div>
