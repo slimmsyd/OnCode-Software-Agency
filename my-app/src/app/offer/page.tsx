@@ -301,6 +301,45 @@ export default function OfferPage() {
         </div>
       </motion.section>
 
+      {/* What's Next Section */}
+      <motion.section 
+        className="py-32 px-6 bg-white"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
+        <div className="max-w-6xl mx-auto">
+          <motion.h2 
+            className="text-6xl font-thin text-black mb-20"
+            variants={fadeInUp}
+          >
+            What's Next
+          </motion.h2>
+          
+          <motion.div 
+            className="space-y-8"
+            variants={staggerContainer}
+          >
+            {[
+              { step: "Update Team Information", description: "Keep your team section up-to-date with current staff and roles." },
+              { step: "Update Photos", description: "Refresh the visuals with new, high-quality images that represent your brand." },
+              { step: "Update Menu Items", description: "Ensure your menu reflects the latest offerings and pricing." },
+              { step: "Ensure Copy is Right for Your Branding", description: "Review and update the text to align with your brand's voice and messaging." }
+            ].map((item, index) => (
+              <motion.div 
+                key={index}
+                className="grid md:grid-cols-3 gap-8 py-8 border-b border-gray-200 last:border-b-0"
+                variants={fadeInUp}
+              >
+                <div className="text-xl font-medium text-black">{item.step}</div>
+                <div className="text-gray-600">{item.description}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </motion.section>
+
       {/* Contact Section */}
       <motion.section 
         className="py-32 px-6 bg-black text-white"
