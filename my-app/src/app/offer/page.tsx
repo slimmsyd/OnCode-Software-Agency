@@ -1,7 +1,8 @@
 'use client';
 
-import { CheckCircle, Phone, ExternalLink, MessageSquare, Globe, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { X } from 'lucide-react';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -24,6 +25,8 @@ const scaleIn = {
 };
 
 export default function OfferPage() {
+  const [showChatbot, setShowChatbot] = useState(false);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -221,6 +224,14 @@ export default function OfferPage() {
               <p className="text-gray-500 italic">
                 No pressure. Just value delivered and an open door for what's next.
               </p>
+              
+              <motion.button 
+                onClick={() => setShowChatbot(true)}
+                className="text-sm text-gray-400 hover:text-black transition-colors border-b border-gray-300 hover:border-black mt-8"
+                variants={fadeInUp}
+              >
+                Ask why this important
+              </motion.button>
             </div>
           </motion.div>
         </div>
@@ -259,7 +270,7 @@ export default function OfferPage() {
               variants={staggerContainer}
             >
               {[
-                { title: "", video: "/Videos/TintLabs_Promo.mp4" },
+                { title: "", video: "/Videos/Tint_Lab_Promo_3.mp4" },
                 { title: "", video: "/Videos/Tint_Labs_Promo_2.mp4" }
               ].map((item, index) => (
                 <motion.div 
@@ -309,12 +320,71 @@ export default function OfferPage() {
               <div className="space-y-4 pt-8">
                 <div className="text-2xl font-light">Sydney Sanders</div>
                 <div className="text-gray-400">Software Engineer</div>
-                <div className="text-xl">423-033-5112</div>
+                <div className="text-xl">423-933-5112</div>
               </div>
             </div>
           </motion.div>
         </div>
       </motion.section>
+
+      {/* Chatbot Modal */}
+      {showChatbot && (
+        <motion.div 
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setShowChatbot(false)}
+        >
+          <motion.div 
+            className="bg-white rounded-lg max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-8">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-thin text-black">Why This Matters</h3>
+                <button 
+                  onClick={() => setShowChatbot(false)}
+                  className="text-gray-400 hover:text-black transition-colors"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              
+              <div className="space-y-6 text-gray-800">
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-black">Digital Presence = Business Growth</h4>
+                  <p>Your current website represents your business 24/7. A professional, modern site builds trust before customers even walk through your door.</p>
+                </div>
+                
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-black">Local Competition</h4>
+                  <p>Other cafes in Fredericksburg are investing in their digital presence. This upgrade keeps Anita's FXBG competitive and discoverable by new customers.</p>
+                </div>
+                
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-black">Immediate ROI</h4>
+                  <p>The website is already built and working. You're seeing the value upfront—better customer experience, automated inquiries, and professional presentation.</p>
+                </div>
+                
+                <div className="space-y-4">
+                  <h4 className="text-lg font-medium text-black">Future-Proof Investment</h4>
+                  <p>This foundation supports future growth: online ordering, event bookings, expanded social media presence, and local SEO dominance.</p>
+                </div>
+                
+                <div className="pt-4 border-t border-gray-100">
+                  <p className="text-sm text-gray-500 italic">
+               
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 } 
