@@ -13,11 +13,19 @@ interface Work {
 const works: Work[] = [
 
   {
-    title: "Naturally Radiant | Custom Scheduling & Payment Integration",
-    description: "A custom scheduling and payment solution for a leading wellness provider. Integrated Airtable, MAKE, n8n, and Helcium to centralize appointments, automate reminders, and modernize in-person payments.",
-    image: "/works/Naturally_Radiant.png",
-    link: "/casetudies/naturallyRadiant"
+    title: "Naturally Radiant | Digital SOAP Notes System",
+    description: "We built a custom SOAP notes interface that allows practitioners to log client sessions digitally, submit assessments and recommendations, and sync everything into Airtable. This centralized client history, streamlined practitioner workflows, and replaced paper-based records with a scalable digital system.",
+    image: "/works/SoapNotes.png",
+    link: "/casestudies/naturallyRadiant"
   },
+
+  {
+    title: "Tint Labs – Car Dealership Website", 
+    description: "Designed and developed an agency website showcasing performance-based marketing services, case studies, and client results. Features clean agency-style UI, mobile optimization, and dynamic content integration from IG/TikTok.",
+    image: "/works/TintLabVideo.mov", // Video showcase of https://www.tintlab.net/
+    link: "https://www.tintlab.net/"
+  },
+
 
   {
     title: "PRMNT PRO | Contract Extraction AI Pipeline",
@@ -34,37 +42,37 @@ const works: Work[] = [
 
   // },
 
-  {
-    title: "Kinnected(On-going)",
-    description: "A platform using Blockhaing Technology, store your family, history forever, using the immutable nature of blockchain.",
-    image: "/works/Kinnected.png", // Update with your actual image path
-    link: "/casetudies/kinnected"
-  },
-  {
-    title: "Street Economics Dashboard",
-    description: "A dashboard for Street Economics,to manage community engagment, user interactions. to caputre data and analytics. To help the community grow and thrive.",
-    image: "https://red-broken-ferret-951.mypinata.cloud/ipfs/bafybeifsyeosyutghfvz7aphm7wgdyezk6nfttanurc4ldyuiwsvs76yme", // Update with your actual image path
-    link: "/casetudies/streetEconomics"
-  },
-  {
-    title: "Universal Law AI Youtube Automation Channel",
-    description: "A Youtube automation channel that uses AI Songs, Images, and Videos to create a new song every week.",
-    image: "/works/Universal_Law.png", // Update with your actual image path
-    link: "/casetudies/universalLaw"
-  },
-  {
-    title: "Invoice Magi",
-    description: "Implementation of your design. No design? No problem. We can assist.",
-    image: "/works/invoice-magi.png", // Update with your actual image path
-    link: "/casetudies/invoice-magi"
-  },
+  // {
+  //   title: "Kinnected(On-going)",
+  //   description: "A platform using Blockhaing Technology, store your family, history forever, using the immutable nature of blockchain.",
+  //   image: "/works/Kinnected.png", // Update with your actual image path
+  //   link: "/casetudies/kinnected"
+  // },
+  // {
+  //   title: "Street Economics Dashboard",
+  //   description: "A dashboard for Street Economics,to manage community engagment, user interactions. to caputre data and analytics. To help the community grow and thrive.",
+  //   image: "https://red-broken-ferret-951.mypinata.cloud/ipfs/bafybeifsyeosyutghfvz7aphm7wgdyezk6nfttanurc4ldyuiwsvs76yme", // Update with your actual image path
+  //   link: "/casetudies/streetEconomics"
+  // },
+  // {
+  //   title: "Universal Law AI Youtube Automation Channel",
+  //   description: "A Youtube automation channel that uses AI Songs, Images, and Videos to create a new song every week.",
+  //   image: "/works/Universal_Law.png", // Update with your actual image path
+  //   link: "/casetudies/universalLaw"
+  // },
+  // {
+  //   title: "Invoice Magi",
+  //   description: "Implementation of your design. No design? No problem. We can assist.",
+  //   image: "/works/invoice-magi.png", // Update with your actual image path
+  //   link: "/casetudies/invoice-magi"
+  // },
 
-  {
-    title: "Solomon Gpt",
-    description: "A GPT-4o powered AI sage that can help you guide your life and more deeper questions than ever.",
-    image: "/works/solomon.png", // Update with your actual image path
-    link: "/casetudies/solomonAI"
-  },
+  // {
+  //   title: "Solomon Gpt",
+  //   description: "A GPT-4o powered AI sage that can help you guide your life and more deeper questions than ever.",
+  //   image: "/works/solomon.png", // Update with your actual image path
+  //   link: "/casetudies/solomonAI"
+  // },
   {
     title: "Creatures Cube",
     description: "Web application for an ERC-4047 NFT collection.",
@@ -73,22 +81,24 @@ const works: Work[] = [
   },
   {
     title: "Gliddy",
-    description: "A platform that allows you to meet people in your area. Booking events with people you meet is easy.",
-    image: "/works/gliddy.png", // Update with your actual image path
+    description: "We built Gliddy from the ground up — first as a React web app, then converted it into a fully native iOS and Android mobile application using React Native. The platform connects bartenders and users, with features like profiles, QR codes, notifications, and event booking.",
+    image: "/works/gliddy.png", // Update with actual image path
     link: "/casetudies/gliddy"
   },
+  
   {
     title: "Preeminent Professional Services",
-    description: "A Discovery site build for Professional Managment Agency",
+    description: "A Discovery site build for Facilitimes Management Company",
     image: "/works/PM.png", // Update with your actual image path
     link: "https://www.prmntpro.com/"
   },
   {
-    title: "Generative AI, RAG, and LLM Discord Bot",
-    description: "A Discord bot that can help you generate AI images, Query Crypto Prices, answer questions, and more.",
-    image: "/works/Discord.png", // Update with your actual image path
-    link: "https://github.com/slimmsyd/Discord_Bot_Main"
+    title: "KY Engineering – Website & Business Profile Setup",
+    description: "Built a professional 5-6 page website with AI chatbot, booking calendar, and SEO optimization. Guided client through Google Business Profile setup. Took KY Engineering from zero to professional online presence in under a week.",
+    image: "/works/Ky_Engineering.png", // Update with your actual image path
+    link: "/casetudies/kyengineering"
   },
+
 
   // Add more works as needed
 ];
@@ -96,7 +106,7 @@ const works: Work[] = [
 // Add a helper function to determine if the URL is a video
 const isVideoUrl = (url: string) => {
   // Check for common video extensions or IPFS URLs
-  return url.includes('ipfs') || /\.(mp4|webm|ogg)$/i.test(url);
+  return url.includes('ipfs') || /\.(mp4|webm|ogg|mov)$/i.test(url);
 };
 
 export default function Works() {

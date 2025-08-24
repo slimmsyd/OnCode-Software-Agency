@@ -6,13 +6,11 @@ export default function Pricing() {
     return (
         <section className="relative w-full py-12 md:py-24 lg:py-20 xl:py-10 max-w-[500px] m-auto  text-black">
       <div className="container mx-auto px-4 max-w-6xl">
-        <h2 className="text-black text-[28px] font-semibold mb-8">Pricing</h2>
+        <h2 className="text-black text-[28px] font-semibold mb-8">What's Included</h2>
 
-        {/* Price Display */}
+        {/* Urgency Display */}
         <div className="flex flex-col md:flex-row items-start md:items-center gap-4 mb-8">
-          <span className="text-gray-400 line-through text-2xl">$6,999 / MVP</span>
-          <span className="text-black text-2xl font-semibold">$5,000 / MVP</span>
-          <span className="text-red-500 text-lg">(1 spot left)</span>
+          <span className="text-red-500 text-xl font-medium">⚡ Only 1 spot left this month</span>
         </div>
 
         {/* Features List */}

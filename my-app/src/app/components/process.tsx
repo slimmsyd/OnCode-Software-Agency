@@ -27,7 +27,8 @@ export default function About() {
             </div>
             <div>
               <h3 className="text-2xl font-semibold mb-2">Specification</h3>
-              <p className="text-gray-600">We discuss your idea and create a detailed specification.</p>
+              <p className="text-gray-600">
+              We align your idea with your business model, define the problems to solve, and create a clear specification of the system, workflows, and outcomes.</p>
             </div>
           </motion.div>
 
@@ -43,7 +44,7 @@ export default function About() {
             </div>
             <div>
               <h3 className="text-2xl font-semibold mb-2">Development</h3>
-              <p className="text-gray-600">Watch your MVP take shape with regular updates.</p>
+              <p className="text-gray-600">We build fast with modern frameworks and AI workflows, keeping you updated every step of the way.</p>
             </div>
           </motion.div>
 
@@ -59,7 +60,7 @@ export default function About() {
             </div>
             <div>
               <h3 className="text-2xl font-semibold mb-2">Launch</h3>
-              <p className="text-gray-600">We deploy your product and provide training so that you have full confidence in running it on your own.</p>
+              <p className="text-gray-600">We deploy your product and provide training so you can run and scale it with confidence..</p>
             </div>
           </motion.div>
         </div>

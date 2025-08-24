@@ -39,7 +39,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <p className="text-lg text-black ">
-            Complete package: Web application and landing page included. Everything you need to test your idea in the market.
+            Complete package: Web app, dashboard, or landing page included. Everything you need to launch and validate fast.
             </p>
           </motion.div>
 
@@ -60,7 +60,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <p className="text-lg text-black ">
-            Experienced team: We know what we're doing thanks to having years of experience building successful startups.
+            Experienced team: Years of building digital systems for contractors, founders, and service businesses — we know what works.
             </p>
           </motion.div>
           <motion.div
@@ -70,7 +70,8 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <p className="text-lg text-black ">
-            SEO-optimized: Built-in search engine optimization to improve your product's visibility.            </p>
+            Optimized from day one so your product isn’t just an MVP, but a foundation you can scale.   
+                    </p>
           </motion.div>
 
           <div className="flex justify-start flex-row gap-4">

@@ -18,8 +18,7 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-lg text-black ">
-           Transform, your idea into a market-ready MVP in weeks.
-            </p>
+            Custom apps and AI workflows, delivered fast.            </p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

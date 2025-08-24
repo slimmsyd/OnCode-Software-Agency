@@ -61,7 +61,7 @@ const caseStudies: CaseStudyProps[] = [
       "Automated reminders",
       "Real-time analytics"
     ],
-    imageSrc: "/works/DashboardImage.png",
+    imageSrc: "/works/DashboardImage1.png",
     caseStudyLink: "/casetudies/prmntPro",
     timeline: {
       discovery: 33,

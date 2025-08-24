@@ -28,7 +28,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-lg text-black ">
-            Peace, I'm Syd. With years of experience leading engineer. I’ve been doing this for far to long                 </p>
+            Greetings, I'm Syd. With years of experience leading engineers  . I’ve been doing this for far to long                 </p>
           </motion.div>
 
           <motion.div
@@ -50,7 +50,7 @@ you.
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <p className="text-lg text-black ">
-            My goal with  Oncode is to help entrepreneurs like yourself bring their ideas to life quickly and efficiently. Now is the time to build. You have the vision; we have the technical expertise to make it happen.            
+            At OnCode, our mission is simple: turn your ideas and workflows into working software — fast. Whether you’re a founder testing an MVP, a contractor needing digital systems, or a service business stuck in paperwork, we build custom apps and AI workflows that save time, cut costs, and unlock growth.        
                                 </p>
           </motion.div>
 

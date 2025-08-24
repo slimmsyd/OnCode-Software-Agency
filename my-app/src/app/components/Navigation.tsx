@@ -11,7 +11,7 @@ import {
   useIsAutoConnecting,
   useWalletBalance,
 } from "thirdweb/react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 // import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { client } from "../helper/client";
 // import "@rainbow-me/rainbowkit/styles.css";
@@ -49,15 +49,35 @@ export default function Navigation({
 }: NavigationProps) {
   const [showBG, setShowBG] = useState<boolean>(false);
   const router = useRouter();
+  const pathname = usePathname();
+  
   const showNavBG = () => {
     setShowBG(!showBG);
   };
 
-  const mobileNavBtn = (id: string) => {
-    if (scrollToSection) {
-      scrollToSection(id);
+  // Smart navigation handler
+  const handleNavigation = (sectionId: string) => {
+    // If we're not on the home page, navigate to home first
+    if (pathname !== '/') {
+      // Navigate to home with section hash
+      router.push(`/#${sectionId}`);
+      // Use setTimeout to allow navigation to complete before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // We're on home page, just scroll to section
+      if (scrollToSection) {
+        scrollToSection(sectionId);
+      }
     }
+  };
 
+  const mobileNavBtn = (id: string) => {
+    handleNavigation(id);
     setShowBG(!showBG);
   };
 
@@ -116,7 +136,7 @@ export default function Navigation({
       ${isVisible ? 'max-w-[93%]' : 'max-w-[80%]'}
       transition-all duration-300 ease-in-out
     `}>
-      <div className="flex items-center justify-between px-8 h-[48px] py-4 w-full border border-[#F0F0F0] rounded-[10px] bg-white">
+      <div className="flex items-center justify-between px-8  py-4 w-full border border-[#F0F0F0] rounded-[10px] bg-white">
         {/* Logo */}
         <div className="flex items-center">
           <button 
@@ -141,25 +161,25 @@ export default function Navigation({
             // Render default navigation
             <>
               <div 
-                onClick={() => scrollToSection && scrollToSection('home')}
+                onClick={() => handleNavigation('home')}
                 className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
               >
                 Home
               </div>
               <div 
-                onClick={() => scrollToSection && scrollToSection('ecosystem')}
+                onClick={() => handleNavigation('ecosystem')}
                 className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
               >
                 Ecosystem
               </div>
               <div 
-                onClick={() => scrollToSection && scrollToSection('about')}
+                onClick={() => handleNavigation('about')}
                 className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
               >
                 About us
               </div>
               <div 
-                onClick={() => scrollToSection && scrollToSection('case-studies')}
+                onClick={() => handleNavigation('case-studies')}
                 className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
               >
                 Case Studies

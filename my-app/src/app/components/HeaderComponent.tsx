@@ -184,13 +184,15 @@ export default function HeaderComponent({
             Generative AI Software Development
           </p>
 
-          <h1 className="font-medium text-center header-h1 tracking-[-1px]">
-            BUILD YOUR MVP IN WEEKS NOT MONTHS
-          </h1>
+<div className="mb-[30px]">
+          <h1 className="font-medium text-center uppercase header-h1 tracking-[-1px]">
+          Smarter Builds. Faster Growth
 
-          <p className="font-light  text-black text-center !text-[16px] max-w-[70%] md:max-w-[100%] ">
-            Turning ideas into reality, fast. Let us take your idea from concept
-            to a market-ready MVP in just a few weeks.
+          </h1>
+          </div>
+
+          <p className="font-light max-w-[80%]  text-black text-center !text-[16px] md:max-w-[90%] ">
+          Whether you’re a contractor, founder, or service business, OnCode delivers custom systems that modernize how you work and accelerate your path to scale.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-[20px] mt-[20px] w-full sm:w-auto px-4 sm:px-0">
@@ -198,7 +200,7 @@ export default function HeaderComponent({
               target="_blank"
               href="https://calendly.com/sydcodes/30min"
               // onClick={() => scrollToSection("about")}
-              className="bg-black text-white text-[14px] flex flex-row gap-[10px] items-center px-[10px] py-[8px] rounded-[8px] hover:bg-gray-100 transition-colors duration-300 w-[200px] m-auto text-center justify-center"
+              className="bg-black text-white text-[14px] flex flex-row gap-[10px] items-center px-[10px] py-[8px] rounded-[8px] hover:bg-gray-800 transition-colors duration-300 w-[200px] m-auto text-center justify-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -219,7 +221,7 @@ export default function HeaderComponent({
               </svg>
               Book A Call
             </Link>
-
+{/* 
             <button
               onClick={() => setShowPopup(true)}
               className="bg-white text-[14px] flex flex-row gap-[10px] items-center px-[20px] py-[10px] rounded-[8px] hover:bg-gray-100 transition-colors duration-300 border border-[#CDCDCD] w-[200px] m-auto"
@@ -243,17 +245,14 @@ export default function HeaderComponent({
                 <path d="M16 17H8"></path>
               </svg>
               Validate Your Idea
-            </button> 
+            </button>  */}
 
 
           </div>
 
           <div className="flex flex-col gap-[10px] mt-[20px] w-[95%] md:w-[60%]">
             <p className="font-light text-[16px]  text-black mt-[0px] md:mt-[15px] text-center ">
-              We at Oncode, help you build your MVP(software application) with
-              the execution of 4 devs but with the price of 1 , we build your
-              MVP in weeks not months using effecive AI agentic automation
-              workflows.
+            OnCode helps businesses turn ideas and manual processes into working software — at the speed of 4 developers for the price of 1. With AI-powered workflows, we build the exact systems you need in weeks, not month.
               <br />
               <br />
               As tech updates, so do we.

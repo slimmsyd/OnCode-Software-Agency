@@ -305,7 +305,7 @@ export default function PRMNTPROExtractor() {
       {/* Technical Approach Section */}
       <section className="relative bg-black">
         {/* Diagonal separator */}
-        <div className="absolute top-0 left-0 w-full h-[150px] sm:h-[200px] bg-neutral-900 transform skew-y-6 origin-top-right -translate-y-[50%]"></div>
+       
         
         <div className="container mx-auto relative z-10 py-[100px] sm:py-[180px] px-4 sm:px-8">
           <div className="mb-16 sm:mb-24 overflow-hidden">
