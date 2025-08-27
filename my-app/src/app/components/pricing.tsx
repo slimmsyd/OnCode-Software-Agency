@@ -23,7 +23,7 @@ export default function Pricing() {
             className="flex items-start gap-3"
           >
             <Check className="w-6 h-6 text-black flex-shrink-0 mt-1" />
-            <span className="text-[#6b7280] text-lg">Web application and landing page</span>
+            <span className="text-[#6b7280] text-lg">Custom automation workflows tailored to your business specific needs to support the bottom line</span>
           </motion.div>
 
           <motion.div
@@ -34,7 +34,7 @@ export default function Pricing() {
             className="flex items-start gap-3"
           >
             <Check className="w-6 h-6 text-black flex-shrink-0 mt-1" />
-            <span className="text-[#6b7280] text-lg">Implementation of your design. No design? No problem. We can assist.</span>
+            <span className="text-[#6b7280] text-lg">AI-powered solutions that eliminate manual tasks and drive revenue growth</span>
           </motion.div>
 
           <motion.div
@@ -45,7 +45,7 @@ export default function Pricing() {
             className="flex items-start gap-3"
           >
             <Check className="w-6 h-6 text-black flex-shrink-0 mt-1" />
-            <span className="text-[#6b7280] text-lg">Essential integrations: payments, authentication, databases, analytics.</span>
+            <span className="text-[#6b7280] text-lg">Scalable web applications with enterprise-grade security and performance</span>
           </motion.div>
 
           <motion.div
@@ -56,10 +56,10 @@ export default function Pricing() {
             className="flex items-start gap-3"
           >
             <Check className="w-6 h-6 text-black flex-shrink-0 mt-1" />
-            <span className="text-[#6b7280] text-lg">SEO (Search Engine Optimization).</span>
+            <span className="text-[#6b7280] text-lg">Data analytics dashboards that turn insights into actionable business decisions</span>
           </motion.div>
 
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -67,7 +67,51 @@ export default function Pricing() {
             className="flex items-start gap-3"
           >
             <Check className="w-6 h-6 text-black flex-shrink-0 mt-1" />
-            <span className="text-[#6b7280] text-lg">Setup and deployment.</span>
+            <span className="text-[#6b7280] text-lg">Blockchain & DeFi integrations for next-generation financial applications</span>
+          </motion.div> */}
+
+          {/* <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex items-start gap-3"
+          >
+            <Check className="w-6 h-6 text-black flex-shrink-0 mt-1" />
+            <span className="text-[#6b7280] text-lg">Complete API ecosystems with seamless third-party integrations</span>
+          </motion.div> */}
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex items-start gap-3"
+          >
+            <Check className="w-6 h-6 text-black flex-shrink-0 mt-1" />
+            <span className="text-[#6b7280] text-lg">Custom CRM systems that streamline operations and boost customer retention</span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="flex items-start gap-3"
+          >
+            <Check className="w-6 h-6 text-black flex-shrink-0 mt-1" />
+            <span className="text-[#6b7280] text-lg">Mobile-responsive designs that convert visitors into paying customers</span>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.8 }}
+            className="flex items-start gap-3"
+          >
+            <Check className="w-6 h-6 text-black flex-shrink-0 mt-1" />
+            <span className="text-[#6b7280] text-lg">24/7 monitoring, maintenance, and technical support to ensure zero downtime</span>
           </motion.div>
         </div>
 
