@@ -28,7 +28,7 @@ export default function Footer() {
           >
             <p className="text-lg text-black ">
 
-        © 2024 Oncode, All Rights Reserved. 
+        © 2025 Oncode, All Rights Reserved. 
                  </p>
           </motion.div>
 
