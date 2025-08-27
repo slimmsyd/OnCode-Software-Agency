@@ -184,12 +184,12 @@ export default function Navigation({
               >
                 Case Studies
               </div>
-              <Link 
+              {/* <Link 
                 href="/blog"
                 className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
               >
                 Blog
-              </Link>
+              </Link> */}
               {/* <Link 
                 href="/onboarding"
                 className="nav-link px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-black rounded-md transition-colors duration-300"
