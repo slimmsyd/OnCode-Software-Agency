@@ -92,27 +92,27 @@ export default function HomePage() {
 
   const services = [
     {
-      name: "Custom Web Application Development",
+      name: "Business Process Automation",
       description:
-        "We build scalable and robust web applications tailored to your unique business needs.",
+        "Transform manual workflows into intelligent systems. From SOAP notes to contract analysis, we automate what slows you down.",
       image: "/assets/pastel_2.png",
     },
     {
-      name: "UI/UX Design",
+      name: "MVP & Product Development", 
       description:
-        "Our design experts create intuitive interfaces that provide exceptional user experiences.",
+        "Launch your startup idea or next product feature. Rapid development that gets you to market fast with a foundation that scales.",
       image: "/assets/pastel3.png",
     },
     {
-      name: "AI Tool Solutions and Consulting",
+      name: "AI Integration & Custom Tools",
       description:
-        "Leveraging the latest AI technologies, we develop intelligent solutions and offer consulting to keep you ahead of the curve.",
+        "Custom AI workflows that solve real problems. Document processing, data analysis, and intelligent automation tailored to your business.",
       image: "/assets/pastel_2.png",
     },
     {
-      name: "Creative Content Editing with Generative AI",
+      name: "Enterprise Software Solutions",
       description:
-        "Enhance your visual storytelling with AI-generated B-Roll and cutting-edge content editing.",
+        "Scalable systems for growing businesses. Custom dashboards, data management, and workflow optimization that grows with you.",
       image: "/assets/pastel3.png",
     },
   ];

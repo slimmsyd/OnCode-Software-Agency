@@ -5,7 +5,7 @@ export default function About() {
     return (
         <section className="relative w-full py-12 md:py-24 lg:py-20 xl:py-10 max-w-[500px] m-auto  text-black">
       <div className="container mx-auto px-4 max-w-6xl">
-        <h2 className="text-black text-[28px] font-semibold">Stuck on an idea?</h2>
+        <h2 className="text-black text-[28px] font-semibold">Manual processes slowing you down?</h2>
         {/* Quote */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,7 +15,7 @@ export default function About() {
           className="text-left mb-8"
         >
           <p className="text-[#767676]">
-          Science to do our utmost toward increasing the performance of mankind. - Telsa
+          "Science to do our utmost toward increasing the performance of mankind." - Tesla
           </p>
         </motion.div>
 
@@ -28,7 +28,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-lg text-black ">
-            Rapid development: Your MVP ready in 2-4 weeks.
+            <strong>Rapid delivery:</strong> Custom software solutions built in 2-4 weeks, whether it's your first MVP or your next business automation tool.
             </p>
           </motion.div>
 
@@ -39,7 +39,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <p className="text-lg text-black ">
-            Complete package: Web app, dashboard, or landing page included. Everything you need to launch and validate fast.
+            <strong>Complete solutions:</strong> From startup MVPs to enterprise automation systems — we build what your business actually needs to grow.
             </p>
           </motion.div>
 
@@ -50,7 +50,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <p className="text-lg text-black ">
-            Modern technology: We use the latest technologies to ensure your product is fast, stable, and scalable.
+            <strong>Modern technology:</strong> AI-powered workflows, robust databases, and scalable architecture that grows with your business.
             </p>
           </motion.div>
           <motion.div
@@ -60,7 +60,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <p className="text-lg text-black ">
-            Experienced team: Years of building digital systems for contractors, founders, and service businesses — we know what works.
+            <strong>Proven experience:</strong> From wellness centers to government contractors — we've built digital systems that save time, cut costs, and unlock growth.
             </p>
           </motion.div>
           <motion.div
@@ -70,7 +70,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <p className="text-lg text-black ">
-            Optimized from day one so your product isn’t just an MVP, but a foundation you can scale.   
+            <strong>Built to scale:</strong> Every system we create is designed to handle your growth, from prototype to production and beyond.
                     </p>
           </motion.div>
 

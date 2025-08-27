@@ -252,10 +252,10 @@ export default function HeaderComponent({
 
           <div className="flex flex-col gap-[10px] mt-[20px] w-[95%] md:w-[60%]">
             <p className="font-light text-[16px]  text-black mt-[0px] md:mt-[15px] text-center ">
-            OnCode helps businesses turn ideas and manual processes into working software — at the speed of 4 developers for the price of 1. With AI-powered workflows, we build the exact systems you need in weeks, not month.
+            OnCode transforms manual processes into automated systems that accelerate your business. Whether you're a startup launching your first MVP or an established company ready to scale, we build custom software solutions in weeks, not months.
               <br />
               <br />
-              As tech updates, so do we.
+              From idea to implementation — we keep you OnCode.
             </p>
           </div>
 

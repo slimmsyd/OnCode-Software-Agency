@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     default: "OnCode | Software Agency - Custom Software Development",
     template: "%s | OnCode Software Agency"
   },
-  description: "Professional software development agency specializing in AI, blockchain, and custom web applications. We ensure founders focus on business growth while we handle the code.",
+  description: "Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages in weeks, not months.",
   keywords: [
     "software development agency",
     "custom software development", 
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     url: 'https://www.0ncode.com',
     siteName: 'OnCode Software Agency',
     title: 'OnCode | Professional Software Development Agency',
-    description: 'Professional software development agency specializing in AI, blockchain, and custom web applications. We ensure founders focus on business growth while we handle the code.',
+    description: 'Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages.',
     images: [
       {
         url: 'https://www.0ncode.com/images/og-image.jpg', // You'll need to add this image
