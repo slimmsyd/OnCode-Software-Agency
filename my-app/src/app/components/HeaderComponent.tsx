@@ -184,7 +184,7 @@ export default function HeaderComponent({
             Generative AI Software Development
           </p>
 
-<div className="mb-[30px]">
+<div className="mb-[20px s]">
           <h1 className="font-medium text-center uppercase header-h1 tracking-[-1px]">
           Smarter Builds. Faster Growth
 

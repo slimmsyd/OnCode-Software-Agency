@@ -124,7 +124,7 @@ export default function OnboardingForm({ clientId = 'default', defaultValues = {
 
   return (
     <div className="container max-w-3xl mx-auto py-10 px-4">
-      <ChatPopup />
+      {/* <ChatPopup /> */}
       <div className="bg-white shadow-md rounded-lg overflow-hidden">
         {/* Header */}
         <div className="p-6 border-b">

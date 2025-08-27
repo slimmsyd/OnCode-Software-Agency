@@ -189,7 +189,7 @@ export default function HomePage() {
   return (
     <>
       {/* <PageLoader /> */}
-      <ChatPopup />
+      {/* <ChatPopup /> */}
       
       <div
         className="site-wrapper h-[100vh] md:h-[100vh] relative"
