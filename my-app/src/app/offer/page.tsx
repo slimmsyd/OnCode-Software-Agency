@@ -1,8 +1,9 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import Head from 'next/head';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 40 },
@@ -26,6 +27,29 @@ const scaleIn = {
 
 export default function OfferPage() {
   const [showChatbot, setShowChatbot] = useState(false);
+
+  useEffect(() => {
+    // Update page title and meta description for this specific page
+    document.title = "Website Upgrade Offer | OnCode Software Agency";
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Professional website upgrade services for Anita\'s FXBG. Custom development solutions by OnCode Software Agency.');
+    }
+
+    // Update Open Graph title
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute('content', 'Website Upgrade Offer | OnCode Software Agency');
+    }
+
+    // Update canonical URL
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', 'https://www.0ncode.com/offer');
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">

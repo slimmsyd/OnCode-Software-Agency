@@ -1,7 +1,44 @@
+import { Metadata } from 'next';
 import Navigation from "@/app/components/Navigation";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: 'Naturally Radiant Case Study - Digital SOAP Notes System',
+  description: 'Custom scheduling & payment integration for Naturally Radiant wellness center. Digital SOAP notes system built by OnCode Software Agency to streamline practitioner workflows.',
+  keywords: [
+    'digital SOAP notes system',
+    'wellness center software',
+    'practitioner scheduling system',
+    'custom healthcare software',
+    'naturally radiant case study',
+    'airtable integration',
+    'healthcare workflow automation'
+  ],
+  openGraph: {
+    title: 'Naturally Radiant Case Study - Digital SOAP Notes System | OnCode',
+    description: 'Custom scheduling & payment integration for Naturally Radiant wellness center. Digital SOAP notes system to streamline practitioner workflows.',
+    url: 'https://www.0ncode.com/casetudies/naturallyRadiant',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.0ncode.com/works/SoapNotes.png',
+        width: 1200,
+        height: 630,
+        alt: 'Naturally Radiant Digital SOAP Notes System',
+      },
+    ],
+  },
+  twitter: {
+    title: 'Naturally Radiant Case Study - Digital SOAP Notes System',
+    description: 'Custom scheduling & payment integration for wellness center. Digital SOAP notes system built by OnCode Software Agency.',
+    images: ['https://www.0ncode.com/works/SoapNotes.png'],
+  },
+  alternates: {
+    canonical: 'https://www.0ncode.com/casetudies/naturallyRadiant',
+  },
+};
 
 export default function NaturallyRadiantCase() {
   return (

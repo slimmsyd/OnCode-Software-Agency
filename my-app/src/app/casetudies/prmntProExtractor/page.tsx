@@ -1,9 +1,46 @@
+import { Metadata } from 'next';
 import Navigation from "@/app/components/Navigation";
 import Video from "@/app/components/VideoComponent";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import NewImage from '../../../../public/works/Preem_Chat2.png'
 import NewImage2 from '../../../../public/works/Preem_Chat1.png'
+
+export const metadata: Metadata = {
+  title: 'PRMNT PRO Case Study - AI Contract Extraction Pipeline',
+  description: 'Intelligent PDF Contract Extractor using LangChain and OpenAI for government contracts. AI-powered document analysis system built by OnCode Software Agency.',
+  keywords: [
+    'AI contract extraction',
+    'PDF document analysis',
+    'LangChain OpenAI integration',
+    'government contract processing',
+    'PRMNT PRO case study',
+    'document automation AI',
+    'intelligent contract analysis'
+  ],
+  openGraph: {
+    title: 'PRMNT PRO Case Study - AI Contract Extraction Pipeline | OnCode',
+    description: 'Intelligent PDF Contract Extractor using LangChain and OpenAI for government contracts. AI-powered document analysis system.',
+    url: 'https://www.0ncode.com/casetudies/prmntProExtractor',
+    type: 'article',
+    images: [
+      {
+        url: 'https://www.0ncode.com/works/Preem_Chat1.png',
+        width: 1200,
+        height: 630,
+        alt: 'PRMNT PRO AI Contract Extraction System',
+      },
+    ],
+  },
+  twitter: {
+    title: 'PRMNT PRO Case Study - AI Contract Extraction Pipeline',
+    description: 'Intelligent PDF Contract Extractor using LangChain and OpenAI for government contracts.',
+    images: ['https://www.0ncode.com/works/Preem_Chat1.png'],
+  },
+  alternates: {
+    canonical: 'https://www.0ncode.com/casetudies/prmntProExtractor',
+  },
+};
 
 export default function PRMNTPROExtractor() {
   return (
