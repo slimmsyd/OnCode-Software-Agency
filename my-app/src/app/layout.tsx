@@ -55,13 +55,7 @@ export const metadata: Metadata = {
       },
     ],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'OnCode | Professional Software Development Agency',
-    description: 'Professional software development agency specializing in AI, blockchain, and custom web applications.',
-    images: ['https://www.0ncode.com/images/og-image.jpg'], // Same image as OG
-    creator: '@oncode_agency', // Update with your actual Twitter handle
-  },
+
   verification: {
     google: 'your-google-verification-code', // Add your Google Search Console verification code
     // yandex: 'your-yandex-verification-code',
