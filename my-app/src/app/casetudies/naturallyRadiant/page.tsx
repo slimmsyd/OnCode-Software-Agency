@@ -46,6 +46,48 @@ export default function NaturallyRadiantCase() {
       <Navigation textColor={true} />
 
       <section className="flex flex-col items-center justify-start text-black py-[120px] px-[50px] md:px-[80px]">
+        {/* 3 P's Section */}
+        <div className="w-full max-w-[1400px] mb-16">
+          <div className="text-center mb-12">
+            <p className="text-[16px] text-cyan-600 font-medium tracking-wide uppercase mb-4">For service-based businesses and orgs drowning in manual work</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            {/* Problem */}
+            <div className="bg-red-50 border-l-4 border-red-400 p-6 rounded-r-lg">
+              <div className="flex items-center mb-3">
+                <div className="w-8 h-8 bg-red-400 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">P</div>
+                <h3 className="text-lg font-semibold text-red-800">Problem</h3>
+              </div>
+              <p className="text-red-700 text-sm leading-relaxed">
+                Your staff is wasting hours on paper forms, compliance documents, or repetitive tasks.
+              </p>
+            </div>
+
+            {/* Promise */}
+            <div className="bg-blue-50 border-l-4 border-blue-400 p-6 rounded-r-lg">
+              <div className="flex items-center mb-3">
+                <div className="w-8 h-8 bg-blue-400 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">P</div>
+                <h3 className="text-lg font-semibold text-blue-800">Promise</h3>
+              </div>
+              <p className="text-blue-700 text-sm leading-relaxed">
+                We replace manual workflows with simple digital tools + automation that save time, reduce errors, and centralize everything.
+              </p>
+            </div>
+
+            {/* Proof */}
+            <div className="bg-green-50 border-l-4 border-green-400 p-6 rounded-r-lg">
+              <div className="flex items-center mb-3">
+                <div className="w-8 h-8 bg-green-400 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">P</div>
+                <h3 className="text-lg font-semibold text-green-800">Proof</h3>
+              </div>
+              <p className="text-green-700 text-sm leading-relaxed">
+                Naturally Radiant — moved from paper SOAP notes to digital system with Custom CRM + Agentic automations.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="w-full max-w-[1400px] flex flex-col md:flex-row items-center justify-between gap-[80px]">
           <div className="flex flex-col items-start justify-start w-full md:w-[55%] gap-8">
             <div className="flex flex-col gap-6">
@@ -64,10 +106,7 @@ export default function NaturallyRadiantCase() {
                 <p className="text-4xl font-bold text-cyan-600">2x</p>
                 <p className="text-sm text-gray-600">Time Saved</p>
               </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-4xl font-bold text-cyan-600">Improved</p>
-                <p className="text-sm text-gray-600">Cash Flow</p>
-              </div>
+           
               <div className="flex flex-col gap-2">
                 <p className="text-4xl font-bold text-cyan-600">Scalable</p>
                 <p className="text-sm text-gray-600">Future Ready</p>
@@ -77,7 +116,7 @@ export default function NaturallyRadiantCase() {
           <div className="w-full md:w-[45%]">
             <div className="w-full rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-cyan-50 to-gray-50 p-8">
               <Image 
-                src="/works/Naturally_Radiant.png"
+                src="/works/SoapNotes.png"
                 alt="Naturally Radiant Scheduling and Payment Interface"
                 width={600}
                 height={400}
@@ -93,20 +132,20 @@ export default function NaturallyRadiantCase() {
           <ul className="list-disc pl-6 text-white space-y-4">
             <li><b>Scheduling Challenge:</b> Square's limited scheduling tools lacked robust customization, filtering, and centralized practitioner profile management.</li>
             <li><b>Operational Gaps:</b> No reliable backend to track appointments, associate them with practitioner profiles, or automate reminders efficiently.</li>
-            <li><b>POS Limitation:</b> Square's payment flow was siloed and lacked customization; in-person payments weren't integrated into a broader operational view.</li>
+       
           </ul>
         </SectionBlock>
         <SectionBlock title="Solution (Designed from First Principles)" color="cyan-400">
           <ul className="list-disc pl-6 text-white space-y-4">
             <li><b>Custom Booking Workflow:</b> Replaced Square booking with a custom scheduling system integrated into Airtable, turning appointment data into live, trackable records. Leveraged automation tools like <b>MAKE</b> and <b>n8n</b> to connect systems, automate reminders, and streamline practitioner coordination. Each practitioner now has a dynamic profile with associated appointments, history, and availability. Automated reminders and scheduling logic reduced manual coordination.</li>
-            <li><b>Upgraded POS to Helcium:</b> Integrated Helcium for in-person payments, allowing better tracking, syncing, and reporting of physical transactions. Created a single source of truth for revenue, appointments, and practitioner performance metrics.</li>
+       
           </ul>
         </SectionBlock>
         <SectionBlock title="Business Value Delivered" color="cyan-400">
           <ul className="list-disc pl-6 text-white space-y-4">
             <li><b>Centralized Data:</b> All appointments, payments, and practitioner activity are now viewable and manageable in Airtable.</li>
             <li><b>Time Saved:</b> Manual appointment tracking, confirmation, and follow-up coordination significantly reduced.</li>
-            <li><b>Improved Cash Flow Management:</b> In-person transactions are now seamlessly recorded with Helcium integration, reducing financial blind spots.</li>
+        
             <li><b>Scalability Enabled:</b> The new system can support multiple practitioners, clients, and locations—future-proofing their operations.</li>
           </ul>
         </SectionBlock>

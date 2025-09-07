@@ -16,7 +16,7 @@ const works: Work[] = [
     title: "Naturally Radiant | Digital SOAP Notes System",
     description: "We built a custom SOAP notes interface that allows practitioners to log client sessions digitally, submit assessments and recommendations, and sync everything into Airtable. This centralized client history, streamlined practitioner workflows, and replaced paper-based records with a scalable digital system.",
     image: "/works/SoapNotes.png",
-    link: "/casestudies/naturallyRadiant"
+    link: "/casetudies/naturallyRadiant"
   },
 
   {
