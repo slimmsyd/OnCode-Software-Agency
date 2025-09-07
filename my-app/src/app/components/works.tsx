@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Plus, Sparkles } from "lucide-react";
+import { ArrowRight, Plus, Sparkles, Minus } from "lucide-react";
 import { useState } from "react";
 
 interface Work {
@@ -9,6 +9,7 @@ interface Work {
   description: string;
   image: string; // This can now be either an image or video URL
   link: string;
+  package: string;
 }
 
 const works: Work[] = [
@@ -17,14 +18,16 @@ const works: Work[] = [
     title: "Naturally Radiant | Digital SOAP Notes System",
     description: "We built a custom SOAP notes interface that allows practitioners to log client sessions digitally, submit assessments and recommendations, and sync everything into Airtable. This centralized client history, streamlined practitioner workflows, and replaced paper-based records with a scalable digital system.",
     image: "/works/SoapNotes.png",
-    link: "/casetudies/naturallyRadiant"
+    link: "/casetudies/naturallyRadiant",
+    package: "Workflow Automation Package"
   },
 
   {
     title: "Tint Labs – Car Dealership Website", 
     description: "Designed and developed an agency website showcasing performance-based marketing services, case studies, and client results. Features clean agency-style UI, mobile optimization, and dynamic content integration from IG/TikTok.",
     image: "/works/TintLabVideo.mov", // Video showcase of https://www.tintlab.net/
-    link: "https://www.tintlab.net/"
+    link: "https://www.tintlab.net/",
+    package: "Digital Foundation Package"
   },
 
 
@@ -32,8 +35,8 @@ const works: Work[] = [
     title: "PRMNT PRO | Contract Extraction AI Pipeline",
     description: "We built an intelligent PDF Contract Extractor that leverages LangChain and OpenAI to analyze government contract documents. The system can analyze entire contracts or extract information page by page, giving the team unprecedented flexibility in how they review documents.",
     image: "/works/Preem_Chat1.png", // Update with your actual image path
-    link: "/casetudies/prmntProExtractor"
-
+    link: "/casetudies/prmntProExtractor",
+    package: "AI Integration Package"
   },
   // {
   //   title: "PRMNT PRO | Custom CRM",
@@ -78,26 +81,30 @@ const works: Work[] = [
     title: "Creatures Cube",
     description: "Web application for an ERC-4047 NFT collection.",
     image: "/works/CreatureCubes.png", // Update with your actual image path
-    link: "/casetudies/creaturecubes"
+    link: "/casetudies/creaturecubes",
+    package: "Web3 Development Package"
   },
   {
     title: "Gliddy",
     description: "We built Gliddy from the ground up — first as a React web app, then converted it into a fully native iOS and Android mobile application using React Native. The platform connects bartenders and users, with features like profiles, QR codes, notifications, and event booking.",
     image: "/works/gliddy.png", // Update with actual image path
-    link: "/casetudies/gliddy"
+    link: "/casetudies/gliddy",
+    package: "Mobile Development Package"
   },
   
   {
     title: "Preeminent Professional Services",
     description: "A Discovery site build for Facilitimes Management Company",
     image: "/works/PM.png", // Update with your actual image path
-    link: "https://www.prmntpro.com/"
+    link: "https://www.prmntpro.com/",
+    package: "Digital Foundation Package"
   },
   {
     title: "KY Engineering – Website & Business Profile Setup",
     description: "Built a professional 5-6 page website with AI chatbot, booking calendar, and SEO optimization. Guided client through Google Business Profile setup. Took KY Engineering from zero to professional online presence in under a week.",
     image: "/works/Ky_Engineering.png", // Update with your actual image path
-    link: "/casetudies/kyengineering"
+    link: "/casetudies/kyengineering",
+    package: "Digital Foundation Package"
   },
 
 
@@ -116,6 +123,10 @@ export default function Works() {
 
   const showMoreWorks = () => {
     setVisibleWorks(prev => Math.min(prev + WORKS_PER_LOAD, works.length));
+  };
+
+  const closeWorks = () => {
+    setVisibleWorks(3);
   };
 
   const hasMoreWorks = visibleWorks < works.length;
@@ -147,7 +158,13 @@ export default function Works() {
                   <div className="p-8 md:w-1/3 flex flex-col justify-between">
                     <div>
                       <h3 className="text-xl font-semibold mb-4">{work.title}</h3>
-                      <p className="text-gray-600 text-sm">{work.description}</p>
+                      <p className="text-gray-600 text-sm mb-4">{work.description}</p>
+                      
+                      {/* Package Badge */}
+                      <div className="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium bg-gradient-to-r from-cyan-50 to-blue-50 text-cyan-700 border border-cyan-200">
+                        <div className="w-2 h-2 bg-cyan-400 rounded-full mr-2"></div>
+                        {work.package}
+                      </div>
                     </div>
                     
                     <button 
@@ -237,14 +254,44 @@ export default function Works() {
           </motion.div>
         )}
         
-        {/* Completion message */}
+        {/* Close Works Button & Completion message */}
         {!hasMoreWorks && works.length > 3 && (
           <motion.div 
-            className="flex justify-center mt-16"
+            className="flex flex-col items-center gap-6 mt-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
+            {/* Close Works Button */}
+            <motion.button
+              onClick={closeWorks}
+              className="group relative bg-gradient-to-r from-gray-700 to-gray-800 text-white px-6 py-3 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300"
+              whileHover={{ scale: 1.03, y: -1 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {/* Background gradient animation */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-red-500 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={false}
+              />
+              
+              {/* Button content */}
+              <div className="relative flex items-center gap-2 font-medium">
+                <motion.div
+                  className="bg-white/20 p-1.5 rounded-full"
+                  whileHover={{ rotate: -180 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Minus className="w-3 h-3" />
+                </motion.div>
+                <span className="text-xs tracking-wide">Close Works</span>
+              </div>
+              
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </motion.button>
+
+            {/* Completion message */}
             <div className="text-center">
               <p className="text-gray-600 text-sm mb-2">You've seen all our works!</p>
               <div className="w-12 h-[2px] bg-gradient-to-r from-cyan-600 to-blue-600 mx-auto rounded-full" />
