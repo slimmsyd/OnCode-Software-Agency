@@ -1,7 +1,8 @@
 "use client"
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Plus, Sparkles } from "lucide-react";
+import { useState } from "react";
 
 interface Work {
   title: string;
@@ -110,69 +111,146 @@ const isVideoUrl = (url: string) => {
 };
 
 export default function Works() {
+  const [visibleWorks, setVisibleWorks] = useState(3);
+  const WORKS_PER_LOAD = 3;
+
+  const showMoreWorks = () => {
+    setVisibleWorks(prev => Math.min(prev + WORKS_PER_LOAD, works.length));
+  };
+
+  const hasMoreWorks = visibleWorks < works.length;
+
   return (
     <section className="relative w-full py-12 md:py-24 lg:py-20 xl:py-20 max-w-[1200px] m-auto">
       <div className="container mx-auto px-4">
         <h2 className="text-black text-[28px] font-semibold mb-12">Few of our works</h2>
 
         <div className="space-y-8">
-          {works.map((work, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 relative"
-            >
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-[#fdfbf7] to-[#f8f6f0] pointer-events-none" />
-              
-              <div className="flex flex-col md:flex-row relative">
-                {/* Left Content */}
-                <div className="p-8 md:w-1/3 flex flex-col justify-between">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-4">{work.title}</h3>
-                    <p className="text-gray-600 text-sm">{work.description}</p>
+          <AnimatePresence>
+            {works.slice(0, visibleWorks).map((work, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: -30, scale: 0.95 }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index >= 3 ? (index - 3) * 0.15 : index * 0.1,
+                  ease: [0.25, 0.46, 0.45, 0.94]
+                }}
+                className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 relative"
+              >
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-[#fdfbf7] to-[#f8f6f0] pointer-events-none" />
+                
+                <div className="flex flex-col md:flex-row relative">
+                  {/* Left Content */}
+                  <div className="p-8 md:w-1/3 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold mb-4">{work.title}</h3>
+                      <p className="text-gray-600 text-sm">{work.description}</p>
+                    </div>
+                    
+                    <button 
+                      className="mt-6 inline-flex items-center text-sm font-medium text-gray-900 group"
+                      onClick={() => window.open(work.link, '_blank')}
+                    >
+                      Open case
+                      <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    </button>
                   </div>
-                  
-                  <button 
-                    className="mt-6 inline-flex items-center text-sm font-medium text-gray-900 group"
-                    onClick={() => window.open(work.link, '_blank')}
-                  >
-                    Open case
-                    <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                  </button>
-                </div>
 
-                {/* Right Image */}
-                <div className="md:w-2/3 relative h-[400px] bg-gray-100 m-4 md:m-10 rounded-[10px] border border-[#DDDBDB]">
-                  <div className="aspect-w-16 aspect-h-9">
-                    {isVideoUrl(work.image) ? (
-                      <video
-                        className="w-full h-full object-cover"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                      >
-                        <source src={work.image} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    ) : (
-                      <Image
-                        src={work.image}
-                        alt={work.title}
-                        fill
-                        className="object-cover rounded-[10px]"
-                        quality={100}
-                      />
-                    )}
+                  {/* Right Image */}
+                  <div className="md:w-2/3 relative h-[400px] bg-gray-100 m-4 md:m-10 rounded-[10px] border border-[#DDDBDB]">
+                    <div className="aspect-w-16 aspect-h-9">
+                      {isVideoUrl(work.image) ? (
+                        <video
+                          className="w-full h-full object-cover"
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                        >
+                          <source src={work.image} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      ) : (
+                        <Image
+                          src={work.image}
+                          alt={work.title}
+                          fill
+                          className="object-cover rounded-[10px]"
+                          quality={100}
+                        />
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
+
+        {/* Elegant Show More Button */}
+        {hasMoreWorks && (
+          <motion.div 
+            className="flex justify-center mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <motion.button
+              onClick={showMoreWorks}
+              className="group relative bg-gradient-to-r from-gray-900 to-black text-white px-8 py-4 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {/* Background gradient animation */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                initial={false}
+              />
+              
+              {/* Sparkle effect */}
+              <motion.div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100"
+                initial={false}
+              >
+                <Sparkles className="absolute top-2 right-3 w-4 h-4 text-white animate-pulse" />
+                <Sparkles className="absolute bottom-3 left-4 w-3 h-3 text-white animate-pulse delay-300" />
+              </motion.div>
+              
+              {/* Button content */}
+              <div className="relative flex items-center gap-3 font-medium">
+                <motion.div
+                  className="bg-white/20 p-2 rounded-full"
+                  whileHover={{ rotate: 180 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Plus className="w-4 h-4" />
+                </motion.div>
+                <span className="text-sm tracking-wide">Show More Works</span>
+              </div>
+              
+              {/* Subtle glow effect */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </motion.button>
+          </motion.div>
+        )}
+        
+        {/* Completion message */}
+        {!hasMoreWorks && works.length > 3 && (
+          <motion.div 
+            className="flex justify-center mt-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <div className="text-center">
+              <p className="text-gray-600 text-sm mb-2">You've seen all our works!</p>
+              <div className="w-12 h-[2px] bg-gradient-to-r from-cyan-600 to-blue-600 mx-auto rounded-full" />
+            </div>
+          </motion.div>
+        )}
       </div>
     </section>
   );
