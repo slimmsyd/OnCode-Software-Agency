@@ -133,7 +133,7 @@ export default function EBookRise() {
             <div className="relative flex justify-center lg:justify-end">
               <div className="relative group">
                 {/* Book Cover */}
-                <div className="relative w-96 h-[28rem] transition-transform duration-500 group-hover:scale-105">
+                <div className="relative w-96 h-[32rem] transition-transform duration-500 group-hover:scale-105">
                   {/* Background glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-lg blur-xl opacity-20 scale-110"></div>
                   
@@ -143,7 +143,7 @@ export default function EBookRise() {
                       src="/Ebook/CoverPage.png"
                       alt="Rise of Intelligent Businesses - Book Cover"
                       width={384}
-                      height={448}
+                      height={512}
                       className="w-full h-full object-cover rounded-lg"
                       priority
                     />
