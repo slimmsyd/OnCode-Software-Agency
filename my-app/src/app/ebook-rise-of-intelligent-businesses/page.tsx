@@ -64,14 +64,14 @@ export default function EBookRise() {
       <main className="relative pt-20">
         {/* Hero Section */}
         <section className="relative py-16 px-6">
-          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
             <div className="space-y-8">
               <div className="space-y-6">
-                <div className="inline-flex items-center px-4 py-2 bg-blue-50 rounded-full border border-blue-200">
+                {/* <div className="inline-flex items-center px-4 py-2 bg-blue-50 rounded-lg border border-blue-200">
                   <span className="text-blue-600 text-sm font-medium">📚 Digital Interactive Experience</span>
                 </div>
-                
+                 */}
                 <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
                   Rise of Intelligent
                   <span className="block text-blue-600">Businesses</span>
@@ -82,9 +82,36 @@ export default function EBookRise() {
                 </h2>
                 
                 <p className="text-lg text-gray-600 leading-relaxed max-w-lg">
-                  Experience business transformation like never before. Navigate through interactive case studies, 
-                  discover implementation strategies, and immerse yourself in a digital journey that adapts to your learning style.
+                How to architect a business where humans and tools co-evolve. A two-layer flywheel that compounds skill and capability so you save time, cut costs, and scale without a big tech team. <strong>Why? To improve your quality of life by having an intelligent partner at your side, used the right way.</strong>
                 </p>
+              </div>
+
+              {/* Benefits Bullets */}
+              <div className="space-y-4 max-w-lg">
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-700 leading-relaxed">
+                    <strong>See the system clearly</strong> — AI isn't a gimmick; it's a layer that learns with you.
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-700 leading-relaxed">
+                    <strong>Get your time back</strong> — automate the grind (docs, intake, scheduling) and cut hours into minutes.
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-700 leading-relaxed">
+                    <strong>Build systems that don't stagnate</strong> — every project sharpens your team and your tools.
+                  </p>
+                </div>
+                <div className="flex items-start space-x-3">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+                  <p className="text-gray-700 leading-relaxed">
+                    <strong>Free your energy</strong> — stop drowning in busywork so you can focus on growth and improving your quality of life.
+                  </p>
+                </div>
               </div>
 
 
@@ -106,27 +133,27 @@ export default function EBookRise() {
             <div className="relative flex justify-center lg:justify-end">
               <div className="relative group">
                 {/* Book Cover */}
-                <div className="relative w-80 h-96 transform rotate-3 group-hover:rotate-1 transition-transform duration-500">
+                <div className="relative w-96 h-[28rem] transition-transform duration-500 group-hover:scale-105">
                   {/* Background glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-lg blur-xl opacity-30 scale-110"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 rounded-lg blur-xl opacity-20 scale-110"></div>
                   
                   {/* Actual Book Cover Image */}
                   <div className="relative w-full h-full rounded-lg shadow-2xl overflow-hidden">
                     <Image
                       src="/Ebook/CoverPage.png"
                       alt="Rise of Intelligent Businesses - Book Cover"
-                      width={320}
-                      height={384}
+                      width={384}
+                      height={448}
                       className="w-full h-full object-cover rounded-lg"
                       priority
                     />
                   </div>
                   
                   {/* Interactive badge */}
-                  <div className="absolute -top-3 -right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                  {/* <div className="absolute -top-3 -right-3 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                     interactive
                   </div>
-                  
+                   */}
                   {/* New Release badge */}
                   <div className="absolute -bottom-3 left-4 bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
                     New Release
@@ -149,7 +176,7 @@ export default function EBookRise() {
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
               Be the first to experience the future of business transformation. Get notified when 
-              "Rise of Intelligent Businesses" launches with exclusive early-bird pricing.
+              "Rise of Intelligent Businesses" launches and receive your free copy instantly.
             </p>
             
             {!isSubmitted ? (
@@ -221,7 +248,7 @@ export default function EBookRise() {
               <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 p-1">
                 <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
                   <Image
-                    src="/HomeAssets/Sydney_Photo.jpg"
+                    src="/Personal/SydneySanders.png"
                     alt="Sydney Sanders"
                     width={120}
                     height={120}
