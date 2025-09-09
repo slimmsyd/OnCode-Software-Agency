@@ -51,7 +51,17 @@ export default function EBookRise() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-2xl font-bold text-gray-800">OnCode</div>
+            <div className="flex items-center space-x-3">
+              <Image
+                src="/Personal/OnCodeLogoNew.png"
+                alt="OnCode Logo"
+                width={160}
+                height={53}
+                className="h-12 w-auto"
+                priority
+              />
+              <span className="text-2xl font-bold text-gray-800">OnCode</span>
+            </div>
             <div className="hidden md:flex space-x-8">
               <a href="/" className="text-gray-600 hover:text-gray-800 transition-colors">Home</a>
               <a href="/contact" className="text-gray-600 hover:text-gray-800 transition-colors">Contact</a>
@@ -286,7 +296,16 @@ export default function EBookRise() {
       {/* Footer */}
       <footer className="bg-gray-900 py-12 px-6">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="text-white text-2xl font-bold mb-4">OnCode</div>
+          <div className="flex justify-center items-center space-x-3 mb-4">
+            <Image
+              src="/Personal/OnCodeLogoNew.png"
+              alt="OnCode Logo"
+              width={180}
+              height={60}
+              className="h-14 w-auto filter brightness-0 invert"
+            />
+            <span className="text-white text-2xl font-bold">OnCode</span>
+          </div>
           <p className="text-gray-400 mb-6">Building the future of intelligent businesses</p>
           <div className="flex justify-center space-x-8 text-gray-400">
             <a href="/" className="hover:text-white transition-colors">Home</a>
