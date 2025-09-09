@@ -186,7 +186,7 @@ export default function HeaderComponent({
 
 <div className="mb-[20px s]">
           <h1 className="font-medium text-center uppercase header-h1 tracking-[-1px]">
-          Smarter Builds. Faster Growth
+          Intelligent Builds. Intelligent Growth
 
           </h1>
           </div>
