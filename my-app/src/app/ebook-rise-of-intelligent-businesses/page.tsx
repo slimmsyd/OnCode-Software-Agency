@@ -12,23 +12,27 @@ export default function EBookRise() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Determine webhook URL based on environment
+    const isProduction = process.env.NODE_ENV === 'production';
+    const webhookUrl = isProduction 
+      ? 'https://goldmine.app.n8n.cloud/webhook/90eca099-9ded-4cdf-a5d6-88d66539f42a'
+      : 'https://goldmine.app.n8n.cloud/webhook-test/90eca099-9ded-4cdf-a5d6-88d66539f42a';
+
     try {
-      const response = await fetch(
-        "https://hook.us1.make.com/weto5s8cei9yev2bt3kutqvcoqfzeajf",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            firstName,
-            email,
-            phoneNumber: "",
-            message: "eBook waitlist signup - Rise of Intelligent Businesses",
-            companyName: "eBook Waitlist",
-          }),
-        }
-      );
+      const response = await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName: firstName || "", // firstName is optional
+          email, // email is required
+          source: "eBook waitlist signup - Rise of Intelligent Businesses",
+          timestamp: new Date().toISOString(), // Capture exact signup time
+          signupDate: new Date().toLocaleDateString(), // Human-readable date
+          signupTime: new Date().toLocaleTimeString(), // Human-readable time
+        }),
+      });
 
       if (response.ok) {
         setIsSubmitted(true);
@@ -365,9 +369,8 @@ export default function EBookRise() {
                     id="firstName"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                    placeholder="Enter your first name"
+                    placeholder="Enter your first name (optional)"
                   />
                 </div>
 
