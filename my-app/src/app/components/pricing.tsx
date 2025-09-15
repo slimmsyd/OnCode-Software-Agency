@@ -118,7 +118,7 @@ export default function Pricing() {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
           <a
-            href="https://calendly.com/0ncode-info/30min"
+            href="https://cal.com/oncode-software-kuxhkk/30min"
             target="_blank"
             className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-[#374151] rounded-md hover:bg-gray-800 transition-colors duration-200"
           >
