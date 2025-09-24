@@ -287,7 +287,7 @@ export default function Navigation({
                     Blog
                   </Link>
                   <Link 
-                    href="https://cal.com/oncode-software-kuxhkk/30min"
+                    href="https://cal.com/oncode-software-kuxhkk/30min?overlayCalendar=true"
                     className="nav-link bg-yellow-400 hover:bg-yellow-500 text-black py-2 px-4 rounded-md mt-2 text-center"
                     onClick={() => setShowBG(false)}
                   >

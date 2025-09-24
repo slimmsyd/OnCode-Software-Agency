@@ -63,7 +63,7 @@ export const PricingCard: FC<Props> = ({
       </div>
 
       <Link
-        href="https://cal.com/oncode-software-kuxhkk/30min"
+        href="https://cal.com/oncode-software-kuxhkk/30min?overlayCalendar=true"
         target="_blank"
         className="price-btn cursor-pointer flex items-center justify-center"
       >
