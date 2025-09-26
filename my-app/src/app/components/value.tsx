@@ -7,7 +7,8 @@ export default function About() {
         <section className="relative w-full py-12 md:py-24 lg:py-10 xl:py-10 max-w-[500px] m-auto  text-black">
       <div className="container mx-auto px-4 max-w-6xl">
         
-        {/* Digital Foundations Package */}
+        {/* Digital Foundations Package - COMMENTED OUT */}
+        {/* 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -16,6 +17,7 @@ export default function About() {
           className="mb-16"
         >
           {/* Package Image */}
+          {/* 
           <div className="flex justify-center mb-8">
             <Image
               src="/HomeAssets/DigitalFoundsPackage.png"
@@ -27,8 +29,10 @@ export default function About() {
           </div>
 
           {/* Package Content */}
+          {/* 
           <div className="bg-white rounded-xl border border-gray-200 p-8 shadow-sm">
             {/* Header */}
+            {/* 
             <div className="text-center mb-8">
               <h3 className="text-2xl font-bold text-black mb-2">Digital Foundations Package</h3>
               <div className="text-3xl font-bold text-black mb-2">$550</div>
@@ -36,8 +40,10 @@ export default function About() {
             </div>
 
             {/* Problem & Promise Section */}
+            {/* 
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               {/* The Problem */}
+              {/* 
               <div>
                 <h4 className="text-lg font-semibold text-red-600 mb-4">The Problem</h4>
                 <ul className="space-y-2 text-gray-700">
@@ -49,6 +55,7 @@ export default function About() {
               </div>
 
               {/* The Promise */}
+              {/* 
               <div>
                 <h4 className="text-lg font-semibold text-green-600 mb-4">The Promise</h4>
                 <p className="text-gray-700">
@@ -59,6 +66,7 @@ export default function About() {
             </div>
 
             {/* What's Included */}
+            {/* 
             <div>
               <h4 className="text-lg font-semibold text-black mb-4">What's Included</h4>
               <div className="grid md:grid-cols-2 gap-3 text-sm text-gray-700">
@@ -106,6 +114,7 @@ export default function About() {
             </div>
 
             {/* CTA Button */}
+            {/* 
             <div className="text-center mt-8">
               <a
                 href="https://calendly.com/0ncode-info/30min"
@@ -117,6 +126,7 @@ export default function About() {
             </div>
           </div>
         </motion.div>
+        */}
 
         <h2 className="text-black text-[28px] font-semibold">Remember to stay OnCode</h2>
         {/* Quote */}
