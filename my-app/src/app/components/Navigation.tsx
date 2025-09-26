@@ -202,14 +202,16 @@ export default function Navigation({
 
         {/* Connect Wallet Button */}
         <div className="hidden md:block">
-          <ConnectButton
-            client={client}
-            wallets={wallets}
-            appMetadata={{
-              name: "Black Web3",
-              url: "https://example.com",
-            }}
-          />
+          <div className="connect-wallet-wrapper" style={{ transform: 'scaleY(1.05)' }}>
+            <ConnectButton
+              client={client}
+              wallets={wallets}
+              appMetadata={{
+                name: "Black Web3",
+                url: "https://example.com",
+              }}
+            />
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -299,14 +301,16 @@ export default function Navigation({
             
             {/* Mobile Connect Wallet Button */}
             <div className="mt-4">
-              <ConnectButton
-                client={client}
-                wallets={wallets}
-                appMetadata={{
-                  name: "Black Web3",
-                  url: "https://example.com",
-                }}
-              />
+              <div className="connect-wallet-wrapper" style={{ transform: 'scaleY(1.05)' }}>
+                <ConnectButton
+                  client={client}
+                  wallets={wallets}
+                  appMetadata={{
+                    name: "Black Web3",
+                    url: "https://example.com",
+                  }}
+                />
+              </div>
             </div>
           </div>
         )}
