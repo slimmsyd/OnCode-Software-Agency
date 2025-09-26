@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://www.0ncode.com',
     siteName: 'OnCode Software Agency',
-    title: 'OnCode | Professional Software Development Agency',
+    title: 'OnCode | AI Consultation Agency',
     description: 'Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages.',
     images: [
       {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OnCode | Professional Software Development Agency',
+    title: 'OnCode | AI Consultation Agency',
     description: 'Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages.',
     images: ['https://www.0ncode.com/Personal/OnCodeLogoNew.png'],
     creator: '@OnCodeAgency', // Add your Twitter handle if you have one
