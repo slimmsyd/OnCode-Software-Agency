@@ -48,12 +48,19 @@ export const metadata: Metadata = {
     description: 'Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages.',
     images: [
       {
-        url: 'https://www.0ncode.com/images/og-image.jpg', // You'll need to add this image
+        url: 'https://www.0ncode.com/Personal/OnCodeLogoNew.png',
         width: 1200,
         height: 630,
         alt: 'OnCode Software Agency - Custom Software Development',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'OnCode | Professional Software Development Agency',
+    description: 'Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages.',
+    images: ['https://www.0ncode.com/Personal/OnCodeLogoNew.png'],
+    creator: '@OnCodeAgency', // Add your Twitter handle if you have one
   },
 
   verification: {
