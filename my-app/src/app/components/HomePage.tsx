@@ -20,6 +20,7 @@ import Works from "./works";
 import Value from "./value";
 import Founder from "./founder";
 import ChatPopup from "./ChatPopup";
+import CTA from "./CTA";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -262,6 +263,10 @@ export default function HomePage() {
           <About />
         </div>
 
+        <div>
+          <CTA />
+        </div>
+
         {/* Case Study Section */}
         <CaseStudySection />
 
@@ -284,6 +289,8 @@ export default function HomePage() {
         <div>
           <Founder />
         </div>
+
+      
 
         <Footer />
       </main>
