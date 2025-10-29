@@ -147,6 +147,56 @@ const ShopifyStorePage = () => {
           </div>
         </motion.div>
 
+        {/* Showcase Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mb-20"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-black mb-4">See What We Create</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto mb-3">
+              From professional 3D product mockups to complete branded store experiences
+            </p>
+            <p className="text-sm text-gray-500 italic">
+              *These are design mockups and examples to showcase our capabilities
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto px-6">
+            {/* 3D Product Mockup */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-square rounded-xl overflow-hidden mb-4 bg-gray-50">
+                <img 
+                  src="/shopifyAssets/8bdcc9ac-d79d-45d5-9d1c-39dcf182b8bd.png" 
+                  alt="3D Product Mockup - Traditional Patterned Vest" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-black mb-2">AI-Generated 3D Mockups</h3>
+              <p className="text-gray-600 text-sm">
+                Example of professional product visualization with realistic lighting and textures - custom mockups created for each client's products.
+              </p>
+            </div>
+
+            {/* Store Design Mockup */}
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300">
+              <div className="aspect-square rounded-xl overflow-hidden mb-4 bg-gray-50">
+                <img 
+                  src="/shopifyAssets/Image of  9.jpeg" 
+                  alt="Shopify Store Design - Omi Collection" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-semibold text-black mb-2">Complete Store Experience</h3>
+              <p className="text-gray-600 text-sm">
+                Sample design showing fully branded Shopify stores with custom layouts, professional photography, and optimized user experience.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Package Cards */}
         <div className="grid md:grid-cols-3 gap-8 mb-16 items-start">
           {packages.map((pkg, index) => (
@@ -311,7 +361,7 @@ const ShopifyStorePage = () => {
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {['Shopify', 'Shopify Email / Klaviyo', 'Shopify SMS / Postscript', 'Meta + Google Analytics', 'AI Mockup Tools', 'Advanced Integrations'].map((tech, idx) => (
+            {['Shopify', 'Shopify Email / Klaviyo', 'Shopify SMS / Postscript', 'Meta + Google Analytics', 'AI Mockup Tools'].map((tech, idx) => (
               <div key={idx} className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center hover:bg-gray-100 transition-colors duration-300">
                 <span className="text-gray-800 text-sm font-medium">{tech}</span>
               </div>
