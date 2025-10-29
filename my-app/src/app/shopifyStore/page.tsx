@@ -138,11 +138,21 @@ const ShopifyStorePage = () => {
             Shopify Store Packages
           </h1>
           
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed mb-8">
             Professional eCommerce solutions designed to transform your vision into a thriving online business
           </p>
           
-          <div className="text-sm text-gray-500 mt-4">
+          <div className="mb-6">
+            <a 
+              href="https://cal.com/oncode-software-kuxhkk/30min?overlayCalendar=true" 
+              target="_blank" 
+              className="inline-flex items-center gap-2 bg-black text-white font-semibold py-3 px-6 rounded-xl hover:bg-gray-800 transition-all duration-300 shadow-lg transform hover:scale-105"
+            >
+              <span>Schedule Consultation</span>
+            </a>
+          </div>
+          
+          <div className="text-sm text-gray-500">
             by <span className="text-black font-semibold">OnCode</span>
           </div>
         </motion.div>
