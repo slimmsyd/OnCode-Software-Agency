@@ -64,7 +64,7 @@ export const useGoogleReviews = () => {
       console.error(err);
       setError("Failed to load reviews");
       // Fallback to mock data on error
-      setBusinessRating({ rating: 4.9, totalReviews: 128 });
+      setBusinessRating({ rating: 5, totalReviews: 1 });
       setIsLoading(false);
     }
   };
