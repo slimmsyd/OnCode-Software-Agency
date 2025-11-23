@@ -21,6 +21,8 @@ import Value from "./value";
 import Founder from "./founder";
 import ChatPopup from "./ChatPopup";
 import CTA from "./CTA";
+import LogoCarousel from "./LogoCarousel";
+import ProjectShowcase from "./ProjectShowcase";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -99,7 +101,7 @@ export default function HomePage() {
       image: "/assets/pastel_2.png",
     },
     {
-      name: "MVP & Product Development", 
+      name: "MVP & Product Development",
       description:
         "Launch your startup idea or next product feature. Rapid development that gets you to market fast with a foundation that scales.",
       image: "/assets/pastel3.png",
@@ -191,22 +193,11 @@ export default function HomePage() {
     <>
       {/* <PageLoader /> */}
       {/* <ChatPopup /> */}
-      
+
       <div
-        className="site-wrapper h-[100vh] md:h-[100vh] relative"
+        className="  relative"
         ref={refSectionHome}
       >
-        {/* <div className="overlayDark absolute"></div> */}
-        {/* <div className="absolute video-bg">
-          <Image
-            src="/HomeAssets/Bg_Desktop_Image.png"
-            alt="Background"
-            fill
-            priority
-            className="object-cover"
-            quality={100}
-          />
-        </div> */}
 
 
 
@@ -219,64 +210,36 @@ export default function HomePage() {
           scrollToSection={scrollToSection}
         />
       </div>
-{/* 
-      <div className="py-1 w-full flex flex-col items-center gap-[20px]  justify-center lg:p-8 px-0 bg-black">
-        <p className="text-white/80 montserrat text-[12px]">
-          Tech we work with
-        </p>
 
-        <div className="marquee w-full flex gap-[20px] items-center justify-between overflow-hidden whitespace-nowrap">
-          <img
-            src="https://cdn.prod.website-files.com/6564c816d808331339215960/656628cd52a692653ba4dad8_icon_openAI.png"
-            alt="OpenAI logo"
-            className="w-[100px]  h-[30px]"
-          />
-          <img
-            src="https://cdn.prod.website-files.com/6564c816d808331339215960/66f38a2506d16f7bebd590f4_llamaindx_icon.png"
-            alt="LlamaIndex logo"
-            className="w-[100px]  h-[30px]"
-          />
+      {/* Logo Carousel */}
+      <LogoCarousel />
 
-          <img
-            src="https://cdn.prod.website-files.com/6564c816d808331339215960/65772de377bab5a434fb51a1_icon_LLaMA.png"
-            alt="LLaMA logo"
-            className="w-[100px]  h-[30px]"
-          />
-
-          <img
-            src="https://cdn.prod.website-files.com/6564c816d808331339215960/65776f14d6312f05bf70fef4_icon_vercel.png"
-            alt="Vercel logo"
-            className="w-[100px]  h-[30px]"
-          />
-          <img
-            src="https://cdn.prod.website-files.com/6564c816d808331339215960/656628cd73f2e9c08f5cba6c_icon_node.png"
-            alt="Node.js logo"
-            className="w-[100px]  h-[30px]"
-          />
-        </div>
-      </div> */}
+      {/* Project Showcase */}
+      <ProjectShowcase />
 
       <main className="relative">
-     
+
 
         <div id="ecosystem" ref={refSection1}>
           <About />
         </div>
 
+
+
+
+        {/* 
         <div>
+
           <CTA />
         </div>
+ */}
 
-        {/* Case Study Section */}
-        <CaseStudySection />
 
         <div id="about" ref={refSection2}>
           <Process />
         </div>
 
-        <div id="case-studies" ref={refSection4}>
-          <Works />
-        </div>
+
 
         <div ref={refSection5}>
           <Value />
@@ -290,12 +253,12 @@ export default function HomePage() {
           <Founder />
         </div>
 
-      
+
 
         <Footer />
       </main>
 
-    
+
     </>
   );
 }
@@ -440,29 +403,26 @@ function ImageSlider({
   return (
     <div className="relative w-full overflow-hidden my-[100px] px-[20px]">
       <div
-        className={`flex transition-transform duration-300 ease-in-out ${
-          isMobile ? "" : "gap-[10px]"
-        }`}
+        className={`flex transition-transform duration-300 ease-in-out ${isMobile ? "" : "gap-[10px]"
+          }`}
         style={{
-          transform: `translateX(-${
-            currentIndex * (isMobile ? 100 : 100 / 3)
-          }%)`,
+          transform: `translateX(-${currentIndex * (isMobile ? 100 : 100 / 3)
+            }%)`,
         }}
       >
         {services.map((service, index) => (
           <div
             key={index}
-            className={`${
-              isMobile ? "w-full" : "w-auto"
-            } h-[500px] rounded-[19px] relative flex-shrink-0 group transition-all duration-300 ease-in-out`}
+            className={`${isMobile ? "w-full" : "w-auto"
+              } h-[500px] rounded-[19px] relative flex-shrink-0 group transition-all duration-300 ease-in-out`}
             style={{
               width: isMobile
                 ? "100%"
                 : hoveredIndex === index
-                ? "55%"
-                : hoveredIndex !== null
-                ? "20%"
-                : "33.333%",
+                  ? "55%"
+                  : hoveredIndex !== null
+                    ? "20%"
+                    : "33.333%",
             }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
@@ -508,9 +468,8 @@ function ImageSlider({
             </div>
 
             <Image
-              className={`h-[100%] servicesImage object-cover rounded-[19px] ${
-                hoveredIndex === index ? "w-full" : "w-auto"
-              }`}
+              className={`h-[100%] servicesImage object-cover rounded-[19px] ${hoveredIndex === index ? "w-full" : "w-auto"
+                }`}
               src={service.src}
               alt={`Slide ${index + 1}`}
               width={500}

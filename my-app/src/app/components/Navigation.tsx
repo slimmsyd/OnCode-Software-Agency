@@ -50,7 +50,7 @@ export default function Navigation({
   const [showBG, setShowBG] = useState<boolean>(false);
   const router = useRouter();
   const pathname = usePathname();
-  
+
   const showNavBG = () => {
     setShowBG(!showBG);
   };
@@ -81,10 +81,6 @@ export default function Navigation({
     setShowBG(!showBG);
   };
 
-  useEffect(() => {
-    console.log("Logging the Show BG show", showBG);
-  }, [showBG]);
-
   const [isWalletConnected, setIsWalletConnected] = useState<boolean>(false);
   const [connectedAddress, setConnectedAddress] = useState<string>("");
 
@@ -97,62 +93,37 @@ export default function Navigation({
   const activeAccount = useActiveAccount();
 
   useEffect(() => {
-    console.log("address", activeAccount?.address);
     setConnectedAddress(activeAccount?.address as string);
-    console.log("Logging the connected addres before", connectedAddress);
-  }, [connectedAddress]);
+  }, [activeAccount]);
 
   useEffect(() => {
-    console.log("IS wallet connect true or false", isWalletConnected);
-
     if (connectedAddress) {
-      console.log("Logging the connected adddress address", connectedAddress);
       setIsWalletConnected(true);
     }
   }, [connectedAddress]);
 
-  const [isVisible, setIsVisible] = useState(false);
-  const navRef = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 30) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const [showDropdown, setShowDropdown] = useState<boolean>(false); // State to manage dropdown visibility
-
   return (
-    <div className={`
-      fixed top-[25px] left-1/2 transform -translate-x-1/2 z-50 w-full
-      ${isVisible ? 'max-w-[93%]' : 'max-w-[80%]'}
-      transition-all duration-300 ease-in-out
-    `}>
-      <div className="flex items-center justify-between px-8  py-4 w-full border border-[#F0F0F0] rounded-[10px] bg-white">
+    <div className="relative top-0 left-0 w-full z-50 bg-transparent ">
+      <div className="max-w-[1400px] mx-auto px-6 h-[96px] flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
-          <button 
+          <button
             onClick={() => router.push('/')}
-            className="text-xl font-semibold cursor-pointer">OnCode</button>
+            className="text-xl font-medium tracking-tight cursor-pointer text-black hover:opacity-80 transition-opacity"
+          >
+            OnCode
+          </button>
         </div>
 
         {/* Navigation Links */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-8 ml-auto">
           {customLinks ? (
             // Render custom links for case studies
             customLinks.map((link, index) => (
               <div
                 key={index}
                 onClick={link.onClick}
-                className="nav-link hover:text-gray-300 cursor-pointer"
+                className="nav-link text-gray-600 hover:text-black cursor-pointer text-[15px] font-medium transition-colors"
               >
                 {link.label}
               </div>
@@ -160,68 +131,62 @@ export default function Navigation({
           ) : (
             // Render default navigation
             <>
-              <div 
+              <div
                 onClick={() => handleNavigation('home')}
-                className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
+                className="nav-link bg-white text-black border border-black rounded-full px-6 py-2.5 cursor-pointer transition-all duration-300 text-[15px] font-medium hover:bg-gray-50"
+                style={{ borderWidth: '0.5px' }}
               >
                 Home
               </div>
-              <div 
+              {/* <div
                 onClick={() => handleNavigation('ecosystem')}
-                className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
+                className="nav-link text-gray-600 hover:text-black cursor-pointer transition-colors duration-300 text-[15px] font-medium"
               >
                 Ecosystem
-              </div>
-              <div 
+              </div> */}
+              <div
                 onClick={() => handleNavigation('about')}
-                className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
+                className="nav-link bg-white text-black border border-black rounded-full px-6 py-2.5 cursor-pointer transition-all duration-300 text-[15px] font-medium hover:bg-gray-50"
+                style={{ borderWidth: '0.5px' }}
               >
-                About us
+                About Us
               </div>
-              <div 
+              <div
                 onClick={() => handleNavigation('case-studies')}
-                className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
+                className="nav-link bg-white text-black border border-black rounded-full px-6 py-2.5 cursor-pointer transition-all duration-300 text-[15px] font-medium hover:bg-gray-50"
+                style={{ borderWidth: '0.5px' }}
               >
-                Case Studies
+                Projects
               </div>
-              {/* <Link 
-                href="/blog"
-                className="nav-link hover:text-gray-300 cursor-pointer transition-colors duration-300"
-              >
-                Blog
-              </Link> */}
-              {/* <Link 
-                href="/onboarding"
-                className="nav-link px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-black rounded-md transition-colors duration-300"
-              >
-                Get Started
-              </Link> */}
             </>
           )}
-        </div>
 
-        {/* Connect Wallet Button */}
-        <div className="hidden md:block">
-          <div className="connect-wallet-wrapper" style={{ transform: 'scaleY(1.05)' }}>
+          {/* Connect Wallet Button */}
+          <div className="connect-wallet-wrapper ml-6 pl-6 border-l border-black/10 h-12 flex items-center">
             <ConnectButton
               client={client}
               wallets={wallets}
+              theme={"light"}
+              connectButton={{
+                label: "Connect Wallets",
+                className: "!bg-transparent !text-black !border !border-black/20 !rounded-[4px] !px-5 !py-2 !text-[14px] !font-medium hover:!bg-black/10 transition-all !h-auto"
+              }}
               appMetadata={{
-                name: "Black Web3",
-                url: "https://example.com",
+                name: "OnCode",
+                url: "https://oncode.com",
               }}
             />
           </div>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden z-30">
-          <button 
-            onClick={() => showNavBG()} 
-            className="mobile-nav-container z-30 w-6 h-6 flex items-center justify-center"
+        <div className="md:hidden z-30 ml-auto">
+          <button
+            onClick={() => showNavBG()}
+            className="mobile-nav-container z-30 w-8 h-8 flex items-center justify-center text-black hover:bg-black/5 rounded-full transition-colors"
           >
             <svg
-              className={`${showBG ? "nav-svg" : ""} w-6 h-6`}
+              className="w-6 h-6"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -238,8 +203,15 @@ export default function Navigation({
 
         {/* Mobile Menu */}
         {showBG && (
-          <div className="absolute top-16 left-0 right-0 bg-white p-4 md:hidden rounded-[10px] border border-[#F0F0F0] shadow-lg">
-            <div className="flex flex-col space-y-4">
+          <div className="fixed inset-0 bg-white z-40 flex flex-col pt-24 px-6">
+            <button
+              onClick={() => setShowBG(false)}
+              className="absolute top-6 right-6 text-black p-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
+            </button>
+
+            <div className="flex flex-col space-y-6">
               {customLinks ? (
                 // Render custom links for case studies in mobile menu
                 customLinks.map((link, index) => (
@@ -249,7 +221,7 @@ export default function Navigation({
                       link.onClick();
                       setShowBG(false);
                     }}
-                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                    className="text-2xl font-medium text-gray-600 hover:text-black cursor-pointer"
                   >
                     {link.label}
                   </div>
@@ -257,57 +229,54 @@ export default function Navigation({
               ) : (
                 // Render default mobile navigation
                 <>
-                  <div 
-                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                  <div
+                    className="text-2xl font-medium text-gray-600 hover:text-black cursor-pointer"
                     onClick={() => mobileNavBtn('home')}
                   >
                     Home
                   </div>
-                  <div 
-                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                  <div
+                    className="text-2xl font-medium text-gray-600 hover:text-black cursor-pointer"
                     onClick={() => mobileNavBtn('ecosystem')}
                   >
                     Ecosystem
                   </div>
-                  <div 
-                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                  <div
+                    className="text-2xl font-medium text-gray-600 hover:text-black cursor-pointer"
                     onClick={() => mobileNavBtn('about')}
                   >
                     About us
                   </div>
-                  <div 
-                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                  <div
+                    className="text-2xl font-medium text-gray-600 hover:text-black cursor-pointer"
                     onClick={() => mobileNavBtn('case-studies')}
                   >
-                    Case Studies
+                    Projects
                   </div>
-                  <Link 
+                  <Link
                     href="/blog"
-                    className="nav-link hover:text-gray-300 cursor-pointer py-2"
+                    className="text-2xl font-medium text-gray-600 hover:text-black cursor-pointer"
                     onClick={() => setShowBG(false)}
                   >
                     Blog
                   </Link>
-                  <Link 
-                    href="https://cal.com/oncode-software-kuxhkk/30min?overlayCalendar=true"
-                    className="nav-link bg-yellow-400 hover:bg-yellow-500 text-black py-2 px-4 rounded-md mt-2 text-center"
-                    onClick={() => setShowBG(false)}
-                  >
-                    Get Started
-                  </Link>
                 </>
               )}
             </div>
-            
-            {/* Mobile Connect Wallet Button */}
-            <div className="mt-4">
-              <div className="connect-wallet-wrapper" style={{ transform: 'scaleY(1.05)' }}>
+
+            <div className="mt-auto mb-12">
+              <div className="connect-wallet-wrapper">
                 <ConnectButton
                   client={client}
                   wallets={wallets}
+                  theme={"light"}
+                  connectButton={{
+                    label: "Get started",
+                    className: "!bg-black !text-white !border-none !rounded-full !px-6 !py-3 !text-lg !font-medium !w-full"
+                  }}
                   appMetadata={{
-                    name: "Black Web3",
-                    url: "https://example.com",
+                    name: "OnCode",
+                    url: "https://oncode.com",
                   }}
                 />
               </div>

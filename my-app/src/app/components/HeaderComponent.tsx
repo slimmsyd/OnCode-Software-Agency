@@ -50,7 +50,7 @@ export default function HeaderComponent({
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     // Prevent submission if already loading
     if (isLoading) return;
 
@@ -168,8 +168,9 @@ export default function HeaderComponent({
     setPhone(value);
   };
 
+
   return (
-    <section className="site-inner-container h-[100vh] md:h-[100vh]  ">
+    <section className=" h-[70vh] md:h-[70vh] relative overflow-hidden">
       <Navigation
         scrollToSection={scrollToSection}
         refSection1={refSection1}
@@ -178,29 +179,78 @@ export default function HeaderComponent({
         refSection3={refSection3}
       />
 
-      <div className="flex flex-col h-[80%] items-center justify-center mt-[0px] md:mt-[90px]">
-        <div className="flex flex-col gap-[5px] items-center text-center w-[100%] text-black">
-          <p className="font-light text-[14px]  text-black/50 ">
+      {/* Grid Backdrop */}
+      <div
+        className="absolute top-0 right-0 w-full h-full pointer-events-none z-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(0,0,0,0.03) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px',
+          maskImage: 'radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)',
+        }}
+      />
+
+      {/* Animated Glow Overlay */}
+      <style jsx>{`
+        @keyframes gridGlow {
+          0% {
+            background-position: 0% 0%;
+          }
+          100% {
+            background-position: 100% 100%;
+          }
+        }
+      `}</style>
+      <div
+        className="absolute top-0 right-0 w-full h-full pointer-events-none z-0"
+        style={{
+          backgroundImage: `
+            linear-gradient(
+              135deg,
+              transparent 0%,
+              transparent 45%,
+              rgba(100, 150, 255, 0.15) 48%,
+              rgba(100, 150, 255, 0.25) 50%,
+              rgba(100, 150, 255, 0.15) 52%,
+              transparent 55%,
+              transparent 100%
+            )
+          `,
+          backgroundSize: '200% 200%',
+          animation: 'gridGlow 8s ease-in-out infinite',
+          mixBlendMode: 'overlay',
+          maskImage: 'radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)',
+          WebkitMaskImage: 'radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)',
+        }}
+      />
+
+
+      <div className="flex flex-col h-[80%] items-center justify-center  ">
+        <div className="flex flex-col items-center text-center w-[100%] text-black max-w-5xl mx-auto px-4">
+          {/* Eyebrow */}
+          <p className="font-light text-[14px] text-black/50 uppercase tracking-wide">
             Generative AI Software Development
           </p>
 
-<div className="mb-[20px s]">
-          <h1 className="font-medium text-center uppercase header-h1 tracking-[-1px]">
-          Intelligent Builds. Intelligent Growth
-
+          {/* Main Heading */}
+          <h1 className="font-medium text-center uppercase header-h1 tracking-[-1px] mt-6 mb-6">
+            Custom Software. Automation. AI That Works For Your Business.
           </h1>
-          </div>
 
-          <p className="font-light max-w-[80%]  text-black text-center !text-[16px] md:max-w-[90%] ">
-          Whether you’re a contractor, founder, or service business, OnCode delivers custom systems that modernize how you work and accelerate your path to scale.
+          {/* Description */}
+          <p className="font-light max-w-[85%] text-black text-center text-[18px] leading-relaxed md:max-w-[700px] mt-6">
+            OnCode builds automation workflows, AI tools, and full-stack applications tailored to the way your company actually works. Whether you're launching an MVP or replacing manual processes, we deliver custom systems in weeks — not months.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-[20px] mt-[20px] w-full sm:w-auto px-4 sm:px-0">
+          {/* CTA Button */}
+          <div className="flex flex-col sm:flex-row gap-[20px] mt-8 w-full sm:w-auto px-4 sm:px-0">
             <Link
               target="_blank"
               href="https://calendly.com/sydneysanders/30min"
-              // onClick={() => scrollToSection("about")}
-              className="bg-black text-white text-[14px] flex flex-row gap-[10px] items-center px-[10px] py-[8px] rounded-[8px] hover:bg-gray-800 transition-colors duration-300 w-[200px] m-auto text-center justify-center"
+              className="bg-black text-white text-[15px] flex flex-row gap-[10px] items-center px-6 py-3 rounded-[8px] hover:bg-gray-800 transition-colors duration-300 w-[200px] m-auto text-center justify-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -209,10 +259,10 @@ export default function HeaderComponent({
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                className="lucide lucide-calendar w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 flex-shrink-0"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-4 h-4"
               >
                 <path d="M8 2v4"></path>
                 <path d="M16 2v4"></path>
@@ -221,72 +271,12 @@ export default function HeaderComponent({
               </svg>
               Book A Call
             </Link>
-{/* 
-            <button
-              onClick={() => setShowPopup(true)}
-              className="bg-white text-[14px] flex flex-row gap-[10px] items-center px-[20px] py-[10px] rounded-[8px] hover:bg-gray-100 transition-colors duration-300 border border-[#CDCDCD] w-[200px] m-auto"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                className="lucide lucide-file-text w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 flex-shrink-0"
-              >
-                <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
-                <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
-                <path d="M10 9H8"></path>
-                <path d="M16 13H8"></path>
-                <path d="M16 17H8"></path>
-              </svg>
-              Validate Your Idea
-            </button>  */}
-
-
           </div>
 
-          <div className="flex flex-col gap-[10px] mt-[20px] w-[95%] md:w-[60%]">
-            <p className="font-light text-[16px]  text-black mt-[0px] md:mt-[15px] text-center ">
-            OnCode transforms manual processes into automated systems that accelerate your business. Whether you're a startup launching your first MVP or an established company ready to scale, we build custom software solutions in weeks, not months.
-              <br />
-              <br />
-              From idea to implementation — we keep you OnCode.
-            </p>
-          </div>
-
-
-          {/* Add IG reels nad Shorts HERE */}
-
-          {/* <div className=" mobileBanner items-center justify-center  flex flex-row gap-[50px] mt-[20px] md:mt-[50px] w-[100%] mb-[10px] md:mb-[0px] ">
-            <div className="flex items-center w-[100%] lg:w-[320px] justify-center gap-[10px]">
-              <h2 className="md:text-[28px] text-[18px]">Build</h2>
-              <div className="w-[20px] h-[20px] rounded-full bg-white flex items-center justify-center">
-                <div className="w-[5px] h-[5px]  rounded-full bg-black"></div>
-              </div>
-            </div>
-
-            <div className="flex items-center w-[100%] lg:w-[320px] justify-center gap-[10px]">
-              <div className="w-[20px] h-[20px] rounded-full bg-white flex items-center justify-center">
-                <div className="w-[5px] h-[5px]  rounded-full bg-black"></div>
-              </div>
-              <h2 className="md:text-[28px] text-[18px]">Innovate</h2>
-              <div className="w-[20px] h-[20px] rounded-full bg-white flex items-center justify-center">
-                <div className="w-[5px] h-[5px]  rounded-full bg-black"></div>
-              </div>
-            </div>
-
-            <div className="flex items-center w-[100%] lg:w-[320px] justify-center gap-[10px]">
-              <div className="w-[20px] h-[20px] rounded-full bg-white flex items-center justify-center">
-                <div className="w-[5px] h-[5px]  rounded-full bg-black"></div>
-              </div>
-              <h2 className="md:text-[28px] text-[18px]">Educare</h2>
-            </div>
-          </div> */}
+          {/* Tagline */}
+          <p className="font-light text-[16px] text-black/70 mt-12 text-center italic">
+            From idea to implementation — we keep you OnCode.
+          </p>
         </div>
       </div>
 
@@ -400,7 +390,7 @@ export default function HeaderComponent({
                 Thank you for sharing your vision!
               </h3>
             </div>
-            <div 
+            <div
               className={`prose max-w-none ${styles['response-container']}`}
               dangerouslySetInnerHTML={{ __html: aiResponse }}
             />
