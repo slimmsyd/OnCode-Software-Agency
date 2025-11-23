@@ -14,7 +14,7 @@ export default function PriceContainer({ priceRef }: Props) {
 
 
 
-  
+
   return (
     <section ref={priceRef} className="h-full site-wrapper bg-black">
       <div className="site-container h-full flex flex-col gap-[35px]  pb-[100px]">
@@ -43,7 +43,7 @@ export default function PriceContainer({ priceRef }: Props) {
               <p className="text-[14px] text-[#b4b4b4] ">
                 Essential features of this and that
               </p>
-              <span className = "text-[14px]">
+              <span className="text-[14px]">
                 General Consultation: I can provide an overview of Blockchain
                 technology, explain key concepts, and help you understand how it
                 can be applied to your specific use case
@@ -51,7 +51,7 @@ export default function PriceContainer({ priceRef }: Props) {
             </div>
 
             <Link
-              href="https://calendly.com/blckw3b"
+              href="https://cal.com/oncode-software-kuxhkk/30min"
               target="_blank"
               className="price-btn cursor-pointer flex items-center justify-center"
             >
@@ -59,14 +59,14 @@ export default function PriceContainer({ priceRef }: Props) {
             </Link>
           </div>
 
-        <PricingCard
+          <PricingCard
             pricing={"$45"}
             timing={"30"}
             pricing2={"$75"}
             timing2={"60"}
             category={"Beginner"}
             minutes={"minutes"}
-            text = {"Market Analysis,Wallet Setup and Security,Investment Guidance, Project Recommendations"}
+            text={"Market Analysis,Wallet Setup and Security,Investment Guidance, Project Recommendations"}
           />
           <PricingCard
             pricing={"$75"}
@@ -75,7 +75,7 @@ export default function PriceContainer({ priceRef }: Props) {
             timing2={"90"}
             category={"Intermediate"}
             minutes={"minutes"}
-            text = {"Market Analysis,Wallet Setup and Security,Investment Guidance, Project Recommendations, Tokenomics Consultation, DeFi Strategies, Security Audits"}
+            text={"Market Analysis,Wallet Setup and Security,Investment Guidance, Project Recommendations, Tokenomics Consultation, DeFi Strategies, Security Audits"}
 
           />
           <PricingCard
@@ -85,7 +85,7 @@ export default function PriceContainer({ priceRef }: Props) {
             timing2={"90"}
             category={"Expert"}
             minutes={"minutes"}
-            text = {"Market Analysis,Wallet Setup and Security,Investment Guidance, Project Recommendations, Tokenomics Consultation, DeFi Strategies, Security Audits, Smart Contract Audits, Blockchain Development, Tokenomics Design, Web3 Integration"}
+            text={"Market Analysis,Wallet Setup and Security,Investment Guidance, Project Recommendations, Tokenomics Consultation, DeFi Strategies, Security Audits, Smart Contract Audits, Blockchain Development, Tokenomics Design, Web3 Integration"}
           />
         </div>
       </div>

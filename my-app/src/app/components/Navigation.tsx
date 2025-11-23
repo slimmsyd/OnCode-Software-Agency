@@ -152,7 +152,7 @@ export default function Navigation({
                 About Us
               </div>
               <div
-                onClick={() => handleNavigation('case-studies')}
+                onClick={() => handleNavigation('projects')}
                 className="nav-link bg-white text-black border border-black rounded-full px-6 py-2.5 cursor-pointer transition-all duration-300 text-[15px] font-medium hover:bg-gray-50"
                 style={{ borderWidth: '0.5px' }}
               >
@@ -162,14 +162,14 @@ export default function Navigation({
           )}
 
           {/* Connect Wallet Button */}
-          <div className="connect-wallet-wrapper ml-6 pl-6 border-l border-black/10 h-12 flex items-center">
+          <div className="connect-wallet-wrapper ml-6 pl-6 border-l border-black/10 flex items-center">
             <ConnectButton
               client={client}
               wallets={wallets}
               theme={"light"}
               connectButton={{
-                label: "Connect Wallets",
-                className: "!bg-transparent !text-black !border !border-black/20 !rounded-[4px] !px-5 !py-2 !text-[14px] !font-medium hover:!bg-black/10 transition-all !h-auto"
+                label: "Connect Wallet",
+                className: "!bg-black !text-white !border !border-black !rounded-full !px-6 !py-2.5 !text-[15px] !font-medium hover:!bg-black/90 transition-all !h-auto"
               }}
               appMetadata={{
                 name: "OnCode",

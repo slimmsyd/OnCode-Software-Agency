@@ -117,7 +117,7 @@ export default function ChatPopup() {
   const sendToWebhooks = async (userMessage: string, assistantMessage: string) => {
     try {
       console.log('Sending to webhooks:', { userMessage, assistantMessage });
-      
+
       // Format data for Make.com webhook
       const webhookData = {
         data: {
@@ -127,9 +127,9 @@ export default function ChatPopup() {
           source: 'OnCode Website Chat'
         }
       };
-      
+
       console.log('Formatted webhook data:', JSON.stringify(webhookData, null, 2));
-      
+
       // Send to first webhook
       // try {
       //   console.log('Sending to webhook 1:', webhookUrl1);
@@ -145,7 +145,7 @@ export default function ChatPopup() {
       //       source: 'OnCode Website Chat'
       //     }),
       //   });
-      
+
       //   if (!response1.ok) {
       //     console.error('Webhook 1 error:', response1.status, await response1.text());
       //   } else {
@@ -167,7 +167,7 @@ export default function ChatPopup() {
           },
           body: JSON.stringify(webhookData),
         });
-        
+
         if (!response2.ok) {
           console.error('Webhook 2 error:', response2.status, await response2.text());
         } else {
@@ -194,15 +194,15 @@ export default function ChatPopup() {
   useEffect(() => {
     const timer = setTimeout(() => {
       const initialMessage = "I can help you understand our services, discuss your project requirements, or connect you with our development team. We specialize in building MVPs rapidly with AI-powered workflows.";
-      
-      setMessages(prev => [...prev, 
-        {
-          type: "assistant",
-          content: initialMessage,
-          timestamp: new Date()
-        }
+
+      setMessages(prev => [...prev,
+      {
+        type: "assistant",
+        content: initialMessage,
+        timestamp: new Date()
+      }
       ]);
-      
+
       // Send initial conversation to webhooks
       sendToWebhooks("", initialMessage);
     }, 1000);
@@ -225,7 +225,7 @@ export default function ChatPopup() {
   // Function to generate blockchain project response
   const generateBlockchainResponse = () => {
     const { kinnected, other } = projectInfo.blockchain;
-    
+
     return `Yes, OnCode has extensive experience with blockchain development! Here are some of our notable projects:
 
 • ${kinnected.name}: ${kinnected.description}
@@ -245,7 +245,7 @@ We can help with various blockchain solutions including NFT collections, decentr
   // Function to generate AI/data analytics project response
   const generateAIResponse = () => {
     const { streetEconomics, other } = projectInfo.ai;
-    
+
     return `Absolutely! OnCode specializes in AI automation and data analytics. Here are some of our key projects:
 
 • ${streetEconomics.name}: ${streetEconomics.description}
@@ -269,7 +269,7 @@ Our AI expertise includes building custom analytics dashboards, developing AI ag
       .replace(/• ([^:]+):/g, '• <strong>$1</strong>:')
       // Bold labels like "Technologies:", "Website:", etc.
       .replace(/(Technologies|Website|Learn more):/g, '<strong>$1</strong>:');
-    
+
     return formattedText;
   };
 
@@ -289,18 +289,18 @@ Our AI expertise includes building custom analytics dashboards, developing AI ag
     // Check if the message is about blockchain
     if (isBlockchainQuestion(userMessageText)) {
       const blockchainResponseContent = generateBlockchainResponse();
-      
+
       const blockchainResponse = {
         type: "assistant" as const,
         content: blockchainResponseContent,
         timestamp: new Date(),
         includeContactButton: true
       };
-      
+
       setTimeout(async () => {
         setMessages((prev) => [...prev, blockchainResponse]);
         setIsLoading(false);
-        
+
         // Send to webhooks
         await sendToWebhooks(userMessageText, blockchainResponseContent);
       }, 1000);
@@ -310,18 +310,18 @@ Our AI expertise includes building custom analytics dashboards, developing AI ag
     // Check if the message is about AI/data analytics
     if (isAIQuestion(userMessageText)) {
       const aiResponseContent = generateAIResponse();
-      
+
       const aiResponse = {
         type: "assistant" as const,
         content: aiResponseContent,
         timestamp: new Date(),
         includeContactButton: true
       };
-      
+
       setTimeout(async () => {
         setMessages((prev) => [...prev, aiResponse]);
         setIsLoading(false);
-        
+
         // Send to webhooks
         await sendToWebhooks(userMessageText, aiResponseContent);
       }, 1000);
@@ -330,7 +330,7 @@ Our AI expertise includes building custom analytics dashboards, developing AI ag
 
     // Check if the message is about services/development
     const serviceKeywords = ['services', 'development', 'build', 'app', 'website', 'software', 'mvp'];
-    const isServiceQuestion = serviceKeywords.some(keyword => 
+    const isServiceQuestion = serviceKeywords.some(keyword =>
       userMessageText.toLowerCase().includes(keyword)
     );
 
@@ -353,11 +353,11 @@ Would you like to learn more about any specific service or discuss your project 
         timestamp: new Date(),
         includeContactButton: true
       };
-      
+
       setTimeout(async () => {
         setMessages((prev) => [...prev, servicesMessage]);
         setIsLoading(false);
-        
+
         // Send to webhooks
         await sendToWebhooks(userMessageText, servicesMessageContent);
       }, 1000);
@@ -366,7 +366,7 @@ Would you like to learn more about any specific service or discuss your project 
 
     // Check if the message is about contact/consultation
     const contactKeywords = ['contact', 'consultation', 'talk to team', 'get in touch', 'start project', 'book'];
-    const isContactRequest = contactKeywords.some(keyword => 
+    const isContactRequest = contactKeywords.some(keyword =>
       userMessageText.toLowerCase().includes(keyword)
     );
 
@@ -386,11 +386,11 @@ Would you like to schedule a call with our team?`;
         timestamp: new Date(),
         includeContactButton: true
       };
-      
+
       setTimeout(async () => {
         setMessages((prev) => [...prev, contactMessage]);
         setIsLoading(false);
-        
+
         // Send to webhooks
         await sendToWebhooks(userMessageText, contactMessageContent);
       }, 1000);
@@ -411,13 +411,13 @@ Would you like to schedule a call with our team?`;
       }
 
       const data = await response.json();
-      
+
       const responseText = data.message || "";
-      const includeContactButton = responseText.toLowerCase().includes('contact') || 
-                                 responseText.toLowerCase().includes('consultation') ||
-                                 responseText.toLowerCase().includes('team') ||
-                                 responseText.toLowerCase().includes('book a call');
-      
+      const includeContactButton = responseText.toLowerCase().includes('contact') ||
+        responseText.toLowerCase().includes('consultation') ||
+        responseText.toLowerCase().includes('team') ||
+        responseText.toLowerCase().includes('book a call');
+
       const assistantMessage = {
         type: "assistant" as const,
         content: responseText || "I apologize, but I'm having trouble connecting right now. Please try again later or contact us directly.",
@@ -426,21 +426,21 @@ Would you like to schedule a call with our team?`;
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
-      
+
       // Send to webhooks
       await sendToWebhooks(userMessageText, responseText);
     } catch (error) {
       console.error('Error:', error);
-      
+
       const errorMessageContent = "I apologize, but I'm having trouble connecting right now. Please try again later or contact us directly.";
       const errorMessage = {
         type: "assistant" as const,
         content: errorMessageContent,
         timestamp: new Date(),
       };
-      
+
       setMessages((prev) => [...prev, errorMessage]);
-      
+
       // Send error to webhooks
       await sendToWebhooks(userMessageText, errorMessageContent);
     } finally {
@@ -451,29 +451,29 @@ Would you like to schedule a call with our team?`;
   const handleContactButtonClick = async () => {
     // Track contact button clicks in webhook
     await sendToWebhooks("User clicked contact button", "Redirected to Calendly");
-    window.open('https://calendly.com/sydcodes/30min', '_blank');
+    window.open('https://cal.com/oncode-software-kuxhkk/30min', '_blank');
   };
 
   return (
     <>
       {/* Chat Button */}
       <div className="fixed bottom-8 right-8 z-[100]">
-        <button 
+        <button
           onClick={() => setIsOpen(true)}
           className="group flex items-center justify-center w-14 h-14 bg-gradient-to-br from-emerald-500/80 to-emerald-600/80 hover:from-emerald-400/90 hover:to-emerald-500/90 backdrop-blur-xl p-3.5 rounded-full transition-all duration-300 shadow-lg border border-white/20"
         >
           <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           <span className="w-2 h-2 rounded-full bg-white animate-pulse absolute top-3 right-3"></span>
-          <svg 
-            className="w-6 h-6 text-white drop-shadow-sm" 
-            fill="none" 
-            viewBox="0 0 24 24" 
+          <svg
+            className="w-6 h-6 text-white drop-shadow-sm"
+            fill="none"
+            viewBox="0 0 24 24"
             stroke="currentColor"
           >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={1.5} 
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={1.5}
               d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
             />
           </svg>
@@ -485,7 +485,7 @@ Would you like to schedule a call with our team?`;
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ 
+            animate={{
               opacity: 1,
               y: 0,
               scale: 1,
@@ -494,7 +494,7 @@ Would you like to schedule a call with our team?`;
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
             className="fixed bottom-28 right-8 w-[380px] bg-gradient-to-br from-black/80 to-black/90 backdrop-blur-xl rounded-3xl shadow-2xl z-50 overflow-hidden border border-white/10 flex flex-col"
-            style={{ 
+            style={{
               maxHeight: "85vh",
               boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 40px 0px rgba(16, 185, 129, 0.1)"
             }}
@@ -548,18 +548,16 @@ Would you like to schedule a call with our team?`;
                   {messages.map((msg, index) => (
                     <div
                       key={index}
-                      className={`flex flex-col ${
-                        msg.type === "user" ? "items-end" : "items-start"
-                      }`}
+                      className={`flex flex-col ${msg.type === "user" ? "items-end" : "items-start"
+                        }`}
                     >
                       <div
-                        className={`max-w-[85%] p-3.5 ${
-                          msg.type === "user"
+                        className={`max-w-[85%] p-3.5 ${msg.type === "user"
                             ? "bg-gradient-to-br from-emerald-500/20 to-emerald-600/10 text-white/90 rounded-2xl rounded-tr-sm backdrop-blur-xl border border-emerald-500/10"
                             : "bg-gradient-to-br from-white/10 to-white/5 text-white/90 rounded-2xl rounded-tl-sm backdrop-blur-xl border border-white/10"
-                        }`}
+                          }`}
                       >
-                        <div 
+                        <div
                           className="text-sm leading-relaxed whitespace-pre-line"
                           dangerouslySetInnerHTML={{ __html: formatMessageText(msg.content) }}
                         />
@@ -570,7 +568,7 @@ Would you like to schedule a call with our team?`;
                           })}
                         </p>
                       </div>
-                      
+
                       {/* Contact Button */}
                       {msg.includeContactButton && msg.type === "assistant" && (
                         <button
@@ -630,19 +628,19 @@ Would you like to schedule a call with our team?`;
       {/* Contact Form Modal (if needed) */}
       {showContactForm && (
         <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] flex items-center justify-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.3, ease: [0.19, 1, 0.22, 1] }}
             className="bg-gradient-to-br from-black/80 to-black/90 backdrop-blur-xl rounded-3xl p-6 max-w-md w-full border border-white/10 shadow-2xl"
-            style={{ 
+            style={{
               boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1), 0 0 40px 0px rgba(16, 185, 129, 0.1)"
             }}
           >
             <div className="flex justify-between items-center mb-5">
               <h2 className="text-xl font-medium text-white/90">Contact OnCode Team</h2>
-              <button 
+              <button
                 onClick={() => setShowContactForm(false)}
                 className="p-2 hover:bg-white/5 rounded-full transition-colors"
               >
@@ -651,11 +649,11 @@ Would you like to schedule a call with our team?`;
                 </svg>
               </button>
             </div>
-            
+
             <p className="text-white/60 mb-6">Book a call with our team to discuss your project requirements.</p>
-            
-            <a 
-              href="https://calendly.com/0ncode-info/30min" 
+
+            <a
+              href="https://cal.com/oncode-software-kuxhkk/30min"
               target="_blank"
               className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-3 px-4 rounded-full flex justify-center items-center hover:from-emerald-400 hover:to-emerald-500 transition-all duration-300 shadow-md gap-2"
             >

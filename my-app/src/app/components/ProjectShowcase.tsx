@@ -14,19 +14,10 @@ interface Service {
     link: string;
     title: string;
     description: string;
-    category: string;
+    categories: string[];
 }
 
 const servicesData: Service[] = [
-    {
-        key: 'invoice',
-        media: '/images/Invoice.png',
-        mediaType: 'image',
-        link: 'https://www.invoicemagic.tech/',
-        title: 'Invoice Magic',
-        description: 'Agentic AI system that automates invoice processing and management.',
-        category: 'AI Automations'
-    },
     {
         key: 'creatures',
         media: '/images/CreatureCube.png',
@@ -34,16 +25,7 @@ const servicesData: Service[] = [
         link: 'https://creaturecubes.art/',
         title: 'Creatures Cube',
         description: 'Web3 NFT collection platform with seamless minting and trading capabilities.',
-        category: 'Web3'
-    },
-    {
-        key: 'solomon',
-        media: '/images/Solomon.png',
-        mediaType: 'image',
-        link: '/casetudies/solomonAI',
-        title: 'Solomon Chat App',
-        description: 'Cryptocurrency consulting platform providing expert guidance on investments.',
-        category: 'Mobile'
+        categories: ['Web3', 'Web Apps']
     },
     {
         key: 'gliddy',
@@ -52,16 +34,43 @@ const servicesData: Service[] = [
         link: '/casetudies/gliddy',
         title: 'Gliddy',
         description: 'End-to-end event management platform targeted specifically for bartenders.',
-        category: 'Web Apps'
+        categories: ['Web Apps']
     },
     {
-        key: 'terrain',
-        media: '/images/Terrain.png',
+        key: 'sj-wellness',
+        media: '/Projects/SJ.jpeg',
         mediaType: 'image',
-        link: 'https://www.terrapincrypto.us/',
-        title: 'Terrin Crypto',
-        description: 'Comprehensive support for users at all levels covering privacy and security.',
-        category: 'Web3'
+        link: 'https://www.sjwellnessspa.com',
+        title: 'SJ Wellness',
+        description: 'Website designed and develop for Wellness Center',
+        categories: ['Web Apps']
+    },
+    {
+        key: 'tint-labs',
+        media: '/Projects/TintLabs.jpeg',
+        mediaType: 'image',
+        link: 'https://www.tintlab.net',
+        title: 'Tint Labs',
+        description: 'Website designed for Care Tinting Business ',
+        categories: ['Web Apps']
+    },
+    {
+        key: 'barcode',
+        media: '/Projects/BarCode.png',
+        mediaType: 'image',
+        link: 'https://www.joinbarcode.io',
+        title: 'Barcode',
+        description: 'Web3-powered membership and community platform.',
+        categories: ['Web3', 'Web Apps']
+    },
+    {
+        key: 'blackw3b',
+        media: '/Projects/BlackW3B.png',
+        mediaType: 'image',
+        link: 'https://www.w3bs.fun',
+        title: 'BlackW3B',
+        description: 'Decentralized web3 platform for goldback tokens.',
+        categories: ['Web3', 'Web Apps']
     }
 ];
 
@@ -125,7 +134,7 @@ export default function ProjectShowcase() {
 
     const filteredServices = activeCategory === "All"
         ? servicesData
-        : servicesData.filter(service => service.category === activeCategory);
+        : servicesData.filter(service => service.categories.includes(activeCategory));
 
     return (
         <section className=" px-0 bg-white overflow-hidden my-24 border-b border-black/5 ">
@@ -136,7 +145,7 @@ export default function ProjectShowcase() {
                         Selected Work
                     </h2>
                     <p className="text-xl text-gray-500 font-light tracking-wide max-w-2xl mx-auto mb-8">
-                        Crafting digital experiences that matter.
+                        Oncode Software
                     </p>
 
                     {/* Category Filter Buttons */}
@@ -202,7 +211,7 @@ export default function ProjectShowcase() {
                                             <div className="relative h-full flex flex-col justify-end p-10">
                                                 <div className="mb-4">
                                                     <span className="text-xs font-medium text-white/70 uppercase tracking-wider bg-white/10 px-3 py-1 rounded-full backdrop-blur-sm">
-                                                        {service.category}
+                                                        {service.categories[0]}
                                                     </span>
                                                 </div>
                                                 <h3 className="text-3xl font-light mb-4 leading-tight text-white">

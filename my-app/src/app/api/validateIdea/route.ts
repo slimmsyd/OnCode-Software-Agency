@@ -46,7 +46,7 @@ Your task is to validate and provide feedback on a potential client's business i
 6. Include contact information and next steps
 
 Important Contact Information:
-- Book a consultation: https://calendly.com/0ncode-info/30min
+- Book a consultation: https://cal.com/oncode-software-kuxhkk/30min
 - Personal contact: 423-933-5112
 
 Format your response in HTML with the following structure:
@@ -81,7 +81,7 @@ Format your response in HTML with the following structure:
   </div>
   
   <div class="contact-info">
-    <p><strong>Book a consultation:</strong> <a href="https://calendly.com/0ncode-info/30min">Schedule a call</a></p>
+    <p><strong>Book a consultation:</strong> <a href="https://cal.com/oncode-software-kuxhkk/30min">Schedule a call</a></p>
     <p><strong>Personal contact:</strong> 423-933-5112</p>
   </div>
 </div>

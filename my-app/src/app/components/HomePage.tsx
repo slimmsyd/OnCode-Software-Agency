@@ -215,7 +215,9 @@ export default function HomePage() {
       <LogoCarousel />
 
       {/* Project Showcase */}
-      <ProjectShowcase />
+      <div id="projects">
+        <ProjectShowcase />
+      </div>
 
       <main className="relative">
 
