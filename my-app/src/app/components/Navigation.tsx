@@ -237,15 +237,9 @@ export default function Navigation({
                   </div>
                   <div
                     className="text-2xl font-medium text-gray-600 hover:text-black cursor-pointer"
-                    onClick={() => mobileNavBtn('ecosystem')}
-                  >
-                    Ecosystem
-                  </div>
-                  <div
-                    className="text-2xl font-medium text-gray-600 hover:text-black cursor-pointer"
                     onClick={() => mobileNavBtn('about')}
                   >
-                    About us
+                    About Us
                   </div>
                   <div
                     className="text-2xl font-medium text-gray-600 hover:text-black cursor-pointer"
@@ -253,13 +247,6 @@ export default function Navigation({
                   >
                     Projects
                   </div>
-                  <Link
-                    href="/blog"
-                    className="text-2xl font-medium text-gray-600 hover:text-black cursor-pointer"
-                    onClick={() => setShowBG(false)}
-                  >
-                    Blog
-                  </Link>
                 </>
               )}
             </div>
