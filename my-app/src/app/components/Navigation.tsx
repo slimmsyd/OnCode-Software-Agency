@@ -249,7 +249,7 @@ export default function Navigation({
                   </div>
                   <div
                     className="text-2xl font-medium text-gray-600 hover:text-black cursor-pointer"
-                    onClick={() => mobileNavBtn('case-studies')}
+                    onClick={() => mobileNavBtn('projects')}
                   >
                     Projects
                   </div>
