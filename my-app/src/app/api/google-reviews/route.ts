@@ -1,22 +1,24 @@
 import { NextResponse } from 'next/server';
 
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
-    // 1. Search for the Place ID
-    const searchUrl = `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=OnCode%20Software%20Agency&inputtype=textquery&fields=place_id&key=${GOOGLE_API_KEY}`;
+    // 1. Search for the Place ID using Nearby Search (most precise with coordinates)
+    const searchUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=38.1904635,-77.316658&radius=500&keyword=Oncode%20Software%20Agency&key=${GOOGLE_API_KEY}`;
     
-    const searchRes = await fetch(searchUrl);
+    const searchRes = await fetch(searchUrl, { cache: 'no-store' });
     const searchData = await searchRes.json();
 
     console.log("Loggin search", searchUrl)
     console.log("Loggin search data", searchData)
 
-    if (!searchData.candidates || searchData.candidates.length === 0) {
+    if (!searchData.results || searchData.results.length === 0) {
       return NextResponse.json({ error: 'Place not found' }, { status: 404 });
     }
 
-    const placeId = searchData.candidates[0].place_id;
+    const placeId = searchData.results[0].place_id;
 
     // 2. Get Place Details (Reviews)
     // Fields: name, rating, reviews, user_ratings_total
@@ -24,7 +26,7 @@ export async function GET() {
 
     console.log("Loggin details", detailsUrl)
     
-    const detailsRes = await fetch(detailsUrl);
+    const detailsRes = await fetch(detailsUrl, { cache: 'no-store' });
     const detailsData = await detailsRes.json();
 
     if (!detailsData.result) {
@@ -55,3 +57,4 @@ export async function GET() {
     return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
   }
 }
+
