@@ -23,6 +23,7 @@ import ChatPopup from "./ChatPopup";
 import CTA from "./CTA";
 import LogoCarousel from "./LogoCarousel";
 import ProjectShowcase from "./ProjectShowcase";
+import Testimonials from "./Testimonials";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -253,6 +254,10 @@ export default function HomePage() {
 
         <div>
           <Founder />
+        </div>
+
+        <div>
+          <Testimonials />
         </div>
 
 
