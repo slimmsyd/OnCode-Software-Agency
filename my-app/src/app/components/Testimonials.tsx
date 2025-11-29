@@ -128,7 +128,7 @@ const Testimonials = () => {
                 {/* View More Reviews CTA */}
                 <div className="text-center mt-16 lg:mt-20">
                     <button
-                        onClick={() => window.open('https://www.google.com/search?q=tintlabs+reviews', '_blank')}
+                        onClick={() => window.open('https://www.google.com/search?client=safari&sca_esv=93a27070e35a51f2&channel=iphone_bm&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E6U0es00yir2VpPo3-X7j4r2IDpJ1Za9s0Sl5rgjxeMtjQijGTCjcXseDBkm1pEZx1jIXKOugoJUW4G0b_GzfXIej0LjRJovgqstuRgMmuByHc0ocg%3D%3D&q=Oncode+Software+Agency+Reviews&sa=X&ved=2ahUKEwiW2ufC_5eRAxV-D1kFHQzbC3IQ0bkNegQIIRAD&biw=1512&bih=950&dpr=2', '_blank')}
                         className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-full font-medium text-sm transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
                     >
                         Leave a review
