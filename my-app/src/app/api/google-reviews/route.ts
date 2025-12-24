@@ -1,35 +1,23 @@
 import { NextResponse } from 'next/server';
 
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+const GOOGLE_PLACE_ID = process.env.GOOGLE_PLACE_ID;
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
   try {
-    // 1. Search for the Place ID using Nearby Search (most precise with coordinates)
-    const searchUrl = `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=38.1904635,-77.316658&radius=500&keyword=Oncode%20Software%20Agency&key=${GOOGLE_API_KEY}`;
-    
-    const searchRes = await fetch(searchUrl, { cache: 'no-store' });
-    const searchData = await searchRes.json();
-
-    console.log("Loggin search", searchUrl)
-    console.log("Loggin search data", searchData)
-
-    if (!searchData.results || searchData.results.length === 0) {
-      return NextResponse.json({ error: 'Place not found' }, { status: 404 });
+    if (!GOOGLE_PLACE_ID || !GOOGLE_API_KEY) {
+      return NextResponse.json({ error: 'Missing API Key or Place ID' }, { status: 500 });
     }
 
-    const placeId = searchData.results[0].place_id;
-
-    // 2. Get Place Details (Reviews)
-    // Fields: name, rating, reviews, user_ratings_total
-    const detailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=name,rating,reviews,user_ratings_total&key=${GOOGLE_API_KEY}`;
-
-    console.log("Loggin details", detailsUrl)
+    // Direct fetch using the verified Place ID
+    const detailsUrl = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${GOOGLE_PLACE_ID}&fields=name,rating,reviews,user_ratings_total&key=${GOOGLE_API_KEY}`;
     
     const detailsRes = await fetch(detailsUrl, { cache: 'no-store' });
     const detailsData = await detailsRes.json();
 
     if (!detailsData.result) {
+      console.error("Google Details API Error:", detailsData.status, detailsData.error_message);
       return NextResponse.json({ error: 'Failed to fetch details' }, { status: 500 });
     }
 

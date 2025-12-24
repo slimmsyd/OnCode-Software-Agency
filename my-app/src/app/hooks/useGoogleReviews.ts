@@ -16,31 +16,32 @@ export interface BusinessRating {
 
 const MOCK_REVIEWS: Review[] = [
   {
-    name: "Sarah Jenkins",
+    name: "Preeminent Professional",
     rating: 5,
-    text: "Absolutely incredible service! The team went above and beyond to ensure everything was perfect. I couldn't be happier with the results.",
-    date: "2 weeks ago",
-    avatar: "S"
+    text: "Before working with Sydney, we had no online presence and were losing opportunities. In under a week, he built us a professional site, set up our Google Business profile, added automation for client communication, and even integrated a 24/7 chatbot. It has already started saving us time and improving how clients engage with us. If you need to get your business visible and running smarter, OnCode is the partner to call.",
+    date: "3 months ago",
+    avatar: "P"
   },
   {
-    name: "Michael Chen",
+    name: "BARCODE DAO",
     rating: 5,
-    text: "Professional, efficient, and transparent. They explained every step of the process and delivered exactly what was promised.",
-    date: "1 month ago",
-    avatar: "M"
-  },
-  {
-    name: "Jessica Williams",
-    rating: 5,
-    text: "Best experience I've had in a long time. The attention to detail is unmatched. Highly recommend to anyone looking for quality work.",
+    text: "We are extremely pleased with the team at OSA. Sydney provided excellent communication throughout the process and successfully delivered a clean, user-friendly site for our community.",
     date: "3 weeks ago",
-    avatar: "J"
+    avatar: "B"
+  },
+  {
+    name: "the Hueman",
+    rating: 5,
+    text: "Great experience working with OnCode. They understood our vision perfectly and delivered a high-quality product that exceeded our expectations. Professional, responsive, and highly skilled agency.",
+    date: "18 hours ago",
+    avatar: "H"
   }
 ];
 
 export const useGoogleReviews = () => {
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [businessRating, setBusinessRating] = useState<BusinessRating>({ rating: 0, totalReviews: 0 });
+  const [reviews, setReviews] = useState<Review[]>(MOCK_REVIEWS);
+  const [businessRating, setBusinessRating] = useState<BusinessRating>({ rating: 5, totalReviews: 5 });
+
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -57,14 +58,17 @@ export const useGoogleReviews = () => {
 
       const data = await response.json();
       
-      setReviews(data.reviews);
-      setBusinessRating(data.businessRating);
+      // Only update if we actually got reviews back
+      if (data.reviews && data.reviews.length > 0) {
+        setReviews(data.reviews);
+        setBusinessRating(data.businessRating);
+      }
       setIsLoading(false);
     } catch (err) {
       console.error(err);
       setError("Failed to load reviews");
       // Fallback to mock data on error
-      setBusinessRating({ rating: 5, totalReviews: 1 });
+      setBusinessRating({ rating: 5, totalReviews: 2 });
       setIsLoading(false);
     }
   };

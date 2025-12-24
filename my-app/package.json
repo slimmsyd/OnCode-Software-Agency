@@ -17,6 +17,8 @@
     "@tanstack/react-query": "^5.51.23",
     "@thirdweb-dev/react": "^4.9.4",
     "@thirdweb-dev/sdk": "^4.0.99",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "embla-carousel-auto-scroll": "^8.6.0",
     "embla-carousel-react": "^8.6.0",
     "ethers": "^5.7.2",
@@ -36,6 +38,8 @@
     "react-query": "^3.39.3",
     "react-syntax-highlighter": "^15.6.1",
     "remark-gfm": "^4.0.1",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7",
     "three": "^0.168.0",
     "twilio": "^5.3.5",
     "zod": "^3.24.3"
