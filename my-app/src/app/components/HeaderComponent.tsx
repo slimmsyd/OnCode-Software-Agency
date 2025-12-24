@@ -170,7 +170,7 @@ export default function HeaderComponent({
 
 
   return (
-    <section className=" h-[70vh] md:h-[70vh] relative overflow-hidden">
+    <section className="min-h-screen md:min-h-[70vh] relative overflow-hidden flex flex-col">
       <Navigation
         scrollToSection={scrollToSection}
         refSection1={refSection1}
@@ -228,7 +228,7 @@ export default function HeaderComponent({
       />
 
 
-      <div className="flex flex-col h-[80%] items-center justify-center  ">
+      <div className="flex flex-col flex-1 items-center justify-center py-12 md:py-20">
         <div className="flex flex-col items-center text-center w-[100%] text-black max-w-5xl mx-auto px-4">
           {/* Eyebrow */}
           <p className="font-light text-[14px] text-black/50 uppercase tracking-wide">
@@ -249,7 +249,7 @@ export default function HeaderComponent({
           <div className="flex flex-col sm:flex-row gap-[20px] mt-8 w-full sm:w-auto px-4 sm:px-0">
             <Link
               target="_blank"
-              href="https://cal.com/oncode-software-kuxhkk/30min"
+              href="https://cal.com/oncode-software-kuxhkk/30minhttps://www.0ncode.com"
               className="bg-black text-white text-[15px] flex flex-row gap-[10px] items-center px-6 py-3 rounded-[8px] hover:bg-gray-800 transition-colors duration-300 w-[200px] m-auto text-center justify-center"
             >
               <svg

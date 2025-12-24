@@ -100,12 +100,21 @@ const Testimonials = () => {
             </div>
 
             <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-                <Marquee pauseOnHover className="[--duration:30s] [--gap:1.5rem] py-4">
+                <Marquee
+                    pauseOnHover
+                    className="py-4"
+                    style={{ '--duration': '30s', '--gap': '1.5rem' } as React.CSSProperties}
+                >
                     {firstRow.map((review, i) => (
                         <ReviewCard key={`${review.name}-${i}`} {...review} />
                     ))}
                 </Marquee>
-                <Marquee reverse pauseOnHover className="[--duration:30s] [--gap:1.5rem] py-4">
+                <Marquee
+                    reverse
+                    pauseOnHover
+                    className="py-4"
+                    style={{ '--duration': '30s', '--gap': '1.5rem' } as React.CSSProperties}
+                >
                     {secondRow.map((review, i) => (
                         <ReviewCard key={`${review.name}-${i}-rev`} {...review} />
                     ))}

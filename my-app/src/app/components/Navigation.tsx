@@ -104,7 +104,7 @@ export default function Navigation({
 
   return (
     <div className="relative top-0 left-0 w-full z-50 bg-transparent ">
-      <div className="max-w-[1400px] mx-auto px-6 h-[96px] flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-6 h-[72px] md:h-[96px] flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center">
           <button

@@ -31,6 +31,10 @@ interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
    * @default 4
    */
   repeat?: number
+  /**
+   * Optional inline styles
+   */
+  style?: React.CSSProperties
 }
 
 export function Marquee({
@@ -40,11 +44,13 @@ export function Marquee({
   children,
   vertical = false,
   repeat = 4,
+  style,
   ...props
 }: MarqueeProps) {
   return (
     <div
       {...props}
+      style={style}
       className={cn(
         "group flex [gap:var(--gap)] overflow-hidden p-2 [--duration:40s] [--gap:1rem]",
         {
