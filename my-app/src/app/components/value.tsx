@@ -117,7 +117,7 @@ export default function About() {
         {/* 
             <div className="text-center mt-8">
               <a
-                href="https://calendly.com/0ncode-info/30min"
+                href="https://cal.com/oncode-software-kuxhkk/30min"
                 target="_blank"
                 className="inline-flex items-center justify-center px-8 py-3 text-base font-medium text-white bg-black rounded-md hover:bg-gray-800 transition-colors duration-200"
               >
