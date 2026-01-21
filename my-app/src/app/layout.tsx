@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
-import { GoogleAnalytics } from '@next/third-parties/google'
-import { GoogleTagManager } from "@next/third-parties/google";
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { AuthProvider } from "./context/AuthContext";
 
 import { Gnosis, Ethereum } from "@thirdweb-dev/chains";
@@ -92,12 +91,12 @@ export default function RootLayout({
         <link rel="canonical" href="https://www.0ncode.com" />
       </head>
       <body>
-        <GoogleTagManager gtmId="G-ESW0CVVTY5" />
         <ThirdwebProvider>
           <AuthProvider>
             {children}
           </AuthProvider>
         </ThirdwebProvider>
+        <GoogleAnalytics gaId="G-M88WL83RDV" />
       </body>
     </html>
   );
