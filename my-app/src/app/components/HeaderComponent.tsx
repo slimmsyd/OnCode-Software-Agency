@@ -242,7 +242,7 @@ export default function HeaderComponent({
 
           {/* Description */}
           <p className="font-light max-w-[85%] text-black text-center text-[18px] leading-relaxed md:max-w-[700px] mt-6">
-            OnCode builds automation workflows, AI tools, and full-stack applications tailored to the way your company actually works. Whether you're launching an MVP or replacing manual processes, we deliver custom systems in weeks — not months.
+            OnCode builds automation workflows, AI tools, and full-stack applications tailored to the way your company actually works. Whether you're launching an MVP or replacing manual processes, we deliver custom systems in weeks - not months.
           </p>
 
           {/* CTA Button */}
