@@ -39,7 +39,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <p className="text-lg text-black ">
-              <strong>Complete solutions:</strong> From startup MVPs to enterprise automation systems — we build what your business actually needs to grow.
+              <strong>Complete solutions:</strong> From startup MVPs to enterprise automation systems, we build what your business actually needs to grow.
             </p>
           </motion.div>
 
@@ -60,7 +60,7 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.6 }}
           >
             <p className="text-lg text-black ">
-              <strong>Proven experience:</strong> From wellness centers to government contractors — we've built digital systems that save time, cut costs, and unlock growth.
+              <strong>Proven experience:</strong> From wellness centers to government contractors, we've built digital systems that save time, cut costs, and unlock growth.
             </p>
           </motion.div>
           <motion.div
