@@ -275,7 +275,7 @@ export default function HeaderComponent({
 
           {/* Tagline */}
           <p className="font-light text-[16px] text-black/70 mt-12 text-center italic">
-            From idea to implementation — we keep you OnCode.
+            From idea to implementation - we keep you OnCode.
           </p>
         </div>
       </div>
