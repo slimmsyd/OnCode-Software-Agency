@@ -71,6 +71,15 @@ const servicesData: Service[] = [
         title: 'BlackW3B',
         description: 'Decentralized web3 platform for goldback tokens.',
         categories: ['Web3', 'Web Apps']
+    },
+    {
+        key: 'prmnt-pro',
+        media: '/Projects/PRMNT.jpeg',
+        mediaType: 'image',
+        link: 'https://www.prmntpro.com',
+        title: 'Preeminent Professional Services',
+        description: 'Website designed, developed, and maintained for facility management services.',
+        categories: ['Web Apps']
     }
 ];
 
