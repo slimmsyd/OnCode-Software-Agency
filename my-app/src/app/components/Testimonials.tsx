@@ -4,10 +4,18 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/ui/marquee";
 
 const reviews = [
-
-
-
-
+    {
+        name: "Cameren Downs",
+        username: "Verified Google Review",
+        body: "Great guy to work with, communicates well, get the work done fast and always on time. Never have issues when working with him and his work is good!",
+        img: "https://avatar.vercel.sh/cameren",
+    },
+    {
+        name: "Abdoulaye Gassama",
+        username: "Verified Google Review",
+        body: "Love this brothers professionalism and his knowledge on what he actually does. He was extremely effective in our project and looking forward to building another website with him!",
+        img: "https://avatar.vercel.sh/abdoulaye",
+    },
     {
         name: "Preeminent Professional",
         username: "Verified Google Review",
