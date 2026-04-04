@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.0ncode.com)",
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "Read(//Users/sydneysanders/Desktop/**)"
+    ],
+    "additionalDirectories": [
+      "/Users/sydneysanders/Desktop"
+    ]
+  }
+}

@@ -80,6 +80,24 @@ const servicesData: Service[] = [
         title: 'Preeminent Professional Services',
         description: 'Website designed, developed, and maintained for facility management services.',
         categories: ['Web Apps']
+    },
+    {
+        key: 'mcbride',
+        media: '/Projects/McBride.png',
+        mediaType: 'image',
+        link: 'https://www.mcbridebasketballacademy.org',
+        title: 'McBride Basketball Academy',
+        description: 'Booking platform with Stripe payments, Google Calendar sync, and admin dashboard for session management.',
+        categories: ['Web Apps']
+    },
+    {
+        key: 'boxraw',
+        media: '/Projects/BoxRaw.png',
+        mediaType: 'image',
+        link: '#',
+        title: 'BoxRaw Labs',
+        description: 'Video labeling platform for boxing analysis with multi-camera sync, team workflows, and automated clip export.',
+        categories: ['Web Apps']
     }
 ];
 
