@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import React, { FC, RefObject } from "react";
+import { useIntakeForm } from "../../context/IntakeFormContext";
 
 interface Props {
   pricing?: string;
@@ -22,7 +23,7 @@ export const PricingCard: FC<Props> = ({
   minutes,
   text
 }) => {
-
+  const { openIntakeForm } = useIntakeForm();
 
   const items = text?.split(',');
 
@@ -62,13 +63,12 @@ export const PricingCard: FC<Props> = ({
         </span>
       </div>
 
-      <Link
-        href="https://cal.com/oncode-software-kuxhkk/30min?overlayCalendar=true"
-        target="_blank"
+      <button
+        onClick={openIntakeForm}
         className="price-btn cursor-pointer flex items-center justify-center"
       >
-        Book A Call
-      </Link>
+        Get Started
+      </button>
     </div>
   );
 };

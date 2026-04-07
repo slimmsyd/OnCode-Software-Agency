@@ -1,8 +1,10 @@
 "use client"
 import { motion } from "framer-motion";
 import { Check, Calendar } from "lucide-react";
+import { useIntakeForm } from "../context/IntakeFormContext";
 
 export default function Pricing() {
+  const { openIntakeForm } = useIntakeForm();
   return (
     <section className="relative w-full py-12 md:py-24 lg:py-20 xl:py-10 max-w-[500px] m-auto  text-black">
       <div className="container mx-auto px-4 max-w-6xl">
@@ -117,15 +119,13 @@ export default function Pricing() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <a
-            href="https://cal.com/oncode-software-kuxhkk/30min?overlayCalendar=true"
-            target="_blank"
+          <button
+            onClick={openIntakeForm}
             className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-[#374151] rounded-md hover:bg-gray-800 transition-colors duration-200"
           >
             <Calendar className="w-5 h-5 mr-2" />
-            Book a call
-          </a>
-
+            Get Started
+          </button>
         </div>
       </div>
     </section>

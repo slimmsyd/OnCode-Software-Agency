@@ -1,6 +1,7 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useIntakeForm } from "../context/IntakeFormContext";
 
 interface Message {
   type: "user" | "assistant";
@@ -18,6 +19,7 @@ interface ServiceOption {
 }
 
 export default function ChatPopup() {
+  const { openIntakeForm } = useIntakeForm();
   const [isOpen, setIsOpen] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
   const [message, setMessage] = useState("");
@@ -449,9 +451,9 @@ Would you like to schedule a call with our team?`;
   };
 
   const handleContactButtonClick = async () => {
-    // Track contact button clicks in webhook
-    await sendToWebhooks("User clicked contact button", "Redirected to Calendly");
-    window.open('https://cal.com/oncode-software-kuxhkk/30min', '_blank');
+    await sendToWebhooks("User clicked contact button", "Opened intake form");
+    setIsOpen(false);
+    openIntakeForm();
   };
 
   return (
@@ -652,16 +654,18 @@ Would you like to schedule a call with our team?`;
 
             <p className="text-white/60 mb-6">Book a call with our team to discuss your project requirements.</p>
 
-            <a
-              href="https://cal.com/oncode-software-kuxhkk/30min"
-              target="_blank"
+            <button
+              onClick={() => {
+                setShowContactForm(false);
+                openIntakeForm();
+              }}
               className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-3 px-4 rounded-full flex justify-center items-center hover:from-emerald-400 hover:to-emerald-500 transition-all duration-300 shadow-md gap-2"
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
-              Open Calendly
-            </a>
+              Get Started
+            </button>
           </motion.div>
         </div>
       )}

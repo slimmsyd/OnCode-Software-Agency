@@ -1,7 +1,9 @@
 "use client"
 import { motion } from "framer-motion";
+import { useIntakeForm } from "../context/IntakeFormContext";
 
 export default function About() {
+  const { openIntakeForm } = useIntakeForm();
   return (
     <section className="relative w-full py-12 md:py-24 lg:py-20 xl:py-10 max-w-[500px] m-auto  text-black">
       <div className="container mx-auto px-4 max-w-6xl">
@@ -75,14 +77,12 @@ export default function About() {
           </motion.div>
 
           <div className="flex justify-start flex-row gap-4">
-            <a
-              href="https://cal.com/oncode-software-kuxhkk/30min"
-              target="_blank"
+            <button
+              onClick={openIntakeForm}
               className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-black rounded-md hover:bg-gray-800 transition-colors duration-200"
             >
-              Book a Call
-            </a>
-
+              Get Started
+            </button>
           </div>
         </div>
       </div>

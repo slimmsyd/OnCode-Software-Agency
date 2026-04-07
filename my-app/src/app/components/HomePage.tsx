@@ -24,6 +24,7 @@ import CTA from "./CTA";
 import LogoCarousel from "./LogoCarousel";
 import ProjectShowcase from "./ProjectShowcase";
 import Testimonials from "./Testimonials";
+import { IntakeFormProvider } from "../context/IntakeFormContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -191,7 +192,7 @@ export default function HomePage() {
 
 
   return (
-    <>
+    <IntakeFormProvider>
       {/* <PageLoader /> */}
       {/* <ChatPopup /> */}
 
@@ -199,9 +200,6 @@ export default function HomePage() {
         className="  relative"
         ref={refSectionHome}
       >
-
-
-
         <HeaderComponent
           refSection1={refSection1}
           refSection2={refSection2}
@@ -221,28 +219,13 @@ export default function HomePage() {
       </div>
 
       <main className="relative">
-
-
         <div id="ecosystem" ref={refSection1}>
           <About />
         </div>
 
-
-
-
-        {/* 
-        <div>
-
-          <CTA />
-        </div>
- */}
-
-
         <div id="about" ref={refSection2}>
           <Process />
         </div>
-
-
 
         <div ref={refSection5}>
           <Value />
@@ -260,13 +243,9 @@ export default function HomePage() {
           <Testimonials />
         </div>
 
-
-
         <Footer />
       </main>
-
-
-    </>
+    </IntakeFormProvider>
   );
 }
 

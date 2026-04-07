@@ -2,6 +2,7 @@ import Link from "next/link";
 import Navigation from "./Navigation";
 import { RefObject, useState } from "react";
 import styles from "../styles/response.module.css";
+import { useIntakeForm } from "../context/IntakeFormContext";
 
 interface Props {
   refSection1: RefObject<HTMLDivElement>;
@@ -43,6 +44,7 @@ export default function HeaderComponent({
   priceRef,
   scrollToSection,
 }: Props) {
+  const { openIntakeForm } = useIntakeForm();
   const [showPopup, setShowPopup] = useState(false);
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
   const [aiResponse, setAiResponse] = useState("");
@@ -247,9 +249,8 @@ export default function HeaderComponent({
 
           {/* CTA Button */}
           <div className="flex flex-col sm:flex-row gap-[20px] mt-8 w-full sm:w-auto px-4 sm:px-0">
-            <Link
-              target="_blank"
-              href="https://cal.com/oncode-software-kuxhkk/30min"
+            <button
+              onClick={openIntakeForm}
               className="bg-black text-white text-[15px] flex flex-row gap-[10px] items-center px-6 py-3 rounded-[8px] hover:bg-gray-800 transition-colors duration-300 w-[200px] m-auto text-center justify-center"
             >
               <svg
@@ -269,8 +270,9 @@ export default function HeaderComponent({
                 <rect width="18" height="18" x="3" y="4" rx="2"></rect>
                 <path d="M3 10h18"></path>
               </svg>
-              Book A Call
-            </Link>
+              Get Started
+            </button>
+            <p className="text-xs text-black/50 text-center mt-1">Takes 2 minutes</p>
           </div>
 
           {/* Tagline */}

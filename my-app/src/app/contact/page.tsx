@@ -1,27 +1,26 @@
-
 import { Metadata } from 'next';
-import Navigation from "@/app/components/Navigation";
-import Footer from "@/app/components/Footer";
+import ContactPageContent from './ContactPageContent';
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with OnCode Software Agency for your custom software development needs. We specialize in AI, blockchain, and web application development.',
+  title: 'Contact Us | Get a Custom Quote',
+  description: 'Tell us about your project and get a custom quote from OnCode Software Agency. We specialize in AI, automation, and custom software development.',
   keywords: [
     'contact software development agency',
     'software development consultation',
     'custom software quote',
     'OnCode contact',
-    'software agency contact'
+    'software agency contact',
+    'get started with OnCode',
   ],
   openGraph: {
     title: 'Contact OnCode Software Agency',
-    description: 'Get in touch with OnCode Software Agency for your custom software development needs.',
+    description: 'Tell us about your project and get a custom quote from OnCode Software Agency.',
     url: 'https://www.0ncode.com/contact',
     type: 'website',
   },
   twitter: {
     title: 'Contact OnCode Software Agency',
-    description: 'Get in touch with OnCode Software Agency for your custom software development needs.',
+    description: 'Tell us about your project and get a custom quote from OnCode Software Agency.',
   },
   alternates: {
     canonical: 'https://www.0ncode.com/contact',
@@ -29,10 +28,5 @@ export const metadata: Metadata = {
 };
 
 export default function Contact() {
-  return (
-    <>
-    <Navigation textColor={true} />
-    <Footer />
-    </>
-  )
+  return <ContactPageContent />;
 }
