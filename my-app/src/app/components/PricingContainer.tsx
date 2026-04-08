@@ -4,6 +4,7 @@ import Video from "./VideoComponent";
 import { useEffect, useRef, useState } from "react";
 import { PricingCard } from "./subComponents/PricingCard";
 import { useIntakeForm } from "../context/IntakeFormContext";
+import { GetStartedButton } from "@/components/ui/get-started-button";
 
 import React, { RefObject } from "react";
 
@@ -52,12 +53,7 @@ export default function PriceContainer({ priceRef }: Props) {
               </span>
             </div>
 
-            <button
-              onClick={openIntakeForm}
-              className="price-btn cursor-pointer flex items-center justify-center"
-            >
-              Get Started
-            </button>
+            <GetStartedButton onClick={openIntakeForm} />
           </div>
 
           <PricingCard

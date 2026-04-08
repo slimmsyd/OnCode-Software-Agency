@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import React, { FC, RefObject } from "react";
 import { useIntakeForm } from "../../context/IntakeFormContext";
+import { GetStartedButton } from "@/components/ui/get-started-button";
 
 interface Props {
   pricing?: string;
@@ -63,12 +64,7 @@ export const PricingCard: FC<Props> = ({
         </span>
       </div>
 
-      <button
-        onClick={openIntakeForm}
-        className="price-btn cursor-pointer flex items-center justify-center"
-      >
-        Get Started
-      </button>
+      <GetStartedButton onClick={openIntakeForm} />
     </div>
   );
 };

@@ -1,7 +1,8 @@
 "use client"
 import { motion } from "framer-motion";
-import { Check, Calendar } from "lucide-react";
+import { Check } from "lucide-react";
 import { useIntakeForm } from "../context/IntakeFormContext";
+import { GetStartedButton } from "@/components/ui/get-started-button";
 
 export default function Pricing() {
   const { openIntakeForm } = useIntakeForm();
@@ -119,13 +120,7 @@ export default function Pricing() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <button
-            onClick={openIntakeForm}
-            className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-[#374151] rounded-md hover:bg-gray-800 transition-colors duration-200"
-          >
-            <Calendar className="w-5 h-5 mr-2" />
-            Get Started
-          </button>
+          <GetStartedButton onClick={openIntakeForm} />
         </div>
       </div>
     </section>

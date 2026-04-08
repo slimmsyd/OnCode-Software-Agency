@@ -1,4 +1,4 @@
-import Navigation from "@/app/components/Navigation";
+import Navigation from "@/components/ui/header-2";
 import Video from "@/app/components/VideoComponent";
 import GliddyMobileImage from '../../../../public/works/Gliddy_Mobile.jpg'
 import Footer from "@/app/components/Footer";

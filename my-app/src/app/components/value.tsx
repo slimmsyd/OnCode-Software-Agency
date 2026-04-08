@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useIntakeForm } from "../context/IntakeFormContext";
+import { GetStartedButton } from "@/components/ui/get-started-button";
 
 export default function About() {
   const { openIntakeForm } = useIntakeForm();
@@ -154,12 +155,7 @@ export default function About() {
 
 
           <div className="flex justify-start flex-row gap-4">
-            <button
-              onClick={openIntakeForm}
-              className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-black rounded-md hover:bg-gray-800 transition-colors duration-200"
-            >
-              Get Started
-            </button>
+            <GetStartedButton onClick={openIntakeForm} />
           </div>
 
         </div>

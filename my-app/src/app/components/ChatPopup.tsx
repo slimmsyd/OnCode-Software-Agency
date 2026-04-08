@@ -2,6 +2,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useIntakeForm } from "../context/IntakeFormContext";
+import { GetStartedButton } from "@/components/ui/get-started-button";
 
 interface Message {
   type: "user" | "assistant";
@@ -654,18 +655,10 @@ Would you like to schedule a call with our team?`;
 
             <p className="text-white/60 mb-6">Book a call with our team to discuss your project requirements.</p>
 
-            <button
-              onClick={() => {
-                setShowContactForm(false);
-                openIntakeForm();
-              }}
-              className="w-full bg-gradient-to-r from-emerald-500 to-emerald-600 text-white py-3 px-4 rounded-full flex justify-center items-center hover:from-emerald-400 hover:to-emerald-500 transition-all duration-300 shadow-md gap-2"
-            >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              Get Started
-            </button>
+            <GetStartedButton onClick={() => {
+              setShowContactForm(false);
+              openIntakeForm();
+            }} />
           </motion.div>
         </div>
       )}

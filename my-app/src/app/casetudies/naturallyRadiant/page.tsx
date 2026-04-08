@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Navigation from "@/app/components/Navigation";
+import Navigation from "@/components/ui/header-2";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import Image from "next/image";

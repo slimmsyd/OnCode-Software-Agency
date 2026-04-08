@@ -1,8 +1,9 @@
 import Link from "next/link";
-import Navigation from "./Navigation";
+import Navigation from "@/components/ui/header-2";
 import { RefObject, useState } from "react";
 import styles from "../styles/response.module.css";
 import { useIntakeForm } from "../context/IntakeFormContext";
+import { GetStartedButton } from "@/components/ui/get-started-button";
 
 interface Props {
   refSection1: RefObject<HTMLDivElement>;
@@ -249,29 +250,7 @@ export default function HeaderComponent({
 
           {/* CTA Button */}
           <div className="flex flex-col sm:flex-row gap-[20px] mt-8 w-full sm:w-auto px-4 sm:px-0">
-            <button
-              onClick={openIntakeForm}
-              className="bg-black text-white text-[15px] flex flex-row gap-[10px] items-center px-6 py-3 rounded-[8px] hover:bg-gray-800 transition-colors duration-300 w-[200px] m-auto text-center justify-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="w-4 h-4"
-              >
-                <path d="M8 2v4"></path>
-                <path d="M16 2v4"></path>
-                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
-                <path d="M3 10h18"></path>
-              </svg>
-              Get Started
-            </button>
+            <GetStartedButton onClick={openIntakeForm} />
             <p className="text-xs text-black/50 text-center mt-1">Takes 2 minutes</p>
           </div>
 

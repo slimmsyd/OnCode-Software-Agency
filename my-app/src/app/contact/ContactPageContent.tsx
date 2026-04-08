@@ -1,6 +1,6 @@
 "use client";
 
-import Navigation from "@/app/components/Navigation";
+import Navigation from "@/components/ui/header-2";
 import Footer from "@/app/components/Footer";
 import IntakeFormWizard from "@/app/components/intake-form/IntakeFormWizard";
 import { IntakeFormProvider } from "@/app/context/IntakeFormContext";

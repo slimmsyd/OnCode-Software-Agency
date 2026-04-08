@@ -1,4 +1,4 @@
-import Navigation from "@/app/components/Navigation";
+import Navigation from "@/components/ui/header-2";
 import Video from "@/app/components/VideoComponent";
 import Footer from "@/app/components/Footer";
 import N8nWorkflow from  "../../../../public/works/N8nWorlfow.png"

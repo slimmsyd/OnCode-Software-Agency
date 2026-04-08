@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import Navigation from "@/app/components/Navigation";
+import Navigation from "@/components/ui/header-2";
 import Video from "@/app/components/VideoComponent";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
