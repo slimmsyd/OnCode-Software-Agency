@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
 import { useRouter, usePathname } from 'next/navigation';
-import { useIntakeForm } from '@/app/context/IntakeFormContext';
+import { useIntakeFormSafe } from '@/app/context/IntakeFormContext';
 import { GetStartedButton } from '@/components/ui/get-started-button';
 import {
 	ConnectButton,
@@ -43,9 +43,17 @@ export default function Navigation({
 	const scrolled = useScroll(10);
 	const router = useRouter();
 	const pathname = usePathname();
-	const { openIntakeForm } = useIntakeForm();
+	const intakeForm = useIntakeFormSafe();
 
 	useAutoConnect({ client, wallets });
+
+	const handleGetStarted = React.useCallback(() => {
+		if (intakeForm) {
+			intakeForm.openIntakeForm();
+		} else {
+			router.push('/contact');
+		}
+	}, [intakeForm, router]);
 
 	const handleNavigation = (sectionId: string) => {
 		if (pathname !== '/') {
@@ -147,10 +155,10 @@ export default function Navigation({
 						/>
 					</div>
 
-					<GetStartedButton onClick={openIntakeForm} />
-				</div>
+				<GetStartedButton onClick={handleGetStarted} />
+			</div>
 
-				<Button
+			<Button
 					size="icon"
 					variant="outline"
 					onClick={() => setOpen(!open)}
@@ -220,7 +228,7 @@ export default function Navigation({
 								}}
 							/>
 						</div>
-						<GetStartedButton onClick={openIntakeForm} />
+						<GetStartedButton onClick={handleGetStarted} />
 					</div>
 				</div>
 			</div>

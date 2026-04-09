@@ -39,3 +39,7 @@ export function useIntakeForm() {
   }
   return context;
 }
+
+export function useIntakeFormSafe() {
+  return useContext(IntakeFormContext) ?? null;
+}
