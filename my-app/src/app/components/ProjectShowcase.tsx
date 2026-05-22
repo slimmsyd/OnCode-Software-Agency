@@ -19,6 +19,24 @@ interface Service {
 
 const servicesData: Service[] = [
     {
+        key: 'hrr-foundation',
+        media: '/works/HRRFoundation.png',
+        mediaType: 'image',
+        link: 'https://www.hrr-foundation.org/',
+        title: 'HRR Foundation',
+        description: 'Nonprofit web platform showcasing school-based behavioral health programs, with partner inquiry and donor conversion flows.',
+        categories: ['Web Apps']
+    },
+    {
+        key: 'sessions-elevated',
+        media: '/works/SessionsElevated.png',
+        mediaType: 'image',
+        link: 'https://www.sessionselevated.com/',
+        title: 'Sessions Elevated',
+        description: 'Booking and admin platform for a luxury seasonal wellness event series with capacity-limited RSVPs and partner showcase.',
+        categories: ['Web Apps']
+    },
+    {
         key: 'creatures',
         media: '/images/CreatureCube.png',
         mediaType: 'image',

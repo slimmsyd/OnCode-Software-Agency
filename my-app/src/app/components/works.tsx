@@ -15,6 +15,22 @@ interface Work {
 const works: Work[] = [
 
   {
+    title: "HRR Foundation | Nonprofit Web Platform",
+    description: "Designed and developed a custom marketing and program-discovery site for the Health Readiness Resources Foundation — a nonprofit running school-based behavioral health programs including SNIC, Rural Access to Care, Youth Mentorship, and Family Support. Built around partnership inquiries, donor conversion, and program transparency, with newsletter capture and integrated crisis resources.",
+    image: "/works/HRRFoundation.png",
+    link: "https://www.hrr-foundation.org/",
+    package: "Digital Foundation Package"
+  },
+
+  {
+    title: "Sessions Elevated | Curated Wellness Event Platform",
+    description: "Built a bespoke booking and event-management platform for a luxury seasonal wellness series. Includes capacity-limited reservations, a practitioners directory, partner showcase for Black-owned wellness brands, and an admin CMS for managing seasonal events, RSVPs, and content.",
+    image: "/works/SessionsElevated.png",
+    link: "https://www.sessionselevated.com/",
+    package: "Workflow Automation Package"
+  },
+
+  {
     title: "Naturally Radiant | Digital SOAP Notes System",
     description: "We built a custom SOAP notes interface that allows practitioners to log client sessions digitally, submit assessments and recommendations, and sync everything into Airtable. This centralized client history, streamlined practitioner workflows, and replaced paper-based records with a scalable digital system.",
     image: "/works/SoapNotes.png",
@@ -106,7 +122,6 @@ const works: Work[] = [
     link: "/casetudies/kyengineering",
     package: "Digital Foundation Package"
   },
-
 
   // Add more works as needed
 ];
