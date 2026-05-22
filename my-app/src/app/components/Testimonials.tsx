@@ -5,6 +5,12 @@ import { Marquee } from "@/components/ui/marquee";
 
 const reviews = [
     {
+        name: "Mekhi Fuller",
+        username: "Verified Google Review",
+        body: "Working with OnCode was a huge help for both me and my client. Before working with them, my client’s website had no real system for capturing or nurturing leads, and there was no way to properly collect customer data for future marketing.",
+        img: "https://avatar.vercel.sh/mekhi",
+    },
+    {
         name: "Cameren Downs",
         username: "Verified Google Review",
         body: "Great guy to work with, communicates well, get the work done fast and always on time. Never have issues when working with him and his work is good!",
