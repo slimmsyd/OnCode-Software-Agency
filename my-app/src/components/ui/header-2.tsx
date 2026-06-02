@@ -138,6 +138,7 @@ export default function Navigation({
 								</button>
 							))}
 
+					{/* Connect Wallet (desktop) — hidden, not needed for current marketing site
 					<div className="connect-wallet-wrapper border-l border-border pl-2 flex items-center">
 						<ConnectButton
 							client={client}
@@ -154,6 +155,7 @@ export default function Navigation({
 							}}
 						/>
 					</div>
+					*/}
 
 				<GetStartedButton onClick={handleGetStarted} />
 			</div>
@@ -212,6 +214,7 @@ export default function Navigation({
 								))}
 					</div>
 					<div className="flex flex-col gap-2">
+						{/* Connect Wallet (mobile) — hidden, not needed for current marketing site
 						<div className="connect-wallet-wrapper">
 							<ConnectButton
 								client={client}
@@ -228,6 +231,7 @@ export default function Navigation({
 								}}
 							/>
 						</div>
+						*/}
 						<GetStartedButton onClick={handleGetStarted} />
 					</div>
 				</div>
