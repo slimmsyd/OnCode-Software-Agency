@@ -62,7 +62,7 @@ const caseStudies: CaseStudyProps[] = [
       "Real-time analytics"
     ],
     imageSrc: "/works/DashboardImage1.png",
-    caseStudyLink: "/casetudies/prmntPro",
+    caseStudyLink: "/casestudies/prmntPro",
     timeline: {
       discovery: 33,
       design: 33,
@@ -95,7 +95,7 @@ const caseStudies: CaseStudyProps[] = [
       "Integration with existing workflows"
     ],
     imageSrc: "/works/Preem_Chat1.png",
-    caseStudyLink: "/casetudies/prmntProExtractor",
+    caseStudyLink: "/casestudies/prmntProExtractor",
     timeline: {
       discovery: 25,
       design: 35,
@@ -352,7 +352,7 @@ export default function CaseStudySection() {
             Explore our detailed case studies to see how we've helped businesses transform their operations through custom development and intelligent automation.
           </p>
           <Link
-            href="/casetudies"
+            href="/casestudies"
             className="inline-flex items-center mt-6 px-8 py-3 border border-black text-black hover:bg-black hover:text-white transition-colors duration-300"
           >
             View all case studies

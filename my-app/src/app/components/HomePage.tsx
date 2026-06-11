@@ -323,7 +323,7 @@ function ImageSlider({
       rank: "02",
       description:
         "Cryptocurrency Consulting: Expert guidance on cryptocurrency investments, security, and blockchain integration.",
-      link: "/casetudies/solomonAI",
+      link: "/casestudies/solomonAI",
     },
     {
       src: "/assets/GliddyPng.png",
@@ -331,7 +331,7 @@ function ImageSlider({
       rank: "03",
       description:
         "End to End Event Management Platform, targeted to Bartenders",
-      link: "/casetudies/gliddy",
+      link: "/casestudies/gliddy",
     },
     {
       src: "/images/Terrain.png",

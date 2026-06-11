@@ -216,7 +216,7 @@ export default function UniversalLaw() {
         <div className="w-full h-[1px] mt-[40px] bg-gray-300"></div>
 
         <Link
-          href="/casetudies/streetEconomics"
+          href="/casestudies/streetEconomics"
           className="text-[14px] mt-[20px] text-gray-500"
         >
           Next Case Study
