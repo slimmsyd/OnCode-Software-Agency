@@ -10,31 +10,24 @@ export default function SolomonAI() {
       <section className="flex flex-col md:flex-row items-start justify-start  text-black gap-[50px] py-[100px] px-[50px]">
         <div className="flex flex-col items-start justify-start w-[100%] flex-1 min-w-[500px]">
           <p>Case Studies</p>
-          <h2>We built Invoice Magi AI, true testament to the power of Agentic AI</h2>
+          <h2>Building an Advanced AI intergrated Blockchain Platform, to store your family, history forever</h2>
+          <Link href="https://www.kinnected.life/" target="_blank" className="text-[14px] my-[20px] text-gray-500">Visit Website</Link>
 
           <div className="flex flex-col items-start justify-start">
+            
             <p className="text-[16px] text-gray-500">
-              Design Patterns for AI Agents
+
+            Design Patterns for Application Development
             </p>
             <p>Web Application Development</p>
-            <p>Prompt Engineering (CoT)</p>
-            <p>Secure Headless Web Application</p>
             <p>Website Design</p>
+            <p>Blockchain Development</p>
+            <p>AI Integration/RAG Workflow</p>
           </div>
         </div>
         <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col items-start justify-start">
-            <Video
-                   src="https://teal-artistic-bonobo-612.mypinata.cloud/ipfs/Qmbai728AC9JdVS5rbNu4Rfwadx6jpxzCebMgm62WMmJub"
-              type="video/mp4"
-              width="90%"
-              height="auto"
-              controls={true}
-              autoPlay={true}
-              loop={true}
-              muted={false}
-              className="pointerEventsYes m-[0px] md:m-auto"
-            />
+            <img src="/works/Kinnected.png" alt="kinnected" />
           </div>
         </div>
       </section>
@@ -47,8 +40,7 @@ export default function SolomonAI() {
 
           <div className="flex flex-col items-start justify-start">
             <p className="text-[16px] text-gray-500">
-              Invoice Magi AI was a startup that desired to build a platform that would allow users to generate invoice, payment links, utilizing NLP for their customers.
-            </p>
+            Kinnected solves the problem of fragmented, impermanent digital family legacies by providing a secure, blockchain-powered             </p>
           </div>
         </div>
 
@@ -58,10 +50,21 @@ export default function SolomonAI() {
           </div>
 
           <div className="flex flex-col items-start justify-start">
-            <p className="text-[16px] text-gray-500">
-              We built a secure headless web application that would allow users to generate invoice, payment links, utilizing NLP for their customers.
-            </p>
-          </div>
+  <p className="text-[16px] text-gray-500">
+    We built a blockchain-powered platform to unify and immortalize family legacies. Using <strong>Arweave</strong> for permanent, decentralized storage, Kinnected ensures photos, stories, and documents are preserved for generations, immune to data loss or corporate shutdowns.  
+
+    <br />
+    <br />
+
+    Our team developed a custom <strong>GraphQL API</strong> layered with a <strong>Knowledge Graph AI</strong> to map and query complex family relationships. The AI organizes fragmented data into interactive timelines and surfaces hidden connections (e.g., linking a grandparent’s diary to a descendant’s DNA test).  
+
+    <br />
+    <br />
+
+    To gamify kinship, we integrated reward mechanics for collaborative actions like filling family tree gaps or recording oral histories. Users earn tokens for contributions, redeemable for legacy-building tools (e.g., AI-generated ancestry documentaries).  
+  </p>
+        </div>
+
         </div>
 
         <div className="flex flex-col md:flex-row items-start justify-between">
@@ -71,8 +74,8 @@ export default function SolomonAI() {
 
           <div className="flex flex-col items-start justify-start">
             <p className="text-[16px] text-gray-500">
-              Invoice Magi AI was able to launch a product that was in high demand.
-              Users were able to generate invoice, payment links, utilizing NLP for their customers.
+            Still in development, but the team is excited about the potential of this project.
+
             </p>
           </div>
         </div>
@@ -86,17 +89,17 @@ export default function SolomonAI() {
 
           <div className="flex flex-row items-center justify-center gap-[20px]">
             <div className="flex flex-col items-start justify-start">
-              <h3 className="text-[16px] font-medium text-white">Ai consulting</h3>
+              <h3 className="text-[16px] font-medium text-white">Web Application Development</h3>
               <p className="text-[14px] text-gray-500">
-                  We consulting with Solmon AI team, to help them build a innovate LLM product.
+                      We built a secure headless web application that would allow users to manage their upcoming events.
               </p>
             </div>
             <div className="flex flex-col items-start justify-start">
               <h3 className="text-[16px] font-medium text-white">
-                Generative AI Development
+                Website Design
               </h3>
               <p className="text-[14px] text-gray-500">
-              Our team of Prompt Engineeers was able to build and a tailor an AI to Solomon AI's needs.
+              We designed a website that would allow users to manage their upcoming events.
               </p>
             </div>
             <div className="flex flex-col items-start justify-start">
@@ -114,14 +117,15 @@ export default function SolomonAI() {
 
       <section className="h-[70vh] bg-white py-[100px] px-[50px] text-black flex flex-col items-start justify-center">
         <h3 className="text-[16px] text-gray-500">
-          "ONCODE's expertise in AI development has been transformative for Solomon AI. Their innovative approach and deep understanding of LLMs helped us create a product that truly resonates with our users. The ability to synthesize complex ideological data into coherent, holistic answers has set us apart in the market."
+          "ONCODE's expertise Web Application has been instrumental in bringing Gliddy to life. Their efficient approach and attention to detail helped us create a user-friendly platform that simplifies event management. The seamless integration of features and robust backend have positioned us well for future growth."
         </h3>
-        <p className="text-[16px] text-gray-500">Solomon.AI</p>
+        <p className="text-[16px] text-gray-500"  >Gliddy Team</p>
 
         <div className="w-full h-[1px] mt-[40px] bg-gray-300"></div>
 
         <Link
-          href="/casetudies/gliddy"
+          href="/casestudies/gliddy"
+          target="_blank"
           className="text-[14px] mt-[20px] text-gray-500"
         >
           Next Case Study

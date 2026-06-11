@@ -18,7 +18,7 @@ const works: Work[] = [
     title: "Naturally Radiant | Digital SOAP Notes System",
     description: "We built a custom SOAP notes interface that allows practitioners to log client sessions digitally, submit assessments and recommendations, and sync everything into Airtable. This centralized client history, streamlined practitioner workflows, and replaced paper-based records with a scalable digital system.",
     image: "/works/SoapNotes.png",
-    link: "/casetudies/naturallyRadiant",
+    link: "/casestudies/naturallyRadiant",
     package: "Workflow Automation Package"
   },
 
@@ -35,14 +35,14 @@ const works: Work[] = [
     title: "PRMNT PRO | Contract Extraction AI Pipeline",
     description: "We built an intelligent PDF Contract Extractor that leverages LangChain and OpenAI to analyze government contract documents. The system can analyze entire contracts or extract information page by page, giving the team unprecedented flexibility in how they review documents.",
     image: "/works/Preem_Chat1.png", // Update with your actual image path
-    link: "/casetudies/prmntProExtractor",
+    link: "/casestudies/prmntProExtractor",
     package: "AI Integration Package"
   },
   // {
   //   title: "PRMNT PRO | Custom CRM",
   //   description: "Designed and Developed Custom CRM for PRMNT PRO, to handle SDR.",
   //   image: "/works/Sales_Call_Dashboard.png", // Update with your actual image path
-  //   link: "/casetudies/prmntPro"
+  //   link: "/casestudies/prmntPro"
 
   // },
 
@@ -50,45 +50,45 @@ const works: Work[] = [
   //   title: "Kinnected(On-going)",
   //   description: "A platform using Blockhaing Technology, store your family, history forever, using the immutable nature of blockchain.",
   //   image: "/works/Kinnected.png", // Update with your actual image path
-  //   link: "/casetudies/kinnected"
+  //   link: "/casestudies/kinnected"
   // },
   // {
   //   title: "Street Economics Dashboard",
   //   description: "A dashboard for Street Economics,to manage community engagment, user interactions. to caputre data and analytics. To help the community grow and thrive.",
   //   image: "https://red-broken-ferret-951.mypinata.cloud/ipfs/bafybeifsyeosyutghfvz7aphm7wgdyezk6nfttanurc4ldyuiwsvs76yme", // Update with your actual image path
-  //   link: "/casetudies/streetEconomics"
+  //   link: "/casestudies/streetEconomics"
   // },
   // {
   //   title: "Universal Law AI Youtube Automation Channel",
   //   description: "A Youtube automation channel that uses AI Songs, Images, and Videos to create a new song every week.",
   //   image: "/works/Universal_Law.png", // Update with your actual image path
-  //   link: "/casetudies/universalLaw"
+  //   link: "/casestudies/universalLaw"
   // },
   // {
   //   title: "Invoice Magi",
   //   description: "Implementation of your design. No design? No problem. We can assist.",
   //   image: "/works/invoice-magi.png", // Update with your actual image path
-  //   link: "/casetudies/invoice-magi"
+  //   link: "/casestudies/invoice-magi"
   // },
 
   // {
   //   title: "Solomon Gpt",
   //   description: "A GPT-4o powered AI sage that can help you guide your life and more deeper questions than ever.",
   //   image: "/works/solomon.png", // Update with your actual image path
-  //   link: "/casetudies/solomonAI"
+  //   link: "/casestudies/solomonAI"
   // },
   {
     title: "Creatures Cube",
     description: "Web application for an ERC-4047 NFT collection.",
     image: "/works/CreatureCubes.png", // Update with your actual image path
-    link: "/casetudies/creaturecubes",
+    link: "/casestudies/creaturecubes",
     package: "Web3 Development Package"
   },
   {
     title: "Gliddy",
     description: "We built Gliddy from the ground up — first as a React web app, then converted it into a fully native iOS and Android mobile application using React Native. The platform connects bartenders and users, with features like profiles, QR codes, notifications, and event booking.",
     image: "/works/gliddy.png", // Update with actual image path
-    link: "/casetudies/gliddy",
+    link: "/casestudies/gliddy",
     package: "Mobile Development Package"
   },
   
@@ -103,7 +103,7 @@ const works: Work[] = [
     title: "KY Engineering – Website & Business Profile Setup",
     description: "Built a professional 5-6 page website with AI chatbot, booking calendar, and SEO optimization. Guided client through Google Business Profile setup. Took KY Engineering from zero to professional online presence in under a week.",
     image: "/works/Ky_Engineering.png", // Update with your actual image path
-    link: "/casetudies/kyengineering",
+    link: "/casestudies/kyengineering",
     package: "Digital Foundation Package"
   },
 

@@ -10,7 +10,7 @@ export default function SolomonAI() {
       <section className="flex flex-col md:flex-row items-start justify-start  text-black gap-[50px] py-[100px] px-[50px]">
         <div className="flex flex-col items-start justify-start w-[100%] flex-1 min-w-[500px]">
           <p>Case Studies</p>
-          <h2>We built Solomon AI, and their customers are content about it</h2>
+          <h2>We built Invoice Magi AI, true testament to the power of Agentic AI</h2>
 
           <div className="flex flex-col items-start justify-start">
             <p className="text-[16px] text-gray-500">
@@ -25,7 +25,7 @@ export default function SolomonAI() {
         <div className="flex flex-col items-center justify-center">
           <div className="flex flex-col items-start justify-start">
             <Video
-              src="https://www.aisolomon.xyz/video_introduction.mp4"
+                   src="https://teal-artistic-bonobo-612.mypinata.cloud/ipfs/Qmbai728AC9JdVS5rbNu4Rfwadx6jpxzCebMgm62WMmJub"
               type="video/mp4"
               width="90%"
               height="auto"
@@ -47,9 +47,7 @@ export default function SolomonAI() {
 
           <div className="flex flex-col items-start justify-start">
             <p className="text-[16px] text-gray-500">
-              Solomon AI was a startup that had a desire to combine spirtuality
-              and generative ai.Users would come to the site to find answers to
-              the deepeest questions. AI would synthesize data from various ideaolgies to provide  holistic answers.
+              Invoice Magi AI was a startup that desired to build a platform that would allow users to generate invoice, payment links, utilizing NLP for their customers.
             </p>
           </div>
         </div>
@@ -61,8 +59,7 @@ export default function SolomonAI() {
 
           <div className="flex flex-col items-start justify-start">
             <p className="text-[16px] text-gray-500">
-              We built a secure headless web application that would allow users to ask questions and receive answers. We also built a retrieval augmented generation model that would allow the AI to synthesize data from various ideaolgies to provide  holistic answers.
-              Design the AI model, built the full stack application, and deployed it on AWS.
+              We built a secure headless web application that would allow users to generate invoice, payment links, utilizing NLP for their customers.
             </p>
           </div>
         </div>
@@ -74,10 +71,8 @@ export default function SolomonAI() {
 
           <div className="flex flex-col items-start justify-start">
             <p className="text-[16px] text-gray-500">
-              Solomon AI was able to launch a product that was in high demand.
-              Users were able to find answers to their questions and the AI was
-              able to synthesize data from various ideaolgies to provide
-              holistic answers.
+              Invoice Magi AI was able to launch a product that was in high demand.
+              Users were able to generate invoice, payment links, utilizing NLP for their customers.
             </p>
           </div>
         </div>
@@ -126,7 +121,7 @@ export default function SolomonAI() {
         <div className="w-full h-[1px] mt-[40px] bg-gray-300"></div>
 
         <Link
-          href="/casetudies/gliddy"
+          href="/casestudies/gliddy"
           className="text-[14px] mt-[20px] text-gray-500"
         >
           Next Case Study

@@ -61,7 +61,7 @@ export default function ChatPopup() {
         {
           name: "Solomon Chat App",
           description: "AI-powered chat application for cryptocurrency consulting",
-          url: "/casetudies/solomonAI"
+          url: "/casestudies/solomonAI"
         },
         {
           name: "Invoice Magi",

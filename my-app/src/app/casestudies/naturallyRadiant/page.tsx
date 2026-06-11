@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Naturally Radiant Case Study - Digital SOAP Notes System | OnCode',
     description: 'Custom scheduling & payment integration for Naturally Radiant wellness center. Digital SOAP notes system to streamline practitioner workflows.',
-    url: 'https://www.0ncode.com/casetudies/naturallyRadiant',
+    url: 'https://www.0ncode.com/casestudies/naturallyRadiant',
     type: 'article',
     images: [
       {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     images: ['https://www.0ncode.com/works/SoapNotes.png'],
   },
   alternates: {
-    canonical: 'https://www.0ncode.com/casetudies/naturallyRadiant',
+    canonical: 'https://www.0ncode.com/casestudies/naturallyRadiant',
   },
 };
 
@@ -167,7 +167,7 @@ export default function NaturallyRadiantCase() {
         <p className="text-[16px] text-gray-500">Naturally Radiant Team</p>
         <div className="w-full h-[1px] mt-[40px] bg-gray-300"></div>
         {/* <Link
-          href="/casetudies/invoice-magi"
+          href="/casestudies/invoice-magi"
           className="text-[14px] mt-[20px] text-gray-500"
         >
           Next Case Study

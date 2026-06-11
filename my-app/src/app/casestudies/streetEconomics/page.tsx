@@ -165,7 +165,7 @@ export default function SolomonAI() {
         <div className="w-full h-[1px] mt-[40px] bg-gray-300"></div>
 
         <Link
-          href="/casetudies/gliddy"
+          href="/casestudies/gliddy"
           className="text-[14px] mt-[20px] text-gray-500"
         >
           Next Case Study

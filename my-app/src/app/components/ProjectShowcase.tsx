@@ -31,7 +31,7 @@ const servicesData: Service[] = [
         key: 'gliddy',
         media: '/assets/GliddyPng.png',
         mediaType: 'image',
-        link: '/casetudies/gliddy',
+        link: '/casestudies/gliddy',
         title: 'Gliddy',
         description: 'End-to-end event management platform targeted specifically for bartenders.',
         categories: ['Web Apps']
@@ -42,7 +42,7 @@ const servicesData: Service[] = [
         mediaType: 'image',
         link: 'https://www.sjwellnessspa.com',
         title: 'SJ Wellness',
-        description: 'Website designed and develop for Wellness Center',
+        description: 'Website designed and developed for Wellness Center',
         categories: ['Web Apps']
     },
     {
@@ -51,7 +51,7 @@ const servicesData: Service[] = [
         mediaType: 'image',
         link: 'https://www.tintlab.net',
         title: 'Tint Labs',
-        description: 'Website designed for Care Tinting Business ',
+        description: 'Website designed for Car Tinting Business',
         categories: ['Web Apps']
     },
     {
