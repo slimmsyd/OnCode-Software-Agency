@@ -595,3 +595,51 @@ p {
   }
 }
 
+
+/* ============================================================
+   Homepage redesign — hero glow + staggered fade-up entrance
+   ============================================================ */
+@keyframes oc-gridGlow {
+  0%   { background-position: 0% 0%; }
+  100% { background-position: 100% 100%; }
+}
+
+@keyframes oc-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.oc-fade-up {
+  opacity: 0;
+  animation: oc-fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.oc-fade-up.d-200 { animation-delay: 200ms; }
+.oc-fade-up.d-400 { animation-delay: 400ms; }
+.oc-fade-up.d-600 { animation-delay: 600ms; }
+.oc-fade-up.d-800 { animation-delay: 800ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .oc-fade-up {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+  .oc-hero-glow { animation: none !important; }
+}
+
+/* Editorial section heading — About / Process / Founder / Final CTA / Footer. */
+.section-heading {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+  letter-spacing: -0.02em;
+}
+
+/* Display heading — Selected Work / Testimonials. Light, large, tight. */
+.display-heading {
+  font-size: clamp(40px, 7vw, 60px);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: #111;
+  line-height: 1.05;
+}

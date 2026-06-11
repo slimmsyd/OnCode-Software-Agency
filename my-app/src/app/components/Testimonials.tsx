@@ -41,7 +41,7 @@ const reviews = [
 
 If you’re building anything ambitious or innovative, Syd is the engineer you want. Highly recommended.
 
-— Founder of Black W3B`,
+Founder of Black W3B`,
         img: "https://avatar.vercel.sh/blackw3b",
     },
 ];
