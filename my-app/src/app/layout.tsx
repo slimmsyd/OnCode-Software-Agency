@@ -10,10 +10,10 @@ import { Gnosis, Ethereum } from "@thirdweb-dev/chains";
 
 export const metadata: Metadata = {
   title: {
-    default: "OnCode | Software Agency - Custom Software Development",
+    default: "OnCode | Custom Software & AI Consultation Agency",
     template: "%s | OnCode Software Agency"
   },
-  description: "Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages in weeks, not months.",
+  description: "OnCode finds where your business leaks time and money, then builds the systems that seal the leaks: websites, web applications, custom software, and AI automation, managed long after launch.",
   keywords: [
     "software development agency",
     "custom software development", 
