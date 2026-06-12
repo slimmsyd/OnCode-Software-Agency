@@ -27,10 +27,10 @@ export default function RedesignNav() {
           <Image
             src="/redesign/oncode-wordmark.png"
             alt="OnCode"
-            width={883}
-            height={243}
+            width={785}
+            height={314}
             priority
-            className="h-8 w-auto object-contain"
+            className="h-10 w-auto object-contain"
           />
         </button>
 
