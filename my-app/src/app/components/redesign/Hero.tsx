@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import BookAuditButton from "./BookAuditButton";
 import { scrollToId } from "./lib";
@@ -45,9 +46,19 @@ export default function Hero() {
 
       <div className="relative z-[1] flex flex-1 items-center justify-center px-6 pb-20 pt-10">
         <div className="max-w-[880px] text-center">
-          <p className="oc-fade-up text-[14px] font-light uppercase tracking-[0.05em] text-black/50">
-            The AI Diagnostic Audit
-          </p>
+          <div className="oc-fade-up flex flex-col items-center">
+            <Image
+              src="/redesign/oncode-wordmark.png"
+              alt="OnCode"
+              width={785}
+              height={314}
+              priority
+              className="h-16 w-auto object-contain"
+            />
+            <p className="mt-3 text-[12px] font-light uppercase tracking-[0.05em] text-black/50">
+              The AI Diagnostic Audit
+            </p>
+          </div>
           <h1 className="header-h1 oc-fade-up d-200 mb-6 mt-6 text-black">
             Find Where Your Business Leaks Time And Money.
           </h1>
