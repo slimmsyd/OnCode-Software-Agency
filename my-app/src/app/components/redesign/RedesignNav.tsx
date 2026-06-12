@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { bookAudit, scrollToId } from "./lib";
 
@@ -15,25 +14,24 @@ const NAV_ITEMS = [
 
 export default function RedesignNav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="relative z-50 w-full">
-      <div className="mx-auto flex h-24 max-w-[1400px] items-center justify-between px-6">
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="flex items-center"
-          aria-label="OnCode — back to top"
-        >
-          <Image
-            src="/redesign/oncode-wordmark.png"
-            alt="OnCode"
-            width={785}
-            height={314}
-            priority
-            className="h-14 w-auto object-contain"
-          />
-        </button>
-
+    <nav className="fixed inset-x-0 top-0 z-50">
+      <div
+        className={`mx-auto flex items-center justify-between transition-all duration-300 ease-out ${
+          scrolled
+            ? "mt-3 h-16 max-w-[1200px] rounded-full bg-white px-6 shadow-[0_8px_30px_rgba(0,0,0,0.08)] ring-1 ring-black/5 mx-4 lg:mx-auto"
+            : "mt-0 h-24 max-w-[1400px] bg-transparent px-6"
+        }`}
+      >
         {/* Desktop links */}
         <div className="hidden items-center gap-7 lg:flex">
           {NAV_ITEMS.map((it) => (
@@ -45,13 +43,6 @@ export default function RedesignNav() {
               {it.label}
             </button>
           ))}
-          <span className="h-6 w-px bg-black/10" />
-          <button
-            onClick={bookAudit}
-            className="h-10 rounded-full bg-black px-[22px] text-[15px] font-medium text-white transition-opacity duration-200 hover:opacity-90"
-          >
-            Book the Audit
-          </button>
         </div>
 
         {/* Mobile trigger */}
@@ -61,6 +52,13 @@ export default function RedesignNav() {
           aria-label="Open menu"
         >
           <Menu size={22} />
+        </button>
+
+        <button
+          onClick={bookAudit}
+          className="h-10 rounded-full bg-black px-[22px] text-[15px] font-medium text-white transition-opacity duration-200 hover:opacity-90"
+        >
+          Book the Audit
         </button>
       </div>
 

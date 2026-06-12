@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       data-screen-label="Hero"
-      className="relative flex min-h-[68vh] flex-col overflow-hidden"
+      className="relative flex min-h-[68vh] flex-col overflow-hidden pt-24"
     >
       {/* Faint 40px grid, radial-masked toward top-right */}
       <div
