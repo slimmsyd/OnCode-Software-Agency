@@ -23,6 +23,14 @@ const CLIENT_BUILDS: Project[] = [
     categories: ["Web Apps"],
   },
   {
+    key: "hrr-foundation",
+    media: "/redesign/projects/hrr-foundation.png",
+    title: "HRR Foundation",
+    description:
+      "Brand site for a healthcare-access foundation: prevention, early intervention, mentorship, and community-based care programs, built on a warm editorial design system.",
+    categories: ["Web Apps"],
+  },
+  {
     key: "tint-labs",
     media: "/redesign/projects/tintlabs.jpeg",
     title: "Tint Labs",

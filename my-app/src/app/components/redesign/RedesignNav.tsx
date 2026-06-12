@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { bookAudit, scrollToId } from "./lib";
 
@@ -20,9 +21,17 @@ export default function RedesignNav() {
       <div className="mx-auto flex h-24 max-w-[1400px] items-center justify-between px-6">
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-[22px] font-medium tracking-[-0.02em] text-black"
+          className="flex items-center"
+          aria-label="OnCode — back to top"
         >
-          OnCode
+          <Image
+            src="/redesign/oncode-wordmark.png"
+            alt="OnCode"
+            width={883}
+            height={243}
+            priority
+            className="h-8 w-auto object-contain"
+          />
         </button>
 
         {/* Desktop links */}
