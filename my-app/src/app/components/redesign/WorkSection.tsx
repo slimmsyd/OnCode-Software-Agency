@@ -16,20 +16,20 @@ interface Project {
 // Add Screw It Pro here once it is live.
 const WORK_PROJECTS: Project[] = [
   {
+    key: "hrr-foundation",
+    media: "/redesign/projects/hrr-foundation.png",
+    title: "HRR Foundation",
+    kind: "CRM Design + Development",
+    description:
+      "Full CRM designed and developed for a healthcare-access foundation — managing prevention, early intervention, mentorship, and community-based care programs.",
+  },
+  {
     key: "mcbride",
     media: "/redesign/projects/mcbride.png",
     title: "McBride Basketball Academy",
     kind: "Booking Platform",
     description:
       "Booking platform with Stripe payments, Google Calendar sync, and an admin dashboard for session management.",
-  },
-  {
-    key: "hrr-foundation",
-    media: "/redesign/projects/hrr-foundation.png",
-    title: "HRR Foundation",
-    kind: "Brand Site",
-    description:
-      "Brand site for a healthcare-access foundation: prevention, early intervention, mentorship, and community-based care programs.",
   },
   {
     key: "tint-labs",
