@@ -24,6 +24,14 @@ const WORK_PROJECTS: Project[] = [
       "Booking platform with Stripe payments, Google Calendar sync, and an admin dashboard for session management.",
   },
   {
+    key: "hrr-foundation",
+    media: "/redesign/projects/hrr-foundation.png",
+    title: "HRR Foundation",
+    kind: "Brand Site",
+    description:
+      "Brand site for a healthcare-access foundation: prevention, early intervention, mentorship, and community-based care programs.",
+  },
+  {
     key: "tint-labs",
     media: "/redesign/projects/tintlabs.jpeg",
     title: "Tint Labs",
