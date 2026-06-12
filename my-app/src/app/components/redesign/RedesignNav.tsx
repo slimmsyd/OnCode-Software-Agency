@@ -23,6 +23,24 @@ export default function RedesignNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Close the mobile overlay if the viewport grows past the lg breakpoint
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const onChange = (e: MediaQueryListEvent) => {
+      if (e.matches) setOpen(false);
+    };
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  // Lock page scroll while the overlay is open
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <nav className="fixed inset-x-0 top-0 z-50">
       <div
@@ -64,7 +82,7 @@ export default function RedesignNav() {
 
       {/* Mobile full-screen overlay */}
       {open && (
-        <div className="fixed inset-0 z-[100] flex flex-col bg-white px-6 pb-6 pt-24">
+        <div className="fixed inset-0 z-[100] flex flex-col bg-white px-6 pb-6 pt-24 lg:hidden">
           <button
             onClick={() => setOpen(false)}
             className="absolute right-6 top-6 text-black"
