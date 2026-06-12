@@ -30,7 +30,7 @@ export default function RedesignNav() {
             width={785}
             height={314}
             priority
-            className="h-10 w-auto object-contain"
+            className="h-14 w-auto object-contain"
           />
         </button>
 
