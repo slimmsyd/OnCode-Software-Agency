@@ -16,6 +16,14 @@ interface Project {
 // Add Screw It Pro here once it is live.
 const WORK_PROJECTS: Project[] = [
   {
+    key: "street-economics",
+    media: "/redesign/projects/streetecon.png",
+    title: "Street Economics",
+    kind: "Digital Infrastructure + CRM",
+    description:
+      "Full digital infrastructure for a 220+ member economic community — website development, hosting, and CRM setup to power membership, engagement, and growth.",
+  },
+  {
     key: "hrr-foundation",
     media: "/redesign/projects/hrr-foundation.png",
     title: "HRR Foundation",
