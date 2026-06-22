@@ -5,6 +5,12 @@ import { Marquee } from "@/components/ui/marquee";
 
 const reviews = [
     {
+        name: "SE HQ",
+        username: "Verified Google Review",
+        body: "Syd exceeds expectations and always makes a transformational impact when we work together. He always takes us to the next level. Excited to work with him every single time.",
+        img: "https://avatar.vercel.sh/sehq",
+    },
+    {
         name: "Cameren Downs",
         username: "Verified Google Review",
         body: "Great guy to work with, communicates well, get the work done fast and always on time. Never have issues when working with him and his work is good!",
