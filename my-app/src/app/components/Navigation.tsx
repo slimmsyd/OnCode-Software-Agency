@@ -161,7 +161,7 @@ export default function Navigation({
             </>
           )}
 
-          {/* Connect Wallet Button — hidden, not needed for current marketing site
+          {/* Connect Wallet Button - hidden, not needed for current marketing site
           <div className="connect-wallet-wrapper ml-6 pl-6 border-l border-black/10 flex items-center">
             <ConnectButton
               client={client}
@@ -252,7 +252,7 @@ export default function Navigation({
               )}
             </div>
 
-            {/* Connect Wallet (mobile) — hidden, not needed for current marketing site
+            {/* Connect Wallet (mobile) - hidden, not needed for current marketing site
             <div className="mt-auto mb-12">
               <div className="connect-wallet-wrapper">
                 <ConnectButton

@@ -431,7 +431,7 @@ export default function OfferPage() {
                 
                 <div className="space-y-4">
                   <h4 className="text-lg font-medium text-black">Immediate ROI</h4>
-                  <p>The website is already built and working. You're seeing the value upfront—better customer experience, automated inquiries, and professional presentation.</p>
+                  <p>The website is already built and working. You're seeing the value upfront - better customer experience, automated inquiries, and professional presentation.</p>
                 </div>
                 
                 <div className="space-y-4">

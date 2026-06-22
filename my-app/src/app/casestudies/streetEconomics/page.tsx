@@ -91,7 +91,7 @@ export default function SolomonAI() {
                 </li>
               </ul>
               <p className="text-[18px] text-white leading-relaxed mt-6">
-                This dashboard turns raw data into clear insights, showing peak activity times, the most popular channels, and the top contributors—all in real time. It's simple to use, fast, and designed to give Street Economics the info they need without the fluff.
+                This dashboard turns raw data into clear insights, showing peak activity times, the most popular channels, and the top contributors - all in real time. It's simple to use, fast, and designed to give Street Economics the info they need without the fluff.
               </p>
             </div>
           </div>

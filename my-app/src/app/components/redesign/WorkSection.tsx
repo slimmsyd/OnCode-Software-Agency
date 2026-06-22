@@ -11,7 +11,7 @@ interface Project {
   description: string;
 }
 
-// Client builds only — operational systems lead; Web3 work stays off the
+// Client builds only - operational systems lead; Web3 work stays off the
 // first impression (link it elsewhere or keep it behind a separate view).
 // Add Screw It Pro here once it is live.
 const WORK_PROJECTS: Project[] = [
@@ -21,7 +21,7 @@ const WORK_PROJECTS: Project[] = [
     title: "Street Economics",
     kind: "Digital Infrastructure + CRM",
     description:
-      "Full digital infrastructure for a 220+ member economic community — website development, hosting, and CRM setup to power membership, engagement, and growth.",
+      "Full digital infrastructure for a 220+ member economic community - website development, hosting, and CRM setup to power membership, engagement, and growth.",
   },
   {
     key: "wepray2flourish",
@@ -29,7 +29,7 @@ const WORK_PROJECTS: Project[] = [
     title: "We Pray To Flourish",
     kind: "Ecommerce + Digital Infrastructure",
     description:
-      "Custom CRM, hosting, and digital infrastructure for an author-led brand — ecommerce site with Stripe payments, book sales, and newsletter growth.",
+      "Custom CRM, hosting, and digital infrastructure for an author-led brand - ecommerce site with Stripe payments, book sales, and newsletter growth.",
   },
   {
     key: "hrr-foundation",
@@ -37,7 +37,7 @@ const WORK_PROJECTS: Project[] = [
     title: "HRR Foundation",
     kind: "CRM Design + Development",
     description:
-      "Full CRM designed and developed for a healthcare-access foundation — managing prevention, early intervention, mentorship, and community-based care programs.",
+      "Full CRM designed and developed for a healthcare-access foundation - managing prevention, early intervention, mentorship, and community-based care programs.",
   },
   {
     key: "mcbride",
@@ -53,7 +53,7 @@ const WORK_PROJECTS: Project[] = [
     title: "Tint Labs",
     kind: "Website + Booking",
     description:
-      "Website, booking, and lead capture for a car-tinting business — the build behind the case study.",
+      "Website, booking, and lead capture for a car-tinting business - the build behind the case study.",
   },
   {
     key: "prmnt-pro",
@@ -103,7 +103,7 @@ export default function WorkSection() {
     const viewport = viewportRef.current;
     const card = cardRef.current;
     if (!viewport || !card) return;
-    // offsetWidth is layout width — unaffected by the idle scale() transform
+    // offsetWidth is layout width - unaffected by the idle scale() transform
     const cardW = card.offsetWidth;
     setOffset((viewport.clientWidth - cardW) / 2 - index * (cardW + GAP));
   }, [index]);
@@ -120,7 +120,7 @@ export default function WorkSection() {
   return (
     <section
       id="work"
-      data-screen-label="Selected Work — Filmstrip"
+      data-screen-label="Selected Work - Filmstrip"
       className="bg-white pb-[88px] pt-[112px]"
     >
       <div className="mx-auto mb-12 flex max-w-[1280px] items-end justify-between gap-6 px-10">
@@ -133,7 +133,7 @@ export default function WorkSection() {
           </h2>
         </div>
         <span className="whitespace-nowrap pb-1.5 text-[13px] tracking-[0.14em] text-black/45">
-          {String(index + 1).padStart(2, "0")} —{" "}
+          {String(index + 1).padStart(2, "0")} /{" "}
           {String(total).padStart(2, "0")}
         </span>
       </div>

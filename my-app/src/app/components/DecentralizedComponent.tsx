@@ -30,7 +30,7 @@ export default function DecentralizedComponent({ refSection2,
               <h2>Decentralized Finance </h2>
               <p className="text-[14px] text-[#b4b4b4] text-center ">
                 Decentralized Finance (DeFi) is more than just digital
-                currency—it's a revolutionary system that puts financial control
+                currency - it's a revolutionary system that puts financial control
                 back in your hands. Designed to be accessible and inclusive,
                 DeFi bypasses traditional banking barriers, offering minority
                 communities the opportunity to build wealth, access credit, and

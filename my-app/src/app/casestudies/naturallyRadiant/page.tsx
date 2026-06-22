@@ -82,7 +82,7 @@ export default function NaturallyRadiantCase() {
                 <h3 className="text-lg font-semibold text-green-800">Proof</h3>
               </div>
               <p className="text-green-700 text-sm leading-relaxed">
-                Naturally Radiant — moved from paper SOAP notes to digital system with Custom CRM + Agentic automations.
+                Naturally Radiant - moved from paper SOAP notes to digital system with Custom CRM + Agentic automations.
               </p>
             </div>
           </div>
@@ -146,7 +146,7 @@ export default function NaturallyRadiantCase() {
             <li><b>Centralized Data:</b> All appointments, payments, and practitioner activity are now viewable and manageable in Airtable.</li>
             <li><b>Time Saved:</b> Manual appointment tracking, confirmation, and follow-up coordination significantly reduced.</li>
         
-            <li><b>Scalability Enabled:</b> The new system can support multiple practitioners, clients, and locations—future-proofing their operations.</li>
+            <li><b>Scalability Enabled:</b> The new system can support multiple practitioners, clients, and locations - future-proofing their operations.</li>
           </ul>
         </SectionBlock>
         <SectionBlock title="Strategic Skills Demonstrated" color="cyan-400">

@@ -86,7 +86,7 @@ const works: Work[] = [
   },
   {
     title: "Gliddy",
-    description: "We built Gliddy from the ground up — first as a React web app, then converted it into a fully native iOS and Android mobile application using React Native. The platform connects bartenders and users, with features like profiles, QR codes, notifications, and event booking.",
+    description: "We built Gliddy from the ground up - first as a React web app, then converted it into a fully native iOS and Android mobile application using React Native. The platform connects bartenders and users, with features like profiles, QR codes, notifications, and event booking.",
     image: "/works/gliddy.png", // Update with actual image path
     link: "/casestudies/gliddy",
     package: "Mobile Development Package"

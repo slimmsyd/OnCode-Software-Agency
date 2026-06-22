@@ -27,7 +27,7 @@ const ShopifyStorePage = () => {
         '1-on-1 admin training (30 mins)'
       ],
       addOn: {
-        title: 'Ongoing Management — $50/month (first 3 months)',
+        title: 'Ongoing Management - $50/month (first 3 months)',
         features: [
           'Up to 10 product updates/month',
           'Homepage refresh (featured product, banner updates)',
@@ -35,7 +35,7 @@ const ShopifyStorePage = () => {
           'Priority support for edits'
         ]
       },
-      value: 'A credible, functional online storefront — fast, clean, and ready for sales.',
+      value: 'A credible, functional online storefront - fast, clean, and ready for sales.',
       borderColor: 'border-blue-200',
       hoverColor: 'hover:border-blue-400'
     },
@@ -67,7 +67,7 @@ const ShopifyStorePage = () => {
         '30-day light support after launch'
       ],
       addOn: {
-        title: 'Ongoing Management — $50/month (first 3 months)',
+        title: 'Ongoing Management - $50/month (first 3 months)',
         features: [
           'Product uploads (up to 10 new/month)',
           'Monthly newsletter blast template',
@@ -75,7 +75,7 @@ const ShopifyStorePage = () => {
           'Basic sales report & product performance insights'
         ]
       },
-      value: 'A real, branded eCommerce foundation — looks professional, drives conversions, and sets the business up for scaling.',
+      value: 'A real, branded eCommerce foundation - looks professional, drives conversions, and sets the business up for scaling.',
       borderColor: 'border-purple-200',
       hoverColor: 'hover:border-purple-400'
     },
@@ -99,7 +99,7 @@ const ShopifyStorePage = () => {
         '30-day support post-launch'
       ],
       addOn: {
-        title: 'Ongoing Management — $50/month (first 3 months)',
+        title: 'Ongoing Management - $50/month (first 3 months)',
         features: [
           '10 product uploads/month',
           '1 newsletter + SMS campaign/month',

@@ -132,25 +132,25 @@ export default function EBookRise() {
               <div className="flex items-start space-x-3 text-left">
                 <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-gray-700 leading-relaxed">
-                  <strong>See the system clearly</strong> — AI isn't a gimmick; it's a layer that learns with you.
+                  <strong>See the system clearly</strong> - AI isn't a gimmick; it's a layer that learns with you.
                 </p>
               </div>
               <div className="flex items-start space-x-3 text-left">
                 <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-gray-700 leading-relaxed">
-                  <strong>Get your time back</strong> — automate the grind (docs, intake, scheduling) and cut hours into minutes.
+                  <strong>Get your time back</strong> - automate the grind (docs, intake, scheduling) and cut hours into minutes.
                 </p>
               </div>
               <div className="flex items-start space-x-3 text-left">
                 <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-gray-700 leading-relaxed">
-                  <strong>Build systems that don't stagnate</strong> — every project sharpens your team and your tools.
+                  <strong>Build systems that don't stagnate</strong> - every project sharpens your team and your tools.
                 </p>
               </div>
               <div className="flex items-start space-x-3 text-left">
                 <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
                 <p className="text-gray-700 leading-relaxed">
-                  <strong>Free your energy</strong> — stop drowning in busywork so you can focus on growth and improving your quality of life.
+                  <strong>Free your energy</strong> - stop drowning in busywork so you can focus on growth and improving your quality of life.
                 </p>
               </div>
             </div>
@@ -198,7 +198,7 @@ export default function EBookRise() {
                 <p className="text-lg text-gray-800 leading-relaxed">
                   Projects that once took weeks started finishing in days.<br/>
                   Clients who were drowning in paperwork and manual tasks got organized, automated systems that saved them hours every week.<br/>
-                  Even app founders — with no tech team, no venture capital — got their products in hand, faster than they thought possible.
+                  Even app founders - with no tech team, no venture capital - got their products in hand, faster than they thought possible.
                 </p>
               </div>
               
@@ -221,7 +221,7 @@ export default function EBookRise() {
               <p className="text-lg text-gray-800 leading-relaxed">
                 That's when it hit me:<br/>
                 We're not just doing business anymore.<br/>
-                <strong>We're entering an age of Intelligent Business — where your systems evolve with you.</strong>
+                <strong>We're entering an age of Intelligent Business - where your systems evolve with you.</strong>
               </p>
               
               <h3 className="text-2xl font-bold text-gray-900 mt-12 mb-6">
@@ -249,9 +249,9 @@ export default function EBookRise() {
                 <p className="text-lg text-gray-800 leading-relaxed">You can turn paper stacks into dashboards.</p>
                 <p className="text-lg text-gray-800 leading-relaxed">You can answer customers 24/7 without lifting a finger.</p>
                 <p className="text-lg text-gray-800 leading-relaxed">You can even turn raw ideas into apps in weeks, not years.</p>
-                <p className="text-lg text-gray-800 leading-relaxed">You can draft Jazz, Hip-hop, or Pop songs with a text prompt — and refine them into tracks that sound studio-made.</p>
-                <p className="text-lg text-gray-800 leading-relaxed">You can generate images with your voice — and see your words turn into visuals in seconds.</p>
-                <p className="text-lg text-gray-800 leading-relaxed">You can storyboard and produce short films with AI — giving creators Hollywood-style tools at their fingertips.</p>
+                <p className="text-lg text-gray-800 leading-relaxed">You can draft Jazz, Hip-hop, or Pop songs with a text prompt - and refine them into tracks that sound studio-made.</p>
+                <p className="text-lg text-gray-800 leading-relaxed">You can generate images with your voice - and see your words turn into visuals in seconds.</p>
+                <p className="text-lg text-gray-800 leading-relaxed">You can storyboard and produce short films with AI - giving creators Hollywood-style tools at their fingertips.</p>
               </div>
               
               <p className="text-lg text-gray-800 leading-relaxed">
@@ -313,7 +313,7 @@ export default function EBookRise() {
               
               <p className="text-lg text-gray-800 leading-relaxed">
                 This isn't about theory.<br/>
-                <strong>It's about giving you time back, fewer costs, and a real path to scale — without needing a tech team.</strong>
+                <strong>It's about giving you time back, fewer costs, and a real path to scale - without needing a tech team.</strong>
               </p>
               
               <p className="text-lg text-gray-800 leading-relaxed">
@@ -344,7 +344,7 @@ export default function EBookRise() {
               
               <p className="text-lg text-gray-800 leading-relaxed">
                 I know which side I'm on.<br/>
-                — Sydney
+ - Sydney
               </p>
             </div>
           </div>

@@ -59,7 +59,7 @@ const CTA = () => {
             See the Voice Agent in Action
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed mb-12">
-            Watch real demos of our 24/7 AI Voice Receptionist—handling calls, booking appointments, 
+            Watch real demos of our 24/7 AI Voice Receptionist - handling calls, booking appointments, 
             and delivering the kind of efficiency usually reserved for big enterprises.
           </p>
           

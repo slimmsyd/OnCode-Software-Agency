@@ -146,7 +146,7 @@ export default function Navigation({
 								</button>
 							))}
 
-					{/* Connect Wallet (desktop) — hidden, not needed for current marketing site
+					{/* Connect Wallet (desktop) - hidden, not needed for current marketing site
 					<div className="connect-wallet-wrapper border-l border-border pl-2 flex items-center">
 						<ConnectButton
 							client={client}
@@ -180,7 +180,7 @@ export default function Navigation({
 				</Button>
 			</nav>
 
-			{/* Mobile sheet — refined editorial layout, glass overlay, smooth open/close */}
+			{/* Mobile sheet - refined editorial layout, glass overlay, smooth open/close */}
 			<AnimatePresence>
 				{open && (
 					<motion.div
@@ -205,7 +205,7 @@ export default function Navigation({
 								</p>
 							</div>
 
-							{/* Nav items — editorial list with index numerals */}
+							{/* Nav items - editorial list with index numerals */}
 							<nav className="flex-1 overflow-y-auto px-6">
 								<ul className="flex flex-col">
 									{customLinks
@@ -257,7 +257,7 @@ export default function Navigation({
 								</ul>
 							</nav>
 
-							{/* Connect Wallet (mobile) — hidden, not needed for current marketing site
+							{/* Connect Wallet (mobile) - hidden, not needed for current marketing site
 							<div className="connect-wallet-wrapper">
 								<ConnectButton
 									client={client}
@@ -276,7 +276,7 @@ export default function Navigation({
 							</div>
 							*/}
 
-							{/* Footer — primary CTA, contact, fine print */}
+							{/* Footer - primary CTA, contact, fine print */}
 							<div className="px-6 pt-6 pb-10 space-y-6">
 								<GetStartedButton
 									onClick={() => {

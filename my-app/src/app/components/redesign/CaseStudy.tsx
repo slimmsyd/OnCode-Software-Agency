@@ -9,9 +9,9 @@ import { bookAudit } from "./lib";
 // are supplied by the client.
 const SHOW_STATS = false;
 const STATS = [
-  { value: "—%", label: "of bookings now handled online, without a phone call" },
-  { value: "— hrs", label: "of weekly admin removed from the owner's plate" },
-  { value: "— min", label: "average response time to a new lead, down from hours" },
+  { value: "-%", label: "of bookings now handled online, without a phone call" },
+  { value: "- hrs", label: "of weekly admin removed from the owner's plate" },
+  { value: "- min", label: "average response time to a new lead, down from hours" },
 ];
 
 function StatBlock({ value, label }: { value: string; label: string }) {
