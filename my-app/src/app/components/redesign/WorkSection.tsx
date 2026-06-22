@@ -32,6 +32,21 @@ const WORK_PROJECTS: Project[] = [
       "Custom CRM, hosting, and digital infrastructure for an author-led brand - ecommerce site with Stripe payments, book sales, and newsletter growth.",
   },
   {
+    key: "sj-wellness",
+    media: "/redesign/projects/sj-wellness.jpeg",
+    title: "SJ Wellness",
+    kind: "Website",
+    description: "Website designed and developed for a wellness center.",
+  },
+  {
+    key: "tint-labs",
+    media: "/redesign/projects/tintlabs.jpeg",
+    title: "Tint Labs",
+    kind: "Website + Booking",
+    description:
+      "Website, booking, and lead capture for a car-tinting business - the build behind the case study.",
+  },
+  {
     key: "hrr-foundation",
     media: "/redesign/projects/hrr-foundation.png",
     title: "HRR Foundation",
@@ -46,14 +61,6 @@ const WORK_PROJECTS: Project[] = [
     kind: "Booking Platform",
     description:
       "Booking platform with Stripe payments, Google Calendar sync, and an admin dashboard for session management.",
-  },
-  {
-    key: "tint-labs",
-    media: "/redesign/projects/tintlabs.jpeg",
-    title: "Tint Labs",
-    kind: "Website + Booking",
-    description:
-      "Website, booking, and lead capture for a car-tinting business - the build behind the case study.",
   },
   {
     key: "prmnt-pro",
@@ -78,13 +85,6 @@ const WORK_PROJECTS: Project[] = [
     kind: "Event Platform",
     description:
       "End-to-end event management platform built specifically for bartenders.",
-  },
-  {
-    key: "sj-wellness",
-    media: "/redesign/projects/sj-wellness.jpeg",
-    title: "SJ Wellness",
-    kind: "Website",
-    description: "Website designed and developed for a wellness center.",
   },
 ];
 
