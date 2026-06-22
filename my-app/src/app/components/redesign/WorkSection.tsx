@@ -17,11 +17,19 @@ interface Project {
 const WORK_PROJECTS: Project[] = [
   {
     key: "street-economics",
-    media: "/redesign/projects/streetecon.png",
+    media: "/redesign/projects/streetecon.webp",
     title: "Street Economics",
     kind: "Digital Infrastructure + CRM",
     description:
       "Full digital infrastructure for a 220+ member economic community — website development, hosting, and CRM setup to power membership, engagement, and growth.",
+  },
+  {
+    key: "wepray2flourish",
+    media: "/redesign/projects/wepray2flourish.jpeg",
+    title: "We Pray To Flourish",
+    kind: "Ecommerce + Digital Infrastructure",
+    description:
+      "Custom CRM, hosting, and digital infrastructure for an author-led brand — ecommerce site with Stripe payments, book sales, and newsletter growth.",
   },
   {
     key: "hrr-foundation",
