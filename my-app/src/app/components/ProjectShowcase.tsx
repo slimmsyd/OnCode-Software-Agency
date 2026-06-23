@@ -46,6 +46,15 @@ const servicesData: Service[] = [
         categories: ['Web Apps']
     },
     {
+        key: 'new-world-television',
+        media: '/Projects/NewWorldTelevision.jpeg',
+        mediaType: 'image',
+        link: 'https://www.newworldtelevisionnetwork.com/',
+        title: 'New World Television',
+        description: 'Custom website design and development with booking automations and CRM setup.',
+        categories: ['Web Apps']
+    },
+    {
         key: 'tint-labs',
         media: '/Projects/TintLabs.jpeg',
         mediaType: 'image',
