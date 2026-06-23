@@ -39,6 +39,14 @@ const WORK_PROJECTS: Project[] = [
     description: "Website designed and developed for a wellness center.",
   },
   {
+    key: "new-world-television",
+    media: "/redesign/projects/new-world-television.jpeg",
+    title: "New World Television",
+    kind: "Custom Website Design + Development",
+    description:
+      "Custom website design and development with booking automations and CRM setup for a media network platform.",
+  },
+  {
     key: "tint-labs",
     media: "/redesign/projects/tintlabs.jpeg",
     title: "Tint Labs",
