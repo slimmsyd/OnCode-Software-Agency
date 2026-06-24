@@ -24,6 +24,14 @@ const WORK_PROJECTS: Project[] = [
       "Full digital infrastructure for a 220+ member economic community - website development, hosting, and CRM setup to power membership, engagement, and growth.",
   },
   {
+    key: "boxraw",
+    media: "/redesign/projects/boxraw.jpeg",
+    title: "BoxRaw Labs",
+    kind: "Web Application",
+    description:
+      "Custom web application built for a boxing performance lab to manage training data and coordinate internal team workflows.",
+  },
+  {
     key: "wepray2flourish",
     media: "/redesign/projects/wepray2flourish.jpeg",
     title: "We Pray To Flourish",
@@ -37,14 +45,6 @@ const WORK_PROJECTS: Project[] = [
     title: "SJ Wellness",
     kind: "Website",
     description: "Website designed and developed for a wellness center.",
-  },
-  {
-    key: "boxraw",
-    media: "/redesign/projects/boxraw.jpeg",
-    title: "BoxRaw Labs",
-    kind: "Web Application",
-    description:
-      "Custom web application built for a boxing performance lab to manage training data and coordinate internal team workflows.",
   },
   {
     key: "new-world-television",
