@@ -39,6 +39,14 @@ const WORK_PROJECTS: Project[] = [
     description: "Website designed and developed for a wellness center.",
   },
   {
+    key: "boxraw",
+    media: "/redesign/projects/boxraw.jpeg",
+    title: "BoxRaw Labs",
+    kind: "Web Application",
+    description:
+      "Custom web application built for a boxing performance lab to manage training data and coordinate internal team workflows.",
+  },
+  {
     key: "new-world-television",
     media: "/redesign/projects/new-world-television.jpeg",
     title: "New World Television",
@@ -77,14 +85,6 @@ const WORK_PROJECTS: Project[] = [
     kind: "Corporate Site",
     description:
       "Website designed, developed, and maintained for facility management services.",
-  },
-  {
-    key: "boxraw",
-    media: "/redesign/projects/boxraw.jpeg",
-    title: "BoxRaw Labs",
-    kind: "Video Platform",
-    description:
-      "Video labeling platform for boxing analysis with multi-camera sync, team workflows, and automated clip export.",
   },
   {
     key: "gliddy",

@@ -46,6 +46,15 @@ const servicesData: Service[] = [
         categories: ['Web Apps']
     },
     {
+        key: 'boxraw',
+        media: '/Projects/BoxRaw.png',
+        mediaType: 'image',
+        link: '#',
+        title: 'BoxRaw Labs',
+        description: 'Custom web application built for a boxing performance lab to manage training data and coordinate internal team workflows.',
+        categories: ['Web Apps']
+    },
+    {
         key: 'new-world-television',
         media: '/Projects/NewWorldTelevision.jpeg',
         mediaType: 'image',
@@ -99,15 +108,6 @@ const servicesData: Service[] = [
         description: 'Booking platform with Stripe payments, Google Calendar sync, and admin dashboard for session management.',
         categories: ['Web Apps']
     },
-    {
-        key: 'boxraw',
-        media: '/Projects/BoxRaw.png',
-        mediaType: 'image',
-        link: '#',
-        title: 'BoxRaw Labs',
-        description: 'Video labeling platform for boxing analysis with multi-camera sync, team workflows, and automated clip export.',
-        categories: ['Web Apps']
-    }
 ];
 
 const categories = ["All", "Web3", "Web Apps", "Mobile", "AI Automations"];
