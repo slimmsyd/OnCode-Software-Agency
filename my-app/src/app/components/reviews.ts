@@ -1,5 +1,5 @@
 export const GOOGLE_REVIEWS_URL =
-  "https://www.google.com/search?q=Oncode+Software+Agency+Reviews&cid=9298536943231896564";
+  "https://g.page/r/CfQLL4gVCguBEAE/review";
 
 export interface Review {
   name: string;
