@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import BookAuditButton from "./BookAuditButton";
 import { scrollToId } from "./lib";
 
@@ -90,6 +90,26 @@ export default function Hero() {
           <p className="oc-fade-up d-600 mt-3 text-[12px] text-black/50">
             30-minute call. We scope the audit together
           </p>
+
+          <div
+            className="oc-fade-up d-700 mx-auto mt-10 flex max-w-[720px] flex-wrap items-center justify-center gap-x-3 gap-y-2 border-t border-black/10 pt-8"
+          >
+            <div className="flex items-center gap-1.5">
+              <div className="flex text-[#111111]">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                ))}
+              </div>
+              <span className="text-[14px] font-semibold text-[#111111]">5.0</span>
+              <span className="text-[13px] text-[#6b7280]">Verified Google reviews</span>
+            </div>
+            <span className="hidden h-4 w-px bg-black/15 sm:block" aria-hidden="true" />
+            <p
+              className="text-[13px] font-semibold uppercase tracking-[0.06em] text-black/45"
+            >
+              BOXRAW LABS · HRR WELLNESS · TINT LABS · STREET ECONOMICS · PREEMINENT
+            </p>
+          </div>
 
           <p className="oc-fade-up d-800 mt-11 text-[16px] font-light italic text-black/70">
             From idea to implementation, we keep you OnCode.

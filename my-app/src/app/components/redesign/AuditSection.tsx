@@ -70,47 +70,24 @@ export default function AuditSection() {
         </p>
 
         <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 md:gap-16">
-          {/* Left: the argument */}
           <div className="flex flex-col gap-6">
             <p style={{ fontSize: 17, lineHeight: 1.65, color: body, margin: 0 }}>
-              <strong style={{ color: fg, fontWeight: 600 }}>
-                Your business is a pile of small repeated steps.
-              </strong>{" "}
-              A customer asks, someone answers. An order comes in, someone types
-              it somewhere. A job finishes, someone sends the invoice. Every step
-              a person does by hand costs a little time and a little accuracy,
-              every time it happens.
-            </p>
-            <p style={{ fontSize: 17, lineHeight: 1.65, color: body, margin: 0 }}>
-              Small, all year, a few thousand times, stops being small. It
-              becomes real money leaking out of a hole you cannot see from the
-              inside. The audit finds the hole and measures it,{" "}
+              Every manual step your team repeats costs a little time and
+              accuracy — a few thousand times a year, it stops being little. The
+              audit maps how your business actually runs, prices every leak, and
+              hands you a ranked plan{" "}
               <strong style={{ color: fg, fontWeight: 600 }}>
                 before anyone spends a dollar building.
               </strong>
             </p>
 
-            <div style={{ borderTop: `0.5px solid ${hairline}`, paddingTop: 24, marginTop: 8 }}>
+            <div style={{ borderTop: `0.5px solid ${hairline}`, paddingTop: 24 }}>
               <h3 style={{ fontSize: 15, fontWeight: 600, margin: "0 0 10px", color: fg }}>
                 The investment
               </h3>
               <p style={{ fontSize: 15, lineHeight: 1.6, color: body, margin: 0 }}>
-                Paid upfront, delivered in two weeks. If you move into a build,
-                the full audit fee comes off the build price. You are not paying
-                twice. You are paying to know exactly what to build, and what it
-                is worth, before you commit to building it.
-              </p>
-            </div>
-
-            <div style={{ borderTop: `0.5px solid ${hairline}`, paddingTop: 24 }}>
-              <h3 style={{ fontSize: 15, fontWeight: 600, margin: "0 0 10px", color: fg }}>
-                Who this is for
-              </h3>
-              <p style={{ fontSize: 15, lineHeight: 1.6, color: body, margin: 0 }}>
-                You run a business with real revenue and a process that eats
-                hours every week. You would rather hand the technical problem to
-                a partner you trust than hire for it or guess at it yourself.
-                This is not a website package, and it is not for tire-kicking.
+                Paid upfront, delivered in two weeks. Move into a build and the
+                full audit fee comes off the price — you are not paying twice.
               </p>
             </div>
           </div>

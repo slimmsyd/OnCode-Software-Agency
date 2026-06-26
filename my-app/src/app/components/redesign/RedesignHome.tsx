@@ -2,6 +2,7 @@
 
 import RedesignNav from "./RedesignNav";
 import Hero from "./Hero";
+import HeroProofBand from "./HeroProofBand";
 import AuditSection from "./AuditSection";
 import ServicesSection from "./ServicesSection";
 import WorkSection from "./WorkSection";
@@ -10,17 +11,17 @@ import Process from "./Process";
 import Founder from "./Founder";
 import FinalCTA from "./FinalCTA";
 import RedesignFooter from "./RedesignFooter";
+import StickyAuditBar from "./StickyAuditBar";
 
-import LogoCarousel from "../LogoCarousel";
 import Testimonials from "../Testimonials";
 
 // OnCode homepage redesign: diagnostic-first assembly.
 export default function RedesignHome() {
   return (
-    <div className="relative bg-white">
+    <div className="relative bg-white pb-20">
       <RedesignNav />
       <Hero />
-      <LogoCarousel />
+      <HeroProofBand />
       <AuditSection />
       <ServicesSection />
       <WorkSection />
@@ -30,6 +31,7 @@ export default function RedesignHome() {
       <Testimonials />
       <FinalCTA />
       <RedesignFooter />
+      <StickyAuditBar />
     </div>
   );
 }
