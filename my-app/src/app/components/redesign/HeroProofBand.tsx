@@ -4,11 +4,12 @@ import React from "react";
 import { Star } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
 import ReviewCard from "../ReviewCard";
-import { getHeroProofReviews } from "../reviews";
+import { reviews } from "../reviews";
+
+const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
+const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
 
 export default function HeroProofBand() {
-  const featured = getHeroProofReviews();
-
   return (
     <section
       data-screen-label="Hero Proof Band"
@@ -37,9 +38,23 @@ export default function HeroProofBand() {
           className="py-4"
           style={{ "--duration": "30s", "--gap": "1.5rem" } as React.CSSProperties}
         >
-          {featured.map((review, i) => (
+          {firstRow.map((review, i) => (
             <ReviewCard
               key={`${review.name}-${i}`}
+              {...review}
+              className="w-80 cursor-pointer"
+            />
+          ))}
+        </Marquee>
+        <Marquee
+          reverse
+          pauseOnHover
+          className="py-4"
+          style={{ "--duration": "30s", "--gap": "1.5rem" } as React.CSSProperties}
+        >
+          {secondRow.map((review, i) => (
+            <ReviewCard
+              key={`${review.name}-${i}-rev`}
               {...review}
               className="w-80 cursor-pointer"
             />

@@ -48,17 +48,10 @@ export const reviews: Review[] = [
     body: "Syd Sanders is an exceptional engineer and one of the strongest partners I've ever worked with. As the founder of Black W3B, I bring the vision and Syd turns that vision into real, scalable systems. His precision, speed, and technical mastery have accelerated our entire ecosystem. If you're building anything ambitious or innovative, Syd is the engineer you want. Highly recommended.",
     img: "https://avatar.vercel.sh/blackw3b",
   },
+  {
+    name: "Yaadin Franklin",
+    username: "Verified Google Review",
+    body: "Syd did an excellent job! Curated my website very well, and the conversation didn't take long for the vision to manifest. Job well done.",
+    img: "https://avatar.vercel.sh/yaadin",
+  },
 ];
-
-/** Featured in the hero proof band — single source of truth with Testimonials. */
-export const HERO_PROOF_REVIEW_NAMES = [
-  "Preeminent Professional",
-  "Black W3B",
-  "SE HQ",
-] as const;
-
-export function getHeroProofReviews(): Review[] {
-  return HERO_PROOF_REVIEW_NAMES.map(
-    (name) => reviews.find((r) => r.name === name)!
-  );
-}

@@ -44,7 +44,7 @@ export default function StickyAuditBar() {
       >
         <div className="mx-auto flex max-w-[1100px] items-center justify-between gap-4">
           <p className="hidden text-[14px] font-light leading-snug text-[#4b5563] sm:block">
-            Find your leak — two-week audit, fee credits to your build.
+            Find your leak. Two-week audit, fee credits to your build.
           </p>
           <p className="text-[13px] font-light leading-snug text-[#4b5563] sm:hidden">
             Two-week audit. Fee credits to your build.

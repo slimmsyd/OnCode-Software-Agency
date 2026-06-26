@@ -73,7 +73,7 @@ export default function AuditSection() {
           <div className="flex flex-col gap-6">
             <p style={{ fontSize: 17, lineHeight: 1.65, color: body, margin: 0 }}>
               Every manual step your team repeats costs a little time and
-              accuracy — a few thousand times a year, it stops being little. The
+              accuracy. A few thousand times a year, it stops being little. The
               audit maps how your business actually runs, prices every leak, and
               hands you a ranked plan{" "}
               <strong style={{ color: fg, fontWeight: 600 }}>
@@ -87,7 +87,7 @@ export default function AuditSection() {
               </h3>
               <p style={{ fontSize: 15, lineHeight: 1.6, color: body, margin: 0 }}>
                 Paid upfront, delivered in two weeks. Move into a build and the
-                full audit fee comes off the price — you are not paying twice.
+                full audit fee comes off the price. You are not paying twice.
               </p>
             </div>
           </div>
