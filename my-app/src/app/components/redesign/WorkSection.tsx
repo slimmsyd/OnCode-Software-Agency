@@ -11,9 +11,6 @@ interface Project {
   description: string;
 }
 
-// Client builds only - operational systems lead; Web3 work stays off the
-// first impression (link it elsewhere or keep it behind a separate view).
-// Add Screw It Pro here once it is live.
 const WORK_PROJECTS: Project[] = [
   {
     key: "street-economics",
@@ -104,8 +101,9 @@ export default function WorkSection() {
   const [offset, setOffset] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const viewportRef = useRef<HTMLDivElement>(null);
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const scrollSyncRef = useRef(false);
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
   const total = WORK_PROJECTS.length;
   const active = WORK_PROJECTS[index];
@@ -121,7 +119,7 @@ export default function WorkSection() {
   const measure = useCallback(() => {
     if (isMobile) return;
     const viewport = viewportRef.current;
-    const card = cardRef.current;
+    const card = cardRefs.current[0];
     if (!viewport || !card) return;
     const cardW = card.offsetWidth;
     setOffset((viewport.clientWidth - cardW) / 2 - index * (cardW + GAP));
@@ -133,33 +131,76 @@ export default function WorkSection() {
     return () => window.removeEventListener("resize", measure);
   }, [measure]);
 
-  useEffect(() => {
-    if (!isMobile || !viewportRef.current || !cardRef.current) return;
+  const updateIndexFromScroll = useCallback(() => {
     const viewport = viewportRef.current;
-    const cardW = cardRef.current.offsetWidth;
-    const target = index * (cardW + GAP);
+    if (!viewport || scrollSyncRef.current) return;
+
+    const center = viewport.scrollLeft + viewport.clientWidth / 2;
+    let closest = 0;
+    let minDist = Infinity;
+
+    cardRefs.current.forEach((card, i) => {
+      if (!card) return;
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const dist = Math.abs(center - cardCenter);
+      if (dist < minDist) {
+        minDist = dist;
+        closest = i;
+      }
+    });
+
+    setIndex((current) => (current !== closest ? closest : current));
+  }, []);
+
+  const scrollToIndex = useCallback((targetIndex: number, smooth = true) => {
+    const card = cardRefs.current[targetIndex];
+    const viewport = viewportRef.current;
+    if (!card || !viewport) return;
 
     scrollSyncRef.current = true;
-    viewport.scrollTo({ left: target, behavior: "smooth" });
-    const timer = window.setTimeout(() => {
+    card.scrollIntoView({
+      behavior: smooth ? "smooth" : "auto",
+      inline: "center",
+      block: "nearest",
+    });
+
+    window.setTimeout(() => {
       scrollSyncRef.current = false;
-    }, 450);
-    return () => window.clearTimeout(timer);
-  }, [index, isMobile]);
+    }, smooth ? 500 : 0);
+  }, []);
 
-  const handleScroll = useCallback(() => {
-    if (!isMobile || scrollSyncRef.current || !viewportRef.current || !cardRef.current) {
-      return;
+  const goTo = useCallback(
+    (target: number) => {
+      setIndex(target);
+      if (isMobile) scrollToIndex(target);
+    },
+    [isMobile, scrollToIndex],
+  );
+
+  const prev = () => goTo((index - 1 + total) % total);
+  const next = () => goTo((index + 1) % total);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartRef.current = {
+      x: e.touches[0].clientX,
+      y: e.touches[0].clientY,
+    };
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const start = touchStartRef.current;
+    if (!start || !isMobile) return;
+
+    const dx = e.changedTouches[0].clientX - start.x;
+    const dy = e.changedTouches[0].clientY - start.y;
+
+    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.2) {
+      if (dx < 0) next();
+      else prev();
     }
-    const viewport = viewportRef.current;
-    const cardW = cardRef.current.offsetWidth;
-    const nextIndex = Math.round(viewport.scrollLeft / (cardW + GAP));
-    const clamped = Math.min(Math.max(nextIndex, 0), total - 1);
-    setIndex((current) => (current !== clamped ? clamped : current));
-  }, [isMobile, total]);
 
-  const prev = () => setIndex((i) => (i - 1 + total) % total);
-  const next = () => setIndex((i) => (i + 1) % total);
+    touchStartRef.current = null;
+  };
 
   return (
     <section
@@ -184,12 +225,11 @@ export default function WorkSection() {
 
       <div
         ref={viewportRef}
-        onScroll={handleScroll}
-        className={`w-full ${
-          isMobile
-            ? "snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth px-[10vw] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-            : "overflow-hidden"
-        }`}
+        onScroll={updateIndexFromScroll}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        style={{ scrollPaddingInline: isMobile ? "10vw" : undefined }}
+        className="w-full touch-pan-x overflow-hidden [-webkit-overflow-scrolling:touch] max-[700px]:snap-x max-[700px]:snap-mandatory max-[700px]:overflow-x-auto max-[700px]:overscroll-x-contain max-[700px]:[-ms-overflow-style:none] max-[700px]:[scrollbar-width:none] max-[700px]:[&::-webkit-scrollbar]:hidden"
       >
         <div
           className="flex w-max gap-8 motion-reduce:transition-none"
@@ -207,9 +247,10 @@ export default function WorkSection() {
             return (
               <div
                 key={p.key}
-                ref={i === 0 ? cardRef : undefined}
-                onClick={() => setIndex(i)}
-                className={`relative aspect-[720/440] w-[min(720px,80vw)] flex-none cursor-pointer snap-center overflow-hidden rounded-2xl bg-[#f3f4f6] transition-[opacity,transform,filter] duration-700 ease-out motion-reduce:transition-none ${
+                ref={(el) => {
+                  cardRefs.current[i] = el;
+                }}
+                className={`relative aspect-[720/440] w-[min(720px,80vw)] flex-none snap-center overflow-hidden rounded-2xl bg-[#f3f4f6] transition-[opacity,transform,filter] duration-700 ease-out motion-reduce:transition-none ${
                   !isMobile && idle ? "scale-[0.94] opacity-45 grayscale" : ""
                 }`}
               >
@@ -218,7 +259,7 @@ export default function WorkSection() {
                   alt={p.title}
                   fill
                   sizes="(max-width: 768px) 80vw, 720px"
-                  className="object-cover"
+                  className="pointer-events-none object-cover select-none"
                   draggable={false}
                 />
               </div>
@@ -264,39 +305,17 @@ export default function WorkSection() {
         </button>
       </div>
 
-      <div className="mt-6 flex justify-center gap-3 min-[701px]:mt-9 min-[701px]:gap-2.5">
-        {isMobile && (
-          <>
-            <button
-              onClick={prev}
-              aria-label="Previous project"
-              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-black/20 bg-transparent text-[17px] text-[#111111] transition-all duration-250 hover:border-black hover:bg-black hover:text-white min-[701px]:hidden"
-            >
-              ←
-            </button>
-          </>
-        )}
-        <div className="flex items-center gap-2.5">
-          {WORK_PROJECTS.map((p, i) => (
-            <button
-              key={p.key}
-              onClick={() => setIndex(i)}
-              aria-label={`Go to project ${i + 1}`}
-              className={`h-[3px] w-7 cursor-pointer rounded-sm border-0 p-0 transition-colors duration-300 ${
-                i === index ? "bg-black" : "bg-[#d1d5db]"
-              }`}
-            />
-          ))}
-        </div>
-        {isMobile && (
+      <div className="mt-6 flex justify-center gap-2.5 min-[701px]:mt-9">
+        {WORK_PROJECTS.map((p, i) => (
           <button
-            onClick={next}
-            aria-label="Next project"
-            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-black/20 bg-transparent text-[17px] text-[#111111] transition-all duration-250 hover:border-black hover:bg-black hover:text-white min-[701px]:hidden"
-          >
-            →
-          </button>
-        )}
+            key={p.key}
+            onClick={() => goTo(i)}
+            aria-label={`Go to project ${i + 1}`}
+            className={`h-[3px] w-7 cursor-pointer rounded-sm border-0 p-0 transition-colors duration-300 ${
+              i === index ? "bg-black" : "bg-[#d1d5db]"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );
