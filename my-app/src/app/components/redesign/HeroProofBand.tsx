@@ -4,7 +4,7 @@ import React from "react";
 import { Star } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
 import ReviewCard from "../ReviewCard";
-import { reviews } from "../reviews";
+import { GOOGLE_REVIEWS_URL, reviews } from "../reviews";
 
 const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
 const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
@@ -20,7 +20,7 @@ export default function HeroProofBand() {
           <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-[#6b7280]">
             Why clients hand us the technical problem
           </p>
-          <div className="flex items-center gap-2 text-[13px] text-[#6b7280]">
+          <div className="flex flex-wrap items-center gap-2 text-[13px] text-[#6b7280]">
             <span className="font-semibold text-[#111111]">5.0</span>
             <div className="flex text-[#111111]">
               {[...Array(5)].map((_, i) => (
@@ -28,6 +28,13 @@ export default function HeroProofBand() {
               ))}
             </div>
             <span>· Verified Google reviews</span>
+            <button
+              type="button"
+              onClick={() => window.open(GOOGLE_REVIEWS_URL, "_blank", "noopener,noreferrer")}
+              className="ml-1 cursor-pointer rounded-full border border-black/15 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.06em] text-[#111111] transition-colors duration-200 hover:border-black/30 hover:bg-black/[0.03]"
+            >
+              See all
+            </button>
           </div>
         </div>
       </div>

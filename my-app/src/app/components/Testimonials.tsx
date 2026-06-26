@@ -2,7 +2,7 @@ import React from "react";
 import { Star } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
 import ReviewCard from "./ReviewCard";
-import { reviews } from "./reviews";
+import { GOOGLE_REVIEWS_URL, reviews } from "./reviews";
 
 const firstRow = reviews.slice(0, reviews.length / 2);
 const secondRow = reviews.slice(reviews.length / 2);
@@ -55,10 +55,7 @@ const Testimonials = () => {
       <div className="mt-20 text-center">
         <button
           onClick={() =>
-            window.open(
-              "https://www.google.com/search?q=Oncode+Software+Agency+Reviews&cid=9298536943231896564",
-              "_blank"
-            )
+            window.open(GOOGLE_REVIEWS_URL, "_blank", "noopener,noreferrer")
           }
           className="group relative inline-flex items-center justify-center rounded-full bg-gray-900 px-8 py-4 text-sm font-medium text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-black"
         >
