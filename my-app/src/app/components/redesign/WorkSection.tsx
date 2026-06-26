@@ -97,30 +97,66 @@ const WORK_PROJECTS: Project[] = [
 ];
 
 const GAP = 32;
+const MOBILE_MAX = 700;
 
 export default function WorkSection() {
   const [index, setIndex] = useState(0);
   const [offset, setOffset] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const viewportRef = useRef<HTMLDivElement>(null);
   const cardRef = useRef<HTMLDivElement>(null);
+  const scrollSyncRef = useRef(false);
 
   const total = WORK_PROJECTS.length;
   const active = WORK_PROJECTS[index];
 
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${MOBILE_MAX}px)`);
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
   const measure = useCallback(() => {
+    if (isMobile) return;
     const viewport = viewportRef.current;
     const card = cardRef.current;
     if (!viewport || !card) return;
-    // offsetWidth is layout width - unaffected by the idle scale() transform
     const cardW = card.offsetWidth;
     setOffset((viewport.clientWidth - cardW) / 2 - index * (cardW + GAP));
-  }, [index]);
+  }, [index, isMobile]);
 
   useEffect(() => {
     measure();
     window.addEventListener("resize", measure);
     return () => window.removeEventListener("resize", measure);
   }, [measure]);
+
+  useEffect(() => {
+    if (!isMobile || !viewportRef.current || !cardRef.current) return;
+    const viewport = viewportRef.current;
+    const cardW = cardRef.current.offsetWidth;
+    const target = index * (cardW + GAP);
+
+    scrollSyncRef.current = true;
+    viewport.scrollTo({ left: target, behavior: "smooth" });
+    const timer = window.setTimeout(() => {
+      scrollSyncRef.current = false;
+    }, 450);
+    return () => window.clearTimeout(timer);
+  }, [index, isMobile]);
+
+  const handleScroll = useCallback(() => {
+    if (!isMobile || scrollSyncRef.current || !viewportRef.current || !cardRef.current) {
+      return;
+    }
+    const viewport = viewportRef.current;
+    const cardW = cardRef.current.offsetWidth;
+    const nextIndex = Math.round(viewport.scrollLeft / (cardW + GAP));
+    const clamped = Math.min(Math.max(nextIndex, 0), total - 1);
+    setIndex((current) => (current !== clamped ? clamped : current));
+  }, [isMobile, total]);
 
   const prev = () => setIndex((i) => (i - 1 + total) % total);
   const next = () => setIndex((i) => (i + 1) % total);
@@ -131,7 +167,7 @@ export default function WorkSection() {
       data-screen-label="Selected Work - Filmstrip"
       className="bg-white pb-[88px] pt-[112px]"
     >
-      <div className="mx-auto mb-12 flex max-w-[1280px] items-end justify-between gap-6 px-10">
+      <div className="mx-auto mb-12 flex max-w-[1280px] items-end justify-between gap-6 px-6 min-[701px]:px-10">
         <div>
           <p className="mb-3.5 text-[12px] font-medium uppercase tracking-[0.1em] text-[#767676]">
             Selected Work
@@ -146,13 +182,25 @@ export default function WorkSection() {
         </span>
       </div>
 
-      <div ref={viewportRef} className="w-full overflow-hidden">
+      <div
+        ref={viewportRef}
+        onScroll={handleScroll}
+        className={`w-full ${
+          isMobile
+            ? "snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth px-[10vw] [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            : "overflow-hidden"
+        }`}
+      >
         <div
           className="flex w-max gap-8 motion-reduce:transition-none"
-          style={{
-            transform: `translateX(${offset}px)`,
-            transition: "transform 700ms cubic-bezier(0.22, 1, 0.36, 1)",
-          }}
+          style={
+            isMobile
+              ? undefined
+              : {
+                  transform: `translateX(${offset}px)`,
+                  transition: "transform 700ms cubic-bezier(0.22, 1, 0.36, 1)",
+                }
+          }
         >
           {WORK_PROJECTS.map((p, i) => {
             const idle = i !== index;
@@ -161,8 +209,8 @@ export default function WorkSection() {
                 key={p.key}
                 ref={i === 0 ? cardRef : undefined}
                 onClick={() => setIndex(i)}
-                className={`relative aspect-[720/440] w-[min(720px,80vw)] flex-none cursor-pointer overflow-hidden rounded-2xl bg-[#f3f4f6] transition-[opacity,transform,filter] duration-700 ease-out motion-reduce:transition-none ${
-                  idle ? "scale-[0.94] opacity-45 grayscale" : ""
+                className={`relative aspect-[720/440] w-[min(720px,80vw)] flex-none cursor-pointer snap-center overflow-hidden rounded-2xl bg-[#f3f4f6] transition-[opacity,transform,filter] duration-700 ease-out motion-reduce:transition-none ${
+                  !isMobile && idle ? "scale-[0.94] opacity-45 grayscale" : ""
                 }`}
               >
                 <Image
@@ -171,6 +219,7 @@ export default function WorkSection() {
                   fill
                   sizes="(max-width: 768px) 80vw, 720px"
                   className="object-cover"
+                  draggable={false}
                 />
               </div>
             );
@@ -178,7 +227,13 @@ export default function WorkSection() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 flex max-w-[1280px] flex-col items-center justify-between gap-6 px-10 min-[701px]:flex-row">
+      {isMobile && (
+        <p className="mt-4 text-center text-[12px] font-light tracking-wide text-[#9ca3af]">
+          Swipe to explore our work
+        </p>
+      )}
+
+      <div className="mx-auto mt-12 flex max-w-[1280px] flex-col items-center justify-between gap-6 px-6 min-[701px]:flex-row min-[701px]:px-10">
         <button
           onClick={prev}
           aria-label="Previous project"
@@ -209,17 +264,39 @@ export default function WorkSection() {
         </button>
       </div>
 
-      <div className="mt-9 flex justify-center gap-2.5">
-        {WORK_PROJECTS.map((p, i) => (
+      <div className="mt-6 flex justify-center gap-3 min-[701px]:mt-9 min-[701px]:gap-2.5">
+        {isMobile && (
+          <>
+            <button
+              onClick={prev}
+              aria-label="Previous project"
+              className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-black/20 bg-transparent text-[17px] text-[#111111] transition-all duration-250 hover:border-black hover:bg-black hover:text-white min-[701px]:hidden"
+            >
+              ←
+            </button>
+          </>
+        )}
+        <div className="flex items-center gap-2.5">
+          {WORK_PROJECTS.map((p, i) => (
+            <button
+              key={p.key}
+              onClick={() => setIndex(i)}
+              aria-label={`Go to project ${i + 1}`}
+              className={`h-[3px] w-7 cursor-pointer rounded-sm border-0 p-0 transition-colors duration-300 ${
+                i === index ? "bg-black" : "bg-[#d1d5db]"
+              }`}
+            />
+          ))}
+        </div>
+        {isMobile && (
           <button
-            key={p.key}
-            onClick={() => setIndex(i)}
-            aria-label={`Go to project ${i + 1}`}
-            className={`h-[3px] w-7 cursor-pointer rounded-sm border-0 p-0 transition-colors duration-300 ${
-              i === index ? "bg-black" : "bg-[#d1d5db]"
-            }`}
-          />
-        ))}
+            onClick={next}
+            aria-label="Next project"
+            className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full border border-black/20 bg-transparent text-[17px] text-[#111111] transition-all duration-250 hover:border-black hover:bg-black hover:text-white min-[701px]:hidden"
+          >
+            →
+          </button>
+        )}
       </div>
     </section>
   );
