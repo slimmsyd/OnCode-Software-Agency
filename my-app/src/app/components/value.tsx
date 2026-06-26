@@ -155,7 +155,7 @@ export default function About() {
 
 
           <div className="flex justify-start flex-row gap-4">
-            <GetStartedButton onClick={openIntakeForm} />
+            <GetStartedButton onClick={() => openIntakeForm("value")} />
           </div>
 
         </div>

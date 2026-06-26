@@ -78,7 +78,7 @@ export default function Hero() {
           </p>
 
           <div className="oc-fade-up d-600 mt-9 flex flex-wrap items-center justify-center gap-6">
-            <BookAuditButton />
+            <BookAuditButton source="hero" />
             <button
               onClick={() => scrollToId("work")}
               className="inline-flex items-center gap-2 text-[14px] font-medium text-[#4b5563] transition-colors duration-200 hover:text-black"

@@ -17,6 +17,7 @@ import ProblemStep from "./steps/ProblemStep";
 import ScopeStep from "./steps/ScopeStep";
 import AttributionStep from "./steps/AttributionStep";
 import SuccessScreen from "./SuccessScreen";
+import { trackFormSubmit } from "@/lib/analytics";
 
 const WEBHOOK_URL =
   process.env.NEXT_PUBLIC_N8N_INTAKE_WEBHOOK_URL ??
@@ -102,6 +103,7 @@ export default function IntakeFormWizard({
         throw new Error(`Webhook returned ${response.status}`);
       }
 
+      trackFormSubmit("intake_form", { variant });
       setIsSubmitted(true);
     } catch (error) {
       console.error("Intake form submission failed:", error);

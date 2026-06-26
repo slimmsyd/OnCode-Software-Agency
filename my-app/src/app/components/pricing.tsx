@@ -120,7 +120,7 @@ export default function Pricing() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
-          <GetStartedButton onClick={openIntakeForm} />
+          <GetStartedButton onClick={() => openIntakeForm("pricing")} />
         </div>
       </div>
     </section>

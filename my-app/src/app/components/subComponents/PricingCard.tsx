@@ -64,7 +64,7 @@ export const PricingCard: FC<Props> = ({
         </span>
       </div>
 
-      <GetStartedButton onClick={openIntakeForm} />
+      <GetStartedButton onClick={() => openIntakeForm("pricing_card")} />
     </div>
   );
 };

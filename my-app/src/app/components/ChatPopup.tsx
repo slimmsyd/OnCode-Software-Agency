@@ -454,7 +454,7 @@ Would you like to schedule a call with our team?`;
   const handleContactButtonClick = async () => {
     await sendToWebhooks("User clicked contact button", "Opened intake form");
     setIsOpen(false);
-    openIntakeForm();
+    openIntakeForm("chat_popup");
   };
 
   return (
@@ -657,7 +657,7 @@ Would you like to schedule a call with our team?`;
 
             <GetStartedButton onClick={() => {
               setShowContactForm(false);
-              openIntakeForm();
+              openIntakeForm("chat_popup");
             }} />
           </motion.div>
         </div>

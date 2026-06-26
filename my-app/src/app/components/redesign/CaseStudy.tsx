@@ -74,7 +74,7 @@ export default function CaseStudy() {
               the operation runs through the system, not the owner&apos;s phone.
             </p>
             <button
-              onClick={bookAudit}
+              onClick={() => bookAudit("case_study")}
               className="mt-1 inline-flex items-center gap-2 self-start text-[13px] font-medium uppercase tracking-[0.08em] text-black"
             >
               Find your leak, book the audit <ArrowRight size={14} />

@@ -73,7 +73,7 @@ export default function RedesignNav() {
         </button>
 
         <button
-          onClick={bookAudit}
+          onClick={() => bookAudit("nav")}
           className="h-10 rounded-full bg-black px-[22px] text-[15px] font-medium text-white transition-opacity duration-200 hover:opacity-90"
         >
           Book the Audit
@@ -106,7 +106,7 @@ export default function RedesignNav() {
           </div>
           <div className="mb-12 mt-auto">
             <button
-              onClick={bookAudit}
+              onClick={() => bookAudit("nav")}
               className="h-12 w-full rounded-full bg-black text-lg font-medium text-white"
             >
               Book the Audit

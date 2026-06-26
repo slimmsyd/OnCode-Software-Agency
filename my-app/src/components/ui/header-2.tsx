@@ -51,7 +51,7 @@ export default function Navigation({
 
 	const handleGetStarted = React.useCallback(() => {
 		if (intakeForm) {
-			intakeForm.openIntakeForm();
+			intakeForm.openIntakeForm('nav');
 		} else {
 			router.push('/contact');
 		}

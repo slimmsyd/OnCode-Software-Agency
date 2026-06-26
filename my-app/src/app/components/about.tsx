@@ -78,7 +78,7 @@ export default function About() {
           </motion.div>
 
           <div className="flex justify-start flex-row gap-4">
-            <GetStartedButton onClick={openIntakeForm} />
+            <GetStartedButton onClick={() => openIntakeForm("about")} />
           </div>
         </div>
       </div>

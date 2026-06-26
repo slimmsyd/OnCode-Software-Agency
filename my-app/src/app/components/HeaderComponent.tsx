@@ -250,7 +250,7 @@ export default function HeaderComponent({
 
           {/* CTA Button */}
           <div className="flex flex-col sm:flex-row gap-[20px] mt-8 w-full sm:w-auto px-4 sm:px-0">
-            <GetStartedButton onClick={openIntakeForm} />
+            <GetStartedButton onClick={() => openIntakeForm("header")} />
             <p className="text-xs text-black/50 text-center mt-1">Takes 2 minutes</p>
           </div>
 

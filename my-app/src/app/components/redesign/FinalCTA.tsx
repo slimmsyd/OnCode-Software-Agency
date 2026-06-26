@@ -25,7 +25,7 @@ export default function FinalCTA() {
         </p>
       </div>
 
-      <BookAuditButton />
+      <BookAuditButton source="final_cta" />
       <p className="mt-2 text-[12px] text-black/50">Takes 2 minutes to book</p>
     </section>
   );

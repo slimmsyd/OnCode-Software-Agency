@@ -6,16 +6,20 @@ import { bookAudit } from "./lib";
 interface BookAuditButtonProps {
   label?: string;
   onClick?: () => void;
+  source?: string;
 }
 
 // Pill CTA matching the existing site's "arrow chip slide" hover. Opens cal.com.
 export default function BookAuditButton({
   label = "Book the Audit",
-  onClick = bookAudit,
+  onClick,
+  source = "book_audit_button",
 }: BookAuditButtonProps) {
+  const handleClick = onClick ?? (() => bookAudit(source));
+
   return (
     <button
-      onClick={onClick}
+      onClick={handleClick}
       className="group relative inline-flex h-[52px] cursor-pointer items-center justify-center overflow-hidden rounded-full bg-black px-8 text-[15px] font-medium text-white transition-transform duration-300 active:scale-[0.98]"
     >
       <span className="mr-8 transition-opacity duration-500 group-hover:opacity-0">

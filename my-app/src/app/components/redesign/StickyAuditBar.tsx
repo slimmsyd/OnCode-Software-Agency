@@ -51,7 +51,7 @@ export default function StickyAuditBar() {
           </p>
           <div className="flex shrink-0 items-center gap-2">
             <button
-              onClick={bookAudit}
+              onClick={() => bookAudit("sticky_bar")}
               className="inline-flex h-11 cursor-pointer items-center justify-center rounded-full bg-black px-6 text-[14px] font-medium text-white transition-colors duration-200 hover:bg-[#111111]"
             >
               Book the Audit

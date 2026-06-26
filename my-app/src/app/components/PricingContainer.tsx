@@ -53,7 +53,7 @@ export default function PriceContainer({ priceRef }: Props) {
               </span>
             </div>
 
-            <GetStartedButton onClick={openIntakeForm} />
+            <GetStartedButton onClick={() => openIntakeForm("pricing_container")} />
           </div>
 
           <PricingCard

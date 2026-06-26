@@ -169,7 +169,7 @@ export default function AuditSection() {
 
             <div className="flex flex-col gap-3">
               <button
-                onClick={bookAudit}
+                onClick={() => bookAudit("audit_section")}
                 className="inline-flex h-12 items-center gap-2.5 self-start rounded-lg bg-white px-8 text-[15px] font-medium text-black"
               >
                 Book the Audit <ChevronRight size={16} />

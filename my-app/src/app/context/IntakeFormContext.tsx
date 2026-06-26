@@ -8,9 +8,10 @@ import {
   type ReactNode,
 } from "react";
 import IntakeFormModal from "../components/intake-form/IntakeFormModal";
+import { trackCtaClick } from "@/lib/analytics";
 
 interface IntakeFormContextValue {
-  openIntakeForm: () => void;
+  openIntakeForm: (source?: string) => void;
   closeIntakeForm: () => void;
 }
 
@@ -21,7 +22,10 @@ const IntakeFormContext = createContext<IntakeFormContextValue | undefined>(
 export function IntakeFormProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openIntakeForm = useCallback(() => setIsOpen(true), []);
+  const openIntakeForm = useCallback((source = "get_started") => {
+    trackCtaClick("get_started", { source });
+    setIsOpen(true);
+  }, []);
   const closeIntakeForm = useCallback(() => setIsOpen(false), []);
 
   return (
