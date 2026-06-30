@@ -82,12 +82,13 @@ const servicesData: Service[] = [
         categories: ['Web3', 'Web Apps']
     },
     {
-        key: 'blackw3b',
-        media: '/Projects/BlackW3B.png',
+        key: 'obsidian-protocol',
+        media: '/Projects/ObsidianProtocol.jpeg',
         mediaType: 'image',
-        link: 'https://www.w3bs.fun',
-        title: 'BlackW3B',
-        description: 'Decentralized web3 platform for goldback tokens.',
+        link: 'https://www.w3bs.fun/',
+        title: 'BlackW3B / Obsidian Protocol',
+        description:
+            'Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol—converting 1:1 gold-backed assets into digital tokens on Solana.',
         categories: ['Web3', 'Web Apps']
     },
     {

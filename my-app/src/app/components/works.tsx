@@ -13,7 +13,14 @@ interface Work {
 }
 
 const works: Work[] = [
-
+  {
+    title: "BlackW3B / Obsidian Protocol",
+    description:
+      "Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol—converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
+    image: "/Projects/ObsidianProtocol.jpeg",
+    link: "https://www.w3bs.fun/",
+    package: "Digital Infrastructure Package",
+  },
   {
     title: "Naturally Radiant | Digital SOAP Notes System",
     description: "We built a custom SOAP notes interface that allows practitioners to log client sessions digitally, submit assessments and recommendations, and sync everything into Airtable. This centralized client history, streamlined practitioner workflows, and replaced paper-based records with a scalable digital system.",

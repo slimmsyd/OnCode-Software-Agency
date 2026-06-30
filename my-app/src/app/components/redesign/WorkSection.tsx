@@ -9,9 +9,19 @@ interface Project {
   title: string;
   kind: string;
   description: string;
+  link?: string;
 }
 
 const WORK_PROJECTS: Project[] = [
+  {
+    key: "obsidian-protocol",
+    media: "/redesign/projects/obsidian-protocol.jpeg",
+    title: "BlackW3B / Obsidian Protocol",
+    kind: "Digital Infrastructure + CRM Automation",
+    description:
+      "Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol—converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
+    link: "https://www.w3bs.fun/",
+  },
   {
     key: "street-economics",
     media: "/redesign/projects/streetecon.webp",
@@ -101,7 +111,7 @@ export default function WorkSection() {
   const [offset, setOffset] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const viewportRef = useRef<HTMLDivElement>(null);
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const cardRefs = useRef<(HTMLElement | null)[]>([]);
   const scrollSyncRef = useRef(false);
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
 
@@ -244,24 +254,49 @@ export default function WorkSection() {
         >
           {WORK_PROJECTS.map((p, i) => {
             const idle = i !== index;
+            const isActive = i === index;
+            const cardClassName = `relative aspect-[720/440] w-[min(720px,80vw)] flex-none snap-center overflow-hidden rounded-2xl bg-[#f3f4f6] transition-[opacity,transform,filter] duration-700 ease-out motion-reduce:transition-none ${
+              !isMobile && idle ? "scale-[0.94] opacity-45 grayscale" : ""
+            } ${p.link && isActive ? "cursor-pointer" : ""}`;
+
+            const cardContent = (
+              <Image
+                src={p.media}
+                alt={p.title}
+                fill
+                sizes="(max-width: 768px) 80vw, 720px"
+                className="pointer-events-none object-cover select-none"
+                draggable={false}
+              />
+            );
+
+            if (p.link && isActive) {
+              return (
+                <a
+                  key={p.key}
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ref={(el) => {
+                    cardRefs.current[i] = el;
+                  }}
+                  aria-label={`View ${p.title}`}
+                  className={cardClassName}
+                >
+                  {cardContent}
+                </a>
+              );
+            }
+
             return (
               <div
                 key={p.key}
                 ref={(el) => {
                   cardRefs.current[i] = el;
                 }}
-                className={`relative aspect-[720/440] w-[min(720px,80vw)] flex-none snap-center overflow-hidden rounded-2xl bg-[#f3f4f6] transition-[opacity,transform,filter] duration-700 ease-out motion-reduce:transition-none ${
-                  !isMobile && idle ? "scale-[0.94] opacity-45 grayscale" : ""
-                }`}
+                className={cardClassName}
               >
-                <Image
-                  src={p.media}
-                  alt={p.title}
-                  fill
-                  sizes="(max-width: 768px) 80vw, 720px"
-                  className="pointer-events-none object-cover select-none"
-                  draggable={false}
-                />
+                {cardContent}
               </div>
             );
           })}
@@ -295,6 +330,16 @@ export default function WorkSection() {
           <p className="text-[15px] font-light leading-[1.6] text-[#4b5563]">
             {active.description}
           </p>
+          {active.link && (
+            <a
+              href={active.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 text-[13px] font-medium uppercase tracking-[0.08em] text-[#111111] underline-offset-4 transition-colors hover:text-black/70 hover:underline"
+            >
+              View project →
+            </a>
+          )}
         </div>
         <button
           onClick={next}
