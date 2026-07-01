@@ -47,10 +47,10 @@ export const metadata: Metadata = {
     description: 'Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages.',
     images: [
       {
-        url: 'https://www.0ncode.com/Personal/OnCodeLogoNew.png',
+        url: 'https://www.0ncode.com/Personal/OnCodeShareImage.png',
         width: 1200,
         height: 630,
-        alt: 'OnCode Software Agency - Custom Software Development',
+        alt: 'OnCode — Data Driven Decisions',
       },
     ],
   },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'OnCode | AI Consultation Agency',
     description: 'Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages.',
-    images: ['https://www.0ncode.com/Personal/OnCodeLogoNew.png'],
+    images: ['https://www.0ncode.com/Personal/OnCodeShareImage.png'],
     creator: '@OnCodeAgency', // Add your Twitter handle if you have one
   },
 
@@ -71,11 +71,15 @@ export const metadata: Metadata = {
     canonical: 'https://www.0ncode.com',
   },
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/images/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/images/favicon-16x16.png', type: 'image/png', sizes: '16x16' },
+    ],
     shortcut: '/favicon.ico',
-    apple: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
-  manifest: '/site.webmanifest', // You can create this for PWA features
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
