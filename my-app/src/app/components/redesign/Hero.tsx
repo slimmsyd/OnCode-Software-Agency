@@ -34,9 +34,9 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 overflow-hidden"
         style={{
           WebkitMaskImage:
-            "radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)",
+            "radial-gradient(ellipse 120% 120% at 92% 30%, black 0%, transparent 85%)",
           maskImage:
-            "radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)",
+            "radial-gradient(ellipse 120% 120% at 92% 30%, black 0%, transparent 85%)",
         }}
       >
         <video
@@ -46,7 +46,7 @@ export default function Hero() {
           muted
           playsInline
           preload="auto"
-          className="h-full w-full object-contain object-center"
+          className="h-full w-full object-contain object-[92%_center]"
           aria-hidden
         >
           {/* WebM: white background keyed out to alpha */}
@@ -65,9 +65,9 @@ export default function Hero() {
             " linear-gradient(to bottom, rgba(0,0,0,0.03) 1px, transparent 1px)",
           backgroundSize: "40px 40px",
           WebkitMaskImage:
-            "radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)",
+            "radial-gradient(ellipse 120% 120% at 92% 30%, black 0%, transparent 85%)",
           maskImage:
-            "radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)",
+            "radial-gradient(ellipse 120% 120% at 92% 30%, black 0%, transparent 85%)",
         }}
       />
 
@@ -83,9 +83,9 @@ export default function Hero() {
           animation: "oc-gridGlow 8s ease-in-out infinite",
           mixBlendMode: "overlay",
           WebkitMaskImage:
-            "radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)",
+            "radial-gradient(ellipse 120% 120% at 92% 30%, black 0%, transparent 85%)",
           maskImage:
-            "radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)",
+            "radial-gradient(ellipse 120% 120% at 92% 30%, black 0%, transparent 85%)",
         }}
       />
 
