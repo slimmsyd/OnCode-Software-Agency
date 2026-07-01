@@ -9,7 +9,8 @@ import WorkSection from "./WorkSection";
 import CaseStudy from "./CaseStudy";
 import Process from "./Process";
 import Founder from "./Founder";
-import FinalCTA from "./FinalCTA";
+import FaqSection from "./FaqSection";
+import BookingSection from "./BookingSection";
 import RedesignFooter from "./RedesignFooter";
 import StickyAuditBar from "./StickyAuditBar";
 
@@ -28,8 +29,9 @@ export default function RedesignHome() {
       <CaseStudy />
       <Process />
       <Founder />
+      <FaqSection />
+      <BookingSection />
       <Testimonials />
-      <FinalCTA />
       <RedesignFooter />
       <StickyAuditBar />
     </div>
