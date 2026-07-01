@@ -60,18 +60,21 @@ export default function CaseStudy() {
             </h2>
             <p className="text-[17px] leading-[1.65] text-[#4b5563]">
               <strong className="font-semibold text-black">The leak:</strong>{" "}
-              bookings, quotes, and follow-ups handled by phone and memory.
-              Hours of admin every week, and leads going cold between jobs.
+              268 leads came through in six months. 50 of them never heard back.
+              Quotes typed out but sent to the wrong inbox, weekend inquiries
+              sitting until Monday. Roughly $7,000 in work walked away quietly.
             </p>
             <p className="text-[17px] leading-[1.65] text-[#4b5563]">
               <strong className="font-semibold text-black">The build:</strong>{" "}
-              a site that books work directly, captures every lead, and gives
-              the shop one admin view of the day, built and launched in weeks,
-              managed since.
+              a site that books work directly, captures every lead, and drafts
+              the customer&apos;s exact quote, right vehicle, right price,
+              within minutes of the form coming in. Built and launched in
+              weeks, managed since.
             </p>
             <p className="text-[17px] leading-[1.65] text-[#4b5563]">
               <strong className="font-semibold text-black">The result:</strong>{" "}
-              the operation runs through the system, not the owner&apos;s phone.
+              lead flow nearly doubled to 18 a week. Every inquiry logged,
+              labeled, and answered from one place, nights, weekends, all of it.
             </p>
             <button
               onClick={() => bookAudit("case_study")}
