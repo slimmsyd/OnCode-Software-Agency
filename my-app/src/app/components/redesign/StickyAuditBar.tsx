@@ -9,10 +9,24 @@ const DISMISS_KEY = "oc-sticky-audit-dismissed";
 export default function StickyAuditBar() {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
+  const [bookInView, setBookInView] = useState(false);
 
   useEffect(() => {
     const stored = sessionStorage.getItem(DISMISS_KEY);
     if (stored === "1") setDismissed(true);
+  }, []);
+
+  // Hide the bar while the booking section is on screen so it never covers
+  // the inline calendar on short viewports.
+  useEffect(() => {
+    const book = document.getElementById("book");
+    if (!book) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setBookInView(entry.isIntersecting),
+    );
+    observer.observe(book);
+    return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
@@ -32,7 +46,7 @@ export default function StickyAuditBar() {
     sessionStorage.setItem(DISMISS_KEY, "1");
   };
 
-  if (!visible || dismissed) return null;
+  if (!visible || dismissed || bookInView) return null;
 
   return (
     <>
