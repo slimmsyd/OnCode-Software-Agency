@@ -9,8 +9,31 @@ export default function Hero() {
   return (
     <section
       data-screen-label="Hero"
-      className="relative flex min-h-[68vh] flex-col overflow-hidden pt-24"
+      className="relative flex min-h-[68vh] flex-col overflow-hidden bg-white pt-24"
     >
+      {/* Looping brand video — white bg blends with page; grid stays on top */}
+      <div
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+        style={{
+          WebkitMaskImage:
+            "radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)",
+          maskImage:
+            "radial-gradient(ellipse 120% 120% at 70% 30%, black 0%, transparent 85%)",
+        }}
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+          className="h-full w-full object-contain object-center"
+          aria-hidden
+        >
+          <source src="/redesign/data-driven-bg.mp4" type="video/mp4" />
+        </video>
+      </div>
+
       {/* Faint 40px grid, radial-masked toward top-right */}
       <div
         className="pointer-events-none absolute inset-0"
