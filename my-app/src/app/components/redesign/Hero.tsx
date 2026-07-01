@@ -2,10 +2,28 @@
 
 import Image from "next/image";
 import { ArrowRight, Star } from "lucide-react";
+import { useEffect, useRef } from "react";
 import BookAuditButton from "./BookAuditButton";
 import { scrollToId } from "./lib";
 
 export default function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const syncBlendMode = () => {
+      // WebM has keyed transparency; MP4 fallback uses multiply to hide white.
+      video.style.mixBlendMode = video.currentSrc.includes(".webm")
+        ? "normal"
+        : "multiply";
+    };
+
+    video.addEventListener("loadeddata", syncBlendMode);
+    syncBlendMode();
+    return () => video.removeEventListener("loadeddata", syncBlendMode);
+  }, []);
   return (
     <section
       data-screen-label="Hero"
@@ -22,6 +40,7 @@ export default function Hero() {
         }}
       >
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
@@ -30,6 +49,9 @@ export default function Hero() {
           className="h-full w-full object-contain object-center"
           aria-hidden
         >
+          {/* WebM: white background keyed out to alpha */}
+          <source src="/redesign/data-driven-bg.webm" type="video/webm" />
+          {/* MP4 fallback: multiply hides any remaining white on the page */}
           <source src="/redesign/data-driven-bg.mp4" type="video/mp4" />
         </video>
       </div>
@@ -109,10 +131,6 @@ export default function Hero() {
               See the work <ArrowRight size={14} />
             </button>
           </div>
-
-          <p className="oc-fade-up d-600 mt-3 text-[12px] text-black/50">
-            30-minute call. We scope the audit together
-          </p>
 
           <div
             className="oc-fade-up d-700 mx-auto mt-10 flex max-w-[720px] flex-wrap items-center justify-center gap-x-3 gap-y-2 border-t border-black/10 pt-8"
