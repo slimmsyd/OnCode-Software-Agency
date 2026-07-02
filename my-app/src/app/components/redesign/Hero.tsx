@@ -29,7 +29,7 @@ export default function Hero() {
       data-screen-label="Hero"
       className="relative flex min-h-[68vh] flex-col overflow-hidden bg-white pt-24"
     >
-      {/* Looping brand video — white bg blends with page; grid stays on top */}
+      {/* Looping brand video: white bg blends with page; grid stays on top */}
       <div
         className="pointer-events-none absolute inset-0 overflow-hidden"
         style={{

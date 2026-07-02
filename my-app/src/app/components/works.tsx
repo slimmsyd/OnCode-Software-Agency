@@ -16,7 +16,7 @@ const works: Work[] = [
   {
     title: "BlackW3B / Obsidian Protocol",
     description:
-      "Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol—converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
+      "Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol, converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
     image: "/Projects/ObsidianProtocol.jpeg",
     link: "https://www.w3bs.fun/",
     package: "Digital Infrastructure Package",

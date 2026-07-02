@@ -50,7 +50,7 @@ export const metadata: Metadata = {
         url: 'https://www.0ncode.com/Personal/OnCodeShareImage.png',
         width: 1200,
         height: 630,
-        alt: 'OnCode — Data Driven Decisions',
+        alt: 'OnCode: Data Driven Decisions',
       },
     ],
   },

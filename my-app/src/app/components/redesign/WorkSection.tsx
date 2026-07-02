@@ -19,7 +19,7 @@ const WORK_PROJECTS: Project[] = [
     title: "BlackW3B / Obsidian Protocol",
     kind: "Digital Infrastructure + CRM Automation",
     description:
-      "Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol—converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
+      "Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol, converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
     link: "https://www.w3bs.fun/",
   },
   {
