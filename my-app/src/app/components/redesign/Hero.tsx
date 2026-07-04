@@ -118,7 +118,7 @@ export default function Hero() {
       {/* VSL: isolated block on solid white — no decorative overlays */}
       <div
         id="vsl"
-        className="relative z-20 isolate mx-auto w-full max-w-[900px] scroll-mt-28 px-6 pb-12"
+        className="relative z-20 mx-auto w-full max-w-[900px] scroll-mt-28 px-6 pb-12"
       >
         <VslPlayer className="shadow-[0_12px_40px_rgba(0,0,0,0.12)]" />
       </div>
