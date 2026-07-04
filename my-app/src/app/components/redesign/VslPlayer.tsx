@@ -26,12 +26,12 @@ export default function VslPlayer({ className = "" }: VslPlayerProps) {
 
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl border border-black/[0.08] bg-[#0a0a0a] shadow-[0_8px_32px_rgba(0,0,0,0.1)] ${className}`}
+      className={`relative z-10 w-full overflow-hidden rounded-2xl border border-black/[0.08] bg-[#0a0a0a] shadow-[0_8px_32px_rgba(0,0,0,0.1)] ${className}`}
     >
-      <div className="relative aspect-video w-full">
+      <div className="relative aspect-video w-full bg-[#0a0a0a]">
         <video
           ref={videoRef}
-          className="h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-contain"
           controls={isPlaying}
           playsInline
           preload="metadata"
