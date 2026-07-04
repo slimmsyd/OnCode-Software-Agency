@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowRight, Star } from "lucide-react";
 import { useEffect, useRef } from "react";
 import BookAuditButton from "./BookAuditButton";
+import VslPlayer from "./VslPlayer";
 import { scrollToId } from "./lib";
 
 export default function Hero() {
@@ -121,6 +122,10 @@ export default function Hero() {
             actually runs, put a dollar figure on every leak, and hand you a
             ranked plan to seal them. Then, if you want, we build it.
           </p>
+
+          <div id="vsl" className="oc-fade-up d-500 mx-auto mt-10 w-full max-w-[900px]">
+            <VslPlayer />
+          </div>
 
           <div className="oc-fade-up d-600 mt-9 flex flex-wrap items-center justify-center gap-6">
             <BookAuditButton source="hero" />

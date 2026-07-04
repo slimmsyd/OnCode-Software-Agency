@@ -2,7 +2,6 @@
 
 import RedesignNav from "./RedesignNav";
 import Hero from "./Hero";
-import VslSection from "./VslSection";
 import HeroProofBand from "./HeroProofBand";
 import AuditSection from "./AuditSection";
 import ServicesSection from "./ServicesSection";
@@ -23,7 +22,6 @@ export default function RedesignHome() {
     <div className="relative bg-white pb-20">
       <RedesignNav />
       <Hero />
-      <VslSection />
       <HeroProofBand />
       <AuditSection />
       <ServicesSection />
