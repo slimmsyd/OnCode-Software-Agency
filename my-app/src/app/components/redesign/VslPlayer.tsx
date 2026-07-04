@@ -1,15 +1,64 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Play } from "lucide-react";
+import {
+  trackVslComplete,
+  trackVslPlay,
+  trackVslProgress,
+} from "@/lib/analytics";
 
 type VslPlayerProps = {
   className?: string;
 };
 
+const VSL_VIDEO = "vsl-enhanced";
+const PROGRESS_MILESTONES = [25, 50, 75] as const;
+
 export default function VslPlayer({ className = "" }: VslPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [hasStarted, setHasStarted] = useState(false);
+  const hasTrackedPlay = useRef(false);
+  const trackedMilestones = useRef(new Set<number>());
+
+  const resetTracking = () => {
+    hasTrackedPlay.current = false;
+    trackedMilestones.current.clear();
+  };
+
+  const handlePlayStart = () => {
+    setHasStarted(true);
+    if (hasTrackedPlay.current) return;
+    hasTrackedPlay.current = true;
+    trackVslPlay(VSL_VIDEO);
+  };
+
+  const handleEnded = () => {
+    setHasStarted(false);
+    trackVslComplete(VSL_VIDEO);
+    resetTracking();
+  };
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const handleTimeUpdate = () => {
+      const { currentTime, duration } = video;
+      if (!duration || !Number.isFinite(duration)) return;
+
+      const percent = (currentTime / duration) * 100;
+      for (const milestone of PROGRESS_MILESTONES) {
+        if (percent >= milestone && !trackedMilestones.current.has(milestone)) {
+          trackedMilestones.current.add(milestone);
+          trackVslProgress(VSL_VIDEO, milestone);
+        }
+      }
+    };
+
+    video.addEventListener("timeupdate", handleTimeUpdate);
+    return () => video.removeEventListener("timeupdate", handleTimeUpdate);
+  }, []);
 
   const handlePlay = async () => {
     const video = videoRef.current;
@@ -19,7 +68,7 @@ export default function VslPlayer({ className = "" }: VslPlayerProps) {
 
     try {
       await video.play();
-      setHasStarted(true);
+      handlePlayStart();
     } catch {
       // Autoplay policy blocked programmatic play — leave controls visible.
       setHasStarted(true);
@@ -39,8 +88,8 @@ export default function VslPlayer({ className = "" }: VslPlayerProps) {
           controls={hasStarted}
           playsInline
           preload="metadata"
-          onPlay={() => setHasStarted(true)}
-          onEnded={() => setHasStarted(false)}
+          onPlay={handlePlayStart}
+          onEnded={handleEnded}
           aria-label="OnCode AI Diagnostic Audit video sales letter"
         >
           <source src="/redesign/vsl-enhanced.mp4" type="video/mp4" />

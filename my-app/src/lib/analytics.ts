@@ -42,3 +42,19 @@ export function trackFormSubmit(formName: string, params?: AnalyticsParams) {
 export function trackNavClick(destination: string, params?: AnalyticsParams) {
   emit("nav_click", { destination, ...params });
 }
+
+export function trackVslPlay(videoName: string, params?: AnalyticsParams) {
+  emit("vsl_play", { video_name: videoName, ...params });
+}
+
+export function trackVslProgress(
+  videoName: string,
+  percent: number,
+  params?: AnalyticsParams,
+) {
+  emit("vsl_progress", { video_name: videoName, percent, ...params });
+}
+
+export function trackVslComplete(videoName: string, params?: AnalyticsParams) {
+  emit("vsl_complete", { video_name: videoName, ...params });
+}
