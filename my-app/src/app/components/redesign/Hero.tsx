@@ -86,8 +86,8 @@ export default function Hero() {
             <Image
               src="/redesign/oncode-wordmark.png"
               alt="OnCode"
-              width={785}
-              height={314}
+              width={786}
+              height={236}
               priority
               className="h-16 w-auto object-contain"
             />
