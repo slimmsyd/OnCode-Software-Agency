@@ -31,7 +31,7 @@ const servicesData: Service[] = [
         key: 'gliddy',
         media: '/assets/GliddyPng.png',
         mediaType: 'image',
-        link: '/casestudies/gliddy',
+        link: '#',
         title: 'Gliddy',
         description: 'End-to-end event management platform targeted specifically for bartenders.',
         categories: ['Web Apps']
@@ -257,13 +257,15 @@ export default function ProjectShowcase() {
                                                 <p className="text-base font-light mb-8 leading-relaxed text-white/90 max-w-md">
                                                     {service.description}
                                                 </p>
-                                                <Link
-                                                    href={service.link}
-                                                    className="inline-flex items-center text-sm font-medium hover:gap-3 transition-all duration-300 group/link cursor-pointer text-white uppercase tracking-wider"
-                                                >
-                                                    <span className="mr-2">View Project</span>
-                                                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" />
-                                                </Link>
+                                                {service.link !== "#" && (
+                                                    <Link
+                                                        href={service.link}
+                                                        className="inline-flex items-center text-sm font-medium hover:gap-3 transition-all duration-300 group/link cursor-pointer text-white uppercase tracking-wider"
+                                                    >
+                                                        <span className="mr-2">View Project</span>
+                                                        <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/link:translate-x-1" />
+                                                    </Link>
+                                                )}
                                             </div>
                                         </div>
                                     </div>

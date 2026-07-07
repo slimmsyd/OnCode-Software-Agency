@@ -8,7 +8,7 @@ interface Work {
   title: string;
   description: string;
   image: string; // This can now be either an image or video URL
-  link: string;
+  link?: string;
   package: string;
 }
 
@@ -25,7 +25,7 @@ const works: Work[] = [
     title: "Naturally Radiant | Digital SOAP Notes System",
     description: "We built a custom SOAP notes interface that allows practitioners to log client sessions digitally, submit assessments and recommendations, and sync everything into Airtable. This centralized client history, streamlined practitioner workflows, and replaced paper-based records with a scalable digital system.",
     image: "/works/SoapNotes.png",
-    link: "/casestudies/naturallyRadiant",
+
     package: "Workflow Automation Package"
   },
 
@@ -42,7 +42,7 @@ const works: Work[] = [
     title: "PRMNT PRO | Contract Extraction AI Pipeline",
     description: "We built an intelligent PDF Contract Extractor that leverages LangChain and OpenAI to analyze government contract documents. The system can analyze entire contracts or extract information page by page, giving the team unprecedented flexibility in how they review documents.",
     image: "/works/Preem_Chat1.png", // Update with your actual image path
-    link: "/casestudies/prmntProExtractor",
+
     package: "AI Integration Package"
   },
   // {
@@ -88,14 +88,14 @@ const works: Work[] = [
     title: "Creatures Cube",
     description: "Web application for an ERC-4047 NFT collection.",
     image: "/works/CreatureCubes.png", // Update with your actual image path
-    link: "/casestudies/creaturecubes",
+    link: "https://creaturecubes.art/",
     package: "Web3 Development Package"
   },
   {
     title: "Gliddy",
     description: "We built Gliddy from the ground up - first as a React web app, then converted it into a fully native iOS and Android mobile application using React Native. The platform connects bartenders and users, with features like profiles, QR codes, notifications, and event booking.",
     image: "/works/gliddy.png", // Update with actual image path
-    link: "/casestudies/gliddy",
+
     package: "Mobile Development Package"
   },
   
@@ -110,7 +110,7 @@ const works: Work[] = [
     title: "KY Engineering – Website & Business Profile Setup",
     description: "Built a professional 5-6 page website with AI chatbot, booking calendar, and SEO optimization. Guided client through Google Business Profile setup. Took KY Engineering from zero to professional online presence in under a week.",
     image: "/works/Ky_Engineering.png", // Update with your actual image path
-    link: "/casestudies/kyengineering",
+
     package: "Digital Foundation Package"
   },
 
@@ -174,13 +174,15 @@ export default function Works() {
                       </div>
                     </div>
                     
-                    <button 
-                      className="mt-6 inline-flex items-center text-sm font-medium text-gray-900 group"
-                      onClick={() => window.open(work.link, '_blank')}
-                    >
-                      Open case
-                      <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-                    </button>
+                    {work.link && (
+                      <button
+                        className="mt-6 inline-flex items-center text-sm font-medium text-gray-900 group"
+                        onClick={() => window.open(work.link, "_blank")}
+                      >
+                        View project
+                        <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
+                      </button>
+                    )}
                   </div>
 
                   {/* Right Image */}

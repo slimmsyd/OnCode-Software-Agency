@@ -294,17 +294,7 @@ export default function CaseStudySection() {
                     </div>
                   </div>
                   
-                  <div className="flex justify-end">
-                    <Link
-                      href={currentCaseStudy.caseStudyLink}
-                      className="inline-flex items-center px-8 py-3 text-sm font-medium bg-black text-white hover:bg-gray-900 transition-colors duration-200 group"
-                    >
-                      <span>View Full Case Study</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-3 transform transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </Link>
-                  </div>
+
                 </div>
               </div>
               

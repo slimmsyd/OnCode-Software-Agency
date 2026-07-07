@@ -5,7 +5,12 @@ const nextConfig = {
     return [
       {
         source: "/casetudies/:path*",
-        destination: "/casestudies/:path*",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/casestudies/:path*",
+        destination: "/",
         permanent: true,
       },
     ];
