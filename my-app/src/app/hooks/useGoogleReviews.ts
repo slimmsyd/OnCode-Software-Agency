@@ -16,6 +16,13 @@ export interface BusinessRating {
 
 const MOCK_REVIEWS: Review[] = [
   {
+    name: "Robert Dunn",
+    rating: 5,
+    text: "Oncode and Sydney have been great to work with. Sydney knows his business and is a master at keeping projects on track. We've hit every milestone early or on time. He is flexible with his communication and patient when priorities change.",
+    date: "just now",
+    avatar: "R"
+  },
+  {
     name: "Preeminent Professional",
     rating: 5,
     text: "Before working with Sydney, we had no online presence and were losing opportunities. In under a week, he built us a professional site, set up our Google Business profile, added automation for client communication, and even integrated a 24/7 chatbot. It has already started saving us time and improving how clients engage with us. If you need to get your business visible and running smarter, OnCode is the partner to call.",

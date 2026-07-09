@@ -10,6 +10,12 @@ export interface Review {
 
 export const reviews: Review[] = [
   {
+    name: "Robert Dunn",
+    username: "Verified Google Review",
+    body: "Oncode and Sydney have been great to work with. Sydney knows his business and is a master at keeping projects on track. We've hit every milestone early or on time. He is flexible with his communication and patient when priorities change.",
+    img: "https://avatar.vercel.sh/robert",
+  },
+  {
     name: "SE HQ",
     username: "Verified Google Review",
     body: "Syd exceeds expectations and always makes a transformational impact when we work together. He always takes us to the next level. Excited to work with him every single time.",
