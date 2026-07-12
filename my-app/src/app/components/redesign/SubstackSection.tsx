@@ -46,7 +46,7 @@ export default function SubstackSection() {
           }}
         >
           Field notes on AI, automation, and building software that actually
-          runs a business — not just a demo.
+          runs a business, not just a demo.
         </p>
 
         <a
@@ -61,7 +61,7 @@ export default function SubstackSection() {
           className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl bg-[#0a0a0a] p-8 text-white transition-transform duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 md:flex-row md:items-center md:justify-between md:gap-10 md:p-10"
           aria-label="Read PromptimusPrime on Substack (opens in a new tab)"
         >
-          {/* Subtle Substack accent — brand orange, never emoji */}
+          {/* Subtle Substack accent: brand orange, never emoji */}
           <div
             className="pointer-events-none absolute inset-y-0 left-0 w-1 bg-[#FF6719] transition-all duration-300 group-hover:w-1.5"
             aria-hidden
