@@ -9,6 +9,7 @@ import WorkSection from "./WorkSection";
 import CaseStudy from "./CaseStudy";
 import Process from "./Process";
 import Founder from "./Founder";
+import SubstackSection from "./SubstackSection";
 import FaqSection from "./FaqSection";
 import BookingSection from "./BookingSection";
 import RedesignFooter from "./RedesignFooter";
@@ -29,6 +30,7 @@ export default function RedesignHome() {
       <CaseStudy />
       <Process />
       <Founder />
+      <SubstackSection />
       <FaqSection />
       <BookingSection />
       <Testimonials />

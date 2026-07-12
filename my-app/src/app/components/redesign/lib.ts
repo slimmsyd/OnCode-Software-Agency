@@ -6,6 +6,9 @@ import { trackCtaClick, trackNavClick } from "@/lib/analytics";
 // On the homepage, CTAs scroll to the inline booking section instead.
 export const OC_CAL_URL = "https://cal.com/oncode-software-kuxhkk/30min";
 
+// Founder Substack (PromptimusPrime) — writing + essays.
+export const SUBSTACK_URL = "https://substack.com/@promptimusprime";
+
 // Every "Book the Audit" CTA scrolls to the inline booking section.
 export function bookAudit(source = "book_audit") {
   if (typeof window === "undefined") return;

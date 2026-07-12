@@ -10,6 +10,7 @@ const NAV_ITEMS = [
   { label: "Work", id: "work" },
   { label: "Process", id: "process" },
   { label: "Founder", id: "founder" },
+  { label: "Writing", id: "writing" },
 ];
 
 export default function RedesignNav() {
