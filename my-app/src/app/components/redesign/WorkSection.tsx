@@ -2,14 +2,36 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Project {
   key: string;
-  media: string;
+  media?: string;
   title: string;
   kind: string;
   description: string;
+  /** Destination URL — internal paths stay on-site; absolute URLs open externally. */
   link?: string;
+  /** CTA label under the active card. Defaults by link type. */
+  ctaLabel?: string;
+  /**
+   * How media fills the landscape filmstrip card.
+   * Use "contain" for tall product UI (e.g. extension screenshots).
+   */
+  mediaFit?: "cover" | "contain";
+  /**
+   * Abstract card for confidential builds (no product screenshots).
+   * Renders a branded poster instead of a photo.
+   */
+  poster?: {
+    eyebrow: string;
+    headline: string;
+    footnote: string;
+  };
+}
+
+function isInternalLink(link: string) {
+  return link.startsWith("/");
 }
 
 const WORK_PROJECTS: Project[] = [
@@ -21,6 +43,7 @@ const WORK_PROJECTS: Project[] = [
     description:
       "Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol, converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
     link: "https://www.w3bs.fun/",
+    ctaLabel: "View project →",
   },
   {
     key: "street-economics",
@@ -29,6 +52,17 @@ const WORK_PROJECTS: Project[] = [
     kind: "Digital Infrastructure + CRM",
     description:
       "Full digital infrastructure for a 220+ member economic community - website development, hosting, and CRM setup to power membership, engagement, and growth.",
+  },
+  {
+    key: "pos-extension",
+    title: "POS Web Extension",
+    kind: "Payments · Browser Extension",
+    description:
+      "Browser extension for repair shops on a legacy POS. Reroutes card and ACH through a shop-controlled payment layer so they cut vendor lock-in cost and set their own payment criteria. Full story on the case study.",
+    link: "/work/pos-extension",
+    ctaLabel: "Read the case study →",
+    media: "/redesign/projects/pos-pay-extension.png",
+    mediaFit: "contain",
   },
   {
     key: "boxraw",
@@ -259,27 +293,75 @@ export default function WorkSection() {
               !isMobile && idle ? "scale-[0.94] opacity-45 grayscale" : ""
             } ${p.link && isActive ? "cursor-pointer" : ""}`;
 
-            const cardContent = (
+            const cardContent = p.poster ? (
+              <div
+                className="pointer-events-none absolute inset-0 flex flex-col justify-between bg-[#0a0a0a] p-8 select-none md:p-10"
+                aria-hidden={!isActive}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-white/45">
+                    {p.poster.eyebrow}
+                  </p>
+                  <span className="rounded-full border border-white/15 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.08em] text-white/70">
+                    Extension
+                  </span>
+                </div>
+                <div>
+                  <p className="max-w-[14ch] text-[clamp(28px,3.5vw,40px)] font-light leading-[1.1] tracking-[-0.02em] text-white">
+                    {p.poster.headline}
+                  </p>
+                  <p className="mt-3 text-[13px] font-light tracking-wide text-white/50">
+                    {p.poster.footnote}
+                  </p>
+                </div>
+                {/* Abstract workflow marks */}
+                <div className="absolute right-8 bottom-24 hidden h-16 w-16 items-center justify-center opacity-30 md:flex">
+                  <div className="h-10 w-10 rounded-lg border border-white/30" />
+                  <div className="absolute h-10 w-10 translate-x-3 translate-y-3 rounded-lg border border-white/20" />
+                </div>
+              </div>
+            ) : p.media ? (
               <Image
                 src={p.media}
                 alt={p.title}
                 fill
                 sizes="(max-width: 768px) 80vw, 720px"
-                className="pointer-events-none object-cover select-none"
+                className={`pointer-events-none select-none ${
+                  p.mediaFit === "contain"
+                    ? "object-contain object-center p-4 md:p-6"
+                    : "object-cover"
+                }`}
                 draggable={false}
               />
-            );
+            ) : null;
+
+            const setCardRef = (el: HTMLElement | null) => {
+              cardRefs.current[i] = el;
+            };
 
             if (p.link && isActive) {
+              const internal = isInternalLink(p.link);
+              if (internal) {
+                return (
+                  <Link
+                    key={p.key}
+                    href={p.link}
+                    ref={setCardRef}
+                    aria-label={`Read case study: ${p.title}`}
+                    className={cardClassName}
+                  >
+                    {cardContent}
+                  </Link>
+                );
+              }
+
               return (
                 <a
                   key={p.key}
                   href={p.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  ref={(el) => {
-                    cardRefs.current[i] = el;
-                  }}
+                  ref={setCardRef}
                   aria-label={`View ${p.title}`}
                   className={cardClassName}
                 >
@@ -291,9 +373,7 @@ export default function WorkSection() {
             return (
               <div
                 key={p.key}
-                ref={(el) => {
-                  cardRefs.current[i] = el;
-                }}
+                ref={setCardRef}
                 className={cardClassName}
               >
                 {cardContent}
@@ -330,16 +410,24 @@ export default function WorkSection() {
           <p className="text-[15px] font-light leading-[1.6] text-[#4b5563]">
             {active.description}
           </p>
-          {active.link && (
-            <a
-              href={active.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-1 text-[13px] font-medium uppercase tracking-[0.08em] text-[#111111] underline-offset-4 transition-colors hover:text-black/70 hover:underline"
-            >
-              View project →
-            </a>
-          )}
+          {active.link &&
+            (isInternalLink(active.link) ? (
+              <Link
+                href={active.link}
+                className="mt-1 cursor-pointer text-[13px] font-medium uppercase tracking-[0.08em] text-[#111111] underline-offset-4 transition-colors duration-200 hover:text-black/70 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+              >
+                {active.ctaLabel ?? "Read the case study →"}
+              </Link>
+            ) : (
+              <a
+                href={active.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-1 cursor-pointer text-[13px] font-medium uppercase tracking-[0.08em] text-[#111111] underline-offset-4 transition-colors duration-200 hover:text-black/70 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+              >
+                {active.ctaLabel ?? "View project →"}
+              </a>
+            ))}
         </div>
         <button
           onClick={next}
