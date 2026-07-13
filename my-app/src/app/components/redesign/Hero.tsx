@@ -96,7 +96,7 @@ export default function Hero() {
             </p>
           </div>
           <h1 className="header-h1 oc-fade-up d-200 mb-6 mt-6 text-black">
-            Find Where Your Business Leaks Time And Money.
+            We build the systems your business runs on.
           </h1>
           <p
             className="oc-fade-up d-400 mx-auto font-light text-black"
@@ -107,10 +107,9 @@ export default function Hero() {
               textWrap: "pretty",
             }}
           >
-            Every step your team does by hand costs a little. A few thousand
-            times a year, it stops being little. We map how your business
-            actually runs, put a dollar figure on every leak, and hand you a
-            ranked plan to seal them. Then, if you want, we build it.
+            First we map where you leak time and money. Then we build websites,
+            web apps, custom software, and AI automation around how your company
+            actually works, and we manage them long after launch.
           </p>
         </div>
       </div>
