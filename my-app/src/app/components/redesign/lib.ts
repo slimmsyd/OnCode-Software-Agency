@@ -9,11 +9,17 @@ export const OC_CAL_URL = "https://cal.com/oncode-software-kuxhkk/30min";
 // Founder Substack (PromptimusPrime): writing + essays.
 export const SUBSTACK_URL = "https://substack.com/@promptimusprime";
 
-// Every "Book the Audit" CTA scrolls to the inline booking section.
+// Every "Book the Audit" CTA scrolls to the inline booking section on the homepage.
+// Off-home pages, navigate to /#book so the same conversion path still works.
 export function bookAudit(source = "book_audit") {
   if (typeof window === "undefined") return;
   trackCtaClick("book_audit", { source });
-  scrollToId("book");
+  const el = document.getElementById("book");
+  if (el) {
+    scrollToId("book");
+    return;
+  }
+  window.location.href = "/#book";
 }
 
 // Smooth-scroll to an anchored section with an 88px top offset (nav height).
