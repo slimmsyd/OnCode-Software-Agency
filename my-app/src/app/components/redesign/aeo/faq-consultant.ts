@@ -10,7 +10,7 @@ export const CONSULTANT_FAQ: FaqItem[] = [
   },
   {
     q: "What workflows can you automate?",
-    a: "Lead follow-up, missed-call text-back, intake and scheduling, invoicing and reminders, internal reporting, and custom workflows the audit surfaces.",
+    a: "Lead follow-up, missed-call text-back, intake and scheduling, invoicing and reminders, and internal reporting. We also build custom workflows tailored to how your business actually operates. The diagnostic audit surfaces what is worth automating first.",
   },
   {
     q: "Will I own the automations, documentation, and accounts?",
