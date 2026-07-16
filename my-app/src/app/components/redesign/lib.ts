@@ -23,11 +23,16 @@ export function bookAudit(source = "book_audit") {
 }
 
 // Smooth-scroll to an anchored section with an 88px top offset (nav height).
+// Off the homepage, navigate to /#id so nav still works from AEO pages.
 export function scrollToId(id: string) {
   if (typeof window === "undefined") return;
   const el = document.getElementById(id);
-  if (!el) return;
-  trackNavClick(id, { action: "scroll" });
-  const y = el.getBoundingClientRect().top + window.scrollY - 88;
-  window.scrollTo({ top: y, behavior: "smooth" });
+  if (el) {
+    trackNavClick(id, { action: "scroll" });
+    const y = el.getBoundingClientRect().top + window.scrollY - 88;
+    window.scrollTo({ top: y, behavior: "smooth" });
+    return;
+  }
+  trackNavClick(id, { action: "navigate_home_anchor" });
+  window.location.href = `/#${id}`;
 }

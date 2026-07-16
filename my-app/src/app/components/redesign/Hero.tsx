@@ -92,11 +92,11 @@ export default function Hero() {
               className="h-16 w-auto object-contain"
             />
             <p className="mt-3 text-[12px] font-light uppercase tracking-[0.05em] text-black/50">
-              The AI Diagnostic Audit
+              AI automation firm
             </p>
           </div>
           <h1 className="header-h1 oc-fade-up d-200 mb-6 mt-6 text-black">
-            We build the systems your business runs on.
+            OnCode finds where you leak time and money, then builds the systems that seal the leaks.
           </h1>
           <p
             className="oc-fade-up d-400 mx-auto font-light text-black"
@@ -107,9 +107,10 @@ export default function Hero() {
               textWrap: "pretty",
             }}
           >
-            First we map where you leak time and money. Then we build websites,
-            web apps, custom software, and AI automation around how your company
-            actually works, and we manage them long after launch.
+            We are an AI automation firm for businesses with consistent revenue
+            and real operations to protect. We start with a paid Diagnostic
+            Audit, then build automation, software, and sites around how your
+            company actually works, and we manage them long after launch.
           </p>
         </div>
       </div>

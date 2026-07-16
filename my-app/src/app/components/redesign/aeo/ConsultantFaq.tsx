@@ -1,30 +1,27 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
-import { HOME_FAQ } from "./aeo/faq-home";
+import { CONSULTANT_FAQ } from "./faq-consultant";
 
 const HAIRLINE = "rgba(0,0,0,0.12)";
 
-// Homepage FAQ: AEO seeds + Areas We Serve + audit objections. Schema lives
-// on the server page so it matches this shared data file.
-export default function FaqSection() {
+export default function ConsultantFaq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
     <section
       id="faq"
-      data-screen-label="FAQ accordion"
-      className="bg-white"
+      data-screen-label="AEO Consultant FAQ"
+      className="border-t border-black/10 bg-white"
       style={{ padding: "104px 24px", scrollMarginTop: 100 }}
     >
-      <div className="oc-fade-up mx-auto grid max-w-[1000px] grid-cols-1 items-start gap-x-16 gap-y-10 min-[900px]:grid-cols-[320px_1fr]">
+      <div className="mx-auto grid max-w-[1000px] grid-cols-1 items-start gap-x-16 gap-y-10 min-[900px]:grid-cols-[320px_1fr]">
         <div className="self-start min-[900px]:sticky min-[900px]:top-[120px]">
           <p
             className="text-[14px] font-light uppercase tracking-[0.05em]"
             style={{ margin: "0 0 22px", color: "rgba(0,0,0,0.5)" }}
           >
-            Before you book
+            FAQ
           </p>
           <h2
             style={{
@@ -36,7 +33,7 @@ export default function FaqSection() {
               color: "#111111",
             }}
           >
-            Fair questions.
+            Straight answers.
           </h2>
           <p
             style={{
@@ -48,13 +45,12 @@ export default function FaqSection() {
               textWrap: "pretty",
             }}
           >
-            Who we are, where we work, and what the audit asks of you. Anything
-            else, ask on the call.
+            Geo, ownership, ROI, and what a typical engagement looks like.
           </p>
         </div>
 
         <div>
-          {HOME_FAQ.map((item, i) => {
+          {CONSULTANT_FAQ.map((item, i) => {
             const open = openIndex === i;
             return (
               <div
@@ -62,7 +58,7 @@ export default function FaqSection() {
                 style={{
                   borderTop: `0.5px solid ${HAIRLINE}`,
                   borderBottom:
-                    i === HOME_FAQ.length - 1
+                    i === CONSULTANT_FAQ.length - 1
                       ? `0.5px solid ${HAIRLINE}`
                       : "none",
                 }}
@@ -71,7 +67,7 @@ export default function FaqSection() {
                   type="button"
                   onClick={() => setOpenIndex(open ? null : i)}
                   aria-expanded={open}
-                  aria-controls={`faq-answer-${i}`}
+                  aria-controls={`consultant-faq-answer-${i}`}
                   className="flex w-full cursor-pointer items-baseline justify-between gap-6 text-left"
                   style={{ padding: "22px 8px" }}
                 >
@@ -101,7 +97,7 @@ export default function FaqSection() {
                 </button>
                 {open && (
                   <div
-                    id={`faq-answer-${i}`}
+                    id={`consultant-faq-answer-${i}`}
                     role="region"
                     style={{ padding: "0 48px 26px 8px" }}
                   >
@@ -116,16 +112,6 @@ export default function FaqSection() {
                     >
                       {item.a}
                     </p>
-                    {item.link && (
-                      <p style={{ margin: "12px 0 0", maxWidth: 600 }}>
-                        <Link
-                          href={item.link.href}
-                          className="cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
-                        >
-                          {item.link.label}
-                        </Link>
-                      </p>
-                    )}
                   </div>
                 )}
               </div>

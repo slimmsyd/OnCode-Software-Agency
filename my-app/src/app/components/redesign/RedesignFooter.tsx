@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SUBSTACK_URL } from "./lib";
 import { trackOutboundClick } from "@/lib/analytics";
@@ -20,9 +21,15 @@ export default function RedesignFooter() {
       />
       <div className="mt-8 flex flex-col gap-6">
         <p className="text-[18px] text-black">
-          Custom software and AI consultation: diagnosed first, built right,
-          managed after.
+          AI automation firm: diagnosed first, built right, managed after.
         </p>
+
+        <Link
+          href="/ai-automation-consultant"
+          className="w-fit cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+        >
+          AI automation consultant
+        </Link>
 
         <a
           href={SUBSTACK_URL}
