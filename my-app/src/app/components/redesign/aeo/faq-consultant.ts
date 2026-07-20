@@ -6,7 +6,11 @@ export type FaqItem = {
 export const CONSULTANT_FAQ: FaqItem[] = [
   {
     q: "Do you serve Northern Virginia and the DMV?",
-    a: "Yes. OnCode serves Fredericksburg, Alexandria, Arlington, Lorton, Fairfax, Tysons, and Reston, plus remote clients nationwide.",
+    a: "Yes. OnCode is an AI automation agency serving the DMV: Washington DC, Northern Virginia (Fredericksburg, Alexandria, Arlington, Lorton, Fairfax, Tysons, Reston), and nearby Maryland (including Bethesda and Silver Spring), plus remote clients nationwide.",
+  },
+  {
+    q: "Is OnCode an AI automation agency?",
+    a: "Yes. OnCode is an AI automation agency and consulting firm. We diagnose operational leaks, then build custom automations and software one workflow at a time after a paid diagnostic audit — not a web-design shop that bolts on AI.",
   },
   {
     q: "What workflows can you automate?",

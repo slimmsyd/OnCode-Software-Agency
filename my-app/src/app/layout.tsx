@@ -4,6 +4,8 @@ import "./globals.css";
 import { ThirdwebProvider } from "thirdweb/react";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { AuthProvider } from "./context/AuthContext";
+import JsonLd from "./components/JsonLd";
+import { buildOrganizationSchema } from "./lib/organization-schema";
 
 import { Gnosis, Ethereum } from "@thirdweb-dev/chains";
 
@@ -95,6 +97,7 @@ export default function RootLayout({
         <link rel="canonical" href="https://www.0ncode.com" />
       </head>
       <body>
+        <JsonLd data={buildOrganizationSchema()} />
         <ThirdwebProvider>
           <AuthProvider>
             {children}

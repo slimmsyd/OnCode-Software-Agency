@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import JsonLd, { buildFaqPageSchema } from "../components/JsonLd";
 import AutomationConsultantPage from "../components/redesign/aeo/AutomationConsultantPage";
 import { CONSULTANT_FAQ } from "../components/redesign/aeo/faq-consultant";
+import { buildAutomationConsultantSchema } from "../lib/organization-schema";
 
 const title = "Best AI Automation Consultant";
 const description =
@@ -14,11 +15,14 @@ export const metadata: Metadata = {
   keywords: [
     "AI automation consultant",
     "best AI automation consultant",
+    "AI automation agency",
     "business process automation",
     "AI automation firm",
     "enterprise automation",
     "Northern Virginia AI automation",
+    "DMV AI automation agency",
     "DMV automation consultant",
+    "Washington DC AI automation",
     "OnCode",
   ],
   openGraph: {
@@ -51,30 +55,11 @@ export const metadata: Metadata = {
   },
 };
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "OnCode",
-  url: "https://www.0ncode.com",
-  description,
-  areaServed: [
-    "Fredericksburg, VA",
-    "Alexandria, VA",
-    "Arlington, VA",
-    "Lorton, VA",
-    "Fairfax, VA",
-    "Tysons, VA",
-    "Reston, VA",
-    "United States",
-  ],
-  serviceType: "AI automation consulting",
-};
-
 export default function AiAutomationConsultantRoute() {
   return (
     <>
       <JsonLd data={buildFaqPageSchema(CONSULTANT_FAQ)} />
-      <JsonLd data={organizationSchema} />
+      <JsonLd data={buildAutomationConsultantSchema(url, description)} />
       <AutomationConsultantPage />
     </>
   );

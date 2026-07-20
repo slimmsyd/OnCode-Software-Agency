@@ -24,7 +24,7 @@ export const HOME_FAQ: HomeFaqItem[] = [
   },
   {
     q: "Do you serve Northern Virginia and the DMV?",
-    a: "Yes. OnCode serves Fredericksburg, Alexandria, Arlington, Lorton, Fairfax, Tysons, and Reston, plus remote clients nationwide.",
+    a: "Yes. OnCode is an AI automation agency serving the DMV: Washington DC, Northern Virginia (Fredericksburg, Alexandria, Arlington, Lorton, Fairfax, Tysons, Reston), and nearby Maryland (including Bethesda and Silver Spring), plus remote clients nationwide.",
   },
   {
     q: "How much of my time does the audit take?",
