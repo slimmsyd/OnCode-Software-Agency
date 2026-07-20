@@ -56,9 +56,9 @@ const WORK_PROJECTS: Project[] = [
   {
     key: "pos-extension",
     title: "POS Web Extension",
-    kind: "Payments · Browser Extension",
+    kind: "Payments · Browser Extension · Fredericksburg",
     description:
-      "Browser extension for repair shops on a legacy POS. Reroutes card and ACH through a shop-controlled payment layer so they cut vendor lock-in cost and set their own payment criteria. Full story on the case study.",
+      "Built for a Fredericksburg-area repair shop on a legacy POS. Browser extension reroutes card and ACH through a shop-controlled payment layer so they cut vendor lock-in cost and set their own payment criteria. Full story on the case study.",
     link: "/work/pos-extension",
     ctaLabel: "Read the case study →",
     media: "/redesign/projects/pos-pay-extension.png",
