@@ -54,6 +54,16 @@ const WORK_PROJECTS: Project[] = [
       "Full digital infrastructure for a 220+ member economic community - website development, hosting, and CRM setup to power membership, engagement, and growth.",
   },
   {
+    key: "phaseworks",
+    media: "/redesign/projects/phaseworks.jpeg",
+    title: "PhaseWorks Engineering",
+    kind: "Digital Infrastructure + CRM",
+    description:
+      "Website design, development, and deployment for an infrastructure engineering firm - plus CRM systems so project delivery and client ops run on one stack.",
+    link: "https://www.phaseworksengineering.com/",
+    ctaLabel: "View project →",
+  },
+  {
     key: "pos-extension",
     title: "POS Web Extension",
     kind: "Payments · Browser Extension · Fredericksburg",
