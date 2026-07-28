@@ -6,9 +6,18 @@ export interface Review {
   username: string;
   body: string;
   img: string;
+  /** Optional profile / business URL — linked on the reviewer name for SEO & entity signals */
+  url?: string;
 }
 
 export const reviews: Review[] = [
+  {
+    name: "PhaseWorks Engineering",
+    username: "Verified Google Review",
+    body: "Such a pleasure working with Oncode. Fast responses. Quality deliverables. Extremely easy to work with. 100% will use again!",
+    img: "https://avatar.vercel.sh/phaseworks",
+    url: "https://phaseworksengineering.com",
+  },
   {
     name: "Robert Dunn",
     username: "Verified Google Review",
