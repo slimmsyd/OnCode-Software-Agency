@@ -25,7 +25,7 @@ const servicesData: Service[] = [
         link: 'https://www.screwitpro.com/',
         title: 'ScrewIt Pros',
         description:
-            'Full-stack MVP for Houston furniture assembly: system design, UI/UX, development, hosting, and ongoing maintenance — instant quotes, pickup & workshop assembly, door-to-door delivery.',
+            'Full-stack MVP for Houston furniture assembly: system design, UI/UX, development, hosting, and ongoing maintenance. Instant quotes, pickup and workshop assembly, door-to-door delivery.',
         categories: ['Web Apps']
     },
     {

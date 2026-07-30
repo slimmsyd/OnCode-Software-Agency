@@ -41,7 +41,7 @@ const WORK_PROJECTS: Project[] = [
     title: "ScrewIt Pros",
     kind: "Full Application MVP · System Design → Hosting",
     description:
-      "End-to-end MVP for Houston furniture assembly: system design, UI/UX, full-stack development, hosting, and maintenance — instant quotes, workshop assembly, and door-to-door delivery.",
+      "End-to-end MVP for Houston furniture assembly: system design, UI/UX, full-stack development, hosting, and maintenance. Instant quotes, workshop assembly, and door-to-door delivery.",
     link: "https://www.screwitpro.com/",
     ctaLabel: "View project →",
   },
