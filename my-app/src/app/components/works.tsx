@@ -14,6 +14,14 @@ interface Work {
 
 const works: Work[] = [
   {
+    title: "ScrewIt Pros — Furniture Assembly Platform",
+    description:
+      "End-to-end MVP for a Houston furniture assembly service: system design, UI design, full-stack development, hosting, and maintenance. Customers get instant quotes, schedule pickup, workshop assembly, and white-glove delivery — furniture assembled and delivered ready.",
+    image: "/Projects/ScrewItPro.jpg",
+    link: "https://www.screwitpro.com/",
+    package: "Full Application Build Package",
+  },
+  {
     title: "BlackW3B / Obsidian Protocol",
     description:
       "Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol, converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",

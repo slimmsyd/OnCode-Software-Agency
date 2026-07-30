@@ -21,6 +21,7 @@ A boutique software agency focused on Generative AI software development, custom
 
 ## Portfolio
 
+- **ScrewIt Pros** (screwitpro.com) — full application MVP: system design, UI design, development, hosting, and maintenance for Houston furniture assembly (instant quotes, pickup, workshop assembly, delivery)
 - **BlackW3B** — Web3 tokenized Goldback
 - **Creatures Cube** — Web3 NFT
 - **Barcode** — Web3 membership / community
@@ -35,4 +36,4 @@ A boutique software agency focused on Generative AI software development, custom
 Specification → Development → Launch. Response within 24 hours.
 **Booking:** cal.com/oncode-software-kuxhkk/30min
 
-_Last updated: 2026-07-24_
+_Last updated: 2026-07-30_

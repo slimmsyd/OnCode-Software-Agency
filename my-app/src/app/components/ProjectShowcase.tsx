@@ -19,6 +19,16 @@ interface Service {
 
 const servicesData: Service[] = [
     {
+        key: 'screwit-pro',
+        media: '/Projects/ScrewItPro.jpg',
+        mediaType: 'image',
+        link: 'https://www.screwitpro.com/',
+        title: 'ScrewIt Pros',
+        description:
+            'Full-stack MVP for Houston furniture assembly: system design, UI/UX, development, hosting, and ongoing maintenance — instant quotes, pickup & workshop assembly, door-to-door delivery.',
+        categories: ['Web Apps']
+    },
+    {
         key: 'creatures',
         media: '/images/CreatureCube.png',
         mediaType: 'image',
