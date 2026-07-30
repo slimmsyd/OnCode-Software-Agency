@@ -36,6 +36,16 @@ function isInternalLink(link: string) {
 
 const WORK_PROJECTS: Project[] = [
   {
+    key: "screwit-pro",
+    media: "/redesign/projects/screwitpro.jpg",
+    title: "ScrewIt Pros",
+    kind: "Full Application MVP · System Design → Hosting",
+    description:
+      "End-to-end MVP for Houston furniture assembly: system design, UI/UX, full-stack development, hosting, and maintenance — instant quotes, workshop assembly, and door-to-door delivery.",
+    link: "https://www.screwitpro.com/",
+    ctaLabel: "View project →",
+  },
+  {
     key: "obsidian-protocol",
     media: "/redesign/projects/obsidian-protocol.jpeg",
     title: "BlackW3B / Obsidian Protocol",
