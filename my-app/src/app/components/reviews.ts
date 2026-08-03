@@ -55,6 +55,12 @@ export const reviews: Review[] = [
     img: "https://avatar.vercel.sh/barcode",
   },
   {
+    name: "Obsidian",
+    username: "Verified Google Review",
+    body: "Syd Sanders is an exceptional engineer and one of the strongest partners I've ever worked with. As the founder of Obsidian, I bring the vision and Syd turns that vision into real, scalable systems. His precision, speed, and technical mastery have accelerated our entire ecosystem. If you're building anything ambitious or innovative, Syd is the engineer you want. Highly recommended.",
+    img: "https://avatar.vercel.sh/obsidian",
+  },
+  {
     name: "the Hueman",
     username: "Verified Google Review",
     body: "Syd is a professional and delivers in a timely manner. I've worked with him for years and only trust him when it comes to deliverables for high end clientele.",
