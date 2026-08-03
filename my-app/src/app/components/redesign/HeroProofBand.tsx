@@ -4,10 +4,9 @@ import React from "react";
 import { Star } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
 import ReviewCard from "../ReviewCard";
-import { GOOGLE_REVIEWS_URL, reviews } from "../reviews";
+import { GOOGLE_REVIEWS_URL, reviewRows } from "../reviews";
 
-const firstRow = reviews.slice(0, Math.ceil(reviews.length / 2));
-const secondRow = reviews.slice(Math.ceil(reviews.length / 2));
+const [firstRow, secondRow] = reviewRows;
 
 export default function HeroProofBand() {
   return (

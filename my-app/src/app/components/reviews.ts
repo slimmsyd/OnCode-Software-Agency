@@ -73,3 +73,9 @@ export const reviews: Review[] = [
     img: "https://avatar.vercel.sh/yaadin",
   },
 ];
+
+const reviewSplitIndex = Math.ceil(reviews.length / 2);
+export const reviewRows = [
+  reviews.slice(0, reviewSplitIndex),
+  reviews.slice(reviewSplitIndex),
+] as const;
