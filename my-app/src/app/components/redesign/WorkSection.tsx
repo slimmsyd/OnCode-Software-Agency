@@ -36,6 +36,16 @@ function isInternalLink(link: string) {
 
 const WORK_PROJECTS: Project[] = [
   {
+    key: "pruventa",
+    media: "/redesign/projects/pruventa.jpg",
+    title: "Pruventa",
+    kind: "Website Design + Development · Hosting",
+    description:
+      "Full website design, development, and hosting for a specialty-access infrastructure platform that helps FQHCs, rural clinics, and safety-net organizations deliver specialty care inside the workflows they already use.",
+    link: "https://www.pruventa.com/",
+    ctaLabel: "View project →",
+  },
+  {
     key: "screwit-pro",
     media: "/redesign/projects/screwitpro.jpg",
     title: "ScrewIt Pros",
