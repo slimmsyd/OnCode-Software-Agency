@@ -26,7 +26,6 @@ export default function RedesignHome() {
       <HeroProofBand />
       <AuditSection />
       <ServicesSection />
-      <WorkSection />
       <CaseStudy />
       <Process />
       <Founder />
@@ -34,6 +33,7 @@ export default function RedesignHome() {
       <FaqSection />
       <BookingSection />
       <Testimonials />
+      <WorkSection />
       <RedesignFooter />
       <StickyAuditBar />
     </div>
