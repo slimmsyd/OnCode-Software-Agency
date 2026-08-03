@@ -43,11 +43,11 @@ export default function RedesignNav() {
   }, [open]);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50">
+    <nav className="fixed inset-x-0 top-0 z-50 px-4 sm:px-6 lg:px-8">
       <div
-        className={`mx-auto flex items-center justify-between transition-all duration-300 ease-out ${
+        className={`mx-auto flex w-full items-center justify-between transition-all duration-300 ease-out ${
           scrolled
-            ? "mt-3 h-16 max-w-[1200px] rounded-full bg-white px-6 shadow-[0_8px_30px_rgba(0,0,0,0.08)] ring-1 ring-black/5 mx-4 lg:mx-auto"
+            ? "mt-3 h-16 max-w-[1200px] rounded-full bg-white px-6 shadow-[0_8px_30px_rgba(0,0,0,0.08)] ring-1 ring-black/5"
             : "mt-0 h-24 max-w-[1400px] bg-transparent px-6"
         }`}
       >
