@@ -36,6 +36,16 @@ function isInternalLink(link: string) {
 
 const WORK_PROJECTS: Project[] = [
   {
+    key: "patriot-media",
+    media: "/redesign/projects/patriot-media.jpg",
+    title: "Patriot Entertainment & Media Group",
+    kind: "Website Design + Development · Hosting",
+    description:
+      "Full website design, development, and hosting for a DMV-based live entertainment company serving military families and communities - a video-led site with event listings, artist showcases, and booking inquiry capture.",
+    link: "https://www.patriotmediausa.com/",
+    ctaLabel: "View project →",
+  },
+  {
     key: "pruventa",
     media: "/redesign/projects/pruventa.jpg",
     title: "Pruventa",
