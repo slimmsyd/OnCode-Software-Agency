@@ -62,7 +62,7 @@ const caseStudies: CaseStudyProps[] = [
       "Real-time analytics"
     ],
     imageSrc: "/works/DashboardImage1.png",
-    caseStudyLink: "/casestudies/prmntPro",
+    caseStudyLink: "/work/pos-extension",
     timeline: {
       discovery: 33,
       design: 33,
@@ -95,7 +95,7 @@ const caseStudies: CaseStudyProps[] = [
       "Integration with existing workflows"
     ],
     imageSrc: "/works/Preem_Chat1.png",
-    caseStudyLink: "/casestudies/prmntProExtractor",
+    caseStudyLink: "/work/pos-extension",
     timeline: {
       discovery: 25,
       design: 35,
