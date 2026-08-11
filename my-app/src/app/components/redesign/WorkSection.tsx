@@ -36,23 +36,13 @@ function isInternalLink(link: string) {
 
 const WORK_PROJECTS: Project[] = [
   {
-    key: "patriot-media",
-    media: "/redesign/projects/patriot-media.jpg",
-    title: "Patriot Entertainment & Media Group",
-    kind: "Website Design + Development · Hosting",
+    key: "obsidian-protocol",
+    media: "/redesign/projects/obsidian-protocol.jpeg",
+    title: "Obsidian Protocol",
+    kind: "Digital Infrastructure + CRM Automation",
     description:
-      "Full website design, development, and hosting for a DMV-based live entertainment company serving military families and communities - a video-led site with event listings, artist showcases, and booking inquiry capture.",
-    link: "https://www.patriotmediausa.com/",
-    ctaLabel: "View project →",
-  },
-  {
-    key: "pruventa",
-    media: "/redesign/projects/pruventa.jpg",
-    title: "Pruventa",
-    kind: "Website Design + Development · Hosting",
-    description:
-      "Full website design, development, and hosting for a specialty-access infrastructure platform that helps FQHCs, rural clinics, and safety-net organizations deliver specialty care inside the workflows they already use.",
-    link: "https://www.pruventa.com/",
+      "Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol, converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
+    link: "https://www.w3bs.fun/",
     ctaLabel: "View project →",
   },
   {
@@ -66,13 +56,23 @@ const WORK_PROJECTS: Project[] = [
     ctaLabel: "View project →",
   },
   {
-    key: "obsidian-protocol",
-    media: "/redesign/projects/obsidian-protocol.jpeg",
-    title: "Obsidian Protocol",
-    kind: "Digital Infrastructure + CRM Automation",
+    key: "pruventa",
+    media: "/redesign/projects/pruventa.jpg",
+    title: "Pruventa",
+    kind: "Website Design + Development · Hosting",
     description:
-      "Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol, converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
-    link: "https://www.w3bs.fun/",
+      "Full website design, development, and hosting for a specialty-access infrastructure platform that helps FQHCs, rural clinics, and safety-net organizations deliver specialty care inside the workflows they already use.",
+    link: "https://www.pruventa.com/",
+    ctaLabel: "View project →",
+  },
+  {
+    key: "patriot-media",
+    media: "/redesign/projects/patriot-media.jpg",
+    title: "Patriot Entertainment & Media Group",
+    kind: "Website Design + Development · Hosting",
+    description:
+      "Full website design, development, and hosting for a DMV-based live entertainment company serving military families and communities - a video-led site with event listings, artist showcases, and booking inquiry capture.",
+    link: "https://www.patriotmediausa.com/",
     ctaLabel: "View project →",
   },
   {
