@@ -1,13 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThirdwebProvider } from "thirdweb/react";
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { AuthProvider } from "./context/AuthContext";
 import JsonLd from "./components/JsonLd";
 import { buildOrganizationSchema } from "./lib/organization-schema";
-
-import { Gnosis, Ethereum } from "@thirdweb-dev/chains";
 
 
 export const metadata: Metadata = {
@@ -93,11 +89,7 @@ export default function RootLayout({
       </head>
       <body>
         <JsonLd data={buildOrganizationSchema()} />
-        <ThirdwebProvider>
-          <AuthProvider>
-            {children}
-          </AuthProvider>
-        </ThirdwebProvider>
+        {children}
         <GoogleAnalytics gaId="G-M88WL83RDV" />
       </body>
     </html>

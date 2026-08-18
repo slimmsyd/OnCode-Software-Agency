@@ -1,7 +1,6 @@
 "use client";
 
 import OnboardingForm from "../components/onboarding/OnboardingForm";
-import { ThirdwebProvider } from "@thirdweb-dev/react";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 const queryClient = new QueryClient();

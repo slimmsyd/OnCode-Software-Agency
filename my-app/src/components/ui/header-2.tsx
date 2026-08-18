@@ -7,22 +7,9 @@ import { useScroll } from '@/components/ui/use-scroll';
 import { useRouter, usePathname } from 'next/navigation';
 import { useIntakeFormSafe } from '@/app/context/IntakeFormContext';
 import { GetStartedButton } from '@/components/ui/get-started-button';
-import {
-	ConnectButton,
-	useAutoConnect,
-} from 'thirdweb/react';
-import { client } from '@/app/helper/client';
-import { createWallet, inAppWallet } from 'thirdweb/wallets';
 import { RefObject } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUpRight, Mail } from 'lucide-react';
-
-const wallets = [
-	inAppWallet(),
-	createWallet('io.metamask'),
-	createWallet('com.coinbase.wallet'),
-	createWallet('me.rainbow'),
-];
 
 interface NavigationProps {
 	scrollToSection?: (sectionId: string) => void;
@@ -46,8 +33,6 @@ export default function Navigation({
 	const router = useRouter();
 	const pathname = usePathname();
 	const intakeForm = useIntakeFormSafe();
-
-	useAutoConnect({ client, wallets });
 
 	const handleGetStarted = React.useCallback(() => {
 		if (intakeForm) {
@@ -146,24 +131,6 @@ export default function Navigation({
 								</button>
 							))}
 
-					{/* Connect Wallet (desktop) - hidden, not needed for current marketing site
-					<div className="connect-wallet-wrapper border-l border-border pl-2 flex items-center">
-						<ConnectButton
-							client={client}
-							wallets={wallets}
-							theme="light"
-							connectButton={{
-								label: 'Connect Wallet',
-								className:
-									'!bg-transparent !border !border-input !rounded-md !px-4 !py-2 !text-sm !font-medium hover:!bg-accent hover:!text-accent-foreground !transition-colors !h-10',
-							}}
-							appMetadata={{
-								name: 'OnCode',
-								url: 'https://oncode.com',
-							}}
-						/>
-					</div>
-					*/}
 
 				<GetStartedButton onClick={handleGetStarted} />
 			</div>
@@ -257,24 +224,6 @@ export default function Navigation({
 								</ul>
 							</nav>
 
-							{/* Connect Wallet (mobile) - hidden, not needed for current marketing site
-							<div className="connect-wallet-wrapper">
-								<ConnectButton
-									client={client}
-									wallets={wallets}
-									theme="light"
-									connectButton={{
-										label: 'Connect Wallet',
-										className:
-											'!w-full !bg-transparent !border !border-input !rounded-md !px-4 !py-2 !text-sm !font-medium hover:!bg-accent hover:!text-accent-foreground !transition-colors !h-10',
-									}}
-									appMetadata={{
-										name: 'OnCode',
-										url: 'https://oncode.com',
-									}}
-								/>
-							</div>
-							*/}
 
 							{/* Footer - primary CTA, contact, fine print */}
 							<div className="px-6 pt-6 pb-10 space-y-6">
