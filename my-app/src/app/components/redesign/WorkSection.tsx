@@ -39,9 +39,9 @@ const WORK_PROJECTS: Project[] = [
     key: "obsidian-protocol",
     media: "/redesign/projects/obsidian-protocol.jpeg",
     title: "Obsidian Protocol",
-    kind: "Digital Infrastructure + CRM Automation",
+    kind: "Full Application MVP · System Design → Hosting",
     description:
-      "Digital infrastructure and CRM automation for a leading-edge DeFi tokenization protocol, converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
+      "Full application MVP in partnership with Alpine Gold Exchange — system design through hosting for a DeFi tokenization protocol converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
     link: "https://www.w3bs.fun/",
     ctaLabel: "View project →",
   },
@@ -53,6 +53,16 @@ const WORK_PROJECTS: Project[] = [
     description:
       "End-to-end MVP for Houston furniture assembly: system design, UI/UX, full-stack development, hosting, and maintenance. Instant quotes, workshop assembly, and door-to-door delivery.",
     link: "https://www.screwitpro.com/",
+    ctaLabel: "View project →",
+  },
+  {
+    key: "serenity-helping-hands",
+    media: "/redesign/projects/serenity-helping-hands.jpg",
+    title: "Serenity Helping Hands",
+    kind: "Website Design + Development · Hosting",
+    description:
+      "Full website design, development, and hosting for a veteran-founded, family-owned independent shared housing provider - a story-led site with residence details and inquiry capture for veterans seeking stable, supportive housing.",
+    link: "https://www.serenityhelpinghandsllc.com/",
     ctaLabel: "View project →",
   },
   {
