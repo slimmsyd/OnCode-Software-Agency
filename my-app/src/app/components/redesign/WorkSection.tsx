@@ -308,7 +308,7 @@ export default function WorkSection() {
             Selected Work
           </p>
           <h2 className="text-[clamp(32px,4vw,44px)] font-light leading-[1.05] tracking-[-0.02em] text-[#111111]">
-            The platforms our clients run on.
+            Recent success stories.
           </h2>
         </div>
         <span className="whitespace-nowrap pb-1.5 text-[13px] tracking-[0.14em] text-black/45">
