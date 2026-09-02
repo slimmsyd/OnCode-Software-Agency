@@ -1,13 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { bookAudit, scrollToId } from "./lib";
 
-const NAV_ITEMS = [
+const NAV_ITEMS: { label: string; id: string; href?: string }[] = [
   { label: "The Audit", id: "audit" },
   { label: "Services", id: "services" },
   { label: "Work", id: "work" },
+  { label: "Resources", id: "resources", href: "/resources" },
   { label: "Process", id: "process" },
   { label: "Founder", id: "founder" },
   { label: "Writing", id: "writing" },
@@ -53,15 +55,25 @@ export default function RedesignNav() {
       >
         {/* Desktop links */}
         <div className="hidden items-center gap-7 lg:flex">
-          {NAV_ITEMS.map((it) => (
-            <button
-              key={it.id}
-              onClick={() => scrollToId(it.id)}
-              className="px-1 py-2 text-[15px] font-medium text-[#4b5563] transition-colors duration-200 hover:text-black"
-            >
-              {it.label}
-            </button>
-          ))}
+          {NAV_ITEMS.map((it) =>
+            it.href ? (
+              <Link
+                key={it.id}
+                href={it.href}
+                className="px-1 py-2 text-[15px] font-medium text-[#4b5563] transition-colors duration-200 hover:text-black"
+              >
+                {it.label}
+              </Link>
+            ) : (
+              <button
+                key={it.id}
+                onClick={() => scrollToId(it.id)}
+                className="px-1 py-2 text-[15px] font-medium text-[#4b5563] transition-colors duration-200 hover:text-black"
+              >
+                {it.label}
+              </button>
+            ),
+          )}
         </div>
 
         {/* Mobile trigger */}
@@ -92,18 +104,29 @@ export default function RedesignNav() {
             <X size={24} />
           </button>
           <div className="flex flex-col gap-6">
-            {NAV_ITEMS.map((it) => (
-              <button
-                key={it.id}
-                onClick={() => {
-                  setOpen(false);
-                  setTimeout(() => scrollToId(it.id), 60);
-                }}
-                className="text-left text-2xl font-medium text-[#4b5563]"
-              >
-                {it.label}
-              </button>
-            ))}
+            {NAV_ITEMS.map((it) =>
+              it.href ? (
+                <Link
+                  key={it.id}
+                  href={it.href}
+                  onClick={() => setOpen(false)}
+                  className="text-left text-2xl font-medium text-[#4b5563]"
+                >
+                  {it.label}
+                </Link>
+              ) : (
+                <button
+                  key={it.id}
+                  onClick={() => {
+                    setOpen(false);
+                    setTimeout(() => scrollToId(it.id), 60);
+                  }}
+                  className="text-left text-2xl font-medium text-[#4b5563]"
+                >
+                  {it.label}
+                </button>
+              ),
+            )}
           </div>
           <div className="mb-12 mt-auto">
             <button
