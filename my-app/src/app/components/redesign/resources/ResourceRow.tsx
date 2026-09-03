@@ -4,6 +4,7 @@ import { ArrowUpRight, Check } from "lucide-react";
 import { trackOutboundClick } from "@/lib/analytics";
 import type { ResourceItem } from "./resources-data";
 import ResourceCoverPreview from "./ResourceCoverPreview";
+import ResourceVideoPreview from "./ResourceVideoPreview";
 
 interface ResourceRowProps {
   item: ResourceItem;
@@ -16,7 +17,7 @@ export default function ResourceRow({ item, last = false }: ResourceRowProps) {
     <article
       id={item.key}
       data-screen-label={`Resource: ${item.title}`}
-      className={`grid grid-cols-1 items-start gap-8 border-t border-black/10 px-1 py-12 md:grid-cols-[64px_260px_1fr] md:gap-10 ${
+      className={`grid grid-cols-1 items-start gap-8 border-t border-black/10 px-1 py-12 md:grid-cols-[64px_280px_1fr] md:gap-10 ${
         last ? "border-b border-black/10" : ""
       }`}
     >
@@ -24,7 +25,13 @@ export default function ResourceRow({ item, last = false }: ResourceRowProps) {
         {item.num}
       </span>
 
-      <ResourceCoverPreview src={item.cover} title={item.title} />
+      {/* Visuals: PDF cover always; walkthrough video tile when the resource has one. */}
+      <div className="flex flex-col gap-6">
+        <ResourceCoverPreview src={item.cover} title={item.title} />
+        {item.video && (
+          <ResourceVideoPreview video={item.video} title={item.title} />
+        )}
+      </div>
 
       <div>
         <h2 className="mb-2.5 text-[26px] font-semibold tracking-[-0.015em] text-black">

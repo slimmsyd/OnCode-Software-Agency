@@ -1,3 +1,12 @@
+export interface ResourceVideo {
+  /** YouTube video id (the `v` param), not a full URL. */
+  youtubeId: string;
+  /** Short label under the thumbnail, e.g. "Watch the walkthrough". */
+  label: string;
+  /** Minutes, shown on the thumbnail badge. */
+  duration?: string;
+}
+
 export interface ResourceItem {
   /** Stable key + anchor id. */
   key: string;
@@ -16,6 +25,8 @@ export interface ResourceItem {
   driveUrl: string;
   /** PDF cover image in /public. 260x336 display box, object-fit: cover. */
   cover: string;
+  /** Optional walkthrough video. Adds a second preview tile that opens a YouTube modal. */
+  video?: ResourceVideo;
 }
 
 export const RESOURCES: ResourceItem[] = [
@@ -34,6 +45,10 @@ export const RESOURCES: ResourceItem[] = [
     pack: "skill, proposal template, Stripe setup",
     driveUrl: "https://drive.google.com/drive/folders/1nRNSJu4MYIw-ZviAo4w9cwseSjHMleD1",
     cover: "/resources/covers/client-proposal-creator-cover.png",
+    video: {
+      youtubeId: "OGmb8kURvao",
+      label: "Watch the walkthrough",
+    },
   },
   {
     key: "inbox-email-triage",
@@ -67,5 +82,22 @@ export const RESOURCES: ResourceItem[] = [
     pack: "skill, project scaffold",
     driveUrl: "https://drive.google.com/drive/folders/1PbsLKMMVunhB-Xz3xrWooKtrMmGCv8YG",
     cover: "/resources/covers/standards-vault-cover.png",
+  },
+  {
+    key: "agency-ga-reporter",
+    num: "04",
+    title: "Agency GA Reporter",
+    promise:
+      "Pulls GA4 for every client, builds a branded PDF dashboard, drops a Gmail draft for each. Sends nothing on its own.",
+    who:
+      "agencies and consultants who deliver recurring analytics reports across a client portfolio.",
+    bullets: [
+      "One run pulls GA4, builds a one-page PDF, and creates a draft per client with an email on file.",
+      "Auto-writes plain-English takeaways so each report reads like you wrote it, not like a dashboard export.",
+      "Never auto-sends. Every draft sits in Gmail for you to review, tweak, and send.",
+    ],
+    pack: "skill, template script, setup guide",
+    driveUrl: "https://drive.google.com/drive/folders/1785AT-ZbQGazRcXrsaELUcTcuG2jH2aJ",
+    cover: "/resources/covers/agency-ga-reporter-cover.png",
   },
 ];

@@ -67,7 +67,7 @@ export default function ResourcesPage() {
           >
             A growing library of tools we built for ourselves, then packaged up.
             Each one is a skill your agent can run today, with the template and
-            folder structure already set up. Three here now. More dropping soon.
+            folder structure already set up. Four here now. More dropping soon.
             Take what is useful. Nothing here asks for your email.
           </p>
           <div className="mt-8 flex flex-wrap gap-2.5">
