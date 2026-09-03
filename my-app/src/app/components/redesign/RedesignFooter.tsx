@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
-import { SUBSTACK_URL } from "./lib";
+import { ArrowUpRight, Linkedin } from "lucide-react";
+import { LINKEDIN_URL, SUBSTACK_URL } from "./lib";
 import { trackOutboundClick } from "@/lib/analytics";
 
 export default function RedesignFooter() {
@@ -44,6 +44,32 @@ export default function RedesignFooter() {
           aria-label="Read PromptimusPrime on Substack (opens in a new tab)"
         >
           PromptimusPrime on Substack
+          <ArrowUpRight
+            size={14}
+            className="text-black/50 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-black"
+            aria-hidden
+          />
+        </a>
+
+        <a
+          href={LINKEDIN_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() =>
+            trackOutboundClick(LINKEDIN_URL, "Sydney Sanders LinkedIn footer", {
+              source: "footer",
+            })
+          }
+          className="group inline-flex w-fit cursor-pointer items-center gap-2.5 text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+          aria-label="Sydney Sanders on LinkedIn (opens in a new tab)"
+        >
+          <span
+            aria-hidden
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-black/15 text-black transition-colors duration-200 group-hover:border-black group-hover:bg-black group-hover:text-white"
+          >
+            <Linkedin size={16} />
+          </span>
+          Sydney Sanders on LinkedIn
           <ArrowUpRight
             size={14}
             className="text-black/50 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-black"
