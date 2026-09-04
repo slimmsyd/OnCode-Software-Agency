@@ -100,4 +100,21 @@ export const RESOURCES: ResourceItem[] = [
     driveUrl: "https://drive.google.com/drive/folders/1785AT-ZbQGazRcXrsaELUcTcuG2jH2aJ",
     cover: "/resources/covers/agency-ga-reporter-cover.png",
   },
+  {
+    key: "solicitation-quick-reference",
+    num: "05",
+    title: "Solicitation Quick Reference",
+    promise:
+      "Hand it a government bid document. Get a one-page branded sheet with the 13 facts that decide whether you bid.",
+    who:
+      "contractors and estimators who receive RFPs, IFBs, and RFQs and need the deadline, submission method, and scope on one page before they commit time.",
+    bullets: [
+      "Set branding once: company name, ID numbers, colors, optional logo. Saved to a file. Never asked again.",
+      "Upload any solicitation. It extracts issuer, dates, submission method, scope, bonding, insurance, set-asides, and prevailing wage, then shows all 13 fields for your approval.",
+      "It builds a one-page PDF in your branding with the due date in red at the top, plus a plain text copy. Never guesses. Never generates without your yes.",
+    ],
+    pack: "skill, branding setup, quick reference template",
+    driveUrl: "https://drive.google.com/drive/folders/1VWxSeUhJE6lmczM1TYBnGBd7YIFrBQ_E",
+    cover: "/resources/covers/solicitation-quick-reference-cover.png",
+  },
 ];

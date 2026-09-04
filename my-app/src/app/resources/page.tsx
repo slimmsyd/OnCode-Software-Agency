@@ -6,7 +6,7 @@ import { RESOURCES } from "../components/redesign/resources/resources-data";
 export const metadata: Metadata = {
   title: "Resources — Free Agent Skills & Templates",
   description:
-    "Free agent skills, templates and Drive setups from OnCode. No email required: the Client Proposal Creator, Inbox Email Triage, and Standards Vault, packaged and ready to run.",
+    "Free agent skills, templates and Drive setups from OnCode. No email required: Client Proposal Creator, Inbox Email Triage, Standards Vault, Agency GA Reporter, Solicitation Quick Reference, and more.",
   alternates: { canonical: "https://www.0ncode.com/resources" },
   openGraph: {
     type: "website",
