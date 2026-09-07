@@ -41,7 +41,7 @@ const WORK_PROJECTS: Project[] = [
     title: "Obsidian Protocol",
     kind: "Full Application MVP · System Design → Hosting",
     description:
-      "Full application MVP in partnership with Alpine Gold Exchange — system design through hosting for a DeFi tokenization protocol converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
+      "Full application MVP in partnership with Alpine Gold Exchange, from system design through hosting for a DeFi tokenization protocol converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
     link: "https://www.w3bs.fun/",
     ctaLabel: "View project →",
   },
@@ -61,7 +61,7 @@ const WORK_PROJECTS: Project[] = [
     title: "Serenity Helping Hands",
     kind: "Website Design + Development · Hosting",
     description:
-      "Full website design, development, and hosting for a veteran-founded, family-owned independent shared housing provider - a story-led site with residence details and inquiry capture for veterans seeking stable, supportive housing.",
+      "Full website design, development, and hosting for a veteran-founded, family-owned independent shared housing provider with a story-led site, residence details, and inquiry capture for veterans seeking stable, supportive housing.",
     link: "https://www.serenityhelpinghandsllc.com/",
     ctaLabel: "View project →",
   },
@@ -81,7 +81,7 @@ const WORK_PROJECTS: Project[] = [
     title: "Patriot Entertainment & Media Group",
     kind: "Website Design + Development · Hosting",
     description:
-      "Full website design, development, and hosting for a DMV-based live entertainment company serving military families and communities - a video-led site with event listings, artist showcases, and booking inquiry capture.",
+      "Full website design, development, and hosting for a DMV-based live entertainment company serving military families and communities with a video-led site, event listings, artist showcases, and booking inquiry capture.",
     link: "https://www.patriotmediausa.com/",
     ctaLabel: "View project →",
   },
@@ -91,7 +91,7 @@ const WORK_PROJECTS: Project[] = [
     title: "Street Economics",
     kind: "Digital Infrastructure + CRM",
     description:
-      "Full digital infrastructure for a 220+ member economic community - website development, hosting, and CRM setup to power membership, engagement, and growth.",
+      "Full digital infrastructure for a 220+ member economic community with website development, hosting, and CRM setup to power membership, engagement, and growth.",
   },
   {
     key: "phaseworks",
@@ -99,7 +99,7 @@ const WORK_PROJECTS: Project[] = [
     title: "PhaseWorks Engineering",
     kind: "Digital Infrastructure + CRM",
     description:
-      "Website design, development, and deployment for an infrastructure engineering firm - plus CRM systems so project delivery and client ops run on one stack.",
+      "Website design, development, and deployment for an infrastructure engineering firm, plus CRM systems so project delivery and client ops run on one stack.",
     link: "https://www.phaseworksengineering.com/",
     ctaLabel: "View project →",
   },
@@ -128,7 +128,7 @@ const WORK_PROJECTS: Project[] = [
     title: "We Pray To Flourish",
     kind: "Ecommerce + Digital Infrastructure",
     description:
-      "Custom CRM, hosting, and digital infrastructure for an author-led brand - ecommerce site with Stripe payments, book sales, and newsletter growth.",
+      "Custom CRM, hosting, and digital infrastructure for an author-led brand with an ecommerce site, Stripe payments, book sales, and newsletter growth.",
   },
   {
     key: "sj-wellness",
@@ -151,7 +151,7 @@ const WORK_PROJECTS: Project[] = [
     title: "Tint Labs",
     kind: "Website + Booking",
     description:
-      "Website, booking, and lead capture for a car-tinting business - the build behind the case study.",
+      "Website, booking, and lead capture for a car-tinting business featured in our case study.",
   },
   {
     key: "hrr-foundation",
@@ -159,7 +159,7 @@ const WORK_PROJECTS: Project[] = [
     title: "HRR Foundation",
     kind: "CRM Design + Development",
     description:
-      "Full CRM designed and developed for a healthcare-access foundation - managing prevention, early intervention, mentorship, and community-based care programs.",
+      "Full CRM designed and developed for a healthcare-access foundation managing prevention, early intervention, mentorship, and community-based care programs.",
   },
   {
     key: "mcbride",
