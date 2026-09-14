@@ -76,6 +76,16 @@ const WORK_PROJECTS: Project[] = [
     ctaLabel: "View project →",
   },
   {
+    key: "hoops-2u-dmv",
+    media: "/redesign/projects/hoops2u-dmv.jpg",
+    title: "Hoops 2u DMV",
+    kind: "Web Application · CRM + Booking Automation",
+    description:
+      "Full web application for a DMV mobile entertainment business: CRM setup, booking automation, event scheduling, and reconciliation, plus end-to-end automation design and development built around their business outcomes. We operated as the full-stack engineer throughout.",
+    link: "https://www.hoops2udmv.com/",
+    ctaLabel: "View project →",
+  },
+  {
     key: "patriot-media",
     media: "/redesign/projects/patriot-media.jpg",
     title: "Patriot Entertainment & Media Group",
