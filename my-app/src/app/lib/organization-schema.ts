@@ -3,8 +3,9 @@
  * Hero copy stays national; geo lives here + FAQ schema for local queries.
  */
 
-const BASE_URL = "https://www.0ncode.com";
-const LOGO_URL = `${BASE_URL}/Personal/OnCodeShareImage.png`;
+import { OG_IMAGE, SCHEMA_LOGO, SITE_URL } from "./seo";
+
+const BASE_URL = SITE_URL;
 const DESCRIPTION =
   "OnCode is an AI automation firm and software agency. We find where businesses leak time and money, then build custom automations, software, and sites — starting with a paid diagnostic audit and one workflow at a time.";
 
@@ -117,11 +118,11 @@ export function buildOrganizationSchema(
     url: BASE_URL,
     logo: {
       "@type": "ImageObject",
-      url: LOGO_URL,
-      width: 1200,
-      height: 630,
+      url: SCHEMA_LOGO.url,
+      width: SCHEMA_LOGO.width,
+      height: SCHEMA_LOGO.height,
     },
-    image: LOGO_URL,
+    image: OG_IMAGE.url,
     description: DESCRIPTION,
     slogan: "From idea to implementation — we keep you OnCode.",
     foundingLocation: {

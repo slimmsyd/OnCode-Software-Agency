@@ -3,6 +3,7 @@ import JsonLd, { buildFaqPageSchema } from "../components/JsonLd";
 import AutomationConsultantPage from "../components/redesign/aeo/AutomationConsultantPage";
 import { CONSULTANT_FAQ } from "../components/redesign/aeo/faq-consultant";
 import { buildAutomationConsultantSchema } from "../lib/organization-schema";
+import { buildOpenGraph, OG_IMAGE } from "../lib/seo";
 
 const title = "Best AI Automation Consultant";
 const description =
@@ -25,26 +26,17 @@ export const metadata: Metadata = {
     "Washington DC AI automation",
     "OnCode",
   ],
-  openGraph: {
+  openGraph: buildOpenGraph({
     title: `${title} | OnCode`,
     description,
     url,
-    type: "website",
-    siteName: "OnCode Software Agency",
-    images: [
-      {
-        url: "https://www.0ncode.com/Personal/OnCodeShareImage.png",
-        width: 1200,
-        height: 630,
-        alt: "OnCode AI automation consultant",
-      },
-    ],
-  },
+    images: [{ ...OG_IMAGE, alt: "OnCode AI automation consultant" }],
+  }),
   twitter: {
     card: "summary_large_image",
     title: `${title} | OnCode`,
     description,
-    images: ["https://www.0ncode.com/Personal/OnCodeShareImage.png"],
+    images: [OG_IMAGE.url],
   },
   alternates: {
     canonical: url,

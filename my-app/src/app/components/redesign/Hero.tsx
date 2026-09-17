@@ -84,10 +84,10 @@ export default function Hero() {
         <div className="relative z-10 mx-auto max-w-[880px] px-6 pt-10 text-center">
           <div className="oc-fade-up flex flex-col items-center">
             <Image
-              src="/redesign/oncode-wordmark.png"
+              src="/redesign/oncode-hero-wordmark.png"
               alt="OnCode"
-              width={786}
-              height={236}
+              width={799}
+              height={220}
               priority
               className="h-16 w-auto object-contain"
             />

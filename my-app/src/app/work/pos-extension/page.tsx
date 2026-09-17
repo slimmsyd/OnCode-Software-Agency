@@ -7,6 +7,7 @@ import RedesignFooter from "@/app/components/redesign/RedesignFooter";
 import BookAuditButton from "@/app/components/redesign/BookAuditButton";
 import JsonLd, { buildFaqPageSchema } from "@/app/components/JsonLd";
 import { reviews } from "@/app/components/reviews";
+import { SCHEMA_LOGO } from "@/app/lib/seo";
 
 const robertReview = reviews.find((r) => r.name === "Robert Dunn");
 
@@ -99,7 +100,7 @@ const caseStudySchema = {
         url: "https://www.0ncode.com",
         logo: {
           "@type": "ImageObject",
-          url: "https://www.0ncode.com/Personal/OnCodeShareImage.png",
+          url: SCHEMA_LOGO.url,
         },
       },
       mainEntityOfPage: {

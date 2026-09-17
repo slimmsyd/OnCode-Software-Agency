@@ -4,10 +4,13 @@ import "./globals.css";
 import { GoogleAnalytics } from '@next/third-parties/google';
 import JsonLd from "./components/JsonLd";
 import { buildOrganizationSchema } from "./lib/organization-schema";
+import { buildOpenGraph, OG_IMAGE, SITE_NAME, SITE_URL } from "./lib/seo";
 
+const OG_DESCRIPTION =
+  "Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.0ncode.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "OnCode | Custom Software & AI Consultation Agency",
     template: "%s | OnCode Software Agency",
@@ -24,9 +27,9 @@ export const metadata: Metadata = {
     "business automation",
     "software consulting",
   ],
-  authors: [{ name: "OnCode Software Agency" }],
-  creator: "OnCode Software Agency",
-  publisher: "OnCode Software Agency",
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
   robots: {
     index: true,
     follow: true,
@@ -38,40 +41,31 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  openGraph: {
-    type: "website",
+  openGraph: buildOpenGraph({
     locale: "en_US",
-    url: "https://www.0ncode.com",
-    siteName: "OnCode Software Agency",
+    url: SITE_URL,
     title: "OnCode | AI Consultation Agency",
-    description:
-      "Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages.",
-    images: [
-      {
-        url: "https://www.0ncode.com/Personal/OnCodeShareImage.png",
-        width: 1200,
-        height: 630,
-        alt: "OnCode: Data Driven Decisions",
-      },
-    ],
-  },
+    description: OG_DESCRIPTION,
+  }),
   twitter: {
     card: "summary_large_image",
     title: "OnCode | AI Consultation Agency",
-    description:
-      "Custom software development that accelerates your business. From startup MVPs to enterprise automation systems, we transform manual processes into automated advantages.",
-    images: ["https://www.0ncode.com/Personal/OnCodeShareImage.png"],
+    description: OG_DESCRIPTION,
+    images: [OG_IMAGE.url],
     creator: "@OnCodeAgency",
   },
   // Self-canonicals are set per page. Do not set a sitewide homepage canonical here.
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/images/favicon-32x32.png", type: "image/png", sizes: "32x32" },
       { url: "/images/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/images/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/images/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/images/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+      { url: "/images/favicon-192x192.png", type: "image/png", sizes: "192x192" },
     ],
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   manifest: "/site.webmanifest",
 };

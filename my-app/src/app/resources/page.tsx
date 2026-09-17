@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import ResourcesPage from "../components/redesign/resources/ResourcesPage";
 import JsonLd from "../components/JsonLd";
 import { RESOURCES } from "../components/redesign/resources/resources-data";
+import { buildOpenGraph } from "../lib/seo";
 
 export const metadata: Metadata = {
   title: "Resources — Free Agent Skills & Templates",
   description:
     "Free agent skills, templates and Drive setups from OnCode. No email required: Client Proposal Creator, Inbox Email Triage, Standards Vault, Agency GA Reporter, Solicitation Quick Reference, and more.",
   alternates: { canonical: "https://www.0ncode.com/resources" },
-  openGraph: {
-    type: "website",
+  openGraph: buildOpenGraph({
     url: "https://www.0ncode.com/resources",
     title: "OnCode Resources — Free Agent Skills & Templates",
     description:
       "Free agent skills, templates and Drive setups. No email required.",
-  },
+  }),
 };
 
 // ItemList so answer engines can enumerate the giveaways. Mirrors RESOURCES

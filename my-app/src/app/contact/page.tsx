@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import ContactPageContent from './ContactPageContent';
+import { buildOpenGraph, OG_IMAGE } from '../lib/seo';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Get a Custom Quote',
@@ -12,25 +13,17 @@ export const metadata: Metadata = {
     'software agency contact',
     'get started with OnCode',
   ],
-  openGraph: {
+  openGraph: buildOpenGraph({
     title: 'Contact OnCode Software Agency',
     description: 'Tell us about your project and get a custom quote from OnCode Software Agency.',
     url: 'https://www.0ncode.com/contact',
-    type: 'website',
-    images: [
-      {
-        url: 'https://www.0ncode.com/Personal/OnCodeShareImage.png',
-        width: 1200,
-        height: 630,
-        alt: 'Contact OnCode Software Agency',
-      },
-    ],
-  },
+    images: [{ ...OG_IMAGE, alt: 'Contact OnCode Software Agency' }],
+  }),
   twitter: {
     card: 'summary_large_image',
     title: 'Contact OnCode Software Agency',
     description: 'Tell us about your project and get a custom quote from OnCode Software Agency.',
-    images: ['https://www.0ncode.com/Personal/OnCodeShareImage.png'],
+    images: [OG_IMAGE.url],
   },
   alternates: {
     canonical: 'https://www.0ncode.com/contact',
