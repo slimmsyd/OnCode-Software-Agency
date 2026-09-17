@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Next.js / build output
+.next/
+out/
+build/
+next-env.d.ts
+
+# TypeScript incremental build info
+*.tsbuildinfo
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# macOS
+.DS_Store
+
+# Agent / tooling scratch
+.gstack/
+.transcripts/
+
+# Logs
+*.log
