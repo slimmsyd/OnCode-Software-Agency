@@ -14,7 +14,14 @@ Outputs:
   public/images/og-image.png                  1200x630 social share card (ornate mark)
   public/images/favicon-mark-1024.png         favicon master: emblem with the corner
                                               ornaments stripped, centered on white
-  + every favicon size, apple-touch-icon.png, icon.png and favicon.ico
+  + every favicon size and apple-touch-icon.png / icon.png
+  src/app/favicon.ico                         the ICO that Next.js actually serves at
+                                              /favicon.ico
+
+Note: Next.js App Router treats `app/favicon.ico` as a metadata file convention and
+it takes precedence over `public/favicon.ico`. A copy in `public/` is silently
+ignored, so this script writes the ICO into `src/app/` only - do not add one back
+to `public/`.
 
 Run from anywhere:  python3 scripts/build-brand-assets.py
 Requires: pillow, numpy
@@ -40,6 +47,9 @@ FOOTER_MARK_OUT = PUBLIC / "redesign" / "oncode-mark-ornate.png"
 SCHEMA_LOGO_OUT = PUBLIC / "images" / "oncode-logo.png"
 OG_IMAGE_OUT = PUBLIC / "images" / "og-image.png"
 FAVICON_MASTER_OUT = PUBLIC / "images" / "favicon-mark-1024.png"
+# App Router metadata convention - Next serves this at /favicon.ico and ignores
+# any public/favicon.ico, so the generated ICO has to land here.
+FAVICON_ICO_OUT = MY_APP / "src" / "app" / "favicon.ico"
 
 # Anything darker than this counts as ink when we look for the artwork bounds.
 INK_THRESHOLD = 200
@@ -237,9 +247,8 @@ def build_favicon_sets(master: Image.Image) -> None:
         PUBLIC / "apple-touch-icon.png",
     )
     save_png(master.resize((PWA_ICON_SIZE,) * 2, Image.LANCZOS), PUBLIC / "icon.png")
-    master.save(PUBLIC / "favicon.ico", format="ICO", sizes=list(ICO_SIZES))
-    ico = PUBLIC / "favicon.ico"
-    print(f"  {ico.relative_to(MY_APP)}  {ico.stat().st_size // 1024}KB")
+    master.save(FAVICON_ICO_OUT, format="ICO", sizes=list(ICO_SIZES))
+    print(f"  {FAVICON_ICO_OUT.relative_to(MY_APP)}  {FAVICON_ICO_OUT.stat().st_size // 1024}KB")
 
 
 def main() -> None:
