@@ -142,7 +142,7 @@ export default function WorkSection() {
         onScroll={updateIndexFromScroll}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
-        style={{ scrollPaddingInline: isMobile ? "10vw" : undefined }}
+        style={{ scrollPaddingInline: isMobile ? "16vw" : undefined }}
         className="w-full touch-pan-x overflow-hidden [-webkit-overflow-scrolling:touch] max-[700px]:snap-x max-[700px]:snap-mandatory max-[700px]:overflow-x-auto max-[700px]:overscroll-x-contain max-[700px]:[-ms-overflow-style:none] max-[700px]:[scrollbar-width:none] max-[700px]:[&::-webkit-scrollbar]:hidden"
       >
         <div
@@ -159,7 +159,7 @@ export default function WorkSection() {
           {WORK_PROJECTS.map((p, i) => {
             const idle = i !== index;
             const isActive = i === index;
-            const cardClassName = `relative aspect-[720/440] w-[min(720px,80vw)] flex-none snap-center overflow-hidden bg-[#f3f4f6] transition-[opacity,transform,filter] duration-700 ease-out motion-reduce:transition-none ${
+            const cardClassName = `relative aspect-[720/440] w-[min(720px,68vw)] flex-none snap-center overflow-hidden bg-[#f3f4f6] transition-[opacity,transform,filter] duration-700 ease-out motion-reduce:transition-none min-[701px]:w-[min(720px,80vw)] ${
               !isMobile && idle ? "scale-[0.94] opacity-45 grayscale" : ""
             } ${isActive ? "cursor-pointer" : ""}`;
 
@@ -211,7 +211,7 @@ export default function WorkSection() {
         </p>
       )}
 
-      <div className="mx-auto mt-12 flex max-w-[1280px] flex-col items-center justify-between gap-6 px-6 min-[701px]:flex-row min-[701px]:px-10">
+      <div className="mx-auto mt-12 flex max-w-[1280px] flex-col items-center justify-between gap-6 px-10 min-[701px]:flex-row min-[701px]:px-10">
         <button
           onClick={prev}
           aria-label="Previous project"
@@ -221,7 +221,7 @@ export default function WorkSection() {
         </button>
         <div
           aria-live="polite"
-          className="flex max-w-[560px] flex-col items-center gap-2.5 text-center"
+          className="flex w-full max-w-[68vw] flex-col items-center gap-2.5 text-center min-[701px]:max-w-[560px]"
         >
           <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#767676]">
             {active.kind}
@@ -248,7 +248,7 @@ export default function WorkSection() {
         </button>
       </div>
 
-      <div className="mt-6 flex justify-center gap-2.5 min-[701px]:mt-9">
+      <div className="mx-auto mt-6 flex max-w-[1280px] flex-wrap justify-center gap-x-2.5 gap-y-3 px-10 min-[701px]:mt-9">
         {WORK_PROJECTS.map((p, i) => (
           <button
             key={p.key}
