@@ -25,6 +25,13 @@ export default function RedesignFooter() {
         </p>
 
         <Link
+          href="/ai-automation-local-business"
+          className="w-fit cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+        >
+          AI automation for local businesses
+        </Link>
+
+        <Link
           href="/ai-automation-consultant"
           className="w-fit cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
         >
@@ -65,7 +72,7 @@ export default function RedesignFooter() {
         >
           <span
             aria-hidden
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-black/15 text-black transition-colors duration-200 group-hover:border-black group-hover:bg-black group-hover:text-white"
+            className="flex h-9 w-9 items-center justify-center border border-black/10 text-black transition-colors duration-200 group-hover:bg-black/[0.04]"
           >
             <Linkedin size={16} />
           </span>

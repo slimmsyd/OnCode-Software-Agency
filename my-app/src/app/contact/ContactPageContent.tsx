@@ -1,21 +1,20 @@
 "use client";
 
-import Navigation from "@/components/ui/header-2";
-import Footer from "@/app/components/Footer";
+import HomeNavigation from "@/app/components/redesign/HomeNavigation";
+import RedesignFooter from "@/app/components/redesign/RedesignFooter";
 import IntakeFormWizard from "@/app/components/intake-form/IntakeFormWizard";
-import { IntakeFormProvider } from "@/app/context/IntakeFormContext";
 
 export default function ContactPageContent() {
   return (
-    <IntakeFormProvider>
-      <Navigation textColor={true} />
+    <div className="relative min-h-screen bg-white">
+      <HomeNavigation variant="inner" />
 
-      <div className="min-h-screen bg-white pt-32 pb-20 px-4">
-        <div className="max-w-xl mx-auto">
-          <h1 className="text-3xl font-semibold text-black mb-2 text-center">
+      <div className="px-4 pb-20 pt-28 min-[701px]:pt-36">
+        <div className="mx-auto max-w-xl">
+          <h1 className="mb-2 text-center text-3xl font-semibold text-black">
             Tell us about your project
           </h1>
-          <p className="text-gray-500 text-center mb-10">
+          <p className="mb-10 text-center text-gray-500">
             Fill out the form below and we&apos;ll get back to you within 24
             hours.
           </p>
@@ -23,7 +22,7 @@ export default function ContactPageContent() {
         </div>
       </div>
 
-      <Footer />
-    </IntakeFormProvider>
+      <RedesignFooter />
+    </div>
   );
 }

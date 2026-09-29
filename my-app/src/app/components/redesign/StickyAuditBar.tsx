@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { X } from "lucide-react";
 import { bookAudit } from "./lib";
+import { sharpButtonClass, sharpIconButtonClass } from "./sharp-button";
 
 const DISMISS_KEY = "oc-sticky-audit-dismissed";
 
@@ -66,14 +67,14 @@ export default function StickyAuditBar() {
           <div className="flex shrink-0 items-center gap-2">
             <button
               onClick={() => bookAudit("sticky_bar")}
-              className="inline-flex h-11 cursor-pointer items-center justify-center rounded-full bg-black px-6 text-[14px] font-medium text-white transition-colors duration-200 hover:bg-[#111111]"
+              className={sharpButtonClass}
             >
               Book the Audit
             </button>
             <button
               onClick={dismiss}
               aria-label="Dismiss sticky call to action"
-              className="inline-flex h-11 w-11 cursor-pointer items-center justify-center rounded-full text-[#6b7280] transition-colors duration-200 hover:bg-black/5 hover:text-black"
+              className={sharpIconButtonClass}
             >
               <X size={18} />
             </button>

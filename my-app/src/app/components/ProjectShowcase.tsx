@@ -38,15 +38,6 @@ const servicesData: Service[] = [
         categories: ['Web3', 'Web Apps']
     },
     {
-        key: 'gliddy',
-        media: '/assets/GliddyPng.png',
-        mediaType: 'image',
-        link: '#',
-        title: 'Gliddy',
-        description: 'End-to-end event management platform targeted specifically for bartenders.',
-        categories: ['Web Apps']
-    },
-    {
         key: 'sj-wellness',
         media: '/Projects/SJ.jpeg',
         mediaType: 'image',

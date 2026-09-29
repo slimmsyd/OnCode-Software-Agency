@@ -77,7 +77,7 @@ export default function VslPlayer({ className = "" }: VslPlayerProps) {
 
   return (
     <div
-      className={`relative z-10 w-full overflow-hidden rounded-2xl border border-black/[0.08] bg-[#0a0a0a] shadow-[0_8px_32px_rgba(0,0,0,0.1)] ${className}`}
+      className={`relative z-10 w-full overflow-hidden border border-black/[0.08] bg-[#0a0a0a] shadow-[0_8px_32px_rgba(0,0,0,0.1)] ${className}`}
     >
       <div className="relative aspect-video w-full bg-[#0a0a0a]">
         <video
@@ -103,7 +103,7 @@ export default function VslPlayer({ className = "" }: VslPlayerProps) {
             className="absolute inset-0 z-30 flex cursor-pointer items-center justify-center bg-black/20 transition-colors duration-200 hover:bg-black/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             aria-label="Play video"
           >
-            <span className="pointer-events-none flex h-16 w-16 items-center justify-center rounded-full bg-white text-black shadow-[0_4px_24px_rgba(0,0,0,0.25)] transition-transform duration-200 hover:scale-105">
+            <span className="pointer-events-none flex h-16 w-16 items-center justify-center bg-white text-black shadow-[0_4px_24px_rgba(0,0,0,0.25)] transition-transform duration-200 hover:scale-105">
               <Play className="ml-1 h-7 w-7 fill-current" />
             </span>
           </button>

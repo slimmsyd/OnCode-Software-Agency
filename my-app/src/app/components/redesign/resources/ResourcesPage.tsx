@@ -74,12 +74,12 @@ export default function ResourcesPage() {
             {TAGS.map((t) => (
               <span
                 key={t}
-                className="inline-flex h-[30px] items-center rounded-full border border-black/15 px-3.5 text-[11px] font-medium uppercase tracking-[0.06em] text-[#111111]"
+                className="inline-flex h-[30px] items-center border border-black/10 px-3.5 text-[11px] font-medium uppercase tracking-[0.06em] text-[#111111]"
               >
                 {t}
               </span>
             ))}
-            <span className="inline-flex h-[30px] items-center rounded-full bg-[#fafafa] px-3.5 text-[11px] font-medium uppercase tracking-[0.06em] text-[#767676]">
+            <span className="inline-flex h-[30px] items-center border border-black/10 bg-[#fafafa] px-3.5 text-[11px] font-medium uppercase tracking-[0.06em] text-[#767676]">
               More dropping soon
             </span>
           </div>

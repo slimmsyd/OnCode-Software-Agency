@@ -3,199 +3,9 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { WORK_PROJECTS, projectPath } from "@/app/work/projects";
+import { sharpIconButtonClass } from "./sharp-button";
 
-interface Project {
-  key: string;
-  media?: string;
-  title: string;
-  kind: string;
-  description: string;
-  /** Destination URL — internal paths stay on-site; absolute URLs open externally. */
-  link?: string;
-  /** CTA label under the active card. Defaults by link type. */
-  ctaLabel?: string;
-  /**
-   * How media fills the landscape filmstrip card.
-   * Use "contain" for tall product UI (e.g. extension screenshots).
-   */
-  mediaFit?: "cover" | "contain";
-  /**
-   * Abstract card for confidential builds (no product screenshots).
-   * Renders a branded poster instead of a photo.
-   */
-  poster?: {
-    eyebrow: string;
-    headline: string;
-    footnote: string;
-  };
-}
-
-function isInternalLink(link: string) {
-  return link.startsWith("/");
-}
-
-const WORK_PROJECTS: Project[] = [
-  {
-    key: "obsidian-protocol",
-    media: "/redesign/projects/obsidian-protocol.jpeg",
-    title: "Obsidian Protocol",
-    kind: "Full Application MVP · System Design → Hosting",
-    description:
-      "Full application MVP in partnership with Alpine Gold Exchange, from system design through hosting for a DeFi tokenization protocol converting 1:1 gold-backed assets into digital tokens on the Solana blockchain.",
-    link: "https://www.w3bs.fun/",
-    ctaLabel: "View project →",
-  },
-  {
-    key: "screwit-pro",
-    media: "/redesign/projects/screwitpro.jpg",
-    title: "ScrewIt Pros",
-    kind: "Full Application MVP · System Design → Hosting",
-    description:
-      "End-to-end MVP for Houston furniture assembly: system design, UI/UX, full-stack development, hosting, and maintenance. Instant quotes, workshop assembly, and door-to-door delivery.",
-    link: "https://www.screwitpro.com/",
-    ctaLabel: "View project →",
-  },
-  {
-    key: "serenity-helping-hands",
-    media: "/redesign/projects/serenity-helping-hands.jpg",
-    title: "Serenity Helping Hands",
-    kind: "Website Design + Development · Hosting",
-    description:
-      "Full website design, development, and hosting for a veteran-founded, family-owned independent shared housing provider with a story-led site, residence details, and inquiry capture for veterans seeking stable, supportive housing.",
-    link: "https://www.serenityhelpinghandsllc.com/",
-    ctaLabel: "View project →",
-  },
-  {
-    key: "pruventa",
-    media: "/redesign/projects/pruventa.jpg",
-    title: "Pruventa",
-    kind: "Website Design + Development · Hosting",
-    description:
-      "Full website design, development, and hosting for a specialty-access infrastructure platform that helps FQHCs, rural clinics, and safety-net organizations deliver specialty care inside the workflows they already use.",
-    link: "https://www.pruventa.com/",
-    ctaLabel: "View project →",
-  },
-  {
-    key: "hoops-2u-dmv",
-    media: "/redesign/projects/hoops2u-dmv.jpg",
-    title: "Hoops 2u DMV",
-    kind: "Web Application · CRM + Booking Automation",
-    description:
-      "Full web application for a DMV mobile entertainment business: CRM setup, booking automation, event scheduling, and reconciliation, plus end-to-end automation design and development built around their business outcomes. We operated as the full-stack engineer throughout.",
-    link: "https://www.hoops2udmv.com/",
-    ctaLabel: "View project →",
-  },
-  {
-    key: "patriot-media",
-    media: "/redesign/projects/patriot-media.jpg",
-    title: "Patriot Entertainment & Media Group",
-    kind: "Website Design + Development · Hosting",
-    description:
-      "Full website design, development, and hosting for a DMV-based live entertainment company serving military families and communities with a video-led site, event listings, artist showcases, and booking inquiry capture.",
-    link: "https://www.patriotmediausa.com/",
-    ctaLabel: "View project →",
-  },
-  {
-    key: "street-economics",
-    media: "/redesign/projects/streetecon.webp",
-    title: "Street Economics",
-    kind: "Digital Infrastructure + CRM",
-    description:
-      "Full digital infrastructure for a 220+ member economic community with website development, hosting, and CRM setup to power membership, engagement, and growth.",
-  },
-  {
-    key: "phaseworks",
-    media: "/redesign/projects/phaseworks.jpeg",
-    title: "PhaseWorks Engineering",
-    kind: "Digital Infrastructure + CRM",
-    description:
-      "Website design, development, and deployment for an infrastructure engineering firm, plus CRM systems so project delivery and client ops run on one stack.",
-    link: "https://www.phaseworksengineering.com/",
-    ctaLabel: "View project →",
-  },
-  {
-    key: "pos-extension",
-    title: "POS Web Extension",
-    kind: "Payments · Browser Extension · Fredericksburg",
-    description:
-      "Built for a Fredericksburg-area repair shop on a legacy POS. Browser extension reroutes card and ACH through a shop-controlled payment layer so they cut vendor lock-in cost and set their own payment criteria. Full story on the case study.",
-    link: "/work/pos-extension",
-    ctaLabel: "Read the case study →",
-    media: "/redesign/projects/pos-pay-extension.png",
-    mediaFit: "contain",
-  },
-  {
-    key: "boxraw",
-    media: "/redesign/projects/boxraw.jpeg",
-    title: "BoxRaw Labs",
-    kind: "Web Application",
-    description:
-      "Custom web application built for a boxing performance lab to manage training data and coordinate internal team workflows.",
-  },
-  {
-    key: "wepray2flourish",
-    media: "/redesign/projects/wepray2flourish.jpeg",
-    title: "We Pray To Flourish",
-    kind: "Ecommerce + Digital Infrastructure",
-    description:
-      "Custom CRM, hosting, and digital infrastructure for an author-led brand with an ecommerce site, Stripe payments, book sales, and newsletter growth.",
-  },
-  {
-    key: "sj-wellness",
-    media: "/redesign/projects/sj-wellness.jpeg",
-    title: "SJ Wellness",
-    kind: "Website",
-    description: "Website designed and developed for a wellness center.",
-  },
-  {
-    key: "new-world-television",
-    media: "/redesign/projects/new-world-television.jpeg",
-    title: "New World Television",
-    kind: "Custom Website Design + Development",
-    description:
-      "Custom website design and development with booking automations and CRM setup for a media network platform.",
-  },
-  {
-    key: "tint-labs",
-    media: "/redesign/projects/tintlabs.jpeg",
-    title: "Tint Labs",
-    kind: "Website + Booking",
-    description:
-      "Website, booking, and lead capture for a car-tinting business featured in our case study.",
-  },
-  {
-    key: "hrr-foundation",
-    media: "/redesign/projects/hrr-foundation.png",
-    title: "HRR Foundation",
-    kind: "CRM Design + Development",
-    description:
-      "Full CRM designed and developed for a healthcare-access foundation managing prevention, early intervention, mentorship, and community-based care programs.",
-  },
-  {
-    key: "mcbride",
-    media: "/redesign/projects/mcbride.png",
-    title: "McBride Basketball Academy",
-    kind: "Booking Platform",
-    description:
-      "Booking platform with Stripe payments, Google Calendar sync, and an admin dashboard for session management.",
-  },
-  {
-    key: "prmnt-pro",
-    media: "/redesign/projects/preeminent.jpeg",
-    title: "Preeminent Professional Services",
-    kind: "Corporate Site",
-    description:
-      "Website designed, developed, and maintained for facility management services.",
-  },
-  {
-    key: "gliddy",
-    media: "/redesign/projects/gliddy.jpeg",
-    title: "Gliddy",
-    kind: "Event Platform",
-    description:
-      "End-to-end event management platform built specifically for bartenders.",
-  },
-];
 
 const GAP = 32;
 const MOBILE_MAX = 700;
@@ -349,38 +159,11 @@ export default function WorkSection() {
           {WORK_PROJECTS.map((p, i) => {
             const idle = i !== index;
             const isActive = i === index;
-            const cardClassName = `relative aspect-[720/440] w-[min(720px,80vw)] flex-none snap-center overflow-hidden rounded-2xl bg-[#f3f4f6] transition-[opacity,transform,filter] duration-700 ease-out motion-reduce:transition-none ${
+            const cardClassName = `relative aspect-[720/440] w-[min(720px,80vw)] flex-none snap-center overflow-hidden bg-[#f3f4f6] transition-[opacity,transform,filter] duration-700 ease-out motion-reduce:transition-none ${
               !isMobile && idle ? "scale-[0.94] opacity-45 grayscale" : ""
-            } ${p.link && isActive ? "cursor-pointer" : ""}`;
+            } ${isActive ? "cursor-pointer" : ""}`;
 
-            const cardContent = p.poster ? (
-              <div
-                className="pointer-events-none absolute inset-0 flex flex-col justify-between bg-[#0a0a0a] p-8 select-none md:p-10"
-                aria-hidden={!isActive}
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-white/45">
-                    {p.poster.eyebrow}
-                  </p>
-                  <span className="rounded-full border border-white/15 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.08em] text-white/70">
-                    Extension
-                  </span>
-                </div>
-                <div>
-                  <p className="max-w-[14ch] text-[clamp(28px,3.5vw,40px)] font-light leading-[1.1] tracking-[-0.02em] text-white">
-                    {p.poster.headline}
-                  </p>
-                  <p className="mt-3 text-[13px] font-light tracking-wide text-white/50">
-                    {p.poster.footnote}
-                  </p>
-                </div>
-                {/* Abstract workflow marks */}
-                <div className="absolute right-8 bottom-24 hidden h-16 w-16 items-center justify-center opacity-30 md:flex">
-                  <div className="h-10 w-10 rounded-lg border border-white/30" />
-                  <div className="absolute h-10 w-10 translate-x-3 translate-y-3 rounded-lg border border-white/20" />
-                </div>
-              </div>
-            ) : p.media ? (
+            const cardContent = (
               <Image
                 src={p.media}
                 alt={p.title}
@@ -393,49 +176,28 @@ export default function WorkSection() {
                 }`}
                 draggable={false}
               />
-            ) : null;
+            );
 
             const setCardRef = (el: HTMLElement | null) => {
               cardRefs.current[i] = el;
             };
 
-            if (p.link && isActive) {
-              const internal = isInternalLink(p.link);
-              if (internal) {
-                return (
-                  <Link
-                    key={p.key}
-                    href={p.link}
-                    ref={setCardRef}
-                    aria-label={`Read case study: ${p.title}`}
-                    className={cardClassName}
-                  >
-                    {cardContent}
-                  </Link>
-                );
-              }
-
+            if (isActive) {
               return (
-                <a
+                <Link
                   key={p.key}
-                  href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={projectPath(p.key)}
                   ref={setCardRef}
-                  aria-label={`View ${p.title}`}
+                  aria-label={`Read project: ${p.title}`}
                   className={cardClassName}
                 >
                   {cardContent}
-                </a>
+                </Link>
               );
             }
 
             return (
-              <div
-                key={p.key}
-                ref={setCardRef}
-                className={cardClassName}
-              >
+              <div key={p.key} ref={setCardRef} className={cardClassName}>
                 {cardContent}
               </div>
             );
@@ -453,7 +215,7 @@ export default function WorkSection() {
         <button
           onClick={prev}
           aria-label="Previous project"
-          className="hidden h-[52px] w-[52px] flex-shrink-0 cursor-pointer items-center justify-center rounded-full border border-black/20 bg-transparent text-[17px] text-[#111111] transition-all duration-250 hover:border-black hover:bg-black hover:text-white min-[701px]:flex"
+          className={`hidden flex-shrink-0 text-[17px] min-[701px]:flex ${sharpIconButtonClass}`}
         >
           ←
         </button>
@@ -470,29 +232,17 @@ export default function WorkSection() {
           <p className="text-[15px] font-light leading-[1.6] text-[#4b5563]">
             {active.description}
           </p>
-          {active.link &&
-            (isInternalLink(active.link) ? (
-              <Link
-                href={active.link}
-                className="mt-1 cursor-pointer text-[13px] font-medium uppercase tracking-[0.08em] text-[#111111] underline-offset-4 transition-colors duration-200 hover:text-black/70 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
-              >
-                {active.ctaLabel ?? "Read the case study →"}
-              </Link>
-            ) : (
-              <a
-                href={active.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-1 cursor-pointer text-[13px] font-medium uppercase tracking-[0.08em] text-[#111111] underline-offset-4 transition-colors duration-200 hover:text-black/70 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
-              >
-                {active.ctaLabel ?? "View project →"}
-              </a>
-            ))}
+          <Link
+            href={projectPath(active.key)}
+            className="mt-1 cursor-pointer text-[13px] font-medium uppercase tracking-[0.08em] text-[#111111] underline-offset-4 transition-colors duration-200 hover:text-black/70 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+          >
+            Read the project →
+          </Link>
         </div>
         <button
           onClick={next}
           aria-label="Next project"
-          className="hidden h-[52px] w-[52px] flex-shrink-0 cursor-pointer items-center justify-center rounded-full border border-black/20 bg-transparent text-[17px] text-[#111111] transition-all duration-250 hover:border-black hover:bg-black hover:text-white min-[701px]:flex"
+          className={`hidden flex-shrink-0 text-[17px] min-[701px]:flex ${sharpIconButtonClass}`}
         >
           →
         </button>
@@ -504,7 +254,7 @@ export default function WorkSection() {
             key={p.key}
             onClick={() => goTo(i)}
             aria-label={`Go to project ${i + 1}`}
-            className={`h-[3px] w-7 cursor-pointer rounded-sm border-0 p-0 transition-colors duration-300 ${
+            className={`h-[3px] w-7 cursor-pointer border-0 p-0 transition-colors duration-300 ${
               i === index ? "bg-black" : "bg-[#d1d5db]"
             }`}
           />

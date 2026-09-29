@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowUpRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
+import { sharpButtonClass } from "../sharp-button";
 import { trackOutboundClick } from "@/lib/analytics";
 import type { ResourceItem } from "./resources-data";
 import ResourceCoverPreview from "./ResourceCoverPreview";
@@ -62,20 +63,9 @@ export default function ResourceRow({ item, last = false }: ResourceRowProps) {
                 source: "resources_page",
               })
             }
-            className="group inline-flex h-12 cursor-pointer items-center justify-center gap-2 rounded-full bg-black px-7 text-[15px] font-medium text-white transition-[opacity,transform] duration-200 ease-out hover:opacity-90 active:scale-[0.96] active:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+            className={sharpButtonClass}
           >
-            <span className="relative">
-              Get it on Drive
-              <span
-                aria-hidden
-                className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-white transition-transform duration-200 ease-out group-hover:scale-x-100 group-active:scale-x-100"
-              />
-            </span>
-            <ArrowUpRight
-              size={16}
-              aria-hidden
-              className="transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-active:-translate-y-1 group-active:translate-x-1"
-            />
+            Get it on Drive
           </a>
           <span className="text-[13px] text-[#767676]">In the pack: {item.pack}</span>
         </div>

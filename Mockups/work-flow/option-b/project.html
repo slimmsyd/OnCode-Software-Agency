@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project | OnCode (Option B)</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="b.css">
+  </head>
+  <body>
+    <main class="wrap" id="main"></main>
+
+    <script src="../shared/projects.js"></script>
+    <script src="../shared/chrome.js"></script>
+    <script>
+      (function () {
+        const OC = window.OC;
+        const { esc, img, currentProject, nextAfter, domain, CATEGORIES, ARROW, ARROW_BACK, EXTERNAL } = OC;
+        const p = currentProject();
+        const [next] = nextAfter(p.slug, 1);
+        document.title = `${p.title} | OnCode (Option B)`;
+        OC.chrome({ option: "B", otherOption: "A", otherHref: `../option-a/project.html?p=${p.slug}` });
+
+        const facts = [
+          ["Built", esc(p.kind)],
+          p.facts?.client && ["Client", esc(p.facts.client)],
+          p.facts?.where && ["Where", esc(p.facts.where)],
+          ["Type", esc(CATEGORIES[p.category])],
+        ].filter(Boolean);
+
+        const live = p.link
+          ? `<a class="link-underline" href="${p.link}" target="_blank" rel="noopener noreferrer">Visit ${domain(p.link)}${EXTERNAL}</a>`
+          : "";
+
+        const stats = p.story?.stats
+          ? `<dl class="stats">${p.story.stats
+              .map((s) => `<div><dt>${esc(s.label)}</dt><dd class="tnum">${esc(s.value)}</dd></div>`)
+              .join("")}</dl>`
+          : "";
+
+        const story = p.story?.sections
+          ? `<div class="story">${p.story.sections
+              .map((s) => `<section><h2>${esc(s.heading)}</h2><p>${esc(s.body)}</p></section>`)
+              .join("")}</div>`
+          : "";
+
+        const q = p.story?.quote;
+        const quote = q
+          ? `<blockquote class="quote"><p>“${esc(q.body)}”</p><footer><cite>${esc(q.name)}</cite>, ${esc(q.source)}</footer></blockquote>`
+          : "";
+
+        document.getElementById("main").innerHTML = `
+          <div class="split">
+            <aside class="aside">
+              <a class="back link-arrow" href="work.html">${ARROW_BACK}All work</a>
+              <h1>${esc(p.title)}</h1>
+              <p class="aside__summary">${esc(p.summary)}</p>
+              <dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>
+              <div class="aside__actions">
+                <a class="btn" href="${OC.BOOK_URL}">Book the Audit</a>
+                ${live}
+              </div>
+            </aside>
+
+            <div class="content">
+              <figure class="hero${p.fit === "contain" ? " hero--contain" : ""}">${img(p, { eager: true })}</figure>
+              ${stats}
+              ${story}
+              ${quote}
+            </div>
+          </div>
+
+          <section class="next" aria-label="Next project">
+            <div>
+              <p class="next__label">Next project</p>
+              <h2 class="next__title"><a class="link-arrow" href="project.html?p=${next.slug}">${esc(next.title)} ${ARROW}</a></h2>
+            </div>
+            <div class="next__thumb">${img(next)}</div>
+          </section>
+
+          ${OC.cta()}
+        `;
+      })();
+    </script>
+  </body>
+</html>

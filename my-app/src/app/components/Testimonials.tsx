@@ -1,8 +1,8 @@
 import React from "react";
-import { Star } from "lucide-react";
 import { Marquee } from "@/components/ui/marquee";
 import ReviewCard from "./ReviewCard";
 import { GOOGLE_REVIEWS_URL, reviewRows } from "./reviews";
+import { sharpButtonClass } from "./redesign/sharp-button";
 
 const [firstRow, secondRow] = reviewRows;
 
@@ -56,10 +56,9 @@ const Testimonials = () => {
           onClick={() =>
             window.open(GOOGLE_REVIEWS_URL, "_blank", "noopener,noreferrer")
           }
-          className="group relative inline-flex items-center justify-center rounded-full bg-gray-900 px-8 py-4 text-sm font-medium text-white shadow-xl transition-all duration-300 hover:scale-105 hover:bg-black"
+          className={sharpButtonClass}
         >
-          <span className="mr-2">Leave a real review</span>
-          <Star className="h-4 w-4 transition-transform group-hover:rotate-12" />
+          Leave a real review
         </button>
       </div>
     </section>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project | OnCode (Option A)</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="a.css">
+  </head>
+  <body>
+    <main class="wrap" id="main"></main>
+
+    <script src="../shared/projects.js"></script>
+    <script src="../shared/chrome.js"></script>
+    <script src="a.js"></script>
+    <script>
+      (function () {
+        const OC = window.OC;
+        const { esc, img, currentProject, nextAfter, domain, CATEGORIES, ARROW, ARROW_BACK, EXTERNAL } = OC;
+        const p = currentProject();
+        document.title = `${p.title} | OnCode (Option A)`;
+        OC.chrome({ option: "A", otherOption: "B", otherHref: `../option-b/project.html?p=${p.slug}` });
+
+        const facts = [
+          ["What we built", esc(p.kind)],
+          p.facts?.client && ["Client", esc(p.facts.client)],
+          p.facts?.where && ["Where", esc(p.facts.where)],
+          ["Type", esc(CATEGORIES[p.category])],
+          p.link && [
+            "Live site",
+            `<a class="link-underline" href="${p.link}" target="_blank" rel="noopener noreferrer">${domain(p.link)}${EXTERNAL}</a>`,
+          ],
+        ].filter(Boolean);
+
+        const stats = p.story?.stats
+          ? `<dl class="stats">${p.story.stats
+              .map((s) => `<div><dt>${esc(s.label)}</dt><dd class="tnum">${esc(s.value)}</dd></div>`)
+              .join("")}</dl>`
+          : "";
+
+        const story = p.story?.sections
+          ? `<div class="story">${p.story.sections
+              .map((s) => `<section><h2>${esc(s.heading)}</h2><p>${esc(s.body)}</p></section>`)
+              .join("")}</div>`
+          : "";
+
+        const q = p.story?.quote;
+        const quote = q
+          ? `<blockquote class="quote"><p>“${esc(q.body)}”</p><footer><cite>${esc(q.name)}</cite>, ${esc(q.source)}</footer></blockquote>`
+          : "";
+
+        document.getElementById("main").innerHTML = `
+          <a class="back link-arrow" href="work.html">${ARROW_BACK}All work</a>
+          <header class="project-head">
+            <h1>${esc(p.title)}</h1>
+            <p>${esc(p.summary)}</p>
+          </header>
+          <dl class="facts">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join("")}</dl>
+          <figure class="hero${p.fit === "contain" ? " hero--contain" : ""}">${img(p, { eager: true })}</figure>
+          ${stats}
+          ${story}
+          ${quote}
+          <section class="more" aria-labelledby="more-heading">
+            <div class="more__head">
+              <h2 id="more-heading">More work</h2>
+              <a class="link-arrow" href="work.html">All work${ARROW}</a>
+            </div>
+            <ul class="grid">${nextAfter(p.slug, 2).map((n) => OC.cardA(n, { level: 3 })).join("")}</ul>
+          </section>
+          ${OC.cta()}
+        `;
+      })();
+    </script>
+  </body>
+</html>

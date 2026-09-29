@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { bookAudit } from "../lib";
+import { sharpButtonClass } from "../sharp-button";
 
 export default function ProofSection() {
   return (
@@ -28,7 +28,7 @@ export default function ProofSection() {
         </h2>
 
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
-          <div className="relative h-[360px] w-full overflow-hidden rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.08)] md:h-[480px]">
+          <div className="relative h-[360px] w-full overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.08)] md:h-[480px]">
             <Image
               src="/redesign/projects/tintlabs.jpeg"
               alt="Tint Labs automation build by OnCode"
@@ -72,9 +72,9 @@ export default function ProofSection() {
             <button
               type="button"
               onClick={() => bookAudit("aeo_consultant_proof")}
-              className="mt-1 inline-flex cursor-pointer items-center gap-2 self-start text-[13px] font-medium uppercase tracking-[0.08em] text-black transition-opacity duration-200 hover:opacity-70"
+              className={`mt-1 self-start ${sharpButtonClass}`}
             >
-              Find your leak, book the audit <ArrowRight size={14} />
+              Book the Audit
             </button>
           </div>
         </div>

@@ -32,7 +32,7 @@ const TIERS = [
 
 function FoundationBar() {
   return (
-    <div className="mt-12 flex flex-wrap items-baseline justify-between gap-6 rounded-2xl bg-[#0a0a0a] px-10 py-9 text-white">
+    <div className="mt-12 flex flex-wrap items-baseline justify-between gap-6 bg-[#0a0a0a] px-10 py-9 text-white">
       <div className="max-w-[640px]">
         <p className="mb-3 text-[12px] font-medium uppercase tracking-[0.08em] text-white/50">
           Retainer: Ongoing Management

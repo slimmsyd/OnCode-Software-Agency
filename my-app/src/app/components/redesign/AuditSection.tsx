@@ -1,7 +1,8 @@
 "use client";
 
-import { Check, ChevronRight } from "lucide-react";
+import { Check } from "lucide-react";
 import { bookAudit } from "./lib";
+import { sharpButtonOnDarkClass } from "./sharp-button";
 
 const DELIVERABLES = [
   "A clear map of how your business actually runs, step by step, start to finish.",
@@ -97,7 +98,7 @@ export default function AuditSection() {
             <div
               style={{
                 border: `0.5px solid ${hairline}`,
-                borderRadius: 16,
+                borderRadius: 0,
                 background: "rgba(255,255,255,0.04)",
                 padding: 32,
               }}
@@ -170,9 +171,9 @@ export default function AuditSection() {
             <div className="flex flex-col gap-3">
               <button
                 onClick={() => bookAudit("audit_section")}
-                className="inline-flex h-12 items-center gap-2.5 self-start rounded-lg bg-white px-8 text-[15px] font-medium text-black"
+                className={sharpButtonOnDarkClass}
               >
-                Book the Audit <ChevronRight size={16} />
+                Book the Audit
               </button>
               <span style={{ fontSize: 12, color: muted }}>
                 30 minutes. We scope the audit on the call.

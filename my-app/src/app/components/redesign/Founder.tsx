@@ -42,7 +42,7 @@ export default function Founder() {
           alt="Sydney Sanders, Founder of OnCode"
           width={360}
           height={360}
-          className="h-auto w-full max-w-[360px] rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
+          className="h-auto w-full max-w-[360px] shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
         />
       </div>
     </section>

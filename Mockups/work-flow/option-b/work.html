@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Work | OnCode (Option B)</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="b.css">
+  </head>
+  <body>
+    <main class="wrap" id="main"></main>
+
+    <script src="../shared/projects.js"></script>
+    <script src="../shared/chrome.js"></script>
+    <script>
+      (function () {
+        const OC = window.OC;
+        const { PROJECTS, CATEGORIES, esc, img, ARROW } = OC;
+        OC.chrome({ option: "B", otherOption: "A", otherHref: "../option-a/work.html" });
+
+        const featured = PROJECTS.filter((p) => p.featured);
+        const rest = PROJECTS.filter((p) => !p.featured);
+
+        function feature(p, i) {
+          const contain = p.fit === "contain" ? " feature__media--contain" : "";
+          return `<li class="feature">
+            <div class="feature__media${contain}">${img(p, { eager: i < 2 })}</div>
+            <h3><a href="project.html?p=${p.slug}">${esc(p.title)}</a></h3>
+            <p>${esc(p.summary)}</p>
+            <p class="feature__cta link-arrow" aria-hidden="true"><span>Read the case study</span>${ARROW}</p>
+          </li>`;
+        }
+
+        function row(p) {
+          return `<li class="row">
+            <div class="row__thumb">${img(p)}</div>
+            <div class="row__body">
+              <h3 class="row__title"><a href="project.html?p=${p.slug}">${esc(p.title)}</a></h3>
+              <p class="row__kind">${esc(p.kind)}</p>
+            </div>
+            ${ARROW}
+          </li>`;
+        }
+
+        const groups = Object.entries(CATEGORIES)
+          .map(([key, label]) => ({ key, label, list: rest.filter((p) => p.category === key) }))
+          .filter((g) => g.list.length);
+
+        document.getElementById("main").innerHTML = `
+          <header class="page-head">
+            <h1>Selected work</h1>
+            <p>Websites, web apps, CRMs, and payment tools we have designed, built, and launched. <span class="tnum">${PROJECTS.length}</span> projects so far.</p>
+          </header>
+
+          <section class="featured" aria-labelledby="featured-heading">
+            <h2 class="section-title" id="featured-heading">Case studies</h2>
+            <ul class="featured__list">${featured.map(feature).join("")}</ul>
+          </section>
+
+          <div class="groups">
+            ${groups
+              .map(
+                (g) => `<section aria-labelledby="g-${g.key}">
+                  <h2 class="section-title" id="g-${g.key}">${g.label} <span class="count tnum">${g.list.length}</span></h2>
+                  <ul class="rows">${g.list.map(row).join("")}</ul>
+                </section>`,
+              )
+              .join("")}
+          </div>
+
+          ${OC.cta()}
+        `;
+      })();
+    </script>
+  </body>
+</html>

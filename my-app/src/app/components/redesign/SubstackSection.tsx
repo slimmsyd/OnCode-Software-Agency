@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUpRight, BookOpen } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { SUBSTACK_URL } from "./lib";
 import { trackOutboundClick } from "@/lib/analytics";
 
@@ -58,7 +58,7 @@ export default function SubstackSection() {
               source: "substack_section",
             })
           }
-          className="group relative flex cursor-pointer flex-col overflow-hidden rounded-2xl bg-[#0a0a0a] p-8 text-white transition-transform duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 md:flex-row md:items-center md:justify-between md:gap-10 md:p-10"
+          className="group relative flex cursor-pointer flex-col overflow-hidden bg-[#0a0a0a] p-8 text-white transition-transform duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 md:flex-row md:items-center md:justify-between md:gap-10 md:p-10"
           aria-label="Read PromptimusPrime on Substack (opens in a new tab)"
         >
           {/* Subtle Substack accent: brand orange, never emoji */}
@@ -73,7 +73,7 @@ export default function SubstackSection() {
 
           <div className="relative flex min-w-0 flex-1 flex-col gap-4">
             <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/10">
+              <span className="flex h-10 w-10 items-center justify-center border border-white/20 bg-white/10">
                 <BookOpen size={18} className="text-white/90" aria-hidden />
               </span>
               <span className="text-[12px] font-medium uppercase tracking-[0.08em] text-white/50">
@@ -102,13 +102,8 @@ export default function SubstackSection() {
           </div>
 
           <div className="relative mt-8 flex shrink-0 items-center gap-3 md:mt-0">
-            <span className="inline-flex h-12 items-center gap-2 rounded-full bg-white px-6 text-[14px] font-medium text-black transition-opacity duration-200 group-hover:opacity-90">
+            <span className="inline-flex min-h-11 items-center border border-white/30 px-3 text-[12px] font-semibold uppercase tracking-[0.14em] text-white transition-colors duration-200 group-hover:bg-white/10">
               Read on Substack
-              <ArrowUpRight
-                size={16}
-                className="transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                aria-hidden
-              />
             </span>
           </div>
         </a>

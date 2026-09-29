@@ -1,6 +1,6 @@
 "use client";
 
-import RedesignNav from "./RedesignNav";
+import HomeNavigation from "./HomeNavigation";
 import Hero from "./Hero";
 import HeroProofBand from "./HeroProofBand";
 import AuditSection from "./AuditSection";
@@ -21,7 +21,7 @@ import Testimonials from "../Testimonials";
 export default function RedesignHome() {
   return (
     <div className="relative bg-white pb-20">
-      <RedesignNav />
+      <HomeNavigation variant="home" />
       <Hero />
       <HeroProofBand />
       <WorkSection />

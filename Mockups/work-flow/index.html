@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Work flow mockups | OnCode</title>
+    <link rel="stylesheet" href="shared/base.css">
+    <style>
+      main {
+        padding-top: var(--s9);
+      }
+
+      h1 {
+        font-size: clamp(36px, 5vw, 52px);
+        font-weight: 600;
+        letter-spacing: -0.03em;
+      }
+
+      .intro {
+        margin-top: var(--s4);
+        max-width: 60ch;
+        color: var(--body);
+        font-size: 17px;
+      }
+
+      .options {
+        margin-top: var(--s8);
+        display: grid;
+        gap: var(--s6);
+      }
+
+      @media (min-width: 900px) {
+        .options {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      .option {
+        padding: var(--s6);
+        border-radius: 16px;
+        box-shadow: 0 0 0 1px var(--line);
+      }
+
+      .option h2 {
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: -0.02em;
+      }
+
+      .option > p {
+        margin-top: var(--s3);
+        color: var(--body);
+      }
+
+      .option dl {
+        margin-top: var(--s5);
+        display: grid;
+        gap: var(--s3);
+        font-size: 15px;
+      }
+
+      .option dt {
+        font-weight: 500;
+      }
+
+      .option dd {
+        color: var(--body);
+      }
+
+      .option .links {
+        margin-top: var(--s6);
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--s4) var(--s5);
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <h1>Work flow mockups</h1>
+      <p class="intro">Both options run the same flow: Work in the navigation opens the portfolio, and each project opens its own page. They use the same projects, copy, and colors, so the choice is about structure.</p>
+
+      <div class="options">
+        <section class="option">
+          <h2>Option A: two-up grid</h2>
+          <p>Closest to the reference image. Every project gets the same card, and filters narrow the list.</p>
+          <dl>
+            <div><dt>Portfolio</dt><dd>Bold heading, five filters, two-column image grid with title, arrow, and a three-line summary.</dd></div>
+            <div><dt>Project page</dt><dd>One column: title and summary, a row of facts, full-width image, numbers, then the story as labeled rows.</dd></div>
+            <div><dt>Ending</dt><dd>Two more projects as cards, then Book the Audit.</dd></div>
+          </dl>
+          <div class="links">
+            <a class="btn" href="option-a/work.html">Open option A</a>
+            <a class="link-arrow link-underline" href="option-a/project.html?p=tint-labs">Tint Labs page</a>
+          </div>
+        </section>
+
+        <section class="option">
+          <h2>Option B: case studies, then the index</h2>
+          <p>Leads with the two projects that have full stories. The other 16 sit in a list grouped by what was built.</p>
+          <dl>
+            <div><dt>Portfolio</dt><dd>Large light heading, two case study cards, then Websites, Web apps, and CRM & automation as grouped rows.</dd></div>
+            <div><dt>Project page</dt><dd>Split layout: title, facts, and Book the Audit stay pinned on the left while the image and story scroll on the right.</dd></div>
+            <div><dt>Ending</dt><dd>One large next project row, then Book the Audit.</dd></div>
+          </dl>
+          <div class="links">
+            <a class="btn" href="option-b/work.html">Open option B</a>
+            <a class="link-arrow link-underline" href="option-b/project.html?p=tint-labs">Tint Labs page</a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Work | OnCode (Option A)</title>
+    <link rel="stylesheet" href="../shared/base.css">
+    <link rel="stylesheet" href="a.css">
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="page-head">
+        <h1>Our work</h1>
+        <p>Websites, web apps, CRMs, and payment tools we have designed, built, and launched for the businesses behind them.</p>
+      </header>
+
+      <div class="filters" role="group" aria-label="Filter projects">
+        <span class="filters__count tnum" aria-live="polite" id="count"></span>
+      </div>
+
+      <ul class="grid" id="grid"></ul>
+
+      <div id="cta"></div>
+    </main>
+
+    <script src="../shared/projects.js"></script>
+    <script src="../shared/chrome.js"></script>
+    <script src="a.js"></script>
+    <script>
+      (function () {
+        const { PROJECTS, CATEGORIES, cardA, chrome, cta } = window.OC;
+        chrome({ option: "A", otherOption: "B", otherHref: "../option-b/work.html" });
+        document.getElementById("cta").outerHTML = cta();
+
+        const filters = { all: "All", ...CATEGORIES };
+        const bar = document.querySelector(".filters");
+        const count = document.getElementById("count");
+        const grid = document.getElementById("grid");
+
+        bar.insertAdjacentHTML(
+          "afterbegin",
+          Object.entries(filters)
+            .map(([key, label]) => `<button type="button" data-filter="${key}">${label}</button>`)
+            .join(""),
+        );
+
+        function render(key) {
+          const list = key === "all" ? PROJECTS : PROJECTS.filter((p) => p.category === key);
+          grid.innerHTML = list.map((p, i) => cardA(p, { eager: i < 2 })).join("");
+          count.textContent = `${list.length} ${list.length === 1 ? "project" : "projects"}`;
+          bar.querySelectorAll("button").forEach((b) => {
+            b.setAttribute("aria-pressed", String(b.dataset.filter === key));
+          });
+        }
+
+        bar.addEventListener("click", (e) => {
+          const button = e.target.closest("button[data-filter]");
+          if (!button) return;
+          const key = button.dataset.filter;
+          history.replaceState(null, "", key === "all" ? location.pathname : `#${key}`);
+          render(key);
+        });
+
+        const initial = location.hash.slice(1);
+        render(filters[initial] ? initial : "all");
+      })();
+    </script>
+  </body>
+</html>

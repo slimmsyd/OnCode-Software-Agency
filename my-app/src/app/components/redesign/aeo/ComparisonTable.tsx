@@ -62,7 +62,7 @@ export default function ComparisonTable() {
         </p>
 
         {/* Desktop table */}
-        <div className="hidden overflow-hidden rounded-2xl border border-black/10 md:block">
+        <div className="hidden overflow-hidden border border-black/10 md:block">
           <table className="w-full border-collapse text-left">
             <thead>
               <tr className="border-b border-black/10 bg-[#fafafa]">
@@ -126,7 +126,7 @@ export default function ComparisonTable() {
           {ROWS.map((row) => (
             <div
               key={row.feature}
-              className="rounded-2xl border border-black/10 p-5"
+              className="border border-black/10 p-5"
             >
               <p className="mb-4 text-[15px] font-semibold text-black">
                 {row.feature}
@@ -148,7 +148,7 @@ export default function ComparisonTable() {
                     {row.diy}
                   </dd>
                 </div>
-                <div className="rounded-xl bg-black px-4 py-3 text-white">
+                <div className="bg-black px-4 py-3 text-white">
                   <dt className="text-[12px] font-medium uppercase tracking-[0.06em] text-white/60">
                     OnCode
                   </dt>

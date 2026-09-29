@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { bookAudit } from "./lib";
+import { sharpButtonClass } from "./sharp-button";
 
 // Per the design handoff: ship without the stat row rather than with fake
 // numbers. Flip SHOW_STATS to true and fill STATS once real Tint Labs figures
@@ -34,7 +34,7 @@ export default function CaseStudy() {
     >
       <div className="mx-auto max-w-[1100px]">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
-          <div className="relative h-[420px] w-full overflow-hidden rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.08)] md:h-[560px]">
+          <div className="relative h-[420px] w-full overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.08)] md:h-[560px]">
             <Image
               src="/redesign/projects/tintlabs.jpeg"
               alt="Tint Labs build"
@@ -78,9 +78,9 @@ export default function CaseStudy() {
             </p>
             <button
               onClick={() => bookAudit("case_study")}
-              className="mt-1 inline-flex items-center gap-2 self-start text-[13px] font-medium uppercase tracking-[0.08em] text-black"
+              className={`mt-1 self-start ${sharpButtonClass}`}
             >
-              Find your leak, book the audit <ArrowRight size={14} />
+              Book the Audit
             </button>
           </div>
         </div>

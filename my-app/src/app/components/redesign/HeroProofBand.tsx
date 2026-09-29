@@ -30,7 +30,7 @@ export default function HeroProofBand() {
             <button
               type="button"
               onClick={() => window.open(GOOGLE_REVIEWS_URL, "_blank", "noopener,noreferrer")}
-              className="ml-1 cursor-pointer rounded-full border border-black/15 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.06em] text-[#111111] transition-colors duration-200 hover:border-black/30 hover:bg-black/[0.03]"
+              className="ml-1 inline-flex min-h-11 cursor-pointer items-center border border-black/10 bg-white px-3 text-[12px] font-semibold uppercase tracking-[0.14em] text-[#111111] transition-colors duration-200 hover:bg-black/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
             >
               See all
             </button>

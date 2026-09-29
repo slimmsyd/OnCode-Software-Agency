@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { sharpButtonClass, sharpButtonOnDarkClass } from "@/app/components/redesign/sharp-button";
 import RedesignNav from "@/app/components/redesign/RedesignNav";
 import RedesignFooter from "@/app/components/redesign/RedesignFooter";
 import BookAuditButton from "@/app/components/redesign/BookAuditButton";
@@ -27,7 +27,7 @@ const POS_FAQ = [
   },
   {
     q: "Is this the same as hiring a web design agency?",
-    a: "No. This is a custom payment and workflow layer on top of shop software—not a marketing website. OnCode is an AI automation and software firm: we build extensions, automations, sites, and apps when the operation needs them.",
+    a: "No. This is a custom payment and workflow layer on top of shop software, not a marketing website. OnCode is an AI automation and software firm: we build extensions, automations, sites, and apps when the operation needs them.",
   },
   {
     q: "What POS systems does this work with?",
@@ -188,10 +188,9 @@ export default function PosExtensionCaseStudyPage() {
 
       <main className="mx-auto max-w-[1100px] px-6 pt-28 pb-16 min-[701px]:px-10 min-[701px]:pt-36">
         <Link
-          href="/#work"
-          className="mb-10 inline-flex cursor-pointer items-center gap-2 text-[13px] font-medium uppercase tracking-[0.08em] text-black/50 transition-colors duration-200 hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+          href="/work"
+          className={`mb-10 ${sharpButtonClass}`}
         >
-          <ArrowLeft size={14} aria-hidden="true" />
           Back to work
         </Link>
 
@@ -214,7 +213,7 @@ export default function PosExtensionCaseStudyPage() {
             Built for a Fredericksburg-area auto repair shop stuck on a legacy
             POS. OnCode shipped a browser extension so the shop takes card and
             ACH on its own rails, sets its own payment criteria, and cuts the
-            cost of vendor payment lock-in—and the same pattern works for shops
+            cost of vendor payment lock-in. The same pattern works for shops
             beyond the DMV.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
@@ -229,7 +228,7 @@ export default function PosExtensionCaseStudyPage() {
             ].map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-black/10 px-3 py-1 text-[12px] font-medium tracking-wide text-[#4b5563]"
+                className="border border-black/10 px-3 py-1 text-[12px] font-medium tracking-wide text-[#4b5563]"
               >
                 {tag}
               </span>
@@ -239,7 +238,7 @@ export default function PosExtensionCaseStudyPage() {
 
         <section
           aria-labelledby="location-heading"
-          className="mb-16 rounded-2xl border border-black/10 bg-[#fafafa] px-6 py-8 md:px-8"
+          className="mb-16 border border-black/10 bg-[#fafafa] px-6 py-8 md:px-8"
         >
           <p className="mb-3 text-[14px] font-light uppercase tracking-[0.05em] text-black/50">
             Where this ran
@@ -256,7 +255,7 @@ export default function PosExtensionCaseStudyPage() {
                 Location
               </dt>
               <dd className="text-[15px] leading-relaxed text-[#4b5563]">
-                Fredericksburg area, Virginia — OnCode&apos;s home market in
+                Fredericksburg area, Virginia. OnCode&apos;s home market in
                 the DMV.
               </dd>
             </div>
@@ -291,7 +290,7 @@ export default function PosExtensionCaseStudyPage() {
           >
             POS Pay: payments owned by the shop, not the POS vendor.
           </h2>
-          <figure className="overflow-hidden rounded-2xl border border-black/10 bg-[#f8f8f8] shadow-[0_20px_50px_-24px_rgba(0,0,0,0.25)]">
+          <figure className="overflow-hidden border border-black/10 bg-[#f8f8f8] shadow-[0_20px_50px_-24px_rgba(0,0,0,0.25)]">
             <Image
               src="/redesign/projects/pos-pay-extension.png"
               alt="POS Pay extension UI showing Tekmetric connection status, today's collected total, and Card or ACH payment options"
@@ -321,8 +320,8 @@ export default function PosExtensionCaseStudyPage() {
               shop.
             </h2>
             <p className="max-w-[640px] text-[17px] leading-[1.65] text-[#4b5563]">
-              For this Fredericksburg-area repair shop—and for many operators
-              on the same stack—day-to-day ops run on a legacy point-of-sale and
+              For this Fredericksburg-area repair shop, and for many operators
+              on the same stack, day-to-day ops run on a legacy point-of-sale and
               shop management system. Leaving that stack was not realistic.
               Staying on it meant payments, fees, and payment rules were still
               dictated by the vendor. They needed a way to keep the system staff
@@ -372,7 +371,7 @@ export default function PosExtensionCaseStudyPage() {
               ].map((item) => (
                 <li
                   key={item.title}
-                  className="rounded-2xl border border-black/10 px-5 py-6"
+                  className="border border-black/10 px-5 py-6"
                 >
                   <h3 className="mb-2 text-[17px] font-semibold tracking-[-0.01em] text-black">
                     {item.title}
@@ -401,7 +400,7 @@ export default function PosExtensionCaseStudyPage() {
               payments through a path it controls. That shift reduces payment
               cost, opens room for shop-defined payment rules, and avoids the
               slow bleed of full vendor lock-in. For the businesses running the
-              extension—including this Fredericksburg-area operator—the
+              extension, including this Fredericksburg-area operator, the
               practical outcome is thousands of dollars kept instead of lost to
               a payment stack they never chose on purpose.
             </p>
@@ -462,7 +461,7 @@ export default function PosExtensionCaseStudyPage() {
           </ul>
         </section>
 
-        <section className="rounded-2xl bg-[#0a0a0a] px-8 py-12 text-white md:px-12 md:py-14">
+        <section className="bg-[#0a0a0a] px-8 py-12 text-white md:px-12 md:py-14">
           <p className="mb-3 text-[12px] font-medium uppercase tracking-[0.08em] text-white/50">
             Next step
           </p>
@@ -470,18 +469,18 @@ export default function PosExtensionCaseStudyPage() {
             Stuck inside a system that owns your payments?
           </h2>
           <p className="mb-8 max-w-[480px] text-[16px] leading-[1.6] text-white/65">
-            Whether you&apos;re in Fredericksburg, the wider DMV, or remote—we
+            Whether you&apos;re in Fredericksburg, the wider DMV, or remote, we
             build the layer on top: extensions, payment flows, and workflows
             that keep your ops stack and give you back control of cost and
             criteria.
           </p>
           <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-            <BookAuditButton source="pos_extension_case_study" />
+            <BookAuditButton source="pos_extension_case_study" tone="dark" />
             <Link
-              href="/#work"
-              className="inline-flex cursor-pointer items-center gap-2 text-[13px] font-medium uppercase tracking-[0.08em] text-white/80 transition-colors duration-200 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0a0a]"
+              href="/work"
+              className={sharpButtonOnDarkClass}
             >
-              More selected work <ArrowRight size={14} aria-hidden="true" />
+              More selected work
             </Link>
           </div>
         </section>

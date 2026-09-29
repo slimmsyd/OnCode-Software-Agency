@@ -100,14 +100,6 @@ const works: Work[] = [
     package: "Web3 Development Package"
   },
   {
-    title: "Gliddy",
-    description: "We built Gliddy from the ground up - first as a React web app, then converted it into a fully native iOS and Android mobile application using React Native. The platform connects bartenders and users, with features like profiles, QR codes, notifications, and event booking.",
-    image: "/works/gliddy.png", // Update with actual image path
-
-    package: "Mobile Development Package"
-  },
-  
-  {
     title: "Preeminent Professional Services",
     description: "A Discovery site build for Facilitimes Management Company",
     image: "/works/PM.png", // Update with your actual image path

@@ -1,0 +1,337 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap");
+
+:root {
+  --ink: #111111;
+  --body: #4b5563;
+  --muted: #6b7280;
+  --line: rgba(17, 17, 17, 0.1);
+  --line-strong: rgba(17, 17, 17, 0.22);
+  --surface: #f3f4f6;
+  --hover: #f7f7f8;
+  --paper: #ffffff;
+
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+  --s8: 64px;
+  --s9: 96px;
+  --s10: 128px;
+
+  --fast: 150ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --max: 1200px;
+  --nav-h: 64px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--nav-h) + var(--s7));
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-inline: var(--s5);
+}
+
+@media (min-width: 768px) {
+  .wrap {
+    padding-inline: var(--s7);
+  }
+}
+
+main {
+  padding-top: calc(var(--nav-h) + var(--s9));
+}
+
+/* Arrows nudge on hover to confirm the target is live. */
+.arrow {
+  flex: none;
+  transition: transform var(--fast) var(--ease-out);
+}
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  font-weight: 500;
+}
+
+.link-arrow:hover .arrow {
+  transform: translateX(3px);
+}
+
+.link-arrow:hover .arrow--back {
+  transform: translateX(-3px);
+}
+
+.link-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--line-strong);
+  text-underline-offset: 4px;
+  transition: text-decoration-color var(--fast) ease-out;
+}
+
+.link-underline:hover {
+  text-decoration-color: currentColor;
+}
+
+.ext {
+  margin-left: 2px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    opacity var(--fast) ease-out,
+    transform var(--fast) ease-out;
+}
+
+.btn:hover {
+  opacity: 0.86;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Navigation: same compact pill as the live inner pages. */
+.nav {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  padding: var(--s3) var(--s4);
+}
+
+.nav__bar {
+  max-width: var(--max);
+  height: var(--nav-h);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: var(--s6);
+  padding: 0 var(--s2) 0 var(--s5);
+  background: var(--paper);
+  border-radius: 999px;
+  box-shadow:
+    0 0 0 1px var(--line),
+    0 1px 2px rgba(17, 17, 17, 0.04),
+    0 8px 30px rgba(17, 17, 17, 0.06);
+}
+
+.nav__logo img {
+  height: 24px;
+  width: auto;
+}
+
+.nav__links {
+  display: none;
+  gap: var(--s5);
+  margin-right: auto;
+}
+
+.nav__links a {
+  position: relative;
+  padding: var(--s2) var(--s1);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--body);
+  transition: color var(--fast) ease-out;
+}
+
+.nav__links a:hover,
+.nav__links a[aria-current="page"] {
+  color: var(--ink);
+}
+
+.nav__links a[aria-current="page"]::after {
+  content: "";
+  position: absolute;
+  left: var(--s1);
+  right: var(--s1);
+  bottom: 2px;
+  height: 1.5px;
+  background: currentColor;
+}
+
+.nav__work-mobile {
+  margin-left: auto;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+  .nav__links {
+    display: flex;
+  }
+
+  .nav__work-mobile {
+    display: none;
+  }
+}
+
+.footer {
+  margin-top: var(--s10);
+  border-top: 1px solid var(--line);
+  padding: var(--s7) 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s4) var(--s6);
+  justify-content: space-between;
+}
+
+/* CTA band shared by both options, so the comparison is about the flow. */
+.cta {
+  margin-top: var(--s10);
+  padding-top: var(--s8);
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: var(--s5);
+  justify-items: start;
+}
+
+.cta h2 {
+  font-size: clamp(28px, 3.4vw, 40px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.cta p {
+  max-width: 48ch;
+  color: var(--body);
+  font-size: 17px;
+}
+
+/* Mockup switcher: tooling chrome, not part of the design. */
+.mock-switch {
+  position: fixed;
+  left: var(--s4);
+  bottom: var(--s4);
+  z-index: 60;
+  display: flex;
+  gap: var(--s3);
+  align-items: center;
+  padding: var(--s2) var(--s4);
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 13px;
+  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.18);
+}
+
+.mock-switch a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}

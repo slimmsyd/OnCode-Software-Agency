@@ -43,7 +43,7 @@ export default function ResourceCoverPreview({
         onClick={() => setOpen(true)}
         aria-label={`Preview ${title} PDF`}
         aria-haspopup="dialog"
-        className="group relative h-[336px] w-full max-w-[320px] cursor-pointer overflow-hidden rounded-2xl border border-black/[0.12] bg-white transition-[border-color] duration-200 hover:border-black/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 md:h-[336px] md:w-[260px] md:max-w-none"
+        className="group relative h-[336px] w-full max-w-[320px] cursor-pointer overflow-hidden border border-black/[0.12] bg-white transition-[border-color] duration-200 hover:border-black/25 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 md:h-[336px] md:w-[260px] md:max-w-none"
       >
         <Image
           src={src}
@@ -56,7 +56,7 @@ export default function ResourceCoverPreview({
           aria-hidden
           className="pointer-events-none absolute inset-0 flex items-end justify-center bg-gradient-to-t from-black/40 via-transparent to-transparent pb-4 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
         >
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-[12px] font-medium text-black">
+          <span className="inline-flex items-center gap-1.5 border border-black/10 bg-white/95 px-3 py-1.5 text-[12px] font-medium text-black">
             <ZoomIn size={14} />
             Preview
           </span>
@@ -88,12 +88,12 @@ export default function ResourceCoverPreview({
               type="button"
               onClick={close}
               aria-label="Close preview"
-              className="absolute -right-1 -top-11 z-20 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-black transition-opacity duration-200 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black/70 sm:-right-2 sm:-top-12"
+              className="absolute -right-1 -top-11 z-20 flex h-10 w-10 cursor-pointer items-center justify-center border border-black/10 bg-white text-black transition-colors duration-200 hover:bg-black/[0.04] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black sm:-right-2 sm:-top-12"
             >
               <X size={18} aria-hidden />
             </button>
 
-            <div className="flex max-h-[88vh] w-full flex-col overflow-hidden rounded-2xl border border-black/[0.12] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
+            <div className="flex max-h-[88vh] w-full flex-col overflow-hidden border border-black/[0.12] bg-white shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
               <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain">
                 <Image
                   src={src}

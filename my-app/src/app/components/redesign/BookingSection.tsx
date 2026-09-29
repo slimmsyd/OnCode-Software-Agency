@@ -126,7 +126,7 @@ export default function BookingSection() {
           style={{
             minHeight: 640,
             border: "0.5px solid rgba(0,0,0,0.12)",
-            borderRadius: 16,
+            borderRadius: 0,
             overflow: "hidden",
             background: "#ffffff",
             boxShadow: "0 8px 30px rgba(0,0,0,0.06)",

@@ -25,7 +25,7 @@ export default function ReviewCard({
   return (
     <figure
       className={cn(
-        "relative overflow-hidden rounded-2xl border p-6 transition-all duration-300",
+        "relative overflow-hidden border p-6 transition-all duration-300",
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]",
         className
@@ -33,7 +33,7 @@ export default function ReviewCard({
     >
       <div className="flex flex-row items-center gap-3">
         <div
-          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gray-900 text-sm font-bold text-white"
+          className="flex h-10 w-10 shrink-0 items-center justify-center bg-gray-900 text-sm font-bold text-white"
           aria-hidden
         >
           {name.charAt(0)}

@@ -41,7 +41,7 @@ export default function Process() {
           const StepIcon = s.Icon;
           return (
             <div key={s.title} className="flex items-start gap-8">
-              <div className="z-[1] grid h-[50px] w-[50px] flex-shrink-0 place-items-center rounded-full bg-white text-[#4b5563] shadow-[0_4px_12px_rgba(0,0,0,0.06)]">
+              <div className="z-[1] grid h-[50px] w-[50px] flex-shrink-0 place-items-center border border-black/10 bg-white text-[#4b5563]">
                 <StepIcon size={22} />
               </div>
               <div>
