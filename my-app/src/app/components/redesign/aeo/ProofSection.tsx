@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { bookAudit } from "../lib";
 import { sharpButtonClass } from "../sharp-button";
 
@@ -28,7 +29,11 @@ export default function ProofSection() {
         </h2>
 
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
-          <div className="relative h-[360px] w-full overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.08)] md:h-[480px]">
+          <Link
+            href="/work/tint-labs"
+            className="relative block h-[360px] w-full overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.08)] md:h-[480px]"
+            aria-label="Read the Tint Labs case study"
+          >
             <Image
               src="/redesign/projects/tintlabs.jpeg"
               alt="Tint Labs automation build by OnCode"
@@ -36,7 +41,7 @@ export default function ProofSection() {
               sizes="(max-width: 768px) 100vw, 550px"
               className="object-cover"
             />
-          </div>
+          </Link>
           <div className="flex flex-col gap-5">
             <p className="text-[14px] font-light uppercase tracking-[0.05em] text-black/50">
               Case study
@@ -50,7 +55,12 @@ export default function ProofSection() {
                 letterSpacing: "-0.02em",
               }}
             >
-              Tint Labs
+              <Link
+                href="/work/tint-labs"
+                className="text-inherit no-underline transition-colors duration-200 hover:text-black/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+              >
+                Tint Labs
+              </Link>
             </h3>
             <p className="text-[17px] leading-[1.65] text-[#4b5563]">
               <strong className="font-semibold text-black">The leak:</strong>{" "}
@@ -69,13 +79,16 @@ export default function ProofSection() {
               labeled, and answerable from one place, nights and weekends
               included.
             </p>
-            <button
-              type="button"
-              onClick={() => bookAudit("aeo_consultant_proof")}
+            <a
+              href="/#book"
+              onClick={(event) => {
+                event.preventDefault();
+                bookAudit("aeo_consultant_proof");
+              }}
               className={`mt-1 self-start ${sharpButtonClass}`}
             >
               Book the Audit
-            </button>
+            </a>
           </div>
         </div>
       </div>

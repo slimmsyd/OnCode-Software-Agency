@@ -65,12 +65,16 @@ export default function StickyAuditBar() {
             Two-week audit. Fee credits to your build.
           </p>
           <div className="flex shrink-0 items-center gap-2">
-            <button
-              onClick={() => bookAudit("sticky_bar")}
+            <a
+              href="/#book"
+              onClick={(event) => {
+                event.preventDefault();
+                bookAudit("sticky_bar");
+              }}
               className={sharpButtonClass}
             >
               Book the Audit
-            </button>
+            </a>
             <button
               onClick={dismiss}
               aria-label="Dismiss sticky call to action"

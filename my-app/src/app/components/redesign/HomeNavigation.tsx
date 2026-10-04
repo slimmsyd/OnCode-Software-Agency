@@ -116,20 +116,28 @@ export default function HomeNavigation({ variant = "home" }: HomeNavigationProps
             {NAV_ITEMS.map((it) =>
               it.children ? (
                 <div key={it.id} ref={resourcesRef} className="relative">
-                  <button
-                    type="button"
-                    aria-expanded={resourcesOpen}
-                    aria-haspopup="menu"
-                    onClick={() => setResourcesOpen((value) => !value)}
-                    className="inline-flex items-center gap-1 px-1 py-2 text-[15px] font-medium text-[#4b5563] transition-colors duration-200 hover:text-black"
-                  >
-                    {it.label}
-                    <ChevronDown
-                      size={14}
-                      aria-hidden
-                      className={`transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`}
-                    />
-                  </button>
+                  <div className="inline-flex items-center gap-0.5 px-1 py-2">
+                    <Link
+                      href="/resources"
+                      className="text-[15px] font-medium text-[#4b5563] transition-colors duration-200 hover:text-black"
+                    >
+                      {it.label}
+                    </Link>
+                    <button
+                      type="button"
+                      aria-expanded={resourcesOpen}
+                      aria-haspopup="menu"
+                      aria-label="Open resources menu"
+                      onClick={() => setResourcesOpen((value) => !value)}
+                      className="inline-flex items-center text-[#4b5563] transition-colors duration-200 hover:text-black"
+                    >
+                      <ChevronDown
+                        size={14}
+                        aria-hidden
+                        className={`transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`}
+                      />
+                    </button>
+                  </div>
                   {resourcesOpen && (
                     <div
                       role="menu"
@@ -179,12 +187,16 @@ export default function HomeNavigation({ variant = "home" }: HomeNavigationProps
           </button>
         </div>
 
-        <button
-          onClick={() => bookAudit("nav")}
+        <a
+          href="/#book"
+          onClick={(event) => {
+            event.preventDefault();
+            bookAudit("nav");
+          }}
           className={`ml-3 shrink-0 ${sharpButtonClass}`}
         >
           Book the Audit
-        </button>
+        </a>
       </div>
 
       {open && (
@@ -239,12 +251,16 @@ export default function HomeNavigation({ variant = "home" }: HomeNavigationProps
             )}
           </div>
           <div className="mb-12 mt-auto">
-            <button
-              onClick={() => bookAudit("nav")}
+            <a
+              href="/#book"
+              onClick={(event) => {
+                event.preventDefault();
+                bookAudit("nav");
+              }}
               className={`w-full ${sharpButtonClass}`}
             >
               Book the Audit
-            </button>
+            </a>
           </div>
         </div>
       )}

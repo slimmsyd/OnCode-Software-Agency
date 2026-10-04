@@ -25,6 +25,27 @@ export default function RedesignFooter() {
         </p>
 
         <Link
+          href="/work"
+          className="w-fit cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+        >
+          Work
+        </Link>
+
+        <Link
+          href="/resources"
+          className="w-fit cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+        >
+          Resources
+        </Link>
+
+        <Link
+          href="/contact"
+          className="w-fit cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+        >
+          Start a project
+        </Link>
+
+        <Link
           href="/ai-automation-local-business"
           className="w-fit cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
         >

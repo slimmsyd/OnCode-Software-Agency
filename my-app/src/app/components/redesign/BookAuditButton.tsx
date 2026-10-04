@@ -1,5 +1,6 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import { bookAudit } from "./lib";
 import { sharpButtonClass, sharpButtonOnDarkClass } from "./sharp-button";
 
@@ -16,15 +17,22 @@ export default function BookAuditButton({
   source = "book_audit_button",
   tone = "light",
 }: BookAuditButtonProps) {
-  const handleClick = onClick ?? (() => bookAudit(source));
+  function handleClick(event: MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault();
+    if (onClick) {
+      onClick();
+      return;
+    }
+    bookAudit(source);
+  }
 
   return (
-    <button
-      type="button"
+    <a
+      href="/#book"
       onClick={handleClick}
       className={tone === "dark" ? sharpButtonOnDarkClass : sharpButtonClass}
     >
       {label}
-    </button>
+    </a>
   );
 }

@@ -169,12 +169,16 @@ export default function AuditSection() {
             </div>
 
             <div className="flex flex-col gap-3">
-              <button
-                onClick={() => bookAudit("audit_section")}
+              <a
+                href="/#book"
+                onClick={(event) => {
+                  event.preventDefault();
+                  bookAudit("audit_section");
+                }}
                 className={sharpButtonOnDarkClass}
               >
                 Book the Audit
-              </button>
+              </a>
               <span style={{ fontSize: 12, color: muted }}>
                 30 minutes. We scope the audit on the call.
               </span>

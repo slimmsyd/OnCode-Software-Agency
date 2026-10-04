@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { bookAudit } from "./lib";
 import { sharpButtonClass } from "./sharp-button";
 
@@ -34,7 +35,11 @@ export default function CaseStudy() {
     >
       <div className="mx-auto max-w-[1100px]">
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-16">
-          <div className="relative h-[420px] w-full overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.08)] md:h-[560px]">
+          <Link
+            href="/work/tint-labs"
+            className="relative block h-[420px] w-full overflow-hidden shadow-[0_8px_24px_rgba(0,0,0,0.08)] md:h-[560px]"
+            aria-label="Read the Tint Labs case study"
+          >
             <Image
               src="/redesign/projects/tintlabs.jpeg"
               alt="Tint Labs build"
@@ -42,7 +47,7 @@ export default function CaseStudy() {
               sizes="(max-width: 768px) 100vw, 550px"
               className="object-cover"
             />
-          </div>
+          </Link>
           <div className="flex flex-col gap-5">
             <p className="text-[14px] font-light uppercase tracking-[0.05em] text-black/50">
               Case study
@@ -56,7 +61,12 @@ export default function CaseStudy() {
                 letterSpacing: "-0.02em",
               }}
             >
-              Tint Labs
+              <Link
+                href="/work/tint-labs"
+                className="text-inherit no-underline transition-colors duration-200 hover:text-black/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+              >
+                Tint Labs
+              </Link>
             </h2>
             <p className="text-[17px] leading-[1.65] text-[#4b5563]">
               <strong className="font-semibold text-black">The leak:</strong>{" "}
@@ -76,12 +86,22 @@ export default function CaseStudy() {
               lead flow nearly doubled to 18 a week. Every inquiry logged,
               labeled, and answered from one place, nights, weekends, all of it.
             </p>
-            <button
-              onClick={() => bookAudit("case_study")}
+            <Link
+              href="/work/tint-labs"
+              className="text-[15px] font-medium text-[#111] underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+            >
+              Read the Tint Labs case study
+            </Link>
+            <a
+              href="/#book"
+              onClick={(event) => {
+                event.preventDefault();
+                bookAudit("case_study");
+              }}
               className={`mt-1 self-start ${sharpButtonClass}`}
             >
               Book the Audit
-            </button>
+            </a>
           </div>
         </div>
 

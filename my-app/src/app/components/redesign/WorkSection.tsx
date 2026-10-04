@@ -163,43 +163,29 @@ export default function WorkSection() {
               !isMobile && idle ? "scale-[0.94] opacity-45 grayscale" : ""
             } ${isActive ? "cursor-pointer" : ""}`;
 
-            const cardContent = (
-              <Image
-                src={p.media}
-                alt={p.title}
-                fill
-                sizes="(max-width: 768px) 80vw, 720px"
-                className={`pointer-events-none select-none ${
-                  p.mediaFit === "contain"
-                    ? "object-contain object-center p-4 md:p-6"
-                    : "object-cover"
-                }`}
-                draggable={false}
-              />
-            );
-
-            const setCardRef = (el: HTMLElement | null) => {
-              cardRefs.current[i] = el;
-            };
-
-            if (isActive) {
-              return (
-                <Link
-                  key={p.key}
-                  href={projectPath(p.key)}
-                  ref={setCardRef}
-                  aria-label={`Read project: ${p.title}`}
-                  className={cardClassName}
-                >
-                  {cardContent}
-                </Link>
-              );
-            }
-
             return (
-              <div key={p.key} ref={setCardRef} className={cardClassName}>
-                {cardContent}
-              </div>
+              <Link
+                key={p.key}
+                href={projectPath(p.key)}
+                ref={(el) => {
+                  cardRefs.current[i] = el;
+                }}
+                aria-label={`Read project: ${p.title}`}
+                className={cardClassName}
+              >
+                <Image
+                  src={p.media}
+                  alt={p.title}
+                  fill
+                  sizes="(max-width: 768px) 80vw, 720px"
+                  className={`pointer-events-none select-none ${
+                    p.mediaFit === "contain"
+                      ? "object-contain object-center p-4 md:p-6"
+                      : "object-cover"
+                  }`}
+                  draggable={false}
+                />
+              </Link>
             );
           })}
         </div>

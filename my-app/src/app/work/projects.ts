@@ -15,6 +15,8 @@ export interface WorkProject {
   liveUrl?: string;
   mediaFit?: "cover" | "contain";
   story?: WorkStory;
+  /** Case-study keys shown in the Related work row on this project's page. */
+  relatedKeys?: string[];
 }
 
 export const WORK_PROJECTS: WorkProject[] = [
@@ -91,6 +93,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     description:
       "Full web application for a DMV mobile entertainment business: CRM setup, booking automation, event scheduling, and reconciliation, plus end-to-end automation design and development built around their business outcomes. We operated as the full-stack engineer throughout.",
     liveUrl: "https://www.hoops2udmv.com/",
+    relatedKeys: ["mcbride", "tint-labs"],
     story: {
       what: "The site and booking system for Hoops 2u DMV, a mobile entertainment business.",
       problem:
@@ -107,6 +110,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     description:
       "Full website design, development, and hosting for a DMV-based live entertainment company serving military families and communities with a video-led site, event listings, artist showcases, and booking inquiry capture.",
     liveUrl: "https://www.patriotmediausa.com/",
+    relatedKeys: ["new-world-television"],
     story: {
       what: "The website for Patriot Entertainment & Media Group, a live entertainment company in the DMV.",
       problem:
@@ -122,6 +126,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     kind: "Digital Infrastructure + CRM",
     description:
       "Full digital infrastructure for a 220+ member economic community with website development, hosting, and CRM setup to power membership, engagement, and growth.",
+    relatedKeys: ["hrr-foundation"],
     story: {
       what: "The website and CRM for Street Economics, a community of more than 220 members.",
       problem:
@@ -200,6 +205,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     kind: "Custom Website Design + Development",
     description:
       "Custom website design and development with booking automations and CRM setup for a media network platform.",
+    relatedKeys: ["patriot-media"],
     story: {
       what: "The website for New World Television, a media network.",
       problem:
@@ -215,6 +221,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     kind: "Website + Booking",
     description:
       "Website, booking, and lead capture for a car-tinting business featured in our case study.",
+    relatedKeys: ["hoops-2u-dmv", "mcbride"],
     story: {
       what: "The website and booking system for Tint Labs, a car-tinting shop.",
       problem:
@@ -230,6 +237,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     kind: "CRM Design + Development",
     description:
       "Full CRM designed and developed for a healthcare-access foundation managing prevention, early intervention, mentorship, and community-based care programs.",
+    relatedKeys: ["street-economics"],
     story: {
       what: "The CRM for HRR Foundation, which runs prevention, mentorship, and community care programs.",
       problem:
@@ -245,6 +253,7 @@ export const WORK_PROJECTS: WorkProject[] = [
     kind: "Booking Platform",
     description:
       "Booking platform with Stripe payments, Google Calendar sync, and an admin dashboard for session management.",
+    relatedKeys: ["hoops-2u-dmv", "tint-labs"],
     story: {
       what: "The booking site for McBride Basketball Academy.",
       problem:

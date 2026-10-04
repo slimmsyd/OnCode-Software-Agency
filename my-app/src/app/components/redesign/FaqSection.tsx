@@ -99,35 +99,34 @@ export default function FaqSection() {
                     +
                   </span>
                 </button>
-                {open && (
-                  <div
-                    id={`faq-answer-${i}`}
-                    role="region"
-                    style={{ padding: "0 48px 26px 8px" }}
+                <div
+                  id={`faq-answer-${i}`}
+                  role="region"
+                  hidden={!open}
+                  style={{ padding: open ? "0 48px 26px 8px" : undefined }}
+                >
+                  <p
+                    style={{
+                      margin: 0,
+                      fontSize: 15,
+                      lineHeight: 1.65,
+                      color: "#4b5563",
+                      maxWidth: 600,
+                    }}
                   >
-                    <p
-                      style={{
-                        margin: 0,
-                        fontSize: 15,
-                        lineHeight: 1.65,
-                        color: "#4b5563",
-                        maxWidth: 600,
-                      }}
-                    >
-                      {item.a}
+                    {item.a}
+                  </p>
+                  {item.link && (
+                    <p style={{ margin: "12px 0 0", maxWidth: 600 }}>
+                      <Link
+                        href={item.link.href}
+                        className="cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                      >
+                        {item.link.label}
+                      </Link>
                     </p>
-                    {item.link && (
-                      <p style={{ margin: "12px 0 0", maxWidth: 600 }}>
-                        <Link
-                          href={item.link.href}
-                          className="cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
-                        >
-                          {item.link.label}
-                        </Link>
-                      </p>
-                    )}
-                  </div>
-                )}
+                  )}
+                </div>
               </div>
             );
           })}

@@ -46,6 +46,26 @@ const PROOF = [
     title: "Tint Labs",
     detail: "A local tint shop's site books the job and catches every lead. We built it, and we still maintain it.",
   },
+  {
+    href: "/work/hoops-2u-dmv",
+    title: "Hoops 2u DMV",
+    detail: "Events, inquiries, and the schedule lived apart. The site, CRM, and booking now run as one stack.",
+  },
+  {
+    href: "/work/phaseworks",
+    title: "PhaseWorks Engineering",
+    detail: "Prospects see the firm's work, and new inquiries land in the same CRM as live projects.",
+  },
+  {
+    href: "/work/mcbride",
+    title: "McBride Basketball Academy",
+    detail: "Parents book sessions online. Payments, calendar, and admin stay in one place.",
+  },
+  {
+    href: "/work/hrr-foundation",
+    title: "HRR Foundation",
+    detail: "Programs stay visible to the people they serve, and incoming interest lands in one CRM.",
+  },
 ];
 
 const CITIES = [

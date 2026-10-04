@@ -41,6 +41,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
   const previous = WORK_PROJECTS[index - 1];
   const next = WORK_PROJECTS[index + 1];
+  const related = (project.relatedKeys ?? [])
+    .map((key) => getProject(key))
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
   const review = project.story?.reviewName
     ? reviews.find((item) => item.name === project.story?.reviewName)
     : undefined;
@@ -121,6 +124,29 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </a>
           ) : null}
         </div>
+
+        {related.length > 0 ? (
+          <section
+            aria-label="Related work"
+            className="mt-20 border-t border-black/10 pt-8"
+          >
+            <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.14em] text-[#767676]">
+              Related work
+            </p>
+            <ul className="flex flex-col gap-3">
+              {related.map((item) => (
+                <li key={item.key}>
+                  <Link
+                    href={projectPath(item.key)}
+                    className="inline-flex min-h-11 cursor-pointer items-center text-[15px] font-semibold text-[#111] no-underline underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+                  >
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
         <nav
           aria-label="Other projects"
