@@ -20,8 +20,8 @@ const LEAKS = [
 const STEPS = [
   {
     mark: "01",
-    title: "Diagnostic",
-    detail: "A paid audit of where time and money leave. You keep the map.",
+    title: "Look first",
+    detail: "We map where time and money leave. You keep the map.",
   },
   {
     mark: "02",
@@ -94,8 +94,8 @@ export default function LocalBusinessPage() {
           </h1>
           <p className="mt-6 max-w-[42rem] text-[18px] font-light leading-[1.65]">
             OnCode finds the work your shop, office, or field team repeats, then
-            builds the system that does it. Websites, software, and AI
-            automation, starting with a paid diagnostic.
+            builds the system that does it: websites, software, and AI
+            automation.
           </p>
           <p className="mt-3 max-w-[40rem] text-[16px] font-light leading-[1.6] text-[#6b7280]">
             For owners in the DMV who need the operation to run without one
@@ -200,8 +200,7 @@ export default function LocalBusinessPage() {
             The consultant page has the full offer.
           </h2>
           <p className="mx-auto mt-3 max-w-[36rem] text-[16px] font-light leading-[1.6] text-white/70">
-            Scope, examples, and how the diagnostic is booked live on the AI
-            automation consultant page.
+            Scope and examples live on the AI automation consultant page.
           </p>
           <Link
             href="/ai-automation-consultant"

@@ -18,7 +18,7 @@ export default function FinalCta() {
             letterSpacing: "-0.02em",
           }}
         >
-          Start with the Diagnostic Audit
+          Tell us where the time goes
         </h2>
         <p
           className="mx-auto mb-8 font-light text-[#6b7280]"

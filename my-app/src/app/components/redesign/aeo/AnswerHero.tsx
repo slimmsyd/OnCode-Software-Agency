@@ -34,9 +34,8 @@ export default function AnswerHero() {
         >
           OnCode is an AI automation firm that builds custom, output-driven
           automations for businesses with real operations to protect: the kind
-          that save hours, cut costs, and grow volume. We start with a paid
-          diagnostic audit, then deploy one workflow at a time so you see
-          measurable results before scaling.
+          that save hours, cut costs, and grow volume. We deploy one workflow
+          at a time so you see measurable results before scaling.
         </p>
         <p
           className="mb-10 font-light text-[#6b7280]"

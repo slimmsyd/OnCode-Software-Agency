@@ -7,7 +7,7 @@ import { OG_IMAGE, SCHEMA_LOGO, SITE_URL } from "./seo";
 
 const BASE_URL = SITE_URL;
 const DESCRIPTION =
-  "OnCode is an AI automation firm and software agency. We find where businesses leak time and money, then build custom automations, software, and sites — starting with a paid diagnostic audit and one workflow at a time.";
+  "OnCode is a US AI and custom software agency. We build websites, web applications, custom software, and AI workflow automation for businesses with real operations, and we manage what we ship after launch.";
 
 /** City / metro nodes machines can resolve for local + DMV intent. */
 function city(
@@ -94,7 +94,7 @@ const KNOWS_ABOUT = [
   "AI automation agency",
   "custom software development",
   "workflow automation",
-  "diagnostic AI audit",
+  "web application development",
   "lead follow-up automation",
   "missed-call text-back",
   "DMV AI automation",
@@ -143,11 +143,11 @@ export function buildOrganizationSchema(
     },
     areaServed: AREA_SERVED,
     serviceType: [
-      "AI automation consulting",
-      "AI automation agency",
-      "Business process automation",
       "Custom software development",
       "Web application development",
+      "Website development",
+      "AI automation",
+      "Business process automation",
     ],
     knowsAbout: KNOWS_ABOUT,
     sameAs: SAME_AS,
@@ -174,9 +174,9 @@ export function buildOrganizationSchema(
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Diagnostic Audit",
+            name: "Digital Presence",
             description:
-              "Paid diagnostic that maps time and money leaks, then prioritizes automations and systems to fix them.",
+              "Sites that get a business found and chosen, wired to capture leads.",
             provider: { "@id": `${BASE_URL}/#organization` },
             areaServed: AREA_SERVED,
           },
@@ -185,9 +185,31 @@ export function buildOrganizationSchema(
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "AI Automation Build",
+            name: "Web Applications",
             description:
-              "Custom, output-driven automations shipped one workflow at a time: lead follow-up, missed-call text-back, intake, invoicing, reporting.",
+              "Booking, payments, client portals, and admin tools shaped to how the business already operates.",
+            provider: { "@id": `${BASE_URL}/#organization` },
+            areaServed: AREA_SERVED,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Custom Software",
+            description:
+              "Software built to the exact process, owned by the client, and managed after launch.",
+            provider: { "@id": `${BASE_URL}/#organization` },
+            areaServed: AREA_SERVED,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "AI & Workflow Automation",
+            description:
+              "Custom automations shipped one workflow at a time: lead follow-up, missed-call text-back, intake, invoicing, reporting.",
             provider: { "@id": `${BASE_URL}/#organization` },
             areaServed: AREA_SERVED,
             serviceType: "AI automation",
@@ -197,9 +219,9 @@ export function buildOrganizationSchema(
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Custom Software & Web Applications",
+            name: "Scoped roadmap",
             description:
-              "Sites and software when operations need them, managed after launch.",
+              "When a build needs a map first, OnCode traces where time and money leak and ranks what to fix. That work credits against the build.",
             provider: { "@id": `${BASE_URL}/#organization` },
             areaServed: AREA_SERVED,
           },

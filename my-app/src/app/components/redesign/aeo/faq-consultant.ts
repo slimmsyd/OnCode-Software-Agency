@@ -10,11 +10,11 @@ export const CONSULTANT_FAQ: FaqItem[] = [
   },
   {
     q: "Is OnCode an AI automation agency?",
-    a: "Yes. OnCode is an AI automation agency and consulting firm. We diagnose operational leaks, then build custom automations and software one workflow at a time after a paid diagnostic audit — not a web-design shop that bolts on AI.",
+    a: "Yes. OnCode is an AI automation agency and consulting firm. We find operational leaks, then build custom automations and software one workflow at a time — not a web-design shop that bolts on AI.",
   },
   {
     q: "What workflows can you automate?",
-    a: "Lead follow-up, missed-call text-back, intake and scheduling, invoicing and reminders, and internal reporting. We also build custom workflows tailored to how your business actually operates. The diagnostic audit surfaces what is worth automating first.",
+    a: "Lead follow-up, missed-call text-back, intake and scheduling, invoicing and reminders, and internal reporting. We also build custom workflows tailored to how your business actually operates, starting with the one that pays for itself.",
   },
   {
     q: "Will I own the automations, documentation, and accounts?",
@@ -26,6 +26,6 @@ export const CONSULTANT_FAQ: FaqItem[] = [
   },
   {
     q: "What's a typical project size and timeline?",
-    a: "Audit first (about two weeks). First fix usually ships in weeks, not months. Scope grows only after the pilot pays for itself.",
+    a: "The first fix usually ships in weeks, not months. Scope grows only after the pilot pays for itself.",
   },
 ];

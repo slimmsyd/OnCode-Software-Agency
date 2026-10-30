@@ -27,7 +27,7 @@ export default function AuditSection() {
   return (
     <section
       id="audit"
-      data-screen-label="The AI Diagnostic Audit"
+      data-screen-label="Map before the build"
       className="px-6 py-28 text-white"
       style={{
         background: "#0a0a0a",
@@ -40,7 +40,7 @@ export default function AuditSection() {
           className="mb-6 text-[14px] font-light uppercase tracking-[0.05em]"
           style={{ color: muted }}
         >
-          Start here: the paid entry point
+          When you want a map first
         </p>
         <h2
           className="mb-5"
@@ -52,7 +52,7 @@ export default function AuditSection() {
             color: fg,
           }}
         >
-          The AI Diagnostic Audit
+          See the leaks before anyone builds.
         </h2>
         <p
           className="mb-16"
@@ -65,18 +65,17 @@ export default function AuditSection() {
             textWrap: "pretty",
           }}
         >
-          Two weeks. We find exactly where your business leaks time and money by
-          hand, put a dollar figure on each leak, and hand you a ranked plan to
-          seal them.
+          We find exactly where your business leaks time and money by hand, put
+          a dollar figure on each leak, and hand you a ranked plan to seal them.
         </p>
 
         <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 md:gap-16">
           <div className="flex flex-col gap-6">
             <p style={{ fontSize: 17, lineHeight: 1.65, color: body, margin: 0 }}>
               Every manual step your team repeats costs a little time and
-              accuracy. A few thousand times a year, it stops being little. The
-              audit maps how your business actually runs, prices every leak, and
-              hands you a ranked plan{" "}
+              accuracy. A few thousand times a year, it stops being little. We
+              map how your business actually runs, price every leak, and
+              hand you a ranked plan{" "}
               <strong style={{ color: fg, fontWeight: 600 }}>
                 before anyone spends a dollar building.
               </strong>
@@ -87,8 +86,8 @@ export default function AuditSection() {
                 The investment
               </h3>
               <p style={{ fontSize: 15, lineHeight: 1.6, color: body, margin: 0 }}>
-                Paid upfront, delivered in two weeks. Move into a build and the
-                full audit fee comes off the price. You are not paying twice.
+                A flat fee, agreed before we start. Move into a build and that
+                fee comes off the price. You are not paying twice.
               </p>
             </div>
           </div>
@@ -177,10 +176,10 @@ export default function AuditSection() {
                 }}
                 className={sharpButtonOnDarkClass}
               >
-                Book the Audit
+                Book a call
               </a>
               <span style={{ fontSize: 12, color: muted }}>
-                30 minutes. We scope the audit on the call.
+                30 minutes. We agree what the map covers.
               </span>
             </div>
           </div>

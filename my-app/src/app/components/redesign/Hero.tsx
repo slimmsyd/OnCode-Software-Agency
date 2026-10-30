@@ -99,7 +99,7 @@ export default function Hero() {
             OnCode finds where you leak time and money, then builds the systems that seal the leaks.
           </h1>
           <p
-            className="oc-fade-up d-400 mx-auto font-light text-black"
+            className="oc-fade-up d-400 mx-auto font-light italic text-black"
             style={{
               maxWidth: 720,
               fontSize: 18,
@@ -107,10 +107,14 @@ export default function Hero() {
               textWrap: "pretty",
             }}
           >
-            We are an AI automation firm for businesses with consistent revenue
-            and real operations to protect. We start with a paid Diagnostic
-            Audit, then build automation, software, and sites around how your
-            company actually works, and we manage them long after launch.
+            We design and deploy proprietary AI infrastructure for growing
+            companies. We start with a{" "}
+            <strong className="font-semibold not-italic">
+              Bottleneck Discovery & Goal-Factoring Roadmap
+            </strong>{" "}
+            to isolate the highest-ROI operational friction points, then deploy
+            automated routines and agentic workflows that your team actually
+            owns.
           </p>
         </div>
       </div>

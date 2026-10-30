@@ -48,7 +48,7 @@ export default function FaqSection() {
               textWrap: "pretty",
             }}
           >
-            Who we are, where we work, and what the audit asks of you. Anything
+            Who we are, where we work, and what a first look asks of you. Anything
             else, ask on the call.
           </p>
         </div>

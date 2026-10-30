@@ -87,7 +87,7 @@ export default function ProofSection() {
               }}
               className={`mt-1 self-start ${sharpButtonClass}`}
             >
-              Book the Audit
+              Book a call
             </a>
           </div>
         </div>

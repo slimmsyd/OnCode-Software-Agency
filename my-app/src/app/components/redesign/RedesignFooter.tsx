@@ -21,7 +21,7 @@ export default function RedesignFooter() {
       />
       <div className="mt-8 flex flex-col gap-6">
         <p className="text-[18px] text-black">
-          AI automation firm: diagnosed first, built right, managed after.
+          AI and custom software: built for the operation, managed after.
         </p>
 
         <Link

@@ -7,7 +7,7 @@ import { buildOpenGraph, OG_IMAGE } from "../lib/seo";
 
 const title = "Best AI Automation Consultant";
 const description =
-  "OnCode is an AI automation firm that builds custom, output-driven automations for businesses with real operations to protect. Start with a paid diagnostic audit, then ship one workflow at a time.";
+  "OnCode is an AI automation firm that builds custom, output-driven automations for businesses with real operations to protect. One workflow at a time, then sites and software when the operation needs them.";
 const url = "https://www.0ncode.com/ai-automation-consultant";
 
 export const metadata: Metadata = {

@@ -173,7 +173,7 @@ const caseStudySchema = {
         availability: "https://schema.org/InStock",
         priceCurrency: "USD",
         description:
-          "Custom build for repair shops; scoped after a diagnostic audit.",
+          "Custom build for repair shops, scoped to how the counter actually runs.",
       },
     },
   ],

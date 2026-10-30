@@ -6,10 +6,10 @@ const ROWS = [
     oncode: "Yes: we define success in numbers",
   },
   {
-    feature: "Starts with diagnostic audit",
+    feature: "Looks before it builds",
     agency: "Rarely",
     diy: "No",
-    oncode: "Yes: paid Diagnostic Audit",
+    oncode: "Yes: map the leaks, then build",
   },
   {
     feature: "One-workflow pilot",

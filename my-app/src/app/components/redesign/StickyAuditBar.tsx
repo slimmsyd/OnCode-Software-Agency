@@ -53,16 +53,16 @@ export default function StickyAuditBar() {
     <>
       <div
         role="region"
-        aria-label="Book audit call to action"
+        aria-label="Book a call"
         className="fixed inset-x-0 bottom-0 z-40 border-t border-black/10 bg-white/[0.92] px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] backdrop-blur-md motion-reduce:transition-none sm:px-6"
         style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
       >
         <div className="mx-auto flex max-w-[1100px] items-center justify-between gap-4">
           <p className="hidden text-[14px] font-light leading-snug text-[#4b5563] sm:block">
-            Find your leak. Two-week audit, fee credits to your build.
+            Find the leak, then we build the system.
           </p>
           <p className="text-[13px] font-light leading-snug text-[#4b5563] sm:hidden">
-            Two-week audit. Fee credits to your build.
+            Find the leak. Then we build.
           </p>
           <div className="flex shrink-0 items-center gap-2">
             <a
@@ -73,7 +73,7 @@ export default function StickyAuditBar() {
               }}
               className={sharpButtonClass}
             >
-              Book the Audit
+              Book a call
             </a>
             <button
               onClick={dismiss}

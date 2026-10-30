@@ -6,7 +6,7 @@ const STEPS = [
   {
     Icon: Search,
     title: "Diagnose",
-    body: "The audit. We map how your business actually runs, price every manual leak, and rank what is worth fixing, before anyone builds anything.",
+    body: "We map how your business actually runs, price every manual leak, and rank what is worth fixing, before anyone builds anything.",
   },
   {
     Icon: FileText,

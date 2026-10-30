@@ -12,7 +12,7 @@ interface BookAuditButtonProps {
 }
 
 export default function BookAuditButton({
-  label = "Book the Audit",
+  label = "Book a call",
   onClick,
   source = "book_audit_button",
   tone = "light",

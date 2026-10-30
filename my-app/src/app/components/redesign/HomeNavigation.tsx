@@ -26,8 +26,8 @@ const NAV_ITEMS: {
   href?: string;
   children?: typeof RESOURCE_LINKS;
 }[] = [
-  { label: "The Audit", id: "audit" },
   { label: "Services", id: "services" },
+  { label: "How we start", id: "audit" },
   { label: "Work", id: "work", href: "/work" },
   { label: "Resources", id: "resources", children: RESOURCE_LINKS },
   { label: "Process", id: "process" },
@@ -195,7 +195,7 @@ export default function HomeNavigation({ variant = "home" }: HomeNavigationProps
           }}
           className={`ml-3 shrink-0 ${sharpButtonClass}`}
         >
-          Book the Audit
+          Book a call
         </a>
       </div>
 
@@ -259,7 +259,7 @@ export default function HomeNavigation({ variant = "home" }: HomeNavigationProps
               }}
               className={`w-full ${sharpButtonClass}`}
             >
-              Book the Audit
+              Book a call
             </a>
           </div>
         </div>

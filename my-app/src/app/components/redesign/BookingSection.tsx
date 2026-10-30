@@ -6,8 +6,8 @@ import { trackFormSubmit } from "@/lib/analytics";
 
 const REASSURANCES = [
   "No prep needed. Come as you are.",
-  "Roadmap in your hands two weeks after we start.",
-  "The audit fee credits in full against any build.",
+  "You leave knowing what to fix first.",
+  "If we build next, the scoping fee comes off the price.",
 ];
 
 // Inline booking: replaces FinalCTA. Every "Book the Audit" CTA scrolls here,
@@ -47,7 +47,7 @@ export default function BookingSection() {
             className="text-[14px] font-light uppercase tracking-[0.05em]"
             style={{ margin: "0 0 20px", color: "rgba(0,0,0,0.5)" }}
           >
-            Start with the audit
+            Start with a conversation
           </p>
           <h2
             style={{
@@ -72,8 +72,8 @@ export default function BookingSection() {
             }}
           >
             Thirty minutes. We walk your operation at a high level and agree
-            what the audit covers. Two weeks later you know where the money
-            leaks and what to fix first.
+            what to look at first. You leave knowing where the money leaks and
+            what to fix first.
           </p>
 
           <div

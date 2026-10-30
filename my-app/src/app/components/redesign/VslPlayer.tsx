@@ -90,7 +90,7 @@ export default function VslPlayer({ className = "" }: VslPlayerProps) {
           preload="metadata"
           onPlay={handlePlayStart}
           onEnded={handleEnded}
-          aria-label="OnCode AI Diagnostic Audit video sales letter"
+          aria-label="OnCode intro video"
         >
           <source src="/redesign/vsl-enhanced.mp4" type="video/mp4" />
           Your browser does not support the video tag.

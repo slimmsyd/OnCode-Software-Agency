@@ -4,7 +4,7 @@ import { buildOpenGraph, OG_IMAGE, SITE_URL } from "../lib/seo";
 
 const title = "AI automation for local businesses";
 const description =
-  "OnCode builds AI automation for local businesses in Washington, Maryland, and Virginia. A paid diagnostic, then one workflow at a time.";
+  "OnCode builds AI automation, websites, and custom software for local businesses in Washington, Maryland, and Virginia. One workflow at a time.";
 const url = `${SITE_URL}/ai-automation-local-business`;
 
 export const metadata: Metadata = {

@@ -50,7 +50,7 @@ function FoundationBar() {
         onClick={() => scrollToId("audit")}
         className="inline-flex items-center gap-2 text-[13px] font-medium uppercase tracking-[0.08em] text-white"
       >
-        Which tier is yours? The audit tells you <ArrowRight size={14} />
+        Which tier is yours? Let&apos;s scope it <ArrowRight size={14} />
       </button>
     </div>
   );
@@ -83,8 +83,8 @@ export default function ServicesSection() {
           style={{ fontSize: 18, lineHeight: 1.6, maxWidth: 620, textWrap: "pretty" }}
         >
           Every engagement lands on one of these tiers, and every tier sits on
-          the same management foundation. The audit tells you which rung is
-          yours.
+          the same management foundation. A first conversation tells you which
+          rung is yours.
         </p>
 
         <div>
