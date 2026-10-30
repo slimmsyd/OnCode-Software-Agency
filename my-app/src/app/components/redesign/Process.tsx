@@ -6,22 +6,22 @@ const STEPS = [
   {
     Icon: Search,
     title: "Diagnose",
-    body: "We map how your business actually runs, price every manual leak, and rank what is worth fixing, before anyone builds anything.",
+    body: "The Bottleneck Discovery & Goal-Factoring Roadmap. We isolate the highest-ROI operational friction points and rank what is worth fixing, before anyone builds anything.",
   },
   {
     Icon: FileText,
     title: "Specification",
-    body: "We align the roadmap with your business model, define the problems to solve, and write a clear specification of the system, workflows, and outcomes.",
+    body: "We align that roadmap with your business model, define the friction points to remove, and write a clear specification of the automated routines, agentic workflows, and outcomes.",
   },
   {
     Icon: Bell,
     title: "Development",
-    body: "We build fast with modern frameworks and AI workflows, keeping you updated every step of the way.",
+    body: "We design and deploy the proprietary AI infrastructure, building the routines and workflows your team will own, and we keep you updated every step of the way.",
   },
   {
     Icon: Rocket,
     title: "Launch & Manage",
-    body: "We deploy, train your team, and move the system onto the management layer, so it stays running long after launch day.",
+    body: "We deploy, train your team, and move the system onto the management layer, so what they own stays running long after launch day.",
   },
 ];
 
