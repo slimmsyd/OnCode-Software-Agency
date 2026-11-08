@@ -15,7 +15,7 @@ const RESOURCE_LINKS = [
   },
   {
     href: "/ai-automation-local-business",
-    label: "AI for local businesses",
+    label: "AI for small businesses",
     detail: "How an engagement runs for shops and offices in the DMV.",
   },
 ];

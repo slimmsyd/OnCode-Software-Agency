@@ -90,7 +90,7 @@ export default function LocalBusinessPage() {
             Washington, Maryland, Virginia
           </p>
           <h1 className="max-w-[16ch] text-[clamp(36px,5vw,56px)] font-light leading-[1.08] tracking-[-0.025em]">
-            AI automation for local businesses.
+            AI automation for small businesses.
           </h1>
           <p className="mt-6 max-w-[42rem] text-[18px] font-light leading-[1.65]">
             OnCode finds the work your shop, office, or field team repeats, then

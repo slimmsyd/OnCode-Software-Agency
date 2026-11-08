@@ -49,7 +49,7 @@ export default function RedesignFooter() {
           href="/ai-automation-local-business"
           className="w-fit cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
         >
-          AI automation for local businesses
+          AI automation for small businesses
         </Link>
 
         <Link
