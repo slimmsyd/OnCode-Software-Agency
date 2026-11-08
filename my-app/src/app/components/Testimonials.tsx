@@ -11,10 +11,10 @@ const Testimonials = () => {
     <section className="overflow-hidden bg-white py-24 md:py-32">
       <div className="mx-auto mb-20 max-w-7xl px-6 text-center md:px-12 lg:px-16">
         <h2 className="mb-6 text-4xl font-light tracking-tight text-gray-900 md:text-5xl lg:text-6xl">
-          Trusted by industry leaders
+          Don&apos;t trust me
         </h2>
         <p className="mx-auto max-w-2xl text-xl font-light text-gray-600">
-          Real results for businesses that demand excellence
+          Verified by the people who hired us
         </p>
       </div>
 

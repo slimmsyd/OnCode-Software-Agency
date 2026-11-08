@@ -627,6 +627,19 @@ p {
 .oc-fade-up.d-600 { animation-delay: 600ms; }
 .oc-fade-up.d-800 { animation-delay: 800ms; }
 
+@keyframes oc-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.oc-marquee-track {
+  animation: oc-marquee 48s linear infinite;
+}
+
+.oc-marquee-track:hover {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .oc-fade-up {
     opacity: 1 !important;
@@ -634,6 +647,11 @@ p {
     animation: none !important;
   }
   .oc-hero-glow { animation: none !important; }
+  .oc-marquee-track {
+    animation: none !important;
+    transform: none !important;
+  }
+  .oc-marquee-clone { display: none !important; }
   .oc-preview-in {
     animation: none !important;
     opacity: 1 !important;

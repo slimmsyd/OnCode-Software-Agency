@@ -4,8 +4,13 @@ import Image from "next/image";
 import { ArrowRight, Star } from "lucide-react";
 import { useEffect, useRef } from "react";
 import BookAuditButton from "./BookAuditButton";
+import { ClientMarquee } from "./ClientMarquee";
+import { OnMark } from "./OnMark";
 import VslPlayer from "./VslPlayer";
 import { scrollToId } from "./lib";
+
+/** Flip to true to put the sales video back under the hero copy. */
+const SHOW_HERO_VSL = false;
 
 const HERO_MASK =
   "radial-gradient(ellipse 120% 120% at 92% 30%, black 0%, transparent 85%)";
@@ -86,17 +91,22 @@ export default function Hero() {
             <Image
               src="/redesign/oncode-hero-wordmark.png"
               alt="OnCode"
-              width={799}
-              height={220}
+              width={1024}
+              height={193}
               priority
-              className="h-16 w-auto object-contain"
+              className="h-14 w-auto object-contain sm:h-16"
             />
             <p className="mt-3 text-[12px] font-light uppercase tracking-[0.05em] text-black/50">
               AI automation firm
             </p>
           </div>
           <h1 className="header-h1 oc-fade-up d-200 mb-6 mt-6 text-black">
-            OnCode finds where you leak time and money, then builds the systems that seal the leaks.
+            <span className="whitespace-nowrap">
+              <span className="sr-only">On</span>
+              <OnMark className="mr-[0.06em] inline-block h-[0.76em] w-auto align-[-0.015em]" />
+              Code
+            </span>{" "}
+            applies agentic AI and custom technology for B2B and B2G companies, so you waste less or produce more.
           </h1>
           <p
             className="oc-fade-up d-400 mx-auto font-light italic text-black"
@@ -119,13 +129,14 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* VSL: isolated block on solid white — no decorative overlays */}
-      <div
-        id="vsl"
-        className="relative z-20 mx-auto w-full max-w-[900px] scroll-mt-28 px-6 pb-12"
-      >
-        <VslPlayer className="shadow-[0_12px_40px_rgba(0,0,0,0.12)]" />
-      </div>
+      {SHOW_HERO_VSL && (
+        <div
+          id="vsl"
+          className="relative z-20 mx-auto w-full max-w-[900px] scroll-mt-28 px-6 pb-12"
+        >
+          <VslPlayer className="shadow-[0_12px_40px_rgba(0,0,0,0.12)]" />
+        </div>
+      )}
 
       <div className="relative z-10 mx-auto max-w-[880px] px-6 pb-20 text-center">
         <div className="oc-fade-up d-600 flex flex-wrap items-center justify-center gap-6">
@@ -138,7 +149,7 @@ export default function Hero() {
           </button>
         </div>
 
-        <div className="oc-fade-up d-600 mx-auto mt-10 flex max-w-[720px] flex-wrap items-center justify-center gap-x-3 gap-y-2 border-t border-black/10 pt-8">
+        <div className="oc-fade-up d-600 mx-auto mt-10 flex max-w-[720px] items-center justify-center border-t border-black/10 pt-8">
           <div className="flex items-center gap-1.5">
             <div className="flex text-[#111111]">
               {[...Array(5)].map((_, i) => (
@@ -150,15 +161,9 @@ export default function Hero() {
               Verified Google reviews
             </span>
           </div>
-          <span
-            className="hidden h-4 w-px bg-black/15 sm:block"
-            aria-hidden="true"
-          />
-          <p className="text-[13px] font-semibold uppercase tracking-[0.06em] text-black/45">
-            BOXRAW LABS · HRR WELLNESS · TINT LABS · STREET ECONOMICS ·
-            PREEMINENT
-          </p>
         </div>
+
+        <ClientMarquee className="oc-fade-up d-600 mt-8" />
 
         <p className="oc-fade-up d-800 mt-11 text-[16px] font-light italic text-black/70">
           From idea to implementation, we keep you OnCode.

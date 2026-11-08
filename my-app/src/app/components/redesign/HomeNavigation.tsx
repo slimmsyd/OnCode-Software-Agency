@@ -104,8 +104,8 @@ export default function HomeNavigation({ variant = "home" }: HomeNavigationProps
               <Image
                 src="/redesign/oncode-hero-wordmark.png"
                 alt="OnCode"
-                width={120}
-                height={33}
+                width={1024}
+                height={193}
                 className="h-7 w-auto object-contain"
                 priority
               />

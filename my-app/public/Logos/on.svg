@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2270" height="1056" viewBox="0 0 2270 1056">
+  <g transform="translate(24 24)">
+
+<g transform="translate(0 0)" fill="none" stroke="#000" stroke-width="50" stroke-linecap="round">
+    <path d="M 545.75 26.82 A 479 479 0 1 1 69.88 301.57"/>
+    <line x1="465.68" y1="437.63" x2="260.12" y2="81.6"/>
+  </g>
+<g transform="translate(1188 0)">
+    <clipPath id="nclip-1188"><rect width="1034" height="1008"/></clipPath>
+    <line x1="25" y1="0" x2="1009" y2="1008" stroke="#000" stroke-width="50" stroke-linecap="butt" clip-path="url(#nclip-1188)"/>
+    <rect x="0" y="284" width="50" height="724" fill="#000"/>
+    <rect x="984" y="0" width="50" height="1008" fill="#000"/>
+  </g>
+  </g>
+</svg>

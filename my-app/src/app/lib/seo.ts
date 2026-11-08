@@ -17,7 +17,7 @@ type OpenGraph = NonNullable<Metadata["openGraph"]>;
 export const SITE_URL = "https://www.0ncode.com";
 export const SITE_NAME = "OnCode Software Agency";
 
-/** 1200x630 social share card built from the ornate emblem. */
+/** 1200x630 social share card: the wordmark centered on white. */
 export const OG_IMAGE = {
   url: `${SITE_URL}/images/og-image.png`,
   width: 1200,

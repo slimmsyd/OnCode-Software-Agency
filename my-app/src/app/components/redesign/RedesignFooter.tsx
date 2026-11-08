@@ -13,11 +13,11 @@ export default function RedesignFooter() {
       className="mx-auto w-full max-w-[500px] border-t border-black/5 px-4 pb-20 pt-12 text-black"
     >
       <Image
-        src="/redesign/oncode-mark-ornate.png"
+        src="/redesign/oncode-hero-wordmark.png"
         alt="OnCode"
-        width={523}
-        height={506}
-        className="h-14 w-auto object-contain"
+        width={1024}
+        height={193}
+        className="h-8 w-auto object-contain"
       />
       <div className="mt-8 flex flex-col gap-6">
         <p className="text-[18px] text-black">

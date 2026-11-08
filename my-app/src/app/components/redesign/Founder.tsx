@@ -40,8 +40,8 @@ export default function Founder() {
         <Image
           src="/redesign/people/sydney-sanders.jpeg"
           alt="Sydney Sanders, Founder of OnCode"
-          width={360}
-          height={360}
+          width={683}
+          height={1024}
           className="h-auto w-full max-w-[360px] shadow-[0_8px_24px_rgba(0,0,0,0.08)]"
         />
       </div>
