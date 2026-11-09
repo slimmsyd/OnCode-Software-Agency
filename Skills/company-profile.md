@@ -2,7 +2,8 @@
 
 **Website:** www.0ncode.com (note the leading zero)
 **Slogan:** "From idea to implementation — we keep you OnCode."
-_(Full profile also saved as `Company-Profile.md` in the project folder.)_
+
+This is the short card. The compiled record — offers, pricing examples, stack, portfolio, clients, pipeline, and open gaps — is [oncode-knowledge-base.md](oncode-knowledge-base.md) (Nov 9, 2026). Prefer that file when the two disagree.
 
 ## What we do
 
