@@ -59,6 +59,13 @@ export default function RedesignFooter() {
           AI automation consultant
         </Link>
 
+        <Link
+          href="/email-triage"
+          className="w-fit cursor-pointer text-[15px] font-medium text-black underline-offset-4 transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+        >
+          Email triage for facilities
+        </Link>
+
         <a
           href={SUBSTACK_URL}
           target="_blank"

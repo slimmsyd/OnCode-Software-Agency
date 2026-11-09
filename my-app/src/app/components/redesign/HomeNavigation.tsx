@@ -18,6 +18,11 @@ const RESOURCE_LINKS = [
     label: "AI for small businesses",
     detail: "How an engagement runs for shops and offices in the DMV.",
   },
+  {
+    href: "/email-triage",
+    label: "Email triage",
+    detail: "How a facilities desk keeps the inbox at 20.",
+  },
 ];
 
 const NAV_ITEMS: {
