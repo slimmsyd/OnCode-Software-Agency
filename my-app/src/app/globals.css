@@ -675,3 +675,42 @@ p {
   color: #111;
   line-height: 1.05;
 }
+
+/* First-visit homepage intro. Hidden unless the boot script opts in. */
+.intro-gate {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 400;
+  margin: 0;
+  background: #000;
+  cursor: none;
+  opacity: 1;
+  transition: opacity 420ms ease;
+}
+
+html[data-intro="on"] .intro-gate {
+  display: block;
+}
+
+html[data-intro="on"] .intro-gate.is-leaving {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-gate-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: scale(0.68);
+  transform-origin: center center;
+  background: #000;
+  pointer-events: none;
+}
+
+html[data-intro="on"],
+html[data-intro="on"] body {
+  background: #000;
+  overflow: hidden;
+}

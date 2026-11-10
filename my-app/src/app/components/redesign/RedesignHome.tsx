@@ -14,6 +14,7 @@ import FaqSection from "./FaqSection";
 import BookingSection from "./BookingSection";
 import RedesignFooter from "./RedesignFooter";
 import StickyAuditBar from "./StickyAuditBar";
+import IntroGate from "./IntroGate";
 
 import Testimonials from "../Testimonials";
 
@@ -21,6 +22,7 @@ import Testimonials from "../Testimonials";
 export default function RedesignHome() {
   return (
     <div className="relative bg-white pb-20">
+      <IntroGate />
       <HomeNavigation variant="home" />
       <Hero />
       <HeroProofBand />
