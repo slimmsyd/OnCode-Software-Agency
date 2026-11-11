@@ -132,22 +132,20 @@ export default function NewsletterPageClient() {
             }}
             className="relative lg:mt-4"
           >
-            {/* Perforation: two bites out of the page and a dashed seam, so the
-                form reads as a reply slip torn off the sheet. */}
-            <span
-              aria-hidden
-              className="absolute -top-[9px] left-6 z-10 h-[18px] w-[18px] rounded-full bg-white"
-            />
-            <span
-              aria-hidden
-              className="absolute -top-[9px] right-6 z-10 h-[18px] w-[18px] rounded-full bg-white"
-            />
+            {/* Perforation: two bites taken out of the top edge, with a dashed
+                seam running between them, so the form reads as a reply slip
+                torn off the sheet. The bites are exactly tangent to the two
+                1rem circles, so the dashes meet the notches cleanly. */}
             <div
               aria-hidden
-              className="absolute left-8 right-8 top-[9px] z-10 border-t border-dashed border-white/25"
-            />
+              className="pointer-events-none absolute inset-x-0 top-0"
+            >
+              <span className="absolute left-7 top-0 h-4 w-4 -translate-y-1/2 rounded-full bg-white" />
+              <span className="absolute right-7 top-0 h-4 w-4 -translate-y-1/2 rounded-full bg-white" />
+              <span className="absolute left-[44px] right-[44px] top-px border-t border-dashed border-white/30" />
+            </div>
 
-            <div className="relative bg-[#0a0a0a] px-6 pb-8 pt-10 sm:px-8">
+            <div className="relative bg-[#0a0a0a] px-6 pb-8 pt-11 sm:px-8">
               {isSuccess ? (
                 <div role="status" aria-live="polite">
                   <p
