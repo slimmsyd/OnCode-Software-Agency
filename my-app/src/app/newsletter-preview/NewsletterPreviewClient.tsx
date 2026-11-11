@@ -17,7 +17,7 @@ type Device = "desktop" | "mobile";
 const LETTERS = ["A", "B", "C", "D"];
 
 const TRIGGER_NOTES = [
-  ["Appears after", "15s on page, 55% scroll, or an exit-intent move"],
+  ["Appears after", "5s on page, or an exit-intent move"],
   ["Never during", "the first-visit intro film"],
   ["Asks once", "then stays quiet for 30 days, or forever after a signup"],
   ["Skips", "contact, onboarding, and this preview page"],

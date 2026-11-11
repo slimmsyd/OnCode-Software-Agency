@@ -11,14 +11,16 @@ import {
 import NewsletterModal from "./NewsletterModal";
 import { getNewsletterDesign } from "./designs";
 
-/** Tuning knobs. Deliberately conservative: a newsletter popup is a guest, not a gate. */
+/**
+ * Tuning knobs. We ask early: most visitors decide whether they care in the
+ * first few seconds, and a short dwell catches them before they scroll away.
+ */
 export const POPUP_TRIGGER = {
-  dwellMs: 15000,
-  dwellMsOnTouch: 25000,
-  scrollDepth: 0.55,
+  dwellMs: 5000,
+  dwellMsOnTouch: 8000,
   exitIntent: true,
   /** If the intro film is still playing, start counting only after it ends. */
-  introFallbackMs: 20000,
+  introFallbackMs: 12000,
 };
 
 /** Pages where a subscribe popup would compete with the page's own job. */
@@ -45,8 +47,8 @@ function isTouchDevice(): boolean {
 }
 
 /**
- * Decides when the popup is allowed to appear: after a dwell, a scroll depth,
- * or an exit-intent move, whichever comes first — and never during the intro film.
+ * Decides when the popup is allowed to appear: a short dwell, an exit-intent
+ * move, or whichever comes first — and never during the intro film.
  */
 export default function NewsletterPopup({
   design = DEFAULT_NEWSLETTER_DESIGN,
@@ -93,25 +95,16 @@ export default function NewsletterPopup({
           : POPUP_TRIGGER.dwellMs,
       );
 
-      const handleScroll = () => {
-        const scrollable =
-          document.documentElement.scrollHeight - window.innerHeight;
-        if (scrollable <= 0) return;
-        if (window.scrollY / scrollable >= POPUP_TRIGGER.scrollDepth) show();
-      };
-
       const handleMouseOut = (event: MouseEvent) => {
         if (!POPUP_TRIGGER.exitIntent) return;
         if (event.clientY > 0 || event.relatedTarget) return;
         show();
       };
 
-      window.addEventListener("scroll", handleScroll, { passive: true });
       document.addEventListener("mouseout", handleMouseOut);
 
       stopTriggers = () => {
         window.clearTimeout(dwell);
-        window.removeEventListener("scroll", handleScroll);
         document.removeEventListener("mouseout", handleMouseOut);
       };
     };
