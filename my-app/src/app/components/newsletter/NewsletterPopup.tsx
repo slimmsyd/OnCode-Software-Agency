@@ -25,6 +25,7 @@ export const POPUP_TRIGGER = {
 
 /** Pages where a subscribe popup would compete with the page's own job. */
 const EXCLUDED_PATH_PREFIXES = [
+  "/newsletter",
   "/newsletter-preview",
   "/onboarding",
   "/contact",
