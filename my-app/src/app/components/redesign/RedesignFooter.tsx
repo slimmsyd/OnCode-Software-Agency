@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowUpRight, Linkedin } from "lucide-react";
 import { LINKEDIN_URL, SUBSTACK_URL } from "./lib";
 import { trackOutboundClick } from "@/lib/analytics";
+import NewsletterFooterForm from "../newsletter/NewsletterFooterForm";
 
 export default function RedesignFooter() {
   return (
@@ -23,6 +24,8 @@ export default function RedesignFooter() {
         <p className="text-[18px] text-black">
           AI and custom software: built for the operation, managed after.
         </p>
+
+        <NewsletterFooterForm />
 
         <Link
           href="/work"

@@ -39,3 +39,16 @@ model BlogPost {
 
   @@map("blog_posts")
 }
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  source    String   @default("popup") // popup | footer | preview
+  design    String? // which popup direction captured the lead
+  status    String   @default("subscribed") // subscribed | unsubscribed
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("newsletter_subscribers")
+}

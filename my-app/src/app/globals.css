@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..500;1,6..72,200..500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -713,4 +714,55 @@ html[data-intro="on"],
 html[data-intro="on"] body {
   background: #000;
   overflow: hidden;
+}
+
+/* ============================================================
+   Newsletter popup — layouts respond to the card's container,
+   not the viewport, so the same dialog works in a modal and in
+   the side-by-side preview.
+   ============================================================ */
+.nl-card {
+  container-type: inline-size;
+}
+
+.nl-split {
+  grid-template-columns: 1fr;
+}
+
+.nl-split > .nl-perforation {
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.22);
+}
+
+@container (min-width: 620px) {
+  .nl-split {
+    grid-template-columns: 1.02fr 1fr;
+  }
+  .nl-split > .nl-perforation {
+    border-bottom: 0;
+    border-right: 1px dashed rgba(0, 0, 0, 0.22);
+  }
+}
+
+/* Field Note: on narrow containers the issue contents fold away so the form
+   stays near the top of the card. */
+.nl-issue-contents {
+  display: none;
+}
+
+@container (min-width: 560px) {
+  .nl-issue-contents {
+    display: block;
+  }
+}
+
+/* Field Note masthead: the wordmark is sized against the card, not the
+   viewport, so the preview frame and a real phone match. */
+.nl-masthead-logo {
+  height: 28px;
+}
+
+@container (min-width: 480px) {
+  .nl-masthead-logo {
+    height: 32px;
+  }
 }

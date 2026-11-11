@@ -17,6 +17,7 @@ import StickyAuditBar from "./StickyAuditBar";
 import IntroGate from "./IntroGate";
 
 import Testimonials from "../Testimonials";
+import NewsletterPopup from "../newsletter/NewsletterPopup";
 
 // OnCode homepage redesign: diagnostic-first assembly.
 export default function RedesignHome() {
@@ -38,6 +39,9 @@ export default function RedesignHome() {
       <Testimonials />
       <RedesignFooter />
       <StickyAuditBar />
+      <NewsletterPopup
+        enabled={process.env.NEXT_PUBLIC_NEWSLETTER_POPUP !== "off"}
+      />
     </div>
   );
 }
