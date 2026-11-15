@@ -5,7 +5,7 @@ import HomeNavigation from "@/app/components/redesign/HomeNavigation";
 import RedesignFooter from "@/app/components/redesign/RedesignFooter";
 import { buildOpenGraph } from "@/app/lib/seo";
 import { reviews } from "@/app/components/reviews";
-import LaptopFrame from "../LaptopFrame";
+import ProjectFrame from "../ProjectFrame";
 import { WORK_PROJECTS, getProject, projectPath } from "../projects";
 
 interface ProjectPageProps {
@@ -60,10 +60,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
         </Link>
 
         <div className="mx-auto max-w-[760px]">
-          <LaptopFrame
-            src={project.media}
-            alt={`${project.title} on a laptop`}
-            fit={project.mediaFit}
+          <ProjectFrame
+            project={project}
+            sizes="(max-width: 800px) 100vw, 760px"
           />
           <p className="mb-3 mt-10 text-[11px] font-medium uppercase tracking-[0.14em] text-[#767676]">
             {project.kind}

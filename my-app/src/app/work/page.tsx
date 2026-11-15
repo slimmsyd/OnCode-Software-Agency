@@ -3,7 +3,7 @@ import Link from "next/link";
 import HomeNavigation from "@/app/components/redesign/HomeNavigation";
 import RedesignFooter from "@/app/components/redesign/RedesignFooter";
 import { buildOpenGraph } from "@/app/lib/seo";
-import LaptopFrame from "./LaptopFrame";
+import ProjectFrame from "./ProjectFrame";
 import { WORK_PROJECTS, projectPath } from "./projects";
 
 const PAGE_URL = "https://www.0ncode.com/work";
@@ -50,11 +50,7 @@ export default function WorkPage() {
               href={projectPath(project.key)}
               className="group block min-h-11 cursor-pointer text-inherit no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-4 min-[800px]:[&:nth-child(even)]:mt-24"
             >
-              <LaptopFrame
-                src={project.media}
-                alt={`${project.title} on a laptop`}
-                fit={project.mediaFit}
-              />
+              <ProjectFrame project={project} />
               <div className="mt-5 flex items-baseline justify-between gap-4">
                 <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#767676]">
                   {project.kind}

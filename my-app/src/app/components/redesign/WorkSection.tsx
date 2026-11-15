@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { WORK_PROJECTS, projectPath } from "@/app/work/projects";
+import { WORK_PROJECTS, mediaFitClass, projectPath } from "@/app/work/projects";
+import ProjectMedia from "@/app/work/ProjectMedia";
 import { sharpIconButtonClass } from "./sharp-button";
 
 
@@ -173,17 +173,12 @@ export default function WorkSection() {
                 aria-label={`Read project: ${p.title}`}
                 className={cardClassName}
               >
-                <Image
-                  src={p.media}
-                  alt={p.title}
-                  fill
+                <ProjectMedia
+                  project={p}
                   sizes="(max-width: 768px) 80vw, 720px"
-                  className={`pointer-events-none select-none ${
-                    p.mediaFit === "contain"
-                      ? "object-contain object-center p-4 md:p-6"
-                      : "object-cover"
-                  }`}
-                  draggable={false}
+                  className={`pointer-events-none select-none ${mediaFitClass(
+                    p.mediaFit,
+                  )} ${p.mediaFit === "contain" ? "p-4 md:p-6" : ""}`}
                 />
               </Link>
             );

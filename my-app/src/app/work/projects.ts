@@ -6,9 +6,15 @@ export interface WorkStory {
   reviewName?: string;
 }
 
+export type WorkMediaType = "image" | "video";
+
 export interface WorkProject {
   key: string;
+  /** Image path, or the MP4 path when `mediaType` is "video". */
   media: string;
+  /** First frame shown before a video loads or plays. */
+  mediaPoster?: string;
+  mediaType?: WorkMediaType;
   title: string;
   kind: string;
   description: string;
@@ -20,6 +26,24 @@ export interface WorkProject {
 }
 
 export const WORK_PROJECTS: WorkProject[] = [
+  {
+    key: "dr-umar-live",
+    media: "/redesign/projects/dr-umar-live.mp4",
+    mediaPoster: "/redesign/projects/dr-umar-live-poster.webp",
+    mediaType: "video",
+    title: "Dr Umar Live",
+    kind: "Full-Stack Application · Design → Development · Host-Only Live Streaming",
+    description:
+      "Full-stack, members-only live streaming application for Dr Umar's lectures, built end to end: design, the live broadcast, a searchable archive of a decade of talks, members-only message and forum, and event reservations.",
+    liveUrl: "https://www.drumarlive.com/",
+    story: {
+      what: "The live streaming application for Dr Umar, where he is the host and members sign up to watch.",
+      problem:
+        "Every broadcast, replay, and member question leaned on somebody else's platform. The host had no direct line to the room, and a decade of lectures had no home anyone could search.",
+      solution:
+        "OnCode designed and built the application end to end: member sign-up and the watch flow, the live broadcast, the searchable archive, the members-only inbox and forum, and event reservations, on one stack with the backend to run it.",
+    },
+  },
   {
     key: "obsidian-protocol",
     media: "/redesign/projects/obsidian-protocol.jpeg",
@@ -286,4 +310,9 @@ export function projectPath(key: string) {
 
 export function getProject(key: string) {
   return WORK_PROJECTS.find((project) => project.key === key);
+}
+
+/** Object-fit classes shared by every place a project's media is drawn. */
+export function mediaFitClass(fit?: WorkProject["mediaFit"]) {
+  return fit === "contain" ? "object-contain object-center" : "object-cover";
 }
