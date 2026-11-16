@@ -115,6 +115,21 @@ export default function RedesignFooter() {
           />
         </a>
 
+        <div className="flex gap-5">
+          <Link
+            href="/privacy"
+            className="w-fit cursor-pointer text-[14px] text-[#767676] underline-offset-4 transition-colors duration-200 hover:text-[#111] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+          >
+            Privacy
+          </Link>
+          <Link
+            href="/terms"
+            className="w-fit cursor-pointer text-[14px] text-[#767676] underline-offset-4 transition-colors duration-200 hover:text-[#111] hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
+          >
+            Terms
+          </Link>
+        </div>
+
         <p className="text-[14px] text-[#767676]">
           © 2026 Oncode, All Rights Reserved.
         </p>
